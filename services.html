@@ -1,430 +1,747 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Services | Starcare Medical Centre – Metro Medical Group</title>
-<link rel="stylesheet" href="shared.css">
-<style>
-  /* ---- NAVBAR ---- */
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services | Starcare Medical Centre – Metro Medical Group</title>
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    /* ---- NAVBAR ---- */
 
-.hamburger {
-  display: none;
-}
-/* ---- MOBILE NAV ---- */
-@media (max-width: 900px) {
+    .hamburger {
+      display: none;
+    }
 
-  .nav-links {
-    display: flex;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: white;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px 32px;
-    gap: 16px;
-    border-top: 1px solid var(--border);
-    
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(-10px);
-    transition: 0.3s ease;
-  }
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
 
-  .nav-links.active {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0);
-  }
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
 
-  .nav-links li {
-    width: 100%;
-  }
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
 
-  .nav-links a {
-    display: block;
-    width: 100%;
-    padding: 10px 0;
-  }
+    /* ---- MOBILE NAV ---- */
+    @media (max-width: 900px) {
 
-  /* Hide desktop right section */
-  .nav-emergency {
-    display: none;
-  }
+      .nav-links {
+        display: flex;
+        position: absolute;
+        top: 76px;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 32px;
+        gap: 16px;
+        border-top: 1px solid var(--border);
 
-  /* Show hamburger */
-  .hamburger {
-    display: flex !important;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-  }
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-10px);
+        transition: 0.3s ease;
+      }
 
-  .hamburger span {
-    width: 24px;
-    height: 2px;
-    background: var(--text-dark);
-    display: block;
-  }
-}
-/* ---- SERVICE HERO CARDS ---- */
-.services-feature-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 28px;
-  margin-top: 48px;
-}
-.service-feature-card {
-  background: white;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  border: 1px solid var(--border);
-  transition: var(--transition);
-  display: grid;
-  grid-template-columns: 180px 1fr;
-}
-.service-feature-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--rose); }
-.sfc-img {
-  height: 100%;
-  min-height: 200px;
-  background: linear-gradient(160deg, var(--rose-blush), var(--rose));
-  position: relative;
-  overflow: hidden;
-}
-.sfc-img img { width:100%;height:100%;object-fit:cover; }
-.sfc-body { padding: 28px 24px; }
-.sfc-icon { width:44px;height:44px;border-radius:12px;background:var(--rose-pale);display:flex;align-items:center;justify-content:center;margin-bottom:14px; }
-.sfc-body h3 { font-family:'',serif; font-size:1.15rem; color:var(--maroon-dark); margin-bottom:8px; }
-.sfc-body p { font-size:0.85rem; color:var(--text-soft); line-height:1.7; margin-bottom:14px; }
-.sfc-tags { display:flex; flex-wrap:wrap; gap:6px; }
-.sfc-tag { font-size:0.7rem; color:var(--maroon); background:var(--rose-pale); padding:3px 10px; border-radius:20px; font-weight:600; }
+      .nav-links.active {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
 
-/* ---- ALL SERVICES ---- */
-.all-services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-  margin-top: 48px;
-}
-.service-list-card {
-  background: white;
-  border-radius: var(--radius-lg);
-  padding: 32px 24px;
-  border: 1px solid var(--border);
-  transition: var(--transition);
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-}
-.service-list-card::after {
-  content: '';
-  position: absolute;
-  top: 0; right: 0;
-  width: 4px; height: 100%;
-  background: linear-gradient(to bottom, var(--maroon), var(--maroon-light));
-  transform: scaleY(0);
-  transition: transform 0.4s;
-}
-.service-list-card:hover { transform: translateX(6px); box-shadow: var(--shadow-md); border-color: var(--rose); }
-.service-list-card:hover::after { transform: scaleY(1); }
-.slc-icon { width:52px;height:52px;border-radius:14px;background:var(--rose-pale);display:flex;align-items:center;justify-content:center;margin-bottom:18px;transition:var(--transition); }
-.service-list-card:hover .slc-icon { background:var(--maroon); }
-.service-list-card:hover .slc-icon svg { color:white !important; }
-.service-list-card h3 { font-family:'',serif;font-size:1.05rem;color:var(--maroon-dark);margin-bottom:8px; }
-.service-list-card p { font-size:0.84rem;color:var(--text-soft);line-height:1.7;margin-bottom:14px; }
-.slc-more { font-size:0.8rem;font-weight:700;color:var(--maroon);display:flex;align-items:center;gap:4px;transition:gap 0.2s; }
-.service-list-card:hover .slc-more { gap:8px; }
+      .nav-links li {
+        width: 100%;
+      }
 
-/* ---- PRIVILEGE SECTION ---- */
-.priv-section { background: linear-gradient(135deg, var(--maroon-deep), var(--maroon)); padding: 80px 32px; }
-.priv-inner { max-width: 1280px; margin: 0 auto; }
-.priv-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 48px; }
-.priv-card {
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.18);
-  border-radius: var(--radius-lg);
-  padding: 32px 24px;
-  text-align: center;
-  transition: var(--transition);
-  backdrop-filter: blur(10px);
-}
-.priv-card:hover { background: rgba(255,255,255,0.17); transform: translateY(-4px); }
-.priv-card-icon { width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;margin:0 auto 18px; }
-.priv-card h4 { font-family:'',serif;font-size:1.05rem;color:white;margin-bottom:8px; }
-.priv-card p { font-size:0.82rem;color:rgba(255,255,255,0.7);line-height:1.65; }
+      .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+      }
 
-/* ---- INSURANCE ---- */
-.ins-section { background: var(--rose-pale); padding: 80px 32px; }
-.ins-inner { max-width: 1280px; margin: 0 auto; }
-.ins-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; margin-top: 40px; }
-.ins-badge {
-  background: white;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 16px 12px;
-  text-align: center;
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: var(--text-mid);
-  transition: var(--transition);
-}
-.ins-badge:hover { border-color: var(--maroon); color: var(--maroon); box-shadow: var(--shadow-sm); transform: translateY(-2px); }
+      /* Hide desktop right section */
+      .nav-emergency {
+        display: none;
+      }
 
-@media(max-width:1024px){ .services-feature-grid{grid-template-columns:1fr;} .service-feature-card{grid-template-columns:1fr;} .sfc-img{height:200px;} .all-services-grid{grid-template-columns:1fr 1fr;} .priv-grid{grid-template-columns:1fr 1fr;} .ins-grid{grid-template-columns:repeat(3,1fr);} }
-@media(max-width:640px){ .all-services-grid{grid-template-columns:1fr;} .ins-grid{grid-template-columns:repeat(2,1fr);} }
-</style>
+      /* Show hamburger */
+      .hamburger {
+        display: flex !important;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+      }
+
+      .hamburger span {
+        width: 24px;
+        height: 2px;
+        background: var(--text-dark);
+        display: block;
+      }
+    }
+
+    /* ---- SERVICE HERO CARDS ---- */
+    .services-feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-top: 48px;
+    }
+
+    .service-feature-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: var(--transition);
+      display: grid;
+      grid-template-columns: 180px 1fr;
+    }
+
+    .service-feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--rose);
+    }
+
+    .sfc-img {
+      height: 100%;
+      min-height: 200px;
+      background: linear-gradient(160deg, var(--rose-blush), var(--rose));
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sfc-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .sfc-body {
+      padding: 28px 24px;
+    }
+
+    .sfc-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--rose-pale);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+    }
+
+    .sfc-body h3 {
+      font-family: '', serif;
+      font-size: 1.15rem;
+      color: var(--maroon-dark);
+      margin-bottom: 8px;
+    }
+
+    .sfc-body p {
+      font-size: 0.85rem;
+      color: var(--text-soft);
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+
+    .sfc-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .sfc-tag {
+      font-size: 0.7rem;
+      color: var(--maroon);
+      background: var(--rose-pale);
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+
+    /* ---- ALL SERVICES ---- */
+    .all-services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 48px;
+    }
+
+    .service-list-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 32px 24px;
+      border: 1px solid var(--border);
+      transition: var(--transition);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-list-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--maroon), var(--maroon-light));
+      transform: scaleY(0);
+      transition: transform 0.4s;
+    }
+
+    .service-list-card:hover {
+      transform: translateX(6px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--rose);
+    }
+
+    .service-list-card:hover::after {
+      transform: scaleY(1);
+    }
+
+    .slc-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: var(--rose-pale);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      transition: var(--transition);
+    }
+
+    .service-list-card:hover .slc-icon {
+      background: var(--maroon);
+    }
+
+    .service-list-card:hover .slc-icon svg {
+      color: white !important;
+    }
+
+    .service-list-card h3 {
+      font-family: '', serif;
+      font-size: 1.05rem;
+      color: var(--maroon-dark);
+      margin-bottom: 8px;
+    }
+
+    .service-list-card p {
+      font-size: 0.84rem;
+      color: var(--text-soft);
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+
+    .slc-more {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--maroon);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: gap 0.2s;
+    }
+
+    .service-list-card:hover .slc-more {
+      gap: 8px;
+    }
+
+    /* ---- PRIVILEGE SECTION ---- */
+    .priv-section {
+      background: linear-gradient(135deg, var(--maroon-deep), var(--maroon));
+      padding: 80px 32px;
+    }
+
+    .priv-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .priv-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .priv-card {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: var(--radius-lg);
+      padding: 32px 24px;
+      text-align: center;
+      transition: var(--transition);
+      backdrop-filter: blur(10px);
+    }
+
+    .priv-card:hover {
+      background: rgba(255, 255, 255, 0.17);
+      transform: translateY(-4px);
+    }
+
+    .priv-card-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 18px;
+    }
+
+    .priv-card h4 {
+      font-family: '', serif;
+      font-size: 1.05rem;
+      color: white;
+      margin-bottom: 8px;
+    }
+
+    .priv-card p {
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.65;
+    }
+
+    /* ---- INSURANCE ---- */
+    .ins-section {
+      background: var(--rose-pale);
+      padding: 80px 32px;
+    }
+
+    .ins-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .ins-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 16px;
+      margin-top: 40px;
+    }
+
+    .ins-badge {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 12px;
+      text-align: center;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-mid);
+      transition: var(--transition);
+    }
+
+    .ins-badge:hover {
+      border-color: var(--maroon);
+      color: var(--maroon);
+      box-shadow: var(--shadow-sm);
+      transform: translateY(-2px);
+    }
+
+    @media(max-width:1024px) {
+      .services-feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-feature-card {
+        grid-template-columns: 1fr;
+      }
+
+      .sfc-img {
+        height: 200px;
+      }
+
+      .all-services-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .priv-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .ins-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media(max-width:640px) {
+      .all-services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ins-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
 </head>
+
 <body>
-<!-- NAVBAR -->
-<nav class="navbar" id="navbar">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
-      <img src="https://www.metrostarcare.ae/assets/images/logo/logo.png" alt="Starcare Logo" onerror="this.style.display='none'">
-      <div class="nav-logo-text"><span class="brand">Starcare</span><span class="sub">Metro Medical Group</span></div>
-    </a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="doctors.html">Doctors</a></li>
-      <li><a href="services.html" class="active">Services</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <div class="nav-emergency">
-      <a href="tel:+97165611099" class="emergency-badge">
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="https://www.metrostarcare.ae/assets/images/logo/logo.png" alt="Starcare Logo" onerror="this.style.display='none'">
+        <div class="nav-logo-text"><span class="brand">Starcare</span><span class="sub">Metro Medical Group</span></div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="doctors.html">Doctors</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-emergency">
+        <a href="tel:+97165611099" class="emergency-badge">
           <span class="pulse"></span>
           <span>Book Appointment: +971 65 611099</span>
         </a>
-      <div class="nav-socials">
-        <a href="https://www.instagram.com/starcare.uae" class="nav-social-icon" target="_blank" aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
-        <a href="https://www.facebook.com/share/15BroPchCk/" class="nav-social-icon" target="_blank" aria-label="Facebook"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        <div class="nav-socials">
+          <a href="https://www.instagram.com/starcare.uae" class="nav-social-icon" target="_blank" aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+            </svg></a>
+          <a href="https://www.facebook.com/share/15BroPchCk/" class="nav-social-icon" target="_blank" aria-label="Facebook"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+            </svg></a>
+        </div>
       </div>
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
     </div>
-    <div class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-breadcrumb"><a href="index.html">Home</a><span>›</span><span>Services</span></div>
+    <h1>Comprehensive Medical Services<br>for Your Complete Care</h1>
+    <p>From specialist consultations to emergency care — all under one roof, with a team that genuinely cares.</p>
   </div>
-</nav>
 
-<!-- PAGE HERO -->
-<div class="page-hero">
-  <div class="page-hero-breadcrumb"><a href="index.html">Home</a><span>›</span><span>Services</span></div>
-  <h1>Comprehensive Medical Services<br>for Your Complete Care</h1>
-  <p>From specialist consultations to emergency care — all under one roof, with a team that genuinely cares.</p>
-</div>
-
-<!-- FEATURED SERVICES -->
-<section style="padding:80px 0;background:var(--off-white);">
-  <div class="section" style="padding-top:0;padding-bottom:0;">
-    <div class="text-center">
-      <div class="section-sub">Core Specialties</div>
-      <h2 class="section-title">Our Featured<br><em>Medical Departments</em></h2>
+  <!-- FEATURED SERVICES -->
+  <section style="padding:80px 0;background:var(--off-white);">
+    <div class="section" style="padding-top:0;padding-bottom:0;">
+      <div class="text-center">
+        <div class="section-sub">Core Specialties</div>
+        <h2 class="section-title">Our Featured<br><em>Medical Departments</em></h2>
+      </div>
+      <div class="services-feature-grid">
+        <div class="service-feature-card fade-up">
+          <div class="sfc-img"><img src="https://www.metrostarcare.ae/storage/uploads/1761376414_gynaecology.jpg" alt="Gynecology" onerror="this.parentElement.style.background='linear-gradient(160deg,#F2D9E6,#E8C4D4)'"></div>
+          <div class="sfc-body">
+            <div class="sfc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+              </svg></div>
+            <h3>Gynecology</h3>
+            <p>Dedicated women's healthcare focusing on reproductive health, pregnancy care, and hormonal wellness at every stage of life.</p>
+            <div class="sfc-tags"><span class="sfc-tag">Prenatal Care</span><span class="sfc-tag">Hormonal Health</span><span class="sfc-tag">Reproductive Health</span></div>
+          </div>
+        </div>
+        <div class="service-feature-card fade-up" style="transition-delay:0.1s">
+          <div class="sfc-img"><img src="https://www.metrostarcare.ae/storage/uploads/1741466263_4.jpg" alt="ENT" onerror="this.parentElement.style.background='linear-gradient(160deg,#F2D9E6,#E8C4D4)'"></div>
+          <div class="sfc-body">
+            <div class="sfc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+              </svg></div>
+            <h3>ENT</h3>
+            <p>Expert care for ear, nose, throat, and head/neck conditions — from hearing loss to chronic sinusitis to throat disorders.</p>
+            <div class="sfc-tags"><span class="sfc-tag">Hearing Loss</span><span class="sfc-tag">Sinusitis</span><span class="sfc-tag">Throat Disorders</span></div>
+          </div>
+        </div>
+        <div class="service-feature-card fade-up" style="transition-delay:0.2s">
+          <div class="sfc-img"><img src="https://www.metrostarcare.ae/storage/uploads/1741466280_5.jpg" alt="Orthopedics" onerror="this.parentElement.style.background='linear-gradient(160deg,#F2D9E6,#E8C4D4)'"></div>
+          <div class="sfc-body">
+            <div class="sfc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2">
+                <path d="M18 20V10M12 20V4M6 20v-6" />
+              </svg></div>
+            <h3>Orthopedics</h3>
+            <p>Expert care for musculoskeletal conditions including fractures, joint disorders, and spine-related issues to restore mobility.</p>
+            <div class="sfc-tags"><span class="sfc-tag">Fractures</span><span class="sfc-tag">Joint Disorders</span><span class="sfc-tag">Spine Care</span></div>
+          </div>
+        </div>
+        <div class="service-feature-card fade-up" style="transition-delay:0.3s">
+          <div class="sfc-img"><img src="https://www.metrostarcare.ae/storage/uploads/1741466194_1.jpg" alt="General Medicine" onerror="this.parentElement.style.background='linear-gradient(160deg,#F2D9E6,#E8C4D4)'"></div>
+          <div class="sfc-body">
+            <div class="sfc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+              </svg></div>
+            <h3>General Medicine</h3>
+            <p>Comprehensive primary healthcare services to diagnose, treat, and manage a wide range of conditions with personalised care.</p>
+            <div class="sfc-tags"><span class="sfc-tag">Primary Care</span><span class="sfc-tag">Chronic Disease</span><span class="sfc-tag">Check-ups</span></div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="services-feature-grid">
-      <div class="service-feature-card fade-up">
-        <div class="sfc-img"><img src="https://www.metrostarcare.ae/storage/uploads/1761376414_gynaecology.jpg" alt="Gynecology" onerror="this.parentElement.style.background='linear-gradient(160deg,#F2D9E6,#E8C4D4)'"></div>
-        <div class="sfc-body">
-          <div class="sfc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
-          <h3>Gynecology</h3>
-          <p>Dedicated women's healthcare focusing on reproductive health, pregnancy care, and hormonal wellness at every stage of life.</p>
-          <div class="sfc-tags"><span class="sfc-tag">Prenatal Care</span><span class="sfc-tag">Hormonal Health</span><span class="sfc-tag">Reproductive Health</span></div>
-        </div>
+  </section>
+
+  <!-- ALL SERVICES -->
+  <section style="padding:80px 0;background:var(--rose-pale);">
+    <div class="section" style="padding-top:0;padding-bottom:0;">
+      <div class="text-center">
+        <div class="section-sub">All Departments</div>
+        <h2 class="section-title">Complete Range of<br><em>Medical Specialties</em></h2>
       </div>
-      <div class="service-feature-card fade-up" style="transition-delay:0.1s">
-        <div class="sfc-img"><img src="https://www.metrostarcare.ae/storage/uploads/1741466263_4.jpg" alt="ENT" onerror="this.parentElement.style.background='linear-gradient(160deg,#F2D9E6,#E8C4D4)'"></div>
-        <div class="sfc-body">
-          <div class="sfc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
-          <h3>ENT</h3>
-          <p>Expert care for ear, nose, throat, and head/neck conditions — from hearing loss to chronic sinusitis to throat disorders.</p>
-          <div class="sfc-tags"><span class="sfc-tag">Hearing Loss</span><span class="sfc-tag">Sinusitis</span><span class="sfc-tag">Throat Disorders</span></div>
-        </div>
-      </div>
-      <div class="service-feature-card fade-up" style="transition-delay:0.2s">
-        <div class="sfc-img"><img src="https://www.metrostarcare.ae/storage/uploads/1741466280_5.jpg" alt="Orthopedics" onerror="this.parentElement.style.background='linear-gradient(160deg,#F2D9E6,#E8C4D4)'"></div>
-        <div class="sfc-body">
-          <div class="sfc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></div>
-          <h3>Orthopedics</h3>
-          <p>Expert care for musculoskeletal conditions including fractures, joint disorders, and spine-related issues to restore mobility.</p>
-          <div class="sfc-tags"><span class="sfc-tag">Fractures</span><span class="sfc-tag">Joint Disorders</span><span class="sfc-tag">Spine Care</span></div>
-        </div>
-      </div>
-      <div class="service-feature-card fade-up" style="transition-delay:0.3s">
-        <div class="sfc-img"><img src="https://www.metrostarcare.ae/storage/uploads/1741466194_1.jpg" alt="General Medicine" onerror="this.parentElement.style.background='linear-gradient(160deg,#F2D9E6,#E8C4D4)'"></div>
-        <div class="sfc-body">
-          <div class="sfc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg></div>
+      <div class="all-services-grid">
+        <div class="service-list-card fade-up">
+          <div class="slc-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="2" y1="12" x2="22" y2="12" />
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+            </svg></div>
           <h3>General Medicine</h3>
-          <p>Comprehensive primary healthcare services to diagnose, treat, and manage a wide range of conditions with personalised care.</p>
-          <div class="sfc-tags"><span class="sfc-tag">Primary Care</span><span class="sfc-tag">Chronic Disease</span><span class="sfc-tag">Check-ups</span></div>
+          <p>Comprehensive primary healthcare services designed to diagnose, treat, and manage a wide range of medical conditions.</p>
+          <div class="slc-more">Learn More <span>→</span></div>
+        </div>
+        <div class="service-list-card fade-up" style="transition-delay:0.1s">
+          <div class="slc-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+            </svg></div>
+          <h3>Gynecology</h3>
+          <p>Dedicated women's healthcare, focusing on reproductive health, pregnancy care, and hormonal wellness.</p>
+          <div class="slc-more">Learn More <span>→</span></div>
+        </div>
+        <div class="service-list-card fade-up" style="transition-delay:0.2s">
+          <div class="slc-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2">
+              <circle cx="12" cy="8" r="4" />
+              <path d="M6 20v-2a6 6 0 0 1 12 0v2" />
+            </svg></div>
+          <h3>Pediatrics</h3>
+          <p>Compassionate and specialised healthcare for infants, children, and adolescents at every stage of their development.</p>
+          <div class="slc-more">Learn More <span>→</span></div>
+        </div>
+        <div class="service-list-card fade-up" style="transition-delay:0.3s">
+          <div class="slc-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2">
+              <path d="M18 20V10M12 20V4M6 20v-6" />
+            </svg></div>
+          <h3>Orthopedics</h3>
+          <p>Expert care for musculoskeletal conditions including fractures, joint disorders, and spine-related issues.</p>
+          <div class="slc-more">Learn More <span>→</span></div>
+        </div>
+        <div class="service-list-card fade-up" style="transition-delay:0.4s">
+          <div class="slc-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+            </svg></div>
+          <h3>ENT</h3>
+          <p>Comprehensive care for ear, nose, throat, and related structures of the head and neck.</p>
+          <div class="slc-more">Learn More <span>→</span></div>
+        </div>
+        <div class="service-list-card fade-up" style="transition-delay:0.5s">
+          <div class="slc-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2">
+              <circle cx="12" cy="8" r="4" />
+              <path d="M12 12v8M9 18l3 3 3-3" />
+            </svg></div>
+          <h3>Ophthalmology</h3>
+          <p>Specialised care for vision and eye health, including diagnostic and treatment services for all conditions.</p>
+          <div class="slc-more">Learn More <span>→</span></div>
+        </div>
+        <div class="service-list-card fade-up">
+          <div class="slc-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg></div>
+          <h3>Dermatology &amp; Cosmetology</h3>
+          <p>Skin, hair, and beauty treatments ranging from clinical dermatology to advanced cosmetic procedures.</p>
+          <div class="slc-more">Learn More <span>→</span></div>
+        </div>
+        <div class="service-list-card fade-up" style="transition-delay:0.1s">
+          <div class="slc-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2">
+              <rect x="8" y="2" width="8" height="4" rx="1" />
+              <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+              <path d="M12 11h4M12 16h4M8 11h.01M8 16h.01" />
+            </svg></div>
+          <h3>Dental</h3>
+          <p>Complete dental care including preventive, restorative, and cosmetic dentistry for the whole family.</p>
+          <div class="slc-more">Learn More <span>→</span></div>
+        </div>
+        <div class="service-list-card fade-up" style="transition-delay:0.2s">
+          <div class="slc-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+            </svg></div>
+          <h3>Physiotherapy</h3>
+          <p>Evidence-based physical therapy and rehabilitation for injury recovery, pain management, and mobility improvement.</p>
+          <div class="slc-more">Learn More <span>→</span></div>
+        </div>
+        <div class="service-list-card fade-up" style="transition-delay:0.3s">
+          <div class="slc-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2">
+              <path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z" />
+              <path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z" />
+            </svg></div>
+          <h3>Radiology</h3>
+          <p>Advanced diagnostic imaging services including X-ray, ultrasound, and more for accurate and timely diagnosis.</p>
+          <div class="slc-more">Learn More <span>→</span></div>
+        </div>
+        <div class="service-list-card fade-up" style="transition-delay:0.4s">
+          <div class="slc-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+            </svg></div>
+          <h3>Pathology / Lab</h3>
+          <p>In-house diagnostic laboratory services providing fast, accurate test results to support your healthcare journey.</p>
+          <div class="slc-more">Learn More <span>→</span></div>
+        </div>
+        <div class="service-list-card fade-up" style="transition-delay:0.5s">
+          <div class="slc-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg></div>
+          <h3>Emergency Services</h3>
+          <p>Rapid-response emergency care available during operating hours — call us immediately at +971 65 611099.</p>
+          <div class="slc-more">Call Now <span>→</span></div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ALL SERVICES -->
-<section style="padding:80px 0;background:var(--rose-pale);">
-  <div class="section" style="padding-top:0;padding-bottom:0;">
-    <div class="text-center">
-      <div class="section-sub">All Departments</div>
-      <h2 class="section-title">Complete Range of<br><em>Medical Specialties</em></h2>
-    </div>
-    <div class="all-services-grid">
-      <div class="service-list-card fade-up">
-        <div class="slc-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
-        <h3>General Medicine</h3>
-        <p>Comprehensive primary healthcare services designed to diagnose, treat, and manage a wide range of medical conditions.</p>
-        <div class="slc-more">Learn More <span>→</span></div>
+  <!-- PRIVILEGE SECTION -->
+  <section class="priv-section">
+    <div class="priv-inner">
+      <div class="text-center" style="color:white;">
+        <div class="section-sub" style="color:var(--rose);justify-content:center;">Additional Benefits</div>
+        <h2 class="section-title" style="color:white;">Beyond Medical Care — <em style="color:var(--rose);">Extra Services</em></h2>
+        <p style="color:rgba(255,255,255,0.7);max-width:540px;margin:12px auto 0;font-size:0.95rem;">At Metro Medical Group, we go beyond medical care to offer services that make your experience seamless, convenient, and rewarding.</p>
       </div>
-      <div class="service-list-card fade-up" style="transition-delay:0.1s">
-        <div class="slc-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
-        <h3>Gynecology</h3>
-        <p>Dedicated women's healthcare, focusing on reproductive health, pregnancy care, and hormonal wellness.</p>
-        <div class="slc-more">Learn More <span>→</span></div>
-      </div>
-      <div class="service-list-card fade-up" style="transition-delay:0.2s">
-        <div class="slc-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/></svg></div>
-        <h3>Pediatrics</h3>
-        <p>Compassionate and specialised healthcare for infants, children, and adolescents at every stage of their development.</p>
-        <div class="slc-more">Learn More <span>→</span></div>
-      </div>
-      <div class="service-list-card fade-up" style="transition-delay:0.3s">
-        <div class="slc-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></div>
-        <h3>Orthopedics</h3>
-        <p>Expert care for musculoskeletal conditions including fractures, joint disorders, and spine-related issues.</p>
-        <div class="slc-more">Learn More <span>→</span></div>
-      </div>
-      <div class="service-list-card fade-up" style="transition-delay:0.4s">
-        <div class="slc-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
-        <h3>ENT</h3>
-        <p>Comprehensive care for ear, nose, throat, and related structures of the head and neck.</p>
-        <div class="slc-more">Learn More <span>→</span></div>
-      </div>
-      <div class="service-list-card fade-up" style="transition-delay:0.5s">
-        <div class="slc-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M12 12v8M9 18l3 3 3-3"/></svg></div>
-        <h3>Ophthalmology</h3>
-        <p>Specialised care for vision and eye health, including diagnostic and treatment services for all conditions.</p>
-        <div class="slc-more">Learn More <span>→</span></div>
-      </div>
-      <div class="service-list-card fade-up">
-        <div class="slc-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <h3>Dermatology &amp; Cosmetology</h3>
-        <p>Skin, hair, and beauty treatments ranging from clinical dermatology to advanced cosmetic procedures.</p>
-        <div class="slc-more">Learn More <span>→</span></div>
-      </div>
-      <div class="service-list-card fade-up" style="transition-delay:0.1s">
-        <div class="slc-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4M12 16h4M8 11h.01M8 16h.01"/></svg></div>
-        <h3>Dental</h3>
-        <p>Complete dental care including preventive, restorative, and cosmetic dentistry for the whole family.</p>
-        <div class="slc-more">Learn More <span>→</span></div>
-      </div>
-      <div class="service-list-card fade-up" style="transition-delay:0.2s">
-        <div class="slc-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-        <h3>Physiotherapy</h3>
-        <p>Evidence-based physical therapy and rehabilitation for injury recovery, pain management, and mobility improvement.</p>
-        <div class="slc-more">Learn More <span>→</span></div>
-      </div>
-      <div class="service-list-card fade-up" style="transition-delay:0.3s">
-        <div class="slc-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg></div>
-        <h3>Radiology</h3>
-        <p>Advanced diagnostic imaging services including X-ray, ultrasound, and more for accurate and timely diagnosis.</p>
-        <div class="slc-more">Learn More <span>→</span></div>
-      </div>
-      <div class="service-list-card fade-up" style="transition-delay:0.4s">
-        <div class="slc-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
-        <h3>Pathology / Lab</h3>
-        <p>In-house diagnostic laboratory services providing fast, accurate test results to support your healthcare journey.</p>
-        <div class="slc-more">Learn More <span>→</span></div>
-      </div>
-      <div class="service-list-card fade-up" style="transition-delay:0.5s">
-        <div class="slc-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-        <h3>Emergency Services</h3>
-        <p>Rapid-response emergency care available during operating hours — call us immediately at +971 65 611099.</p>
-        <div class="slc-more">Call Now <span>→</span></div>
+      <div class="priv-grid">
+        <div class="priv-card fade-up">
+          <div class="priv-card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8">
+              <rect x="2" y="5" width="20" height="14" rx="2" />
+              <line x1="2" y1="10" x2="22" y2="10" />
+            </svg></div>
+          <h4>Privilege Card</h4>
+          <p>Exclusive member benefits including discounts on consultations, labs, and specialist referrals.</p>
+        </div>
+        <div class="priv-card fade-up" style="transition-delay:0.1s">
+          <div class="priv-card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg></div>
+          <h4>Free Medical Camps</h4>
+          <p>Regular community health camps offering free screenings, consultations, and health awareness programmes.</p>
+        </div>
+        <div class="priv-card fade-up" style="transition-delay:0.2s">
+          <div class="priv-card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg></div>
+          <h4>Noble Services</h4>
+          <p>Personalised assistance for patients who require special attention, home visits, or extra support.</p>
+        </div>
+        <div class="priv-card fade-up" style="transition-delay:0.3s">
+          <div class="priv-card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8">
+              <rect x="2" y="7" width="20" height="14" rx="2" />
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+            </svg></div>
+          <h4>Corporate Tie-Ups</h4>
+          <p>Tailored corporate health packages for businesses to support employee wellness and productivity.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- PRIVILEGE SECTION -->
-<section class="priv-section">
-  <div class="priv-inner">
-    <div class="text-center" style="color:white;">
-      <div class="section-sub" style="color:var(--rose);justify-content:center;">Additional Benefits</div>
-      <h2 class="section-title" style="color:white;">Beyond Medical Care — <em style="color:var(--rose);">Extra Services</em></h2>
-      <p style="color:rgba(255,255,255,0.7);max-width:540px;margin:12px auto 0;font-size:0.95rem;">At Metro Medical Group, we go beyond medical care to offer services that make your experience seamless, convenient, and rewarding.</p>
+  <!-- INSURANCE -->
+  <section class="ins-section">
+    <div class="ins-inner">
+      <div class="text-center">
+        <div class="section-sub">Coverage</div>
+        <h2 class="section-title">Accepted <em>Insurance Providers</em></h2>
+        <p class="section-desc" style="text-align:center;margin:12px auto 0;">We work with 20+ insurance networks to ensure your care is covered. Contact us to verify your specific plan.</p>
+      </div>
+      <div class="ins-grid">
+        <div class="ins-badge fade-up">Oman Insurance</div>
+        <div class="ins-badge fade-up">SAICO Health</div>
+        <div class="ins-badge fade-up">NGI</div>
+        <div class="ins-badge fade-up">Nextcare</div>
+        <div class="ins-badge fade-up">NAS</div>
+        <div class="ins-badge fade-up">Neuron</div>
+        <div class="ins-badge fade-up">MSH</div>
+        <div class="ins-badge fade-up">MetLife</div>
+        <div class="ins-badge fade-up">Mednet</div>
+        <div class="ins-badge fade-up">Lifeline</div>
+        <div class="ins-badge fade-up">Inayah</div>
+        <div class="ins-badge fade-up">FMC</div>
+        <div class="ins-badge fade-up">eCare</div>
+        <div class="ins-badge fade-up">AXA</div>
+        <div class="ins-badge fade-up">Al Madallah</div>
+        <div class="ins-badge fade-up">Al Buhaira</div>
+        <div class="ins-badge fade-up">Afiya</div>
+        <div class="ins-badge fade-up">ADNIC</div>
+      </div>
+      <div style="text-align:center;margin-top:32px;font-size:0.82rem;color:var(--text-soft);">Not all insurance cards accepted at all branches. Please call <strong>+971 65 611099</strong> to verify before booking.</div>
     </div>
-    <div class="priv-grid">
-      <div class="priv-card fade-up">
-        <div class="priv-card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></div>
-        <h4>Privilege Card</h4>
-        <p>Exclusive member benefits including discounts on consultations, labs, and specialist referrals.</p>
-      </div>
-      <div class="priv-card fade-up" style="transition-delay:0.1s">
-        <div class="priv-card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-        <h4>Free Medical Camps</h4>
-        <p>Regular community health camps offering free screenings, consultations, and health awareness programmes.</p>
-      </div>
-      <div class="priv-card fade-up" style="transition-delay:0.2s">
-        <div class="priv-card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <h4>Noble Services</h4>
-        <p>Personalised assistance for patients who require special attention, home visits, or extra support.</p>
-      </div>
-      <div class="priv-card fade-up" style="transition-delay:0.3s">
-        <div class="priv-card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
-        <h4>Corporate Tie-Ups</h4>
-        <p>Tailored corporate health packages for businesses to support employee wellness and productivity.</p>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- INSURANCE -->
-<section class="ins-section">
-  <div class="ins-inner">
-    <div class="text-center">
-      <div class="section-sub">Coverage</div>
-      <h2 class="section-title">Accepted <em>Insurance Providers</em></h2>
-      <p class="section-desc" style="text-align:center;margin:12px auto 0;">We work with 20+ insurance networks to ensure your care is covered. Contact us to verify your specific plan.</p>
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand"><img src="https://www.metrostarcare.ae/assets/images/logo/logo.png" alt="Starcare Logo">
+        <p>Starcare Medical Centre — providing world-class healthcare services with compassion, excellence, and personalised attention.</p>
+        <div class="footer-socials" style="margin-top:20px;"><a href="#" class="footer-social"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+            </svg></a></div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">General Medicine</a></li>
+          <li><a href="services.html">Gynecology</a></li>
+          <li><a href="services.html">Pediatrics</a></li>
+          <li><a href="services.html">Orthopedics</a></li>
+          <li><a href="services.html">ENT</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="doctors.html">Our Doctors</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul class="footer-contact">
+          <li><span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg></span><span>+971 65 611099</span></li>
+          <li><span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg></span><span>Malabar Plaza, Rolla, Sharjah, UAE</span></li>
+        </ul>
+      </div>
     </div>
-    <div class="ins-grid">
-      <div class="ins-badge fade-up">Oman Insurance</div>
-      <div class="ins-badge fade-up">SAICO Health</div>
-      <div class="ins-badge fade-up">NGI</div>
-      <div class="ins-badge fade-up">Nextcare</div>
-      <div class="ins-badge fade-up">NAS</div>
-      <div class="ins-badge fade-up">Neuron</div>
-      <div class="ins-badge fade-up">MSH</div>
-      <div class="ins-badge fade-up">MetLife</div>
-      <div class="ins-badge fade-up">Mednet</div>
-      <div class="ins-badge fade-up">Lifeline</div>
-      <div class="ins-badge fade-up">Inayah</div>
-      <div class="ins-badge fade-up">FMC</div>
-      <div class="ins-badge fade-up">eCare</div>
-      <div class="ins-badge fade-up">AXA</div>
-      <div class="ins-badge fade-up">Al Madallah</div>
-      <div class="ins-badge fade-up">Al Buhaira</div>
-      <div class="ins-badge fade-up">Afiya</div>
-      <div class="ins-badge fade-up">ADNIC</div>
+    <div class="footer-bottom">
+      <p>© 2025 Metro Medical Group. All rights reserved.</p>
     </div>
-    <div style="text-align:center;margin-top:32px;font-size:0.82rem;color:var(--text-soft);">Not all insurance cards accepted at all branches. Please call <strong>+971 65 611099</strong> to verify before booking.</div>
-  </div>
-</section>
+  </footer>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-brand"><img src="https://www.metrostarcare.ae/assets/images/logo/logo.png" alt="Starcare Logo"><p>Starcare Medical Centre — providing world-class healthcare services with compassion, excellence, and personalised attention.</p><div class="footer-socials" style="margin-top:20px;"><a href="#" class="footer-social"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a></div></div>
-    <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">General Medicine</a></li><li><a href="services.html">Gynecology</a></li><li><a href="services.html">Pediatrics</a></li><li><a href="services.html">Orthopedics</a></li><li><a href="services.html">ENT</a></li></ul></div>
-    <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="about.html">About Us</a></li><li><a href="doctors.html">Our Doctors</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-    <div class="footer-col"><h4>Contact</h4><ul class="footer-contact"><li><span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><span>+971 65 611099</span></li><li><span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span><span>Malabar Plaza, Rolla, Sharjah, UAE</span></li></ul></div>
-  </div>
-  <div class="footer-bottom"><p>© 2025 Metro Medical Group. All rights reserved.</p></div>
-</footer>
+  <script>
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+    });
 
-<script>
-window.addEventListener('scroll', () => { document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40); });
-function toggleMenu() { document.getElementById('navLinks').classList.toggle('active'); }
-const obs = new IntersectionObserver((e) => e.forEach(el => { if(el.isIntersecting) el.target.classList.add('visible'); }), {threshold:0.1});
-document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
-</script>
+    function toggleMenu() {
+      const navLinks = document.getElementById("navLinks");
+      const hamburger = document.getElementById("hamburger");
+
+      navLinks.classList.toggle("active");
+      hamburger.classList.toggle("active");
+    }
+    const obs = new IntersectionObserver((e) => e.forEach(el => {
+      if (el.isIntersecting) el.target.classList.add('visible');
+    }), {
+      threshold: 0.1
+    });
+    document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+  </script>
 </body>
+
 </html>

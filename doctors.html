@@ -8,9 +8,20 @@
   <link rel="stylesheet" href="shared.css">
   <style>
     /* ---- NAVBAR ---- */
-
     .hamburger {
       display: none;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
     }
 
     /* ---- MOBILE NAV ---- */
@@ -19,7 +30,7 @@
       .nav-links {
         display: flex;
         position: absolute;
-        top: 100%;
+        top: 76px;
         left: 0;
         width: 100%;
         background: white;
@@ -119,7 +130,7 @@
       padding: 10px 20px;
       background: white;
       flex: 1;
-      max-width: 340px;
+      max-width: 1000px;
       transition: var(--transition);
     }
 
@@ -528,11 +539,6 @@
   <!-- FILTER BAR -->
   <div class="filter-bar">
     <div class="filter-inner">
-      <select class="filter-select" id="branchFilter" onchange="filterDoctors()">
-        <option value="all">All Branches</option>
-        <option value="sharjah">Metro Medical Sharjah</option>
-        <option value="kuwait">Kuwait Branch</option>
-      </select>
       <select class="filter-select" id="deptFilter" onchange="filterDoctors()">
         <option value="all">All Specialties</option>
         <option value="general">General Medicine</option>
@@ -940,7 +946,11 @@
     });
 
     function toggleMenu() {
-      document.getElementById('navLinks').classList.toggle('active');
+      const navLinks = document.getElementById("navLinks");
+      const hamburger = document.getElementById("hamburger");
+
+      navLinks.classList.toggle("active");
+      hamburger.classList.toggle("active");
     }
     const obs = new IntersectionObserver((e) => e.forEach(el => {
       if (el.isIntersecting) el.target.classList.add('visible');

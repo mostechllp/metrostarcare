@@ -7,9 +7,21 @@
   <title>Starcare Medical Centre | Metro Medical Group — Your Health, Our Priority</title>
   <link rel="stylesheet" href="shared.css">
   <style>
-   /* ---- NAVBAR ---- */
+    /* ---- NAVBAR ---- */
     .hamburger {
       display: none;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
     }
 
     /* ---- MOBILE NAV ---- */
@@ -18,7 +30,7 @@
       .nav-links {
         display: flex;
         position: absolute;
-        top: 100%;
+        top: 76px;
         left: 0;
         width: 100%;
         background: white;
@@ -561,9 +573,10 @@
       .director-badge {
         display: none;
       }
+
       .rasna-img {
-      transform: scale(1.7);
-    }
+        transform: scale(1.7);
+      }
     }
 
     /* ---- SERVICES ---- */
@@ -1147,7 +1160,7 @@
             </div>
           </div>
         </div>
-        
+
         <!-- Dr. Sandhya -->
         <div class="doctor-card fade-up" style="transition-delay:0.3s">
           <div class="doctor-img-wrap">
@@ -1264,34 +1277,34 @@
 
   <!-- INSURANCE TICKER -->
   <div class="insurance-band">
-  <div class="insurance-title">Accepted Insurance Providers</div>
+    <div class="insurance-title">Accepted Insurance Providers</div>
 
-  <div class="ticker-wrap">
-    <div class="ticker-track">
+    <div class="ticker-wrap">
+      <div class="ticker-track">
 
-      <!-- One set -->
-      <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/Oman-Insurance.jpg"></div>
-      <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/SAICOHEALTH.jpg"></div>
-      <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/NGI.jpg"></div>
-      <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/Nextcare.jpg"></div>
-      <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/NAS.jpg"></div>
-      <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/neuron.jpg"></div>
-      <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/MSH.jpg"></div>
-      <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/MetLife.jpg"></div>
+        <!-- One set -->
+        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/Oman-Insurance.jpg"></div>
+        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/SAICOHEALTH.jpg"></div>
+        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/NGI.jpg"></div>
+        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/Nextcare.jpg"></div>
+        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/NAS.jpg"></div>
+        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/neuron.jpg"></div>
+        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/MSH.jpg"></div>
+        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/MetLife.jpg"></div>
 
-      <!-- Duplicate for loop -->
-      <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/Oman-Insurance.jpg"></div>
-      <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/SAICOHEALTH.jpg"></div>
-      <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/NGI.jpg"></div>
-      <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/Nextcare.jpg"></div>
-      <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/NAS.jpg"></div>
-      <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/neuron.jpg"></div>
-      <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/MSH.jpg"></div>
-      <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/MetLife.jpg"></div>
+        <!-- Duplicate for loop -->
+        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/Oman-Insurance.jpg"></div>
+        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/SAICOHEALTH.jpg"></div>
+        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/NGI.jpg"></div>
+        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/Nextcare.jpg"></div>
+        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/NAS.jpg"></div>
+        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/neuron.jpg"></div>
+        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/MSH.jpg"></div>
+        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/MetLife.jpg"></div>
 
+      </div>
     </div>
   </div>
-</div>
 
   <!-- FOOTER -->
   <footer>
@@ -1368,7 +1381,11 @@
     });
 
     function toggleMenu() {
-      document.getElementById("navLinks").classList.toggle("active");
+      const navLinks = document.getElementById("navLinks");
+      const hamburger = document.getElementById("hamburger");
+
+      navLinks.classList.toggle("active");
+      hamburger.classList.toggle("active");
     }
     // Fade-up on scroll
     const obs = new IntersectionObserver((entries) => {
