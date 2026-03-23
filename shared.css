@@ -3,7 +3,7 @@
    Theme: White + Pinkish Maroon / Rose-Maroon
    ============================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 :root {
   --maroon:        #8B1A4A;
@@ -33,13 +33,16 @@
 
 html { scroll-behavior: smooth; }
 
+body, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+}
 body {
-  font-family: 'DM Sans', sans-serif;
   background: var(--off-white);
   color: var(--text-dark);
   line-height: 1.6;
   overflow-x: hidden;
 }
+
 
 /* ---- SCROLLBAR ---- */
 ::-webkit-scrollbar { width: 6px; }
@@ -83,7 +86,7 @@ body {
   flex-direction: column;
   line-height: 1.2;
 }
-.nav-logo-text .brand { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--maroon); }
+.nav-logo-text .brand { font-size: 1.1rem; font-weight: 700; color: var(--maroon); }
 .nav-logo-text .sub { font-size: 0.62rem; font-weight: 500; color: var(--text-soft); letter-spacing: 0.12em; text-transform: uppercase; }
 .nav-links {
   display: flex;
@@ -184,7 +187,6 @@ body {
 .page-hero-breadcrumb a { color: var(--rose); text-decoration: none; }
 .page-hero-breadcrumb span { opacity: 0.5; }
 .page-hero h1 {
-  font-family: 'Playfair Display', serif;
   font-size: clamp(2rem, 5vw, 3.4rem);
   font-weight: 700;
   color: white;
@@ -201,7 +203,6 @@ body {
 /* ---- SECTION ---- */
 .section { padding: 88px 32px; max-width: 1280px; margin: 0 auto; }
 .section-title {
-  font-family: 'Playfair Display', serif;
   font-size: clamp(1.7rem, 3.5vw, 2.6rem);
   font-weight: 700;
   color: var(--maroon-dark);
@@ -331,7 +332,6 @@ body {
   margin-bottom: 8px;
 }
 .doctor-name {
-  font-family: 'Playfair Display', serif;
   font-size: 1.05rem;
   font-weight: 600;
   color: var(--text-dark);
@@ -396,7 +396,6 @@ body {
 .service-card:hover .service-icon { background: var(--maroon); }
 .service-card:hover .service-icon svg { color: white !important; }
 .service-card h3 {
-  font-family: 'Playfair Display', serif;
   font-size: 1.1rem;
   color: var(--maroon-dark);
   margin-bottom: 10px;
@@ -413,7 +412,6 @@ body {
   padding: 32px 20px;
 }
 .stat-num {
-  font-family: 'Playfair Display', serif;
   font-size: 2.8rem;
   font-weight: 700;
   color: var(--maroon);
@@ -427,33 +425,75 @@ body {
   text-transform: uppercase;
 }
 
-/* ---- INSURANCE TICKER ---- */
+/* ---- INSURANCE BAND ---- */
 .insurance-band {
-  background: var(--rose-pale);
+  background: linear-gradient(to bottom, #fff, var(--rose-pale));
+  padding: 32px 0;
+  overflow: hidden;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  padding: 24px 0;
+}
+
+.insurance-title {
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  margin-bottom: 20px;
+}
+
+/* Ticker */
+.ticker-wrap {
   overflow: hidden;
 }
-.ticker-wrap {
+
+.ticker-track {
   display: flex;
-  gap: 40px;
-  animation: ticker 35s linear infinite;
+  gap: 24px;
+  width: max-content;
+  animation: scroll 30s linear infinite;
 }
-@keyframes ticker {
+
+@keyframes scroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
-.ticker-item {
+
+/* Cards */
+.insurance-card {
   flex-shrink: 0;
-  display: flex; align-items: center;
-  gap: 8px;
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--text-mid);
-  white-space: nowrap;
+  background: white;
+  border-radius: 14px;
+  padding: 14px 18px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+  transition: var(--transition);
 }
-.ticker-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--maroon-light); }
+
+.insurance-card img {
+  max-height: 32px;
+  max-width: 100px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.8;
+  transition: var(--transition);
+}
+
+/* Hover effect */
+.insurance-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.insurance-card:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
+}
 
 /* ---- FOOTER ---- */
 footer {
@@ -472,7 +512,6 @@ footer {
 .footer-brand img { height: 44px; margin-bottom: 16px; filter: brightness(0) invert(1); }
 .footer-brand p { font-size: 0.85rem; line-height: 1.75; opacity: 0.7; max-width: 280px; }
 .footer-col h4 {
-  font-family: 'Playfair Display', serif;
   font-size: 1rem;
   color: white;
   margin-bottom: 18px;
