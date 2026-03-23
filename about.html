@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Starcare Medical Centre – Metro Medical Group</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+  /* ---- NAVBAR ---- */
+.navbar {
+  position: relative;
+}
+
+.hamburger {
+  display: none;
+}
+/* ---- MOBILE NAV ---- */
+@media (max-width: 900px) {
+
+  .nav-links {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 32px;
+    gap: 16px;
+    border-top: 1px solid var(--border);
+    
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: 0.3s ease;
+  }
+
+  .nav-links.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  /* Hide desktop right section */
+  .nav-emergency {
+    display: none;
+  }
+
+  /* Show hamburger */
+  .hamburger {
+    display: flex !important;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+
+  .hamburger span {
+    width: 24px;
+    height: 2px;
+    background: var(--text-dark);
+    display: block;
+  }
+}
+
+/* ---- MISSION VISION ---- */
+.mv-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-top: 48px;
+}
+.mv-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 40px 36px;
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+}
+.mv-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.mv-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--maroon), var(--maroon-light));
+}
+.mv-icon { width: 60px; height: 60px; border-radius: 18px; background: var(--rose-pale); display: flex; align-items: center; justify-content: center; margin-bottom: 22px; }
+.mv-card h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--maroon-dark); margin-bottom: 12px; }
+.mv-card p { font-size: 0.9rem; color: var(--text-mid); line-height: 1.75; }
+
+/* ---- VALUES ---- */
+.values-section { background: var(--rose-pale); }
+.values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+.value-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  border: 1px solid var(--border);
+  text-align: center;
+  transition: var(--transition);
+}
+.value-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); }
+.value-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--border);
+  line-height: 1;
+  margin-bottom: 16px;
+}
+.value-card h4 { font-size: 1rem; font-weight: 700; color: var(--maroon-dark); margin-bottom: 8px; }
+.value-card p { font-size: 0.85rem; color: var(--text-soft); line-height: 1.65; }
+
+/* ---- TEAM STORY ---- */
+.story-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: center;
+}
+.story-imgs {
+  position: relative;
+  height: 500px;
+}
+.story-img-a { position: absolute; left: 0; top: 0; width: 70%; height: 80%; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-lg); }
+.story-img-a img { width:100%;height:100%;object-fit:cover; }
+.story-img-b { position: absolute; right: 0; bottom: 0; width: 55%; height: 50%; border-radius: 20px; overflow: hidden; border: 5px solid white; box-shadow: var(--shadow-md); }
+.story-img-b img { width:100%;height:100%;object-fit:cover; }
+.story-tag {
+  position: absolute;
+  bottom: 55%; left: 60%;
+  background: var(--maroon);
+  color: white;
+  padding: 18px 22px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(139,26,74,0.4);
+}
+.story-tag .big { font-family:'Playfair Display',serif; font-size: 2.2rem; font-weight:700; line-height:1; }
+.story-tag .sm { font-size:0.68rem; text-transform:uppercase; letter-spacing:0.1em; opacity:0.8; margin-top:4px; }
+
+/* ---- STATS BAND ---- */
+.stats-band {
+  background: linear-gradient(135deg, var(--maroon-deep), var(--maroon));
+  padding: 64px 32px;
+}
+.stats-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+.stat-item {
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+.stat-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0; top: 20%; bottom: 20%;
+  width: 1px;
+  background: rgba(255,255,255,0.15);
+}
+.stat-item .num { font-family: 'Playfair Display', serif; font-size: 2.8rem; font-weight: 700; color: white; line-height: 1; }
+.stat-item .lbl { font-size: 0.78rem; color: var(--rose); margin-top: 8px; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.8; }
+
+/* ---- LEADERSHIP ---- */
+.leadership-wrap {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 72px;
+  align-items: center;
+}
+.director-card {
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border);
+}
+.director-photo {
+  height: 340px;
+  background: linear-gradient(160deg, var(--rose-blush), var(--rose));
+  position: relative;
+  overflow: hidden;
+}
+.director-photo img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 60%;
+}
+.director-photo-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(to top, rgba(74,13,40,0.92), transparent);
+  padding: 24px;
+}
+.director-badge-strip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--gold);
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+}
+.director-photo-overlay h3 { font-family:'Playfair Display',serif; color:white; font-size:1.2rem; font-weight:600; margin-bottom:3px; }
+.director-photo-overlay p { color: var(--rose); font-size: 0.8rem; }
+.director-meta { padding: 24px; }
+.director-meta .meta-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 0.82rem; }
+.director-meta .meta-row:last-child { border-bottom: none; }
+.director-meta .meta-row .k { color: var(--text-soft); font-weight: 500; }
+.director-meta .meta-row .v { color: var(--text-dark); font-weight: 600; }
+.leadership-right blockquote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-style: italic;
+  color: var(--maroon-dark);
+  line-height: 1.5;
+  border-left: 4px solid var(--maroon-light);
+  padding-left: 24px;
+  margin: 28px 0;
+}
+.leadership-right p { font-size: 0.95rem; color: var(--text-mid); line-height: 1.8; margin-bottom: 16px; }
+
+/* ---- GLOBAL ---- */
+.global-wrap { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; }
+.global-img { border-radius: 20px; overflow:hidden; height:400px; background:var(--rose-pale); display:flex; align-items:center; justify-content:center; }
+.global-img img { width:100%;height:100%;object-fit:cover; }
+.accord-item { border-bottom: 1px solid var(--border); }
+.accord-btn { width:100%; display:flex; justify-content:space-between; align-items:center; padding:18px 0; background:none; border:none; cursor:pointer; font-size:0.95rem; font-weight:600; color:var(--text-dark); text-align:left; transition:color 0.2s; }
+.accord-btn:hover, .accord-btn.open { color: var(--maroon); }
+.accord-btn .chevron { transition: transform 0.3s; }
+.accord-btn.open .chevron { transform: rotate(180deg); }
+.accord-body { max-height: 0; overflow:hidden; transition: max-height 0.4s ease; }
+.accord-body p { padding: 0 0 18px; font-size:0.88rem; color:var(--text-mid); line-height:1.7; }
+
+@media(max-width:900px){ .mv-grid{grid-template-columns:1fr;} .values-grid{grid-template-columns:1fr 1fr;} .story-wrap{grid-template-columns:1fr;} .story-imgs{height:320px;} .stats-inner{grid-template-columns:1fr 1fr;} .leadership-wrap{grid-template-columns:1fr;} .global-wrap{grid-template-columns:1fr;} }
+@media(max-width:600px){ .values-grid{grid-template-columns:1fr;} .stats-inner{grid-template-columns:1fr 1fr;} }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="https://www.metrostarcare.ae/assets/images/logo/logo.png" alt="Starcare Logo" onerror="this.style.display='none'">
+      <div class="nav-logo-text"><span class="brand">Starcare</span><span class="sub">Metro Medical Group</span></div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About Us</a></li>
+      <li><a href="doctors.html">Doctors</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-emergency">
+      <a href="tel:065611099" class="emergency-badge"><span class="pulse"></span><span>Emergency: 065611099</span></a>
+      <div class="nav-socials">
+        <a href="https://www.instagram.com/starcare.uae" class="nav-social-icon" target="_blank" aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+        <a href="https://www.facebook.com/share/15BroPchCk/" class="nav-social-icon" target="_blank" aria-label="Facebook"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      </div>
+    </div>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-breadcrumb"><a href="index.html">Home</a><span>›</span><span>About Us</span></div>
+  <h1>Dedicated to Excellence in<br>Healthcare for Over a Decade</h1>
+  <p>Our doctors, staff, and entire team work with one shared mission — your health and well-being above all else.</p>
+</div>
+
+<!-- MISSION & VISION -->
+<section style="padding:88px 0; background:var(--off-white);">
+  <div class="section" style="padding-top:0;padding-bottom:0;">
+    <div class="text-center">
+      <div class="section-sub">Who We Are</div>
+      <h2 class="section-title">Caring for the Health &amp; Well-Being<br><em>of You and Your Family</em></h2>
+      <p class="section-desc" style="margin: 12px auto 0; text-align:center;">We provide all aspects of medical practice for your family, including general check-ups or assisting with injuries. Your health, privacy and comfort are always our top priorities.</p>
+    </div>
+    <div class="mv-grid">
+      <div class="mv-card fade-up">
+        <div class="mv-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <h3>Our Mission</h3>
+        <p>To make quality healthcare accessible and affordable globally, enhancing lives through a personal touch. We deliver state-of-the-art medical services tailored to individual needs, backed by a patient-centric approach and experienced team ensuring world-class care.</p>
+      </div>
+      <div class="mv-card fade-up" style="transition-delay:0.15s">
+        <div class="mv-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3>Our Vision</h3>
+        <p>To be the most trusted and respected healthcare provider across the UAE and the Gulf, known for clinical excellence, innovation, and compassionate patient care that sets the gold standard in the region.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAND -->
+<div class="stats-band">
+  <div class="stats-inner">
+    <div class="stat-item fade-up"><div class="num">10+</div><div class="lbl">Years of Service</div></div>
+    <div class="stat-item fade-up" style="transition-delay:0.1s"><div class="num">15+</div><div class="lbl">Specialist Doctors</div></div>
+    <div class="stat-item fade-up" style="transition-delay:0.2s"><div class="num">2</div><div class="lbl">Branches (UAE &amp; Kuwait)</div></div>
+    <div class="stat-item fade-up" style="transition-delay:0.3s"><div class="num">20+</div><div class="lbl">Insurance Networks</div></div>
+  </div>
+</div>
+
+<!-- OUR STORY -->
+<section style="padding:88px 0; background:var(--off-white);">
+  <div class="section" style="padding-top:0;padding-bottom:0;">
+    <div class="story-wrap">
+      <div class="story-imgs fade-up">
+        <div class="story-img-a"><img src="https://www.metrostarcare.ae/assets/images/about/1.jpg" alt="Starcare story" onerror="this.parentElement.style.background='linear-gradient(135deg,#F2D9E6,#E8C4D4)'"></div>
+        <div class="story-img-b"><img src="https://www.metrostarcare.ae/assets/images/about/2.jpg" alt="Our team" onerror="this.parentElement.style.background='linear-gradient(135deg,#8B1A4A,#B8426A)'"></div>
+        <div class="story-tag"><div class="big">2+</div><div class="sm">Branches<br>Worldwide</div></div>
+      </div>
+      <div class="fade-up" style="transition-delay:0.2s">
+        <div class="section-sub">Our Story</div>
+        <h2 class="section-title">A Trusted Name in Healthcare<br><em>Across Borders</em></h2>
+        <div class="divider"></div>
+        <p style="color:var(--text-mid);font-size:0.95rem;line-height:1.8;margin-bottom:16px;">Starcare Medical Centre, under the Metro Medical Group, has been a trusted healthcare provider for over a decade. With branches in Sharjah, UAE and Kuwait, we deliver state-of-the-art medical services tailored to individual needs.</p>
+        <p style="color:var(--text-mid);font-size:0.95rem;line-height:1.8;margin-bottom:16px;">From cutting-edge technology to a patient-centric approach, our experienced team ensures world-class care. Our mission is to make quality healthcare accessible and affordable globally, enhancing lives with a personal touch.</p>
+        <p style="color:var(--text-mid);font-size:0.95rem;line-height:1.8;margin-bottom:28px;">We treat all enquiries in confidence. We will work with you to develop individualised care plans, including management of chronic diseases. If we cannot assist, we provide referrals and advice about the type of care you require.</p>
+        <a href="doctors.html" class="btn btn-primary">Meet Our Team</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="values-section" style="padding:88px 0;">
+  <div class="section" style="padding-top:0;padding-bottom:0;">
+    <div class="text-center">
+      <div class="section-sub">What Drives Us</div>
+      <h2 class="section-title">Our Core <em>Values</em></h2>
+    </div>
+    <div class="values-grid">
+      <div class="value-card fade-up"><div class="value-num">01</div><h4>Excellence</h4><p>We strive for the highest standards in every aspect of patient care — from diagnosis to treatment to follow-up.</p></div>
+      <div class="value-card fade-up" style="transition-delay:0.1s"><div class="value-num">02</div><h4>Compassion</h4><p>We treat every patient with empathy and warmth, understanding that visiting a doctor is a moment of vulnerability.</p></div>
+      <div class="value-card fade-up" style="transition-delay:0.2s"><div class="value-num">03</div><h4>Integrity</h4><p>Transparent, ethical, and honest care — our patients can always trust that their best interests come first.</p></div>
+      <div class="value-card fade-up" style="transition-delay:0.3s"><div class="value-num">04</div><h4>Innovation</h4><p>We embrace advanced medical technologies and evidence-based approaches to deliver modern, effective care.</p></div>
+      <div class="value-card fade-up" style="transition-delay:0.4s"><div class="value-num">05</div><h4>Accessibility</h4><p>Quality healthcare should be accessible to all — we work hard to make our services affordable and convenient.</p></div>
+      <div class="value-card fade-up" style="transition-delay:0.5s"><div class="value-num">06</div><h4>Community</h4><p>Through free medical camps and community outreach, we invest in the well-being of the communities we serve.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- MEDICAL DIRECTOR / LEADERSHIP -->
+<section style="padding:88px 0; background:var(--off-white);">
+  <div class="section" style="padding-top:0;padding-bottom:0;">
+    <div class="leadership-wrap">
+      <div class="director-card fade-up">
+        <div class="director-photo">
+          <img src="doctors/rasna_munaifa.png" alt="Dr. Rasna Munaifa Koroth" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(160deg,#F2D9E6,#E8C4D4)'">
+          <div class="director-photo-overlay">
+            <div class="director-badge-strip">⭐ Medical Director</div>
+            <h3>Dr. Rasna Munaifa Koroth</h3>
+            <p>General Practitioner · Metro Medical Group</p>
+          </div>
+        </div>
+        <div class="director-meta">
+          <div class="meta-row"><span class="k">Qualification</span><span class="v">MBBS</span></div>
+          <div class="meta-row"><span class="k">Speciality</span><span class="v">General Practice</span></div>
+          <div class="meta-row"><span class="k">Experience</span><span class="v">10+ Years</span></div>
+          <div class="meta-row"><span class="k">Languages</span><span class="v">English, Arabic, Malayalam</span></div>
+        </div>
+      </div>
+      <div class="fade-up" style="transition-delay:0.2s">
+        <div class="section-sub">Leadership</div>
+        <h2 class="section-title">A Message from Our<br><em>Medical Director</em></h2>
+        <div class="divider"></div>
+        <blockquote>"The health and well-being of our patients and their healthcare team will always be our first priority."</blockquote>
+        <p>Under the leadership of Dr. Rasna Munaifa Koroth, Starcare Medical Centre has grown into one of the most trusted medical facilities in Sharjah. Her unwavering commitment to patient-centered care has shaped the culture of excellence that defines our practice.</p>
+        <p>Dr. Rasna believes that great healthcare begins with listening — to your patient, to your team, and to the community you serve. This philosophy is embedded in every interaction at Starcare.</p>
+        <p>With over a decade of experience in general practice and medical leadership, she continues to inspire our team to deliver care that is not just medically excellent, but genuinely compassionate.</p>
+        <div style="margin-top:32px; display:flex; gap:14px; flex-wrap:wrap;">
+          <a href="doctors.html" class="btn btn-primary">Meet Our Full Team</a>
+          <a href="contact.html" class="btn btn-outline">Book Consultation</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GLOBAL REACH -->
+<section style="padding:88px 0; background:var(--rose-pale);">
+  <div class="section" style="padding-top:0;padding-bottom:0;">
+    <div class="global-wrap">
+      <div class="fade-up">
+        <div class="section-sub">Global Reach</div>
+        <h2 class="section-title">Serving Patients<br><em>Across the Globe</em></h2>
+        <div class="divider"></div>
+        <p style="color:var(--text-mid);font-size:0.95rem;line-height:1.8;margin-bottom:24px;">At Metro Medical Group, we are committed to extending our healthcare services beyond borders, ensuring that patients from around the world receive the care and attention they deserve.</p>
+        <div style="margin-bottom:12px;">
+          <div class="accord-item">
+            <button class="accord-btn" onclick="toggleAccord(this)">
+              <span>Personalised Health Plans</span>
+              <svg class="chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accord-body"><p>Collaborate with our specialists to create tailored health plans addressing your unique medical requirements. We assess your history, lifestyle, and goals to build a plan that truly fits.</p></div>
+          </div>
+          <div class="accord-item">
+            <button class="accord-btn" onclick="toggleAccord(this)">
+              <span>Flexible Service Options</span>
+              <svg class="chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accord-body"><p>No long-term commitments — choose the medical services you need, when you need them. Our flexible scheduling accommodates busy lifestyles and urgent medical needs alike.</p></div>
+          </div>
+          <div class="accord-item">
+            <button class="accord-btn" onclick="toggleAccord(this)">
+              <span>Confidential Medical Advice</span>
+              <svg class="chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accord-body"><p>Your health and privacy are our top priorities. Receive expert guidance in strict confidentiality. Every consultation, result, and record is handled with the utmost discretion.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="global-img fade-up" style="transition-delay:0.2s;">
+        <img src="https://www.metrostarcare.ae/assets/images/background/world-map.png" alt="Global Reach" onerror="this.style.display='none'; this.parentElement.style.justifyContent='center'; this.parentElement.innerHTML='<div style=\'text-align:center;padding:40px;\'><svg width=\'80\' height=\'80\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'#8B1A4A\' stroke-width=\'1\'><circle cx=\'12\' cy=\'12\' r=\'10\'/><line x1=\'2\' y1=\'12\' x2=\'22\' y2=\'12\'/><path d=\'M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z\'/></svg><p style=\'margin-top:20px;color:var(--text-soft);font-size:0.9rem;\'>Sharjah, UAE · Kuwait</p></div>'">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="https://www.metrostarcare.ae/assets/images/logo/logo.png" alt="Starcare Logo">
+      <p>Starcare Medical Centre, under Metro Medical Group, is committed to providing world-class healthcare services with compassion, excellence, and personalised attention for every patient.</p>
+      <div class="footer-socials" style="margin-top:20px;">
+        <a href="https://www.instagram.com/starcare.uae" class="footer-social" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+        <a href="https://www.facebook.com/share/15BroPchCk/" class="footer-social" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">General Medicine</a></li><li><a href="services.html">Gynecology</a></li><li><a href="services.html">Pediatrics</a></li><li><a href="services.html">Orthopedics</a></li><li><a href="services.html">ENT</a></li><li><a href="services.html">Ophthalmology</a></li></ul></div>
+    <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="about.html">About Us</a></li><li><a href="doctors.html">Our Doctors</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul class="footer-contact"><li><span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><span>065611099</span></li><li><span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span><span>Malabar Plaza, Rolla, Sharjah, UAE</span></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Metro Medical Group. All rights reserved.</p>
+    <p style="font-size:0.75rem;opacity:0.4;">Designed with ♥ for exceptional healthcare.</p>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll', () => { document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40); });
+function toggleMenu() { document.getElementById('navLinks').classList.toggle('active'); }
+const obs = new IntersectionObserver((e) => e.forEach(el => { if(el.isIntersecting) el.target.classList.add('visible'); }), {threshold:0.1});
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+function toggleAccord(btn) {
+  const body = btn.nextElementSibling;
+  const isOpen = btn.classList.contains('open');
+  document.querySelectorAll('.accord-btn').forEach(b => { b.classList.remove('open'); b.nextElementSibling.style.maxHeight = '0'; });
+  if (!isOpen) { btn.classList.add('open'); body.style.maxHeight = body.scrollHeight + 'px'; }
+}
+</script>
+</body>
+</html>

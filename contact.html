@@ -1,0 +1,1482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Starcare Medical Centre — Metro Medical Group</title>
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    /* ---- NAVBAR ---- */
+.navbar {
+  position: relative;
+}
+
+.hamburger {
+  display: none;
+}
+/* ---- MOBILE NAV ---- */
+@media (max-width: 900px) {
+
+  .nav-links {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 32px;
+    gap: 16px;
+    border-top: 1px solid var(--border);
+    
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: 0.3s ease;
+  }
+
+  .nav-links.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  /* Hide desktop right section */
+  .nav-emergency {
+    display: none;
+  }
+
+  /* Show hamburger */
+  .hamburger {
+    display: flex !important;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+
+  .hamburger span {
+    width: 24px;
+    height: 2px;
+    background: var(--text-dark);
+    display: block;
+  }
+}
+    /* ---- PAGE HERO ---- */
+    .page-hero {
+      background: linear-gradient(135deg, var(--maroon-deep) 0%, var(--maroon) 60%, #C05078 100%);
+      padding: 140px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 600px 400px at 80% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 70%),
+        url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Ccircle cx='40' cy='40' r='30'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .page-hero-shape {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.06;
+      background: white;
+    }
+
+    .page-hero-shape-1 {
+      width: 400px;
+      height: 400px;
+      right: -80px;
+      top: -80px;
+    }
+
+    .page-hero-shape-2 {
+      width: 220px;
+      height: 220px;
+      left: 5%;
+      bottom: -60px;
+      opacity: 0.04;
+    }
+
+    .page-hero-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .page-hero-left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+
+    .page-hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: var(--rose);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 30px;
+      margin-bottom: 20px;
+      backdrop-filter: blur(10px);
+    }
+
+    .page-hero-eyebrow .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--rose);
+    }
+
+    .page-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      color: white;
+      line-height: 1.2;
+      margin-bottom: 14px;
+      text-align: left;
+    }
+
+    .page-hero h1 em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--rose);
+    }
+
+    .page-hero-desc {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.75);
+      max-width: 460px;
+      line-height: 1.7;
+      text-align: left;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.55);
+      margin-bottom: 20px;
+    }
+
+    .breadcrumb a {
+      color: rgba(255, 255, 255, 0.55);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--rose);
+    }
+
+    .breadcrumb span {
+      color: rgba(255, 255, 255, 0.35);
+    }
+
+    .breadcrumb strong {
+      color: rgba(255, 255, 255, 0.8);
+      font-weight: 500;
+    }
+
+    .page-hero-right {}
+
+    .hero-quick-contact {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      padding: 24px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      min-width: 260px;
+    }
+
+    .hqc-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--rose);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .hqc-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .hqc-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: white;
+    }
+
+    .hqc-info {}
+
+    .hqc-info .lbl {
+      font-size: 0.7rem;
+      color: rgba(255, 255, 255, 0.55);
+      margin-bottom: 1px;
+    }
+
+    .hqc-info .val {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: white;
+    }
+
+    /* ---- BRANCH CARDS ---- */
+    .branches-section {
+      padding: 80px 0;
+      background: var(--off-white);
+    }
+
+    .branches-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-top: 48px;
+    }
+
+    .branch-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .branch-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--rose);
+    }
+
+    .branch-card-header {
+      padding: 28px 32px 24px;
+      background: linear-gradient(135deg, var(--maroon-deep), var(--maroon));
+      position: relative;
+      overflow: hidden;
+    }
+
+    .branch-card-header::after {
+      content: '';
+      position: absolute;
+      right: -30px;
+      bottom: -30px;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .branch-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+    }
+
+    .branch-card-header h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: white;
+      margin-bottom: 4px;
+    }
+
+    .branch-card-header p {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+    .branch-card-body {
+      padding: 28px 32px;
+    }
+
+    .branch-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .branch-detail:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .branch-detail-icon {
+      width: 36px;
+      height: 36px;
+      flex-shrink: 0;
+      border-radius: 10px;
+      background: var(--rose-pale);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--maroon);
+    }
+
+    .branch-detail-text .lbl {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-soft);
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .branch-detail-text .val {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text-dark);
+      line-height: 1.5;
+    }
+
+    .branch-detail-text a {
+      color: var(--maroon);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .branch-detail-text a:hover {
+      color: var(--maroon-light);
+    }
+
+    .branch-hours {
+      margin-top: 18px;
+      background: var(--rose-pale);
+      border-radius: 12px;
+      padding: 16px 18px;
+    }
+
+    .branch-hours h5 {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--maroon);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px 0;
+      font-size: 0.82rem;
+    }
+
+    .hours-row .day {
+      color: var(--text-soft);
+    }
+
+    .hours-row .time {
+      color: var(--text-dark);
+      font-weight: 600;
+    }
+
+    .hours-row.highlight .day,
+    .hours-row.highlight .time {
+      color: var(--maroon);
+      font-weight: 700;
+    }
+
+    .open-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: #E8F7EE;
+      color: #1A8A4A;
+      border-radius: 20px;
+      padding: 3px 10px;
+      font-size: 0.7rem;
+      font-weight: 700;
+    }
+
+    .open-tag .dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #1A8A4A;
+      animation: pulse 2s infinite;
+    }
+
+    /* ---- MAP SECTION ---- */
+    .map-section {
+      padding: 0 0 80px;
+      background: var(--off-white);
+    }
+
+    .map-wrapper {
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-md);
+      height: 440px;
+      position: relative;
+    }
+
+    .map-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .map-overlay-pin {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: white;
+      border-radius: 14px;
+      padding: 14px 18px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      z-index: 10;
+    }
+
+    .map-pin-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: var(--maroon);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      flex-shrink: 0;
+    }
+
+    .map-pin-text .name {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .map-pin-text .addr {
+      font-size: 0.75rem;
+      color: var(--text-soft);
+      margin-top: 1px;
+    }
+
+    /* ---- CONTACT FORM SECTION ---- */
+    .contact-section {
+      padding: 88px 0;
+      background: white;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .contact-form-wrap {}
+
+    .form-header {
+      margin-bottom: 36px;
+    }
+
+    .form-header .section-sub {
+      margin-bottom: 8px;
+    }
+
+    .form-header .section-title {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      margin-bottom: 12px;
+    }
+
+    .form-header p {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      line-height: 1.7;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 7px;
+      letter-spacing: 0.02em;
+    }
+
+    .form-group label .req {
+      color: var(--maroon);
+      margin-left: 2px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.88rem;
+      color: var(--text-dark);
+      background: white;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+      -webkit-appearance: none;
+    }
+
+    .form-control:focus {
+      border-color: var(--maroon);
+      box-shadow: 0 0 0 3px rgba(139, 26, 74, 0.08);
+    }
+
+    .form-control::placeholder {
+      color: #BBBBC2;
+    }
+
+    select.form-control {
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238B1A4A' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+    }
+
+    textarea.form-control {
+      resize: vertical;
+      min-height: 130px;
+    }
+
+    .form-submit {
+      width: 100%;
+      padding: 15px 24px;
+      background: linear-gradient(135deg, var(--maroon-deep), var(--maroon));
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: all 0.3s;
+      margin-top: 8px;
+    }
+
+    .form-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(139, 26, 74, 0.3);
+      background: linear-gradient(135deg, var(--maroon), var(--maroon-light));
+    }
+
+    .form-submit svg {
+      transition: transform 0.2s;
+    }
+
+    .form-submit:hover svg {
+      transform: translateX(4px);
+    }
+
+    .form-note {
+      font-size: 0.75rem;
+      color: var(--text-soft);
+      text-align: center;
+      margin-top: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .form-note svg {
+      color: var(--maroon);
+    }
+
+    /* Form sidebar */
+    .contact-sidebar {}
+
+    .sidebar-card {
+      background: var(--rose-pale);
+      border: 1px solid var(--rose-blush);
+      border-radius: 20px;
+      padding: 28px;
+      margin-bottom: 20px;
+    }
+
+    .sidebar-card h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--maroon-deep);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .sidebar-card h4 .icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 9px;
+      background: var(--maroon);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .sidebar-info-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar-info-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 9px 0;
+      border-bottom: 1px solid rgba(139, 26, 74, 0.08);
+      font-size: 0.85rem;
+    }
+
+    .sidebar-info-list li:last-child {
+      border-bottom: none;
+    }
+
+    .sidebar-info-list .lbl {
+      font-weight: 600;
+      color: var(--maroon);
+      min-width: 70px;
+    }
+
+    .sidebar-info-list .val {
+      color: var(--text-dark);
+      line-height: 1.5;
+    }
+
+    .sidebar-info-list a {
+      color: var(--maroon);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .sidebar-info-list a:hover {
+      color: var(--maroon-light);
+    }
+
+    .emergency-cta {
+      background: linear-gradient(135deg, var(--maroon-deep), var(--maroon));
+      border-radius: 20px;
+      padding: 28px;
+      color: white;
+      text-align: center;
+    }
+
+    .emergency-cta .icon-wrap {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+    }
+
+    .emergency-cta h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .emergency-cta p {
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .emergency-phone {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: white;
+      color: var(--maroon);
+      border-radius: 50px;
+      padding: 12px 24px;
+      font-weight: 800;
+      font-size: 1rem;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: all 0.2s;
+    }
+
+    .emergency-phone:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    }
+
+    .pulse-ring {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .pulse-ring::before {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--maroon);
+      animation: pulse 1.5s infinite;
+    }
+
+    .pulse-ring .dot-inner {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--maroon);
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ---- INSURANCE STRIP (reuse from other pages) ---- */
+    .insurance-strip {
+      padding: 48px 0;
+      background: var(--off-white);
+      border-top: 1px solid var(--border);
+    }
+
+    .ins-strip-label {
+      text-align: center;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+      margin-bottom: 24px;
+    }
+
+    /* Form success message */
+    .form-success {
+      display: none;
+      background: #E8F7EE;
+      border: 1.5px solid #A8DDB5;
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin-bottom: 20px;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.88rem;
+      color: #1A5C38;
+      font-weight: 500;
+    }
+
+    .form-success.show {
+      display: flex;
+    }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 960px) {
+      .branches-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .page-hero-right {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .page-hero {
+        padding: 120px 0 60px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="https://www.metrostarcare.ae/assets/images/logo/logo.png" alt="Starcare Logo" onerror="this.style.display='none'">
+        <div class="nav-logo-text">
+          <span class="brand">Starcare</span>
+          <span class="sub">Metro Medical Group</span>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="doctors.html">Doctors</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <div class="nav-emergency">
+        <a href="tel:065611099" class="emergency-badge">
+          <span class="pulse"></span>
+          <span>Emergency: 065611099</span>
+        </a>
+        <div class="nav-socials">
+          <a href="https://www.instagram.com/starcare.uae" class="nav-social-icon" target="_blank" aria-label="Instagram">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+            </svg>
+          </a>
+          <a href="https://www.facebook.com/share/15BroPchCk/" class="nav-social-icon" target="_blank" aria-label="Facebook">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-shape page-hero-shape-1"></div>
+    <div class="page-hero-shape page-hero-shape-2"></div>
+    <div class="page-hero-inner">
+      <div class="page-hero-left fade-up">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <span>›</span>
+          <strong>Contact Us</strong>
+        </div>
+        <div class="page-hero-eyebrow">
+          <span class="dot"></span>
+          Sharjah &amp; Kuwait · We're Here for You
+        </div>
+        <div class="hero-text">
+          <h1>Get in Touch<br>with <em>Our Team</em></h1>
+          <p class="page-hero-desc">
+            Whether you have questions, need an appointment, or require emergency care — our dedicated team is always ready to help. Reach us by phone, visit, or fill in our contact form.
+          </p>
+        </div>
+
+      </div>
+      <div class="page-hero-right fade-up" style="transition-delay:0.2s">
+        <div class="hero-quick-contact">
+          <div class="hqc-label">Quick Contact</div>
+          <div class="hqc-item">
+            <div class="hqc-icon">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+            </div>
+            <div class="hqc-info">
+              <div class="lbl">Phone (Sharjah)</div>
+              <div class="val">065611099</div>
+            </div>
+          </div>
+          <div class="hqc-item">
+            <div class="hqc-icon">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+            </div>
+            <div class="hqc-info">
+              <div class="lbl">Address</div>
+              <div class="val">Malabar Plaza, Rolla, Sharjah</div>
+            </div>
+          </div>
+          <div class="hqc-item">
+            <div class="hqc-icon">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+            </div>
+            <div class="hqc-info">
+              <div class="lbl">Hours</div>
+              <div class="val">Sat–Thu: 9AM – 9PM</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRANCHES -->
+  <section class="branches-section">
+    <div class="section" style="padding-top:0;padding-bottom:0;">
+      <div class="section-sub fade-up">Our Branches</div>
+      <h2 class="section-title fade-up">Two Locations, <em>One Standard of Excellence</em></h2>
+      <div class="divider fade-up"></div>
+      <div class="branches-grid">
+
+        <!-- Sharjah Branch -->
+        <div class="branch-card fade-up">
+          <div class="branch-card-header">
+            <div class="branch-badge">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              UAE Branch
+            </div>
+            <h3>Sharjah Clinic</h3>
+            <p>Malabar Plaza, Rolla, Sharjah</p>
+          </div>
+          <div class="branch-card-body">
+            <div class="branch-detail">
+              <div class="branch-detail-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </div>
+              <div class="branch-detail-text">
+                <div class="lbl">Address</div>
+                <div class="val">Malabar Plaza, Rolla Street, Sharjah, UAE</div>
+              </div>
+            </div>
+            <div class="branch-detail">
+              <div class="branch-detail-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+              </div>
+              <div class="branch-detail-text">
+                <div class="lbl">Phone</div>
+                <div class="val"><a href="tel:065611099">065611099</a></div>
+              </div>
+            </div>
+            <div class="branch-detail">
+              <div class="branch-detail-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+              </div>
+              <div class="branch-detail-text">
+                <div class="lbl">Email</div>
+                <div class="val"><a href="mailto:info@metrostarcare.ae">info@metrostarcare.ae</a></div>
+              </div>
+            </div>
+            <div class="branch-hours">
+              <h5>Operating Hours</h5>
+              <div class="hours-row highlight">
+                <span class="day">Saturday – Thursday</span>
+                <span class="time">9:00 AM – 9:00 PM</span>
+              </div>
+              <div class="hours-row">
+                <span class="day">Friday</span>
+                <span class="time">4:00 PM – 9:00 PM</span>
+              </div>
+              <div class="hours-row" style="margin-top:10px;">
+                <span class="day" style="font-size:0.75rem;font-weight:600;color:#1A8A4A;">Status</span>
+                <span class="open-tag"><span class="dot"></span>Open Now</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kuwait Branch -->
+        <div class="branch-card fade-up" style="transition-delay:0.15s">
+          <div class="branch-card-header" style="background: linear-gradient(135deg, #3A2A5A, #5A3080);">
+            <div class="branch-badge" style="background:rgba(255,255,255,0.15);">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              Kuwait Branch
+            </div>
+            <h3>Kuwait Clinic</h3>
+            <p>Kuwait — Metro Medical Group</p>
+          </div>
+          <div class="branch-card-body">
+            <div class="branch-detail">
+              <div class="branch-detail-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </div>
+              <div class="branch-detail-text">
+                <div class="lbl">Country</div>
+                <div class="val">Kuwait</div>
+              </div>
+            </div>
+            <div class="branch-detail">
+              <div class="branch-detail-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+              </div>
+              <div class="branch-detail-text">
+                <div class="lbl">Phone</div>
+                <div class="val">Contact via Head Office</div>
+              </div>
+            </div>
+            <div class="branch-detail">
+              <div class="branch-detail-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+              </div>
+              <div class="branch-detail-text">
+                <div class="lbl">Email</div>
+                <div class="val"><a href="mailto:info@metrostarcare.ae">info@metrostarcare.ae</a></div>
+              </div>
+            </div>
+            <div class="branch-hours" style="background:#EDE8F7;">
+              <h5 style="color:#5A3080;">Operating Hours</h5>
+              <div class="hours-row">
+                <span class="day">Saturday – Thursday</span>
+                <span class="time" style="color:#5A3080;font-weight:700;">9:00 AM – 9:00 PM</span>
+              </div>
+              <div class="hours-row">
+                <span class="day">Friday</span>
+                <span class="time">4:00 PM – 9:00 PM</span>
+              </div>
+              <div class="hours-row" style="margin-top:10px;">
+                <span class="day" style="font-size:0.75rem;font-weight:600;color:#5A3080;">Branch</span>
+                <span style="font-size:0.78rem;font-weight:600;color:#5A3080;">Metro Medical Group</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP -->
+  <section class="map-section">
+    <div class="section" style="padding-top:0;padding-bottom:0;">
+      <div class="map-wrapper fade-up" style="position:relative;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.2!2d55.3806!3d25.3697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ef5941db5e5a6a3%3A0xa8e44abbebc67a21!2sMalabar%20Plaza%2C%20Rolla%2C%20Sharjah!5e0!3m2!1sen!2sae!4v1680000000000!5m2!1sen!2sae" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Starcare Medical Centre Location">
+        </iframe>
+        <div class="map-overlay-pin">
+          <div class="map-pin-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+          </div>
+          <div class="map-pin-text">
+            <div class="name">Starcare Medical Centre</div>
+            <div class="addr">Malabar Plaza, Rolla, Sharjah, UAE</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPOINTMENT FORM + SIDEBAR -->
+  <section class="contact-section">
+    <div class="section" style="padding-top:0;padding-bottom:0;">
+      <div class="contact-grid">
+
+        <!-- FORM -->
+        <div class="contact-form-wrap fade-up">
+          <div class="form-header">
+            <div class="section-sub">Book an Appointment</div>
+            <h2 class="section-title">Send Us a <em>Message</em></h2>
+            <div class="divider" style="margin-bottom:14px;"></div>
+            <p>Fill in the form below and our team will get back to you promptly to confirm your appointment or answer your inquiry.</p>
+          </div>
+
+          <div class="form-success" id="formSuccess">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A8A4A" stroke-width="2.5">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+              <polyline points="22 4 12 14.01 9 11.01" />
+            </svg>
+            Thank you! Your message has been sent. We'll contact you shortly.
+          </div>
+
+          <div id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fname">Full Name <span class="req">*</span></label>
+                <input type="text" id="fname" class="form-control" placeholder="Your full name" required>
+              </div>
+              <div class="form-group">
+                <label for="fphone">Phone Number <span class="req">*</span></label>
+                <input type="tel" id="fphone" class="form-control" placeholder="+971 XX XXX XXXX" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="femail">Email Address</label>
+                <input type="email" id="femail" class="form-control" placeholder="your@email.com">
+              </div>
+              <div class="form-group">
+                <label for="fdept">Department / Speciality <span class="req">*</span></label>
+                <select id="fdept" class="form-control" required>
+                  <option value="" disabled selected>Select department</option>
+                  <option>General Medicine</option>
+                  <option>Gynecology</option>
+                  <option>Pediatrics</option>
+                  <option>ENT</option>
+                  <option>Orthopedics</option>
+                  <option>Ophthalmology</option>
+                  <option>Dermatology &amp; Cosmetology</option>
+                  <option>Dental</option>
+                  <option>Physiotherapy</option>
+                  <option>Radiology</option>
+                  <option>Pathology</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fbranch">Preferred Branch</label>
+                <select id="fbranch" class="form-control">
+                  <option value="" disabled selected>Select branch</option>
+                  <option>Sharjah, UAE</option>
+                  <option>Kuwait</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="fdate">Preferred Date</label>
+                <input type="date" id="fdate" class="form-control">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="fmsg">Your Message / Symptoms</label>
+              <textarea id="fmsg" class="form-control" placeholder="Briefly describe your concern or what you'd like to discuss with the doctor..."></textarea>
+            </div>
+            <button type="button" class="form-submit" onclick="submitForm()">
+              Send Message
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="22" y1="2" x2="11" y2="13" />
+                <polygon points="22 2 15 22 11 13 2 9 22 2" />
+              </svg>
+            </button>
+            <p class="form-note">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              </svg>
+              Your information is kept private and secure.
+            </p>
+          </div>
+        </div>
+
+        <!-- SIDEBAR -->
+        <div class="contact-sidebar fade-up" style="transition-delay:0.2s">
+
+          <div class="sidebar-card">
+            <h4>
+              <div class="icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+              </div>
+              Clinic Hours
+            </h4>
+            <ul class="sidebar-info-list">
+              <li>
+                <span class="lbl">Sat – Thu</span>
+                <span class="val">9:00 AM – 9:00 PM</span>
+              </li>
+              <li>
+                <span class="lbl">Friday</span>
+                <span class="val">4:00 PM – 9:00 PM</span>
+              </li>
+              <li style="border-bottom:none;">
+                <span class="lbl">Emergency</span>
+                <span class="val" style="color:var(--maroon);font-weight:700;">Always Available</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="sidebar-card">
+            <h4>
+              <div class="icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+              </div>
+              Contact Details
+            </h4>
+            <ul class="sidebar-info-list">
+              <li>
+                <span class="lbl">Phone</span>
+                <span class="val"><a href="tel:065611099">065611099</a></span>
+              </li>
+              <li>
+                <span class="lbl">Email</span>
+                <span class="val"><a href="mailto:info@metrostarcare.ae">info@metrostarcare.ae</a></span>
+              </li>
+              <li>
+                <span class="lbl">Address</span>
+                <span class="val">Malabar Plaza, Rolla, Sharjah, UAE</span>
+              </li>
+              <li style="border-bottom:none;">
+                <span class="lbl">Instagram</span>
+                <span class="val"><a href="https://www.instagram.com/starcare.uae" target="_blank">@starcare.uae</a></span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="emergency-cta">
+            <div class="icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+            </div>
+            <h4>Emergency? Call Now</h4>
+            <p>For urgent medical needs, don't wait — call us immediately. Our medical team is ready 24/7.</p>
+            <a href="tel:065611099" class="emergency-phone">
+              <span class="pulse-ring"><span class="dot-inner"></span></span>
+              065611099
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSURANCE TICKER -->
+  <div class="insurance-band">
+    <div style="text-align:center;font-size:0.75rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-soft);margin-bottom:16px;">Accepted Insurance Providers</div>
+    <div class="ticker-wrap" id="ticker">
+      <div class="ticker-item"><span class="ticker-dot"></span>Oman Insurance</div>
+      <div class="ticker-item"><span class="ticker-dot"></span>SAICO Health</div>
+      <div class="ticker-item"><span class="ticker-dot"></span>NGI</div>
+      <div class="ticker-item"><span class="ticker-dot"></span>Nextcare</div>
+      <div class="ticker-item"><span class="ticker-dot"></span>NAS</div>
+      <div class="ticker-item"><span class="ticker-dot"></span>Neuron</div>
+      <div class="ticker-item"><span class="ticker-dot"></span>MSH</div>
+      <div class="ticker-item"><span class="ticker-dot"></span>MetLife</div>
+      <div class="ticker-item"><span class="ticker-dot"></span>Mednet</div>
+      <div class="ticker-item"><span class="ticker-dot"></span>Lifeline</div>
+      <div class="ticker-item"><span class="ticker-dot"></span>Inayah</div>
+      <div class="ticker-item"><span class="ticker-dot"></span>FMC</div>
+      <div class="ticker-item"><span class="ticker-dot"></span>eCare</div>
+      <div class="ticker-item"><span class="ticker-dot"></span>AXA</div>
+      <div class="ticker-item"><span class="ticker-dot"></span>Al Madallah</div>
+      <div class="ticker-item"><span class="ticker-dot"></span>Al Buhaira</div>
+      <div class="ticker-item"><span class="ticker-dot"></span>Afiya</div>
+      <div class="ticker-item"><span class="ticker-dot"></span>ADNIC</div>
+      <!-- Duplicate for seamless loop -->
+      <div class="ticker-item"><span class="ticker-dot"></span>Oman Insurance</div>
+      <div class="ticker-item"><span class="ticker-dot"></span>SAICO Health</div>
+      <div class="ticker-item"><span class="ticker-dot"></span>NGI</div>
+      <div class="ticker-item"><span class="ticker-dot"></span>Nextcare</div>
+      <div class="ticker-item"><span class="ticker-dot"></span>NAS</div>
+      <div class="ticker-item"><span class="ticker-dot"></span>Neuron</div>
+      <div class="ticker-item"><span class="ticker-dot"></span>MSH</div>
+      <div class="ticker-item"><span class="ticker-dot"></span>MetLife</div>
+      <div class="ticker-item"><span class="ticker-dot"></span>Mednet</div>
+      <div class="ticker-item"><span class="ticker-dot"></span>Lifeline</div>
+      <div class="ticker-item"><span class="ticker-dot"></span>Inayah</div>
+      <div class="ticker-item"><span class="ticker-dot"></span>FMC</div>
+      <div class="ticker-item"><span class="ticker-dot"></span>eCare</div>
+      <div class="ticker-item"><span class="ticker-dot"></span>AXA</div>
+      <div class="ticker-item"><span class="ticker-dot"></span>Al Madallah</div>
+      <div class="ticker-item"><span class="ticker-dot"></span>Al Buhaira</div>
+      <div class="ticker-item"><span class="ticker-dot"></span>Afiya</div>
+      <div class="ticker-item"><span class="ticker-dot"></span>ADNIC</div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="https://www.metrostarcare.ae/assets/images/logo/logo.png" alt="Starcare Logo">
+        <p>Starcare Medical Centre, under Metro Medical Group, is committed to providing world-class healthcare services with compassion, excellence, and personalised attention for every patient.</p>
+        <div class="footer-socials" style="margin-top:20px;">
+          <a href="https://www.instagram.com/starcare.uae" class="footer-social" target="_blank">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+            </svg>
+          </a>
+          <a href="https://www.facebook.com/share/15BroPchCk/" class="footer-social" target="_blank">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">General Medicine</a></li>
+          <li><a href="services.html">Gynecology</a></li>
+          <li><a href="services.html">Pediatrics</a></li>
+          <li><a href="services.html">Orthopedics</a></li>
+          <li><a href="services.html">ENT</a></li>
+          <li><a href="services.html">Ophthalmology</a></li>
+          <li><a href="services.html">Dermatology</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="doctors.html">Our Doctors</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul class="footer-contact">
+          <li>
+            <span class="contact-icon">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+            </span>
+            <span>065611099</span>
+          </li>
+          <li>
+            <span class="contact-icon">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+            </span>
+            <span>Malabar Plaza, Rolla, Sharjah, UAE</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Metro Medical Group. All rights reserved.</p>
+      <p style="font-size:0.75rem; opacity:0.4;">Designed with ♥ for exceptional healthcare.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Navbar scroll
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+    });
+    // Menu toggle
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+    // Fade-up on scroll
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add('visible');
+      });
+    }, {
+      threshold: 0.1
+    });
+    document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+    // Form submit simulation
+    function submitForm() {
+      const name = document.getElementById('fname').value.trim();
+      const phone = document.getElementById('fphone').value.trim();
+      const dept = document.getElementById('fdept').value;
+      if (!name || !phone || !dept) {
+        // Highlight empty required fields
+        ['fname', 'fphone', 'fdept'].forEach(id => {
+          const el = document.getElementById(id);
+          if (!el.value.trim()) {
+            el.style.borderColor = '#E05050';
+            el.addEventListener('input', () => el.style.borderColor = '', {
+              once: true
+            });
+          }
+        });
+        return;
+      }
+      document.getElementById('contactForm').style.opacity = '0';
+      document.getElementById('contactForm').style.transform = 'translateY(10px)';
+      document.getElementById('contactForm').style.transition = 'all 0.3s';
+      setTimeout(() => {
+        document.getElementById('contactForm').style.display = 'none';
+        const success = document.getElementById('formSuccess');
+        success.classList.add('show');
+        success.style.animation = 'fadeInUp 0.4s ease';
+      }, 300);
+    }
+  </script>
+</body>
+
+</html>
