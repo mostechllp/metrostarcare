@@ -879,24 +879,21 @@ footer {
 }
 
 /* WhatsApp floating button */
-.whatsapp-float {
+.floating-btn {
   position: fixed;
-  bottom: 20px;
   right: 20px;
-  background: #25d366;
-  color: white;
-  font-size: 24px;
-  width: 55px;
-  height: 55px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #fff;
+  font-size: 20px;
   text-decoration: none;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   z-index: 999;
-  transition: transform 0.3s ease;
-  overflow: visible;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transition: all 0.25s ease;
 }
 
 .whatsapp-float:hover {
@@ -925,28 +922,40 @@ footer {
   opacity: 1;
   transform: translateY(-50%) translateX(0);
 }
+.call-float:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
 
-/* Back to top button */
-
-#backToTop {
-  position: fixed;
-  bottom: 90px; /* above WhatsApp */
-  right: 20px;
-  background: var(--maroon);
-  color: var(--white);
-  border: none;
-  padding: 12px 15px;
-  font-size: 18px;
-  border-radius: 50%;
-  cursor: pointer;
-  display: none;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  z-index: 999;
-  transition: all 0.3s ease;
+.call-float:active {
+  transform: scale(0.95);
 }
 
 #backToTop:hover {
   background: var(--maroon-light);
+}
+
+/* WhatsApp */
+.whatsapp-float {
+  bottom: 20px;
+  background: #25d366;
+}
+
+/* Call */
+.call-float {
+  bottom: 90px; /* stacked above */
+  background: #8B1A4A;
+}
+
+/* Scroll to top */
+.scroll-top {
+  bottom: 160px;
+  background: #8B1A4A;
+}
+
+/* Hover */
+.floating-btn:hover {
+  transform: translateY(-3px) scale(1.05);
 }
 
 /* english/arabic toggler */
