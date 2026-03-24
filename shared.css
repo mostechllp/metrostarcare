@@ -624,7 +624,6 @@ body {
   max-height: 50px;
   max-width: 150px;
   object-fit: contain;
-  filter: grayscale(100%);
   opacity: 0.8;
   transition: var(--transition);
 }
@@ -633,11 +632,6 @@ body {
 .insurance-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-}
-
-.insurance-card:hover img {
-  filter: grayscale(0%);
-  opacity: 1;
 }
 
 /* ---- FOOTER ---- */
