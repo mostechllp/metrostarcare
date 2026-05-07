@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>اتصل بنا | مترو ستاركير الطبي – مجموعة مترو الطبية</title>
+  <title>اتصل بنا | مركز ميترو ستاركير الطبي — مجموعة ميترو الطبية</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="../shared.css">
   <style>
@@ -110,22 +110,12 @@
       top: -80px;
     }
 
-    [dir="rtl"] .page-hero-shape-1 {
-      right: auto;
-      left: -80px;
-    }
-
     .page-hero-shape-2 {
       width: 220px;
       height: 220px;
       left: 5%;
       bottom: -60px;
       opacity: 0.04;
-    }
-
-    [dir="rtl"] .page-hero-shape-2 {
-      left: auto;
-      right: 5%;
     }
 
     .page-hero-inner {
@@ -145,10 +135,6 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-    }
-
-    [dir="rtl"] .page-hero-left {
-      align-items: flex-end;
     }
 
     .page-hero-eyebrow {
@@ -181,10 +167,6 @@
       color: white;
       line-height: 1.2;
       margin-bottom: 14px;
-      text-align: left;
-    }
-
-    [dir="rtl"] .page-hero h1 {
       text-align: right;
     }
 
@@ -198,10 +180,6 @@
       color: rgba(255, 255, 255, 0.75);
       max-width: 460px;
       line-height: 1.7;
-      text-align: left;
-    }
-
-    [dir="rtl"] .page-hero-desc {
       text-align: right;
     }
 
@@ -212,10 +190,6 @@
       font-size: 0.78rem;
       color: rgba(255, 255, 255, 0.55);
       margin-bottom: 20px;
-    }
-
-    [dir="rtl"] .breadcrumb {
-      flex-direction: row-reverse;
     }
 
     .breadcrumb a {
@@ -264,10 +238,6 @@
       gap: 12px;
     }
 
-    [dir="rtl"] .hqc-item {
-      flex-direction: row-reverse;
-    }
-
     .hqc-icon {
       width: 38px;
       height: 38px;
@@ -284,10 +254,6 @@
       font-size: 0.7rem;
       color: rgba(255, 255, 255, 0.55);
       margin-bottom: 1px;
-      text-align: left;
-    }
-
-    [dir="rtl"] .hqc-info .lbl {
       text-align: right;
     }
 
@@ -322,7 +288,7 @@
     .map-overlay-pin {
       position: absolute;
       top: 20px;
-      left: 20px;
+      right: 20px;
       background: white;
       border-radius: 14px;
       padding: 14px 18px;
@@ -331,11 +297,6 @@
       align-items: center;
       gap: 12px;
       z-index: 10;
-    }
-
-    [dir="rtl"] .map-overlay-pin {
-      left: auto;
-      right: 20px;
     }
 
     .map-pin-icon {
@@ -416,7 +377,7 @@
 
     .form-group label .req {
       color: var(--maroon);
-      margin-left: 2px;
+      margin-right: 2px;
     }
 
     .form-control {
@@ -437,18 +398,16 @@
       box-shadow: 0 0 0 3px rgba(139, 26, 74, 0.08);
     }
 
+    .form-control::placeholder {
+      color: #BBBBC2;
+    }
+
     select.form-control {
       cursor: pointer;
       background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238B1A4A' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
       background-position: left 14px center;
       padding-left: 36px;
-    }
-
-    [dir="rtl"] select.form-control {
-      background-position: right 14px center;
-      padding-right: 36px;
-      padding-left: 16px;
     }
 
     textarea.form-control {
@@ -479,17 +438,10 @@
     .form-submit:hover {
       transform: translateY(-2px);
       box-shadow: 0 12px 30px rgba(139, 26, 74, 0.3);
-    }
-
-    [dir="rtl"] .form-submit svg {
-      transform: rotate(180deg);
+      background: linear-gradient(135deg, var(--maroon), var(--maroon-light));
     }
 
     .form-submit:hover svg {
-      transform: translateX(4px);
-    }
-
-    [dir="rtl"] .form-submit:hover svg {
       transform: translateX(-4px);
     }
 
@@ -623,6 +575,7 @@
       font-weight: 800;
       font-size: 1rem;
       text-decoration: none;
+      letter-spacing: 0.02em;
       transition: all 0.2s;
     }
 
@@ -631,6 +584,23 @@
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
     }
 
+    .pulse-ring {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .pulse-ring .dot-inner {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--maroon);
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Form success message */
     .form-success {
       display: none;
       background: #E8F7EE;
@@ -654,7 +624,6 @@
         opacity: 0;
         transform: translateY(10px);
       }
-
       to {
         opacity: 1;
         transform: translateY(0);
@@ -666,7 +635,6 @@
         grid-template-columns: 1fr;
         gap: 40px;
       }
-
       .page-hero-right {
         display: none;
       }
@@ -676,7 +644,6 @@
       .form-row {
         grid-template-columns: 1fr;
       }
-
       .page-hero {
         padding: 120px 0 60px;
       }
@@ -690,28 +657,29 @@
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
-        <img src="https://www.metrostarcare.ae/assets/images/logo/logo.png" alt="مترو ستاركير لوجو" onerror="this.style.display='none'">
+        <img src="https://www.metrostarcare.ae/assets/images/logo/logo.png" alt="Metro Starcare Logo" onerror="this.style.display='none'">
         <div class="nav-logo-text">
-          <span class="brand">مترو ستاركير</span>
-          <span class="sub">مجموعة مترو الطبية</span>
+          <span class="brand">ميترو ستاركير</span>
+          <span class="sub">مجموعة ميترو الطبية</span>
         </div>
       </a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="about.html">الرئيسية</a></li>
+        <li><a href="index.html" class="active">الرئيسية</a></li>
         <li><a href="about.html">من نحن</a></li>
         <li><a href="doctors.html">الأطباء</a></li>
         <li><a href="services.html">الخدمات</a></li>
-        <li><a href="contact.html" class="active">اتصل بنا</a></li>
+        <li><a href="packages.html">الباقات</a></li>
+        <li><a href="contact.html">اتصل بنا</a></li>
       </ul>
       <div class="nav-emergency">
-        <a href="tel:+97165611099" class="emergency-badge">
+        <a href="tel:+971528415113" class="emergency-badge">
           <span class="pulse"></span>
-          <span>حجز موعد: +971 6 5611099</span>
+          <span>تحتاج مساعدة؟ +971 52 841 5113</span>
         </a>
         <div class="nav-socials">
           <a href="https://www.instagram.com/starcare.uae" class="nav-social-icon" target="_blank" aria-label="Instagram">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z" />
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
             </svg>
           </a>
           <a href="https://www.facebook.com/share/15BroPchCk/" class="nav-social-icon" target="_blank" aria-label="Facebook">
@@ -739,18 +707,18 @@
     <div class="page-hero-inner">
       <div class="page-hero-left fade-up">
         <div class="breadcrumb">
-          <a href="../index.html">الرئيسية</a>
+          <a href="index.html">الرئيسية</a>
           <span>›</span>
           <strong>اتصل بنا</strong>
         </div>
         <div class="page-hero-eyebrow">
           <span class="dot"></span>
-          الشارقة والكويت · نحن هنا لخدمتك
+          الشارقة &amp; الإمارات · نحن هنا لخدمتك
         </div>
         <div class="hero-text">
           <h1>تواصل مع<br>فريقنا</h1>
           <p class="page-hero-desc">
-            سواء كان لديك أسئلة، أو تحتاج إلى موعد، أو تتطلب رعاية طارئة — فريقنا المتفاني دائماً على استعداد للمساعدة. تواصل معنا عبر الهاتف، أو قم بزيارتنا، أو املأ نموذج الاتصال الخاص بنا.
+            سواء كان لديك أسئلة، أو تحتاج إلى موعد، أو تتطلب رعاية طارئة — فريقنا المتفاني جاهز دائمًا للمساعدة. تواصل معنا عبر الهاتف، أو قم بزيارتنا، أو املأ نموذج الاتصال الخاص بنا.
           </p>
         </div>
       </div>
@@ -765,7 +733,7 @@
             </div>
             <div class="hqc-info">
               <div class="lbl">الهاتف (الشارقة)</div>
-              <div class="val">+971 6 5611099</div>
+              <div class="val">+971 52 841 5113</div>
             </div>
           </div>
           <div class="hqc-item">
@@ -777,7 +745,7 @@
             </div>
             <div class="hqc-info">
               <div class="lbl">العنوان</div>
-              <div class="val">مولبلا بلازا، رولا، الشارقة</div>
+              <div class="val">مالابار بلازا، رولا، الشارقة</div>
             </div>
           </div>
           <div class="hqc-item">
@@ -789,7 +757,7 @@
             </div>
             <div class="hqc-info">
               <div class="lbl">ساعات العمل</div>
-              <div class="val">السبت – الخميس: 7 صباحاً – 12 منتصف الليل</div>
+              <div class="val">الأحد - السبت: 06:30 ص – 11:00 م</div>
             </div>
           </div>
         </div>
@@ -800,21 +768,20 @@
   <!-- MAP -->
   <section class="map-section">
     <div class="section" style="padding-top:0;padding-bottom:0;">
-      <div class="map-wrapper fade-up">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.2!2d55.3806!3d25.3697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ef5941db5e5a6a3%3A0xa8e44abbebc67a21!2sMalabar%20Plaza%2C%20Rolla%2C%20Sharjah!5e0!3m2!1sen!2sae!4v1680000000000!5m2!1sen!2sae" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="موقع مركز مترو ستاركير الطبي">
-        </iframe>
-        <div class="map-overlay-pin">
-          <div class="map-pin-icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-              <circle cx="12" cy="10" r="3" />
-            </svg>
-          </div>
-          <div class="map-pin-text">
-            <div class="name">مركز مترو ستاركير الطبي</div>
-            <div class="addr">مولبلا بلازا، رولا، الشارقة، الإمارات</div>
-          </div>
-        </div>
+      <div class="map-wrapper fade-up" style="position:relative;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3605.4414928689!2d55.385954376058045!3d25.356515925227946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5a33d6acdbff%3A0xf03a6cf2e0a50987!2sMetro%20Starcare%20Medical%20Centre%20-%20Sharjah%2C%20UAE!5e0!3m2!1sen!2sin!4v1777444260512!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <!--<div class="map-overlay-pin">-->
+        <!--  <div class="map-pin-icon">-->
+        <!--    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5">-->
+        <!--      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />-->
+        <!--      <circle cx="12" cy="10" r="3" />-->
+        <!--    </svg>-->
+        <!--  </div>-->
+        <!--  <div class="map-pin-text">-->
+        <!--    <div class="name">مركز ميترو ستاركير الطبي</div>-->
+        <!--    <div class="addr">مالابار بلازا، رولا، الشارقة، الإمارات</div>-->
+        <!--  </div>-->
+        <!--</div>-->
       </div>
     </div>
   </section>
@@ -827,10 +794,10 @@
         <!-- FORM -->
         <div class="contact-form-wrap fade-up">
           <div class="form-header">
-            <div class="section-sub">احجز موعداً</div>
+            <div class="section-sub">احجز موعدًا</div>
             <h2 class="section-title">أرسل لنا رسالة</h2>
             <div class="divider" style="margin-bottom:14px;"></div>
-            <p>املأ النموذج أدناه وسيتواصل معك فريقنا قريباً لتأكيد موعدك أو الرد على استفسارك.</p>
+            <p>املأ النموذج أدناه وسيتواصل معك فريقنا لتأكيد موعدك أو الرد على استفسارك.</p>
           </div>
 
           <div class="form-success" id="formSuccess">
@@ -838,14 +805,14 @@
               <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
               <polyline points="22 4 12 14.01 9 11.01" />
             </svg>
-            شكراً لك! تم إرسال رسالتك. سوف نتواصل معك قريباً.
+            شكرًا لك! تم إرسال رسالتك. سوف نتواصل معك قريبًا.
           </div>
 
           <div id="contactForm">
             <div class="form-row">
               <div class="form-group">
                 <label for="fname">الاسم الكامل <span class="req">*</span></label>
-                <input type="text" id="fname" class="form-control" placeholder="الاسم الكامل" required>
+                <input type="text" id="fname" class="form-control" placeholder="اسمك الكامل" required>
               </div>
               <div class="form-group">
                 <label for="fphone">رقم الهاتف <span class="req">*</span></label>
@@ -862,7 +829,7 @@
                 <select id="fdept" class="form-control" required>
                   <option value="" disabled selected>اختر القسم</option>
                   <option>الطب العام</option>
-                  <option>طب النساء</option>
+                  <option>أمراض النساء</option>
                   <option>طب الأطفال</option>
                   <option>أنف وأذن وحنجرة</option>
                   <option>جراحة العظام</option>
@@ -892,7 +859,7 @@
             </div>
             <div class="form-group">
               <label for="fmsg">رسالتك / الأعراض</label>
-              <textarea id="fmsg" class="form-control" placeholder="صف بإيجاز استفسارك أو ما ترغب في مناقشته مع الطبيب..."></textarea>
+              <textarea id="fmsg" class="form-control" placeholder="صف بإيجاز ما يقلقك أو ما ترغب في مناقشته مع الطبيب..."></textarea>
             </div>
             <button type="button" class="form-submit" onclick="submitForm()">
               إرسال الرسالة
@@ -906,7 +873,7 @@
                 <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
                 <path d="M7 11V7a5 5 0 0 1 10 0v4" />
               </svg>
-              معلوماتك تبقى خاصة وآمنة.
+              معلوماتك محفوظة وآمنة.
             </p>
           </div>
         </div>
@@ -926,8 +893,8 @@
             </h4>
             <ul class="sidebar-info-list">
               <li>
-                <span class="lbl">السبت – الخميس</span>
-                <span class="val">7:00 صباحاً – 12:00 منتصف الليل</span>
+                <span class="lbl">الأحد – السبت</span>
+                <span class="val">06:30 ص – 11:00 م</span>
               </li>
               <li style="border-bottom:none;">
                 <span class="lbl">التوفر</span>
@@ -950,15 +917,15 @@
             <ul class="sidebar-info-list">
               <li>
                 <span class="lbl">الهاتف</span>
-                <span class="val"><a href="tel:+97165611099">+971 6 5611099</a></span>
+                <span class="val"><a href="tel:+971528415113">+971 52 841 5113</a></span>
               </li>
               <li>
-                <span class="lbl">البريد الإلكتروني</span>
+                <span class="lbl">البريد</span>
                 <span class="val"><a href="mailto:info@metrostarcare.ae">info@metrostarcare.ae</a></span>
               </li>
               <li>
                 <span class="lbl">العنوان</span>
-                <span class="val">مولبلا بلازا، رولا، الشارقة، الإمارات</span>
+                <span class="val">مالابار بلازا، رولا، الشارقة، الإمارات</span>
               </li>
               <li style="border-bottom:none;">
                 <span class="lbl">إنستغرام</span>
@@ -973,11 +940,11 @@
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
               </svg>
             </div>
-            <h4>تحدث مع فريقنا</h4>
-            <p>لديك استفسار؟ فريقنا هنا لإرشادك وحجز الاستشارة المناسبة لك.</p>
-            <a href="tel:+97165611099" class="emergency-phone">
+            <h4>تحدث إلى فريقنا</h4>
+            <p>هل لديك استفسار؟ فريقنا هنا لإرشادك وحجز الاستشارة المناسبة.</p>
+            <a href="tel:+97152841511" class="emergency-phone">
               <span class="pulse-ring"><span class="dot-inner"></span></span>
-              +971 6 5611099
+              +971 52 841 5113
             </a>
           </div>
 
@@ -988,50 +955,45 @@
 
   <!-- INSURANCE TICKER -->
   <div class="insurance-band">
-    <div class="insurance-title">مقدمو التأمين المعتمدون</div>
+    <div class="insurance-title">مقدمو التأمين المقبولون</div>
     <div class="ticker-wrap">
-      <div class="ticker-track-ar">
-
-        <!-- One set -->
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/Oman-Insurance.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/SAICOHEALTH.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/NGI.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/Nextcare.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/NAS.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/neuron.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/MSH.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/MetLife.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/mednet.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/lifeline.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/inayah.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/FMC.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/ecare.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/AXA.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/ALMADALLAH.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/AlBuhaira.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/Afiya.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/ADNIC.jpg"></div>
-
-        <!-- Duplicate for loop -->
-         <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/Oman-Insurance.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/SAICOHEALTH.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/NGI.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/Nextcare.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/NAS.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/neuron.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/MSH.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/MetLife.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/mednet.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/lifeline.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/inayah.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/FMC.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/ecare.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/AXA.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/ALMADALLAH.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/AlBuhaira.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/Afiya.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/ADNIC.jpg"></div>
-
+      <div class="ticker-track">
+        <div class="insurance-card"><img src="../uploads/Oman-Insurance.jpg"></div>
+        <div class="insurance-card"><img src="../uploads/SAICOHEALTH.jpg"></div>
+        <div class="insurance-card"><img src="../uploads/NGI.jpg"></div>
+        <div class="insurance-card"><img src="../uploads/Nextcare.jpg"></div>
+        <div class="insurance-card"><img src="../uploads/NAS.jpg"></div>
+        <div class="insurance-card"><img src="../uploads/neuron.jpg"></div>
+        <div class="insurance-card"><img src="../uploads/MSH.jpg"></div>
+        <div class="insurance-card"><img src="../uploads/MetLife.jpg"></div>
+        <div class="insurance-card"><img src="../uploads/mednet.jpg"></div>
+        <div class="insurance-card"><img src="../uploads/lifeline.jpg"></div>
+        <div class="insurance-card"><img src="../uploads/inayah.jpg"></div>
+        <div class="insurance-card"><img src="../uploads/FMC.jpg"></div>
+        <div class="insurance-card"><img src="../uploads/ecare.jpg"></div>
+        <div class="insurance-card"><img src="../uploads/AXA.jpg"></div>
+        <div class="insurance-card"><img src="../uploads/ALMADALLAH.jpg"></div>
+        <div class="insurance-card"><img src="../uploads/AlBuhaira.jpg"></div>
+        <div class="insurance-card"><img src="../uploads/Afiya.jpg"></div>
+        <div class="insurance-card"><img src="../uploads/ADNIC.jpg"></div>
+        <div class="insurance-card"><img src="../uploads/Oman-Insurance.jpg"></div>
+        <div class="insurance-card"><img src="../uploads/SAICOHEALTH.jpg"></div>
+        <div class="insurance-card"><img src="../uploads/NGI.jpg"></div>
+        <div class="insurance-card"><img src="../uploads/Nextcare.jpg"></div>
+        <div class="insurance-card"><img src="../uploads/NAS.jpg"></div>
+        <div class="insurance-card"><img src="../uploads/neuron.jpg"></div>
+        <div class="insurance-card"><img src="../uploads/MSH.jpg"></div>
+        <div class="insurance-card"><img src="../uploads/MetLife.jpg"></div>
+        <div class="insurance-card"><img src="../uploads/mednet.jpg"></div>
+        <div class="insurance-card"><img src="../uploads/lifeline.jpg"></div>
+        <div class="insurance-card"><img src="../uploads/inayah.jpg"></div>
+        <div class="insurance-card"><img src="../uploads/FMC.jpg"></div>
+        <div class="insurance-card"><img src="../uploads/ecare.jpg"></div>
+        <div class="insurance-card"><img src="../uploads/AXA.jpg"></div>
+        <div class="insurance-card"><img src="../uploads/ALMADALLAH.jpg"></div>
+        <div class="insurance-card"><img src="../uploads/AlBuhaira.jpg"></div>
+        <div class="insurance-card"><img src="../uploads/Afiya.jpg"></div>
+        <div class="insurance-card"><img src="../uploads/ADNIC.jpg"></div>
       </div>
     </div>
   </div>
@@ -1039,76 +1001,74 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
-      <div class="footer-brand">
-        <img src="https://www.metrostarcare.ae/assets/images/logo/logo.png" alt="مترو ستاركير لوجو">
-        <p>مركز مترو ستاركير الطبي، التابع لمجموعة مترو الطبية، ملتزم بتقديم خدمات رعاية صحية عالمية المستوى برحمة وتميز واهتمام شخصي لكل مريض.</p>
-        <div class="footer-socials" style="margin-top:20px;">
-          <a href="https://www.instagram.com/starcare.uae" class="footer-social" target="_blank">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z" />
-            </svg>
-          </a>
-          <a href="https://www.facebook.com/share/15BroPchCk/" class="footer-social" target="_blank">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+      <div class="footer-brand"><img src="https://www.metrostarcare.ae/assets/images/logo/logo.png" alt="Metro Starcare Logo">
+        <p>مركز ميترو ستاركير الطبي، تحت مجموعة ميترو الطبية، ملتزم بتقديم خدمات رعاية صحية عالمية المستوى برحابة صدر وتميز واهتمام شخصي لكل مريض.</p>
+        <div class="footer-socials" style="margin-top:20px;"><a href="https://www.instagram.com/starcare.uae" class="footer-social" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+            </svg></a><a href="https://www.facebook.com/share/15BroPchCk/" class="footer-social" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
               <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-            </svg>
-          </a>
-        </div>
+            </svg></a></div>
       </div>
       <div class="footer-col">
         <h4>الخدمات</h4>
         <ul>
-          <li><a href="services.html">الطب العام</a></li>
-          <li><a href="services.html">طب النساء</a></li>
-          <li><a href="services.html">طب الأطفال</a></li>
-          <li><a href="services.html">جراحة العظام</a></li>
-          <li><a href="services.html">أنف وأذن وحنجرة</a></li>
-          <li><a href="services.html">طب العيون</a></li>
-          <li><a href="services.html">الأمراض الجلدية</a></li>
+         <li><a href="services.html">الطب العام</a></li>
+<li><a href="services.html">أمراض النساء والتوليد</a></li>
+<li><a href="services.html">طب الأطفال</a></li>
+<li><a href="services.html">جراحة العظام</a></li>
+<li><a href="services.html">أنف وأذن وحنجرة</a></li>
+<li><a href="services.html">طب العيون</a></li>
+<li><a href="services.html">الأمراض الجلدية</a></li>
+<li><a href="services.html">التجميل الطبي</a></li>
+<li><a href="services.html">الأشعة (السونار والأشعة السينية)</a></li>
+<li><a href="services.html">المختبر</a></li>
+<li><a href="services.html">الصيدلية</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>روابط سريعة</h4>
         <ul>
           <li><a href="about.html">من نحن</a></li>
-          <li><a href="doctors.html">أطباؤنا</a></li>
+          <li><a href="doctors.html">أطبائنا</a></li>
+          <li><a href="packages.html">الباقات</a></li>
           <li><a href="services.html">الخدمات</a></li>
+          <li><a href="careers.html">الوظائف</a></li>
+          <!--<li><a href="#">فريقنا</a></li>-->
+          <li><a href="news.html">الأخبار والفعاليات</a></li>
           <li><a href="contact.html">اتصل بنا</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>اتصل بنا</h4>
         <ul class="footer-contact">
-          <li>
-            <span class="contact-icon">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <li><span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-              </svg>
-            </span>
-            <span>+971 6 5611099</span>
-          </li>
-          <li>
-            <span class="contact-icon">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              </svg></span><span>+971 52 841 5113</span></li>
+              <li><span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+     stroke="currentColor" stroke-width="2">
+  <rect x="3" y="5" width="18" height="14" rx="2"/>
+  <path d="M3 7l9 6 9-6"/>
+</svg></span><span>info@metrostarcare.ae</span></li>
+          <li><span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                 <circle cx="12" cy="10" r="3" />
-              </svg>
-            </span>
-            <span>مولبلا بلازا، رولا، الشارقة، الإمارات</span>
-          </li>
+              </svg></span><span>مالابار بلازا، رolla، الشارقة، الإمارات</span></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 مجموعة مترو الطبية. جميع الحقوق محفوظة.</p>
+      <p>© 2025 مجموعة ميترو الطبية. جميع الحقوق محفوظة.</p>
     </div>
   </footer>
 
-  <a href="https://wa.me/97165611099" class="whatsapp-float" target="_blank" aria-label="واتساب">
+  <a href="https://wa.me/97152841511" class="floating-btn whatsapp-float" target="_blank" aria-label="واتساب">
     <i class="fab fa-whatsapp"></i>
   </a>
+  <a href="tel:+97152841511" class="floating-btn call-float" aria-label="اتصال">
+    <i class="fas fa-phone"></i>
+  </a>
 
-  <button id="backToTop" aria-label="العودة للأعلى">
+  <button id="backToTop" class="floating-btn scroll-top" aria-label="العودة للأعلى">
     <i class="fas fa-arrow-up"></i>
   </button>
 
@@ -1118,8 +1078,10 @@
     });
 
     function toggleMenu() {
-      document.getElementById("navLinks").classList.toggle("active");
-      document.getElementById("hamburger").classList.toggle("active");
+      const navLinks = document.getElementById("navLinks");
+      const hamburger = document.getElementById("hamburger");
+      navLinks.classList.toggle("active");
+      hamburger.classList.toggle("active");
     }
 
     const obs = new IntersectionObserver((entries) => {
@@ -1143,11 +1105,12 @@
         });
         return;
       }
-      document.getElementById('contactForm').style.opacity = '0';
-      document.getElementById('contactForm').style.transform = 'translateY(10px)';
-      document.getElementById('contactForm').style.transition = 'all 0.3s';
+      const formDiv = document.getElementById('contactForm');
+      formDiv.style.opacity = '0';
+      formDiv.style.transform = 'translateY(10px)';
+      formDiv.style.transition = 'all 0.3s';
       setTimeout(() => {
-        document.getElementById('contactForm').style.display = 'none';
+        formDiv.style.display = 'none';
         const success = document.getElementById('formSuccess');
         success.classList.add('show');
         success.style.animation = 'fadeInUp 0.4s ease';
@@ -1156,16 +1119,37 @@
 
     const backToTopBtn = document.getElementById("backToTop");
     window.onscroll = function() {
-      backToTopBtn.style.display = (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) ? "block" : "none";
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        backToTopBtn.style.display = "block";
+      } else {
+        backToTopBtn.style.display = "none";
+      }
     };
-    backToTopBtn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
+    backToTopBtn.onclick = function() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
 
-    // Language switching
     document.querySelectorAll('.lang-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        if (btn.dataset.lang === 'en') window.location.href = '../contact.html';
+      btn.addEventListener('click', (e) => {
+        if (btn.dataset.lang === 'en') {
+          window.location.href = '../contact.html';
+        } else if (btn.dataset.lang === 'ar') {
+          window.location.href = 'contact.html';
+        }
       });
     });
+
+    if (window.location.pathname.includes('/arabic/')) {
+      const arBtn = document.querySelector('.lang-btn[data-lang="ar"]');
+      const enBtn = document.querySelector('.lang-btn[data-lang="en"]');
+      if (arBtn) arBtn.classList.add('active');
+      if (enBtn) enBtn.classList.remove('active');
+    } else {
+      const enBtn = document.querySelector('.lang-btn[data-lang="en"]');
+      const arBtn = document.querySelector('.lang-btn[data-lang="ar"]');
+      if (enBtn) enBtn.classList.add('active');
+      if (arBtn) arBtn.classList.remove('active');
+    }
   </script>
 </body>
 

@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Metro Starcare Medical Centre | Metro Medical Group — Your Health, Our Priority</title>
+  <!--<link href="assets/images/favicon/favicon.png" rel="icon" />-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="shared.css">
   <style>
@@ -23,7 +24,7 @@
 
     .hamburger.active span:nth-child(3) {
       transform: rotate(-45deg) translate(5px, -5px);
-    }
+    }https://www.metrostarcare.ae/uploads/Oman-Insurance.jpg
 
     /* ---- MOBILE NAV ---- */
     @media (max-width: 900px) {
@@ -206,7 +207,7 @@
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
-      margin-bottom: 52px;
+      margin-bottom: 60px;
     }
 
     .hero-stats {
@@ -340,6 +341,118 @@
       font-size: 1.1rem;
       font-weight: 700;
       color: var(--maroon);
+    }
+
+    /* ---- HERO SLIDER ---- */
+    .hero-slider-wrap {
+      position: relative;
+      overflow: hidden;
+      min-height: 100vh;
+      width: 100%;
+    }
+
+    .hero-slider-track {
+      display: flex;
+      transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      height: 100%;
+      will-change: transform;
+    }
+
+    .hero-slide {
+      flex: 0 0 100%;
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-slide.hero {
+      background: linear-gradient(135deg, var(--maroon-deep) 0%, var(--maroon) 55%, #C05078 100%);
+    }
+
+    .hero-slide.patriotic {
+      background: url('home_docs/patriotic_banner.png') right center/cover no-repeat;
+    }
+
+    .hero-overlay-maroon {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(74, 13, 40, 0.92) 0%, rgba(139, 26, 74, 0.88) 55%, rgba(192, 80, 120, 0.82) 100%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .hero-overlay-maroon-fade {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(74, 13, 40, 0.98) 0%, rgba(139, 26, 74, 0.85) 45%, rgba(192, 80, 120, 0) 100%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .hero-nav-dots {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 12px;
+      z-index: 10;
+    }
+
+    .hero-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.4);
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .hero-dot.active {
+      background: white;
+      width: 32px;
+      border-radius: 12px;
+    }
+
+    .hero-nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.2);
+      color: white;
+      border: none;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.2rem;
+      z-index: 10;
+      transition: 0.3s;
+      backdrop-filter: blur(4px);
+    }
+
+    .hero-nav-btn:hover {
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-nav-btn.prev {
+      left: 20px;
+    }
+
+    .hero-nav-btn.next {
+      right: 20px;
+    }
+
+    .patriotic-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.3) 100%);
+      pointer-events: none;
     }
 
     /* ---- WHY US STRIP ---- */
@@ -1076,7 +1189,8 @@
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
-        <img src="https://www.metrostarcare.ae/assets/images/logo/logo.png" alt="Metro Starcare Logo" onerror="this.style.display='none'">
+        <img src="https://www.metrostarcare.ae/assets/images/logo/logo.png" alt="Metro Starcare Logo"
+          onerror="this.style.display='none'">
         <div class="nav-logo-text">
           <span class="brand">Metro Starcare</span>
           <span class="sub">Metro Medical Group</span>
@@ -1091,19 +1205,23 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
       <div class="nav-emergency">
-        <a href="tel:+97165611099" class="emergency-badge">
+        <a href="tel:+971528415113" class="emergency-badge">
           <span class="pulse"></span>
           <span>Need help? +971 52 841 5113</span>
         </a>
         <div class="nav-socials">
-          <a href="https://www.instagram.com/starcare.uae" class="nav-social-icon" target="_blank" aria-label="Instagram">
+          <a href="https://www.instagram.com/starcare.uae" class="nav-social-icon" target="_blank"
+            aria-label="Instagram">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
             </svg>
           </a>
-          <a href="https://www.facebook.com/share/15BroPchCk/" class="nav-social-icon" target="_blank" aria-label="Facebook">
+          <a href="https://www.facebook.com/share/15BroPchCk/" class="nav-social-icon" target="_blank"
+            aria-label="Facebook">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              <path
+                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
             </svg>
           </a>
         </div>
@@ -1120,70 +1238,172 @@
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-shapes">
-      <div class="hero-shape hero-shape-1"></div>
-      <div class="hero-shape hero-shape-2"></div>
-      <div class="hero-shape hero-shape-3"></div>
-    </div>
-    <div class="hero-inner">
-      <div class="hero-left fade-up">
-        <div class="hero-eyebrow">
-          <span class="dot"></span>
-          Kuwait & UAE · Trusted Care for Over a Decade
+  <!-- HERO SLIDER -->
+  <section class="hero-slider-wrap" id="heroSliderWrap">
+    <div class="hero-slider-track" id="heroSliderTrack">
+
+      <!-- Slide 1: Chairman Banner -->
+      <div class="hero-slide hero">
+        <div class="hero-shapes">
+          <div class="hero-shape hero-shape-1"></div>
+          <div class="hero-shape hero-shape-2"></div>
+          <div class="hero-shape hero-shape-3"></div>
         </div>
-        <h1>
-          Your Health,<br>
-          <span class="italic">Our Priority</span> —<br>
-          Experience Premium Care
-        </h1>
-        <p class="hero-desc">
-          Metro Starcare Medical Centre, under Metro Medical Group, has been a trusted healthcare provider for over a decade — delivering world-class medical services with compassion and excellence.
-        </p>
-        <div class="hero-btns">
-          <a href="doctors.html" class="btn btn-white">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="11" cy="11" r="8" />
-              <line x1="21" y1="21" x2="16.65" y2="16.65" />
-            </svg>
-            Find a Doctor
-          </a>
-          <a href="about.html" class="btn" style="background:rgba(255,255,255,0.15);color:white;border:1.5px solid rgba(255,255,255,0.3);">
-            Learn About Us
-          </a>
-        </div>
-      </div>
-      <div class="hero-right fade-up" style="transition-delay:0.2s">
-        <div class="hero-float-card hero-float-1">
-          <div class="float-label">Medical Director</div>
-          <div class="float-value">Dr. Rasna</div>
-        </div>
-        <div class="hero-card-main">
-          <div class="hero-img-area">
-            <img src="home_docs/rasna_munaifa.png" alt="Dr. Rasna Munaifa Koroth" onerror="this.src=''; this.parentElement.style.background='linear-gradient(160deg, #F2D9E6, #E8C4D4)'; this.style.display='none'">
-            <div class="hero-img-overlay">
-              <div class="doc-name">Dr. Rasna Munaifa Koroth</div>
-              <div class="doc-role">Medical Director · General Practitioner</div>
+        <div class="hero-inner">
+          <div class="hero-left fade-up">
+            <div class="hero-eyebrow">
+              <span class="dot"></span>
+              Leadership Vision
+            </div>
+            <h1>
+              Chairman's <span class="italic">Message</span>
+            </h1>
+            <p class="hero-desc" style="max-width: 600px; font-size: 1.05rem; margin-bottom: 16px;">
+              "We have arranged our Healthcare providing specialized centers from Metro Medical Group with a concept
+              that anyone who enters the center will feel that they have reached a star level ambience and receive a
+              premium quality healthcare along with our unique concept of patient escort since the beginning."
+            </p>
+            <p class="hero-desc" style="max-width: 600px; font-size: 1.05rem;">
+              "Our vision is to continue expanding our horizons, embracing modern medical technologies while staying
+              true to our core values of compassion and excellence. Your health and comfort are the driving forces
+              behind every decision we make."
+            </p>
+            <div class="hero-btns" style="margin-top: 32px;">
+              <a href="about.html" class="btn btn-white">Read Full Message</a>
             </div>
           </div>
-          <div class="hero-card-bottom">
-            <div class="avail-badge">
-              <span class="avail-dot"></span>
-              Available Today
+          <div class="hero-right fade-up" style="transition-delay:0.2s">
+            <div
+              style="max-width: 520px; height: 600px; margin-left: auto; position: relative; border-radius: 20px 120px 20px 120px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.4);">
+              <img src="https://www.metromedicalgroup.com/assets/img/team/chairman.jpg" alt="Chairman Mustafa Hamza"
+                style="width: 100%; height: 100%; object-fit: cover; object-position: top center;">
+              <div
+                style="position: absolute; bottom: 0; left: 0; right: 0; padding: 40px 30px; background: linear-gradient(to top, rgba(74, 13, 40, 0.95), transparent);">
+                <div style="color: white; font-size: 1.5rem; font-weight: 700; margin-bottom: 4px;">Mustafa Hamza</div>
+                <div style="color: var(--rose); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px;">
+                  Group Chairman & CEO</div>
+              </div>
             </div>
-            <a href="contact.html" class="btn btn-primary" style="padding:10px 20px;font-size:0.82rem;">Book Appointment</a>
           </div>
         </div>
       </div>
+
+      <!-- Slide 2: Patriotic Banner -->
+      <div class="hero-slide hero">
+        <div class="hero-shapes">
+          <div class="hero-shape hero-shape-1"></div>
+          <div class="hero-shape hero-shape-2"></div>
+          <div class="hero-shape hero-shape-3"></div>
+        </div>
+        <div class="hero-inner">
+          <div class="hero-left fade-up">
+            <div class="hero-eyebrow">
+              <span class="dot" style="background: #ffdb58;"></span>
+              Pride • Unity • Respect
+            </div>
+            <h1>
+              Raising Our <span class="italic" style="color: #ffdb58;">National Pride</span>
+            </h1>
+            <p class="hero-desc" style="max-width: 600px; font-size: 1.05rem; margin-bottom: 16px;">
+              Our national flag is more than a symbol—it is a reflection of our shared journey, enduring strength, and
+              unbreakable unity. We stand together with pride, honoring our nation's legacy and embracing a future of
+              boundless hope.
+            </p>
+            <p class="hero-desc" style="max-width: 600px; font-size: 1.05rem;">
+              As we raise our flag, we reaffirm our commitment to the values of tolerance, progress, and mutual respect
+              that define our great nation. Together, we march towards a brighter tomorrow.
+            </p>
+            <div class="hero-btns" style="margin-top: 32px;">
+              <a href="about.html" class="btn btn-white">
+                Discover Our Heritage
+              </a>
+            </div>
+          </div>
+          <div class="hero-right fade-up" style="transition-delay:0.2s">
+            <div
+              style="max-width: 520px; height: 600px; margin-left: auto; border-radius: 20px 120px 20px 120px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.4);">
+              <img src="home_docs/patriotic_banner.png" alt="Patriotic National Flag"
+                style="width: 100%; height: 100%; object-fit: cover; object-position: right center;">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3: Original Hero -->
+      <div class="hero-slide hero">
+        <div class="hero-shapes">
+          <div class="hero-shape hero-shape-1"></div>
+          <div class="hero-shape hero-shape-2"></div>
+          <div class="hero-shape hero-shape-3"></div>
+        </div>
+        <div class="hero-inner">
+          <div class="hero-left fade-up">
+            <div class="hero-eyebrow">
+              <span class="dot"></span>
+              Kuwait & UAE · Trusted Care for Over a Decade
+            </div>
+            <h1>
+              Your Health,<br>
+              <span class="italic">Our Priority</span> —<br>
+              Experience Premium Care
+            </h1>
+            <p class="hero-desc">
+              Metro Starcare Medical Centre, under Metro Medical Group, has been a trusted healthcare provider for over
+              a decade — delivering world-class medical services with compassion and excellence.
+            </p>
+            <div class="hero-btns">
+              <a href="doctors.html" class="btn btn-white">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8" />
+                  <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                </svg>
+                Find a Doctor
+              </a>
+              <a href="about.html" class="btn"
+                style="background:rgba(255,255,255,0.15);color:white;border:1.5px solid rgba(255,255,255,0.3);">
+                Learn About Us
+              </a>
+            </div>
+          </div>
+          <div class="hero-right fade-up" style="transition-delay:0.2s">
+            <div class="hero-float-card hero-float-1">
+              <div class="float-label">Medical Director</div>
+              <div class="float-value">Dr. Rasna</div>
+            </div>
+            <div class="hero-card-main">
+              <div class="hero-img-area">
+                <img src="home_docs/rasna_munaifa.png" alt="Dr. Rasna Munaifa Koroth"
+                  onerror="this.src=''; this.parentElement.style.background='linear-gradient(160deg, #F2D9E6, #E8C4D4)'; this.style.display='none'">
+                <div class="hero-img-overlay">
+                  <div class="doc-name">Dr. Rasna Munaifa Koroth</div>
+                  <div class="doc-role">Medical Director · General Practitioner</div>
+                </div>
+              </div>
+              <div class="hero-card-bottom">
+                <div class="avail-badge">
+                  <span class="avail-dot"></span>
+                  Available Today
+                </div>
+                <a href="contact.html" class="btn btn-primary" style="padding:10px 20px;font-size:0.82rem;">Book
+                  Appointment</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <div class="hero-nav-dots" id="heroNavDots"></div>
+    <button class="hero-nav-btn prev" id="heroPrevBtn">&#10094;</button>
+    <button class="hero-nav-btn next" id="heroNextBtn">&#10095;</button>
   </section>
 
   <!-- WHY US STRIP -->
   <div class="why-strip">
     <div class="why-inner">
       <div class="why-item fade-up">
-        <div class="why-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2">
+        <div class="why-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A"
+            stroke-width="2">
             <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
             <polyline points="22 4 12 14.01 9 11.01" />
           </svg></div>
@@ -1193,7 +1413,8 @@
         </div>
       </div>
       <div class="why-item fade-up" style="transition-delay:0.1s">
-        <div class="why-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2">
+        <div class="why-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A"
+            stroke-width="2">
             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
             <circle cx="9" cy="7" r="4" />
             <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
@@ -1205,7 +1426,8 @@
         </div>
       </div>
       <div class="why-item fade-up" style="transition-delay:0.2s">
-        <div class="why-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2">
+        <div class="why-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A"
+            stroke-width="2">
             <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
             <line x1="16" y1="2" x2="16" y2="6" />
             <line x1="8" y1="2" x2="8" y2="6" />
@@ -1217,8 +1439,10 @@
         </div>
       </div>
       <div class="why-item fade-up" style="transition-delay:0.3s">
-        <div class="why-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2">
-            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+        <div class="why-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A"
+            stroke-width="2">
+            <path
+              d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
           </svg></div>
         <div class="why-text">
           <h4>Patient-Centric</h4>
@@ -1233,17 +1457,22 @@
     <div class="section" style="padding-top:0;padding-bottom:0;">
       <div class="about-wrap">
         <div class="about-img-group fade-up">
-          <div class="about-img-main"><img src="https://www.metrostarcare.ae/assets/images/about/5.jpg" alt="Metro Starcare Medical Centre"></div>
-          <div class="about-img-secondary"><img src="https://www.metrostarcare.ae/assets/images/about/1.jpg" alt="Medical Care"></div>
+          <div class="about-img-main"><img src="https://www.metrostarcare.ae/assets/images/about/5.jpg"
+              alt="Metro Starcare Medical Centre"></div>
+          <div class="about-img-secondary"><img src="https://www.metrostarcare.ae/assets/images/about/1.jpg"
+              alt="Medical Care"></div>
         </div>
         <div class="about-right fade-up" style="transition-delay:0.2s">
           <div class="section-sub">About Metro Starcare</div>
           <h2 class="section-title">Dedicated to Excellence in Healthcare for Over a Decade</h2>
           <div class="divider"></div>
-          <p class="section-desc">Metro Starcare Medical Centre, under the Metro Medical Group, has been a trusted healthcare provider for over a decade. With branches in Sharjah, UAE and Kuwait, we deliver state-of-the-art medical services tailored to individual needs.</p>
+          <p class="section-desc">Metro Starcare Medical Centre, under the Metro Medical Group, has been a trusted
+            healthcare provider for over a decade. With branches in Sharjah, UAE and Kuwait, we deliver state-of-the-art
+            medical services tailored to individual needs.</p>
           <ul style="margin-top:28px;">
             <li>
-              <div class="about-li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2.5">
+              <div class="about-li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A"
+                  stroke-width="2.5">
                   <polyline points="20 6 9 17 4 12" />
                 </svg></div>
               <div class="about-li-text">
@@ -1252,7 +1481,8 @@
               </div>
             </li>
             <li>
-              <div class="about-li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2.5">
+              <div class="about-li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A"
+                  stroke-width="2.5">
                   <polyline points="20 6 9 17 4 12" />
                 </svg></div>
               <div class="about-li-text">
@@ -1261,7 +1491,8 @@
               </div>
             </li>
             <li>
-              <div class="about-li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2.5">
+              <div class="about-li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A"
+                  stroke-width="2.5">
                   <polyline points="20 6 9 17 4 12" />
                 </svg></div>
               <div class="about-li-text">
@@ -1276,7 +1507,8 @@
             <div class="priv-tag"><span class="check">✓</span> Corporate Tie-Ups</div>
             <div class="priv-tag"><span class="check">✓</span> Noble Services</div>
           </div>
-          <div style="margin-top:28px; display:flex; gap:14px;"><a href="about.html" class="btn btn-primary">More About Us</a><a href="doctors.html" class="btn btn-outline">Find a Doctor</a></div>
+          <div style="margin-top:28px; display:flex; gap:14px;"><a href="about.html" class="btn btn-primary">More About
+              Us</a><a href="doctors.html" class="btn btn-outline">Find a Doctor</a></div>
         </div>
       </div>
     </div>
@@ -1291,60 +1523,87 @@
       </div>
       <div class="services-grid">
         <div class="service-card fade-up">
-          <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
               <circle cx="12" cy="12" r="10" />
               <line x1="2" y1="12" x2="22" y2="12" />
               <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
             </svg></div>
           <h3>General Medicine</h3>
-          <p>Comprehensive primary healthcare services to diagnose, treat, and manage a wide range of medical conditions with personalised care.</p><a href="services.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--maroon);font-size:0.82rem;font-weight:600;text-decoration:none;margin-top:16px;">Learn More <span>→</span></a>
+          <p>Comprehensive primary healthcare services to diagnose, treat, and manage a wide range of medical conditions
+            with personalised care.</p><a href="services.html"
+            style="display:inline-flex;align-items:center;gap:6px;color:var(--maroon);font-size:0.82rem;font-weight:600;text-decoration:none;margin-top:16px;">Learn
+            More <span>→</span></a>
         </div>
         <div class="service-card fade-up">
-          <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
               <path d="M18 20V10M12 20V4M6 20v-6" />
             </svg></div>
           <h3>Orthopedics</h3>
-          <p>Expert care for musculoskeletal conditions including fractures, joint disorders, and spine-related issues to restore mobility.</p><a href="services.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--maroon);font-size:0.82rem;font-weight:600;text-decoration:none;margin-top:16px;">Learn More <span>→</span></a>
+          <p>Expert care for musculoskeletal conditions including fractures, joint disorders, and spine-related issues
+            to restore mobility.</p><a href="services.html"
+            style="display:inline-flex;align-items:center;gap:6px;color:var(--maroon);font-size:0.82rem;font-weight:600;text-decoration:none;margin-top:16px;">Learn
+            More <span>→</span></a>
         </div>
         <div class="service-card fade-up">
-          <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
             </svg></div>
           <h3>Dermatology & Cosmetology</h3>
-          <p>Skin, hair, and beauty treatments ranging from clinical dermatology to advanced cosmetic procedures.</p><a href="services.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--maroon);font-size:0.82rem;font-weight:600;text-decoration:none;margin-top:16px;">Learn More <span>→</span></a>
+          <p>Skin, hair, and beauty treatments ranging from clinical dermatology to advanced cosmetic procedures.</p><a
+            href="services.html"
+            style="display:inline-flex;align-items:center;gap:6px;color:var(--maroon);font-size:0.82rem;font-weight:600;text-decoration:none;margin-top:16px;">Learn
+            More <span>→</span></a>
         </div>
         <div class="service-card fade-up">
-          <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+          <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path
+                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
             </svg></div>
           <h3>Gynecology</h3>
-          <p>Dedicated women's healthcare focusing on reproductive health, pregnancy care, and hormonal wellness with compassionate expert support.</p><a href="services.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--maroon);font-size:0.82rem;font-weight:600;text-decoration:none;margin-top:16px;">Learn More <span>→</span></a>
+          <p>Dedicated women's healthcare focusing on reproductive health, pregnancy care, and hormonal wellness with
+            compassionate expert support.</p><a href="services.html"
+            style="display:inline-flex;align-items:center;gap:6px;color:var(--maroon);font-size:0.82rem;font-weight:600;text-decoration:none;margin-top:16px;">Learn
+            More <span>→</span></a>
         </div>
         <div class="service-card fade-up">
-          <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
               <circle cx="12" cy="8" r="4" />
               <path d="M12 12v8M9 18l3 3 3-3" />
             </svg></div>
           <h3>Ophthalmology</h3>
-          <p>Specialised care for vision and eye health, including diagnostic and treatment services for all age groups.</p><a href="services.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--maroon);font-size:0.82rem;font-weight:600;text-decoration:none;margin-top:16px;">Learn More <span>→</span></a>
+          <p>Specialised care for vision and eye health, including diagnostic and treatment services for all age groups.
+          </p><a href="services.html"
+            style="display:inline-flex;align-items:center;gap:6px;color:var(--maroon);font-size:0.82rem;font-weight:600;text-decoration:none;margin-top:16px;">Learn
+            More <span>→</span></a>
         </div>
         <div class="service-card fade-up">
-          <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
               <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
               <polyline points="9 22 9 12 15 12 15 22" />
             </svg></div>
           <h3>ENT</h3>
-          <p>Expert care for ear, nose, throat and related structures of the head and neck — from hearing loss to sinus and throat disorders.</p><a href="services.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--maroon);font-size:0.82rem;font-weight:600;text-decoration:none;margin-top:16px;">Learn More <span>→</span></a>
+          <p>Expert care for ear, nose, throat and related structures of the head and neck — from hearing loss to sinus
+            and throat disorders.</p><a href="services.html"
+            style="display:inline-flex;align-items:center;gap:6px;color:var(--maroon);font-size:0.82rem;font-weight:600;text-decoration:none;margin-top:16px;">Learn
+            More <span>→</span></a>
         </div>
       </div>
-      <div style="text-align:center; margin-top:40px;"><a href="services.html" class="btn btn-primary">View All Services</a></div>
+      <div style="text-align:center; margin-top:40px;"><a href="services.html" class="btn btn-primary">View All
+          Services</a></div>
     </div>
   </section>
   <!-- CHAIRMAN'S MESSAGE SECTION with sticky image -->
   <section class="chairman-section fade-up">
     <div class="chairman-wrap">
       <div class="chairman-image" style="position: sticky; top: 100px; align-self: flex-start;">
-        <img src="https://www.metromedicalgroup.com/assets/img/team/chairman.jpg" alt="Chairman Mustafa Hamza" onerror="this.style.display='none'">
+        <img src="https://www.metromedicalgroup.com/assets/img/team/chairman.jpg" alt="Chairman Mustafa Hamza"
+          onerror="this.style.display='none'">
         <div class="chairman-sign" style="margin-top: 16px; text-align: center; border-top: none; padding-top: 0;">
           <div class="name">Mustafa Hamza</div>
           <div class="title">Group Chairman & CEO – Metro Medical Group (Kuwait/UAE)</div>
@@ -1355,15 +1614,40 @@
         <h2 class="section-title">Chairman's Message</h2>
         <div class="chairman-message" id="chairmanMessage" style="text-align: justify;">
           <div class="message-short">
-            <p>We have arranged our Healthcare providing specialized centers from Metro Medical Group with a concept that anyone who enters the center will feel that they have reached a star level ambience and receive a premium quality healthcare along with our unique concept of patient escort since the beginning. Our doctors, medical and paramedical staff could be defined as handpicked, especially our doctors where some of them are having more than 40 years' experience in their noble field of providing healthcare services and treatments to the society with a dedicated attitude.</p>
+            <p>We have arranged our Healthcare providing specialized centers from Metro Medical Group with a concept
+              that anyone who enters the center will feel that they have reached a star level ambience and receive a
+              premium quality healthcare along with our unique concept of patient escort since the beginning. Our
+              doctors, medical and paramedical staff could be defined as handpicked, especially our doctors where some
+              of them are having more than 40 years' experience in their noble field of providing healthcare services
+              and treatments to the society with a dedicated attitude.</p>
           </div>
           <div class="message-full">
-            <p>We have arranged our Healthcare providing specialized centers from Metro Medical Group with a concept that anyone who enters the center will feel that they have reached a star level ambience and receive a premium quality healthcare along with our unique concept of patient escort since the beginning.</p>
-            <p>Our doctors, medical and paramedical staff could be defined as handpicked, especially our doctors where some of them are having more than 40 years' experience in their noble field of providing healthcare services and treatments to the society with a dedicated attitude.</p>
-            <p>All set to become a landmark in the field of medical care, Metro Medical Group has gone leaps and bounds to deliver its mission of bringing quality healthcare services for all. The team of our expert medical professionals will constantly endeavor to provide accessible, affordable and best available healthcare services in Kuwait with the available facilities in its best with us. Since its commencement, Metro Medical Group is always in this sector with noble thoughts and services.</p>
-            <p>Great ideologies have greater responsibilities and the goals in healthcare are to safeguard, encourage and Metro Medical Group has become a name that spells assurance for the well-being of the patients. We are committed to make available to the public the benefits of the most modern and technological developments in the field which are a blend of technology along with impeccable patient care. This is where we planned to start our unit of Day care surgeries in our Super Metro Specialized Medical Center in Salmiya. Also we enhanced our services by adding MRI, CT and DEXA Scans in our different branches.</p>
-            <p>With a career in this spanning over several years, I stand here grateful to the almighty, despite being from a humble background, I met a few gracious souls who guided me in my journey of life. My parents solicited inspiration and taught me the value of discipline, perseverance and a regulated life.</p>
-            <p>Through our essence of high teamwork, we bring together all necessary disciplines and skills from many resources of our organization to serve our patients better and attempt to set a league of its own. Life is our greatest gift, where every moment is as new as it is special. Life is about living every second to the fullest and about making every day an experience to enjoy and cherish. We have a dream of delivering world-class healthcare with the best medical talent and we aim that Metro Medical Group leaves an indelible mark in the heart of every patient and their family members.</p>
+            <p>We have arranged our Healthcare providing specialized centers from Metro Medical Group with a concept
+              that anyone who enters the center will feel that they have reached a star level ambience and receive a
+              premium quality healthcare along with our unique concept of patient escort since the beginning.</p>
+            <p>Our doctors, medical and paramedical staff could be defined as handpicked, especially our doctors where
+              some of them are having more than 40 years' experience in their noble field of providing healthcare
+              services and treatments to the society with a dedicated attitude.</p>
+            <p>All set to become a landmark in the field of medical care, Metro Medical Group has gone leaps and bounds
+              to deliver its mission of bringing quality healthcare services for all. The team of our expert medical
+              professionals will constantly endeavor to provide accessible, affordable and best available healthcare
+              services in Kuwait with the available facilities in its best with us. Since its commencement, Metro
+              Medical Group is always in this sector with noble thoughts and services.</p>
+            <p>Great ideologies have greater responsibilities and the goals in healthcare are to safeguard, encourage
+              and Metro Medical Group has become a name that spells assurance for the well-being of the patients. We are
+              committed to make available to the public the benefits of the most modern and technological developments
+              in the field which are a blend of technology along with impeccable patient care. This is where we planned
+              to start our unit of Day care surgeries in our Super Metro Specialized Medical Center in Salmiya. Also we
+              enhanced our services by adding MRI, CT and DEXA Scans in our different branches.</p>
+            <p>With a career in this spanning over several years, I stand here grateful to the almighty, despite being
+              from a humble background, I met a few gracious souls who guided me in my journey of life. My parents
+              solicited inspiration and taught me the value of discipline, perseverance and a regulated life.</p>
+            <p>Through our essence of high teamwork, we bring together all necessary disciplines and skills from many
+              resources of our organization to serve our patients better and attempt to set a league of its own. Life is
+              our greatest gift, where every moment is as new as it is special. Life is about living every second to the
+              fullest and about making every day an experience to enjoy and cherish. We have a dream of delivering
+              world-class healthcare with the best medical talent and we aim that Metro Medical Group leaves an
+              indelible mark in the heart of every patient and their family members.</p>
           </div>
           <button class="read-more-btn" id="readMoreBtn">Read More <span>↓</span></button>
         </div>
@@ -1385,7 +1669,8 @@
         <div class="doctors-track" id="doctorsTrack" style="display: flex; transition: transform 0.5s ease; gap: 24px;">
           <!-- Doctors will be loaded dynamically -->
         </div>
-        <div class="doctors-dots" id="doctorsDots" style="display: flex; justify-content: center; gap: 12px; margin-top: 40px;"></div>
+        <div class="doctors-dots" id="doctorsDots"
+          style="display: flex; justify-content: center; gap: 12px; margin-top: 40px;"></div>
       </div>
     </div>
   </section>
@@ -1398,72 +1683,99 @@
         <h2 class="section-title">What Our Patients Say<br>About Their Experience</h2>
         <div class="divider" style="margin: 12px auto 0;"></div>
       </div>
-      <div class="testimonials-slider">
-        <div class="testimonials-track" id="testimonialsTrack">
-          <div class="testimonial-card">
-            <div class="testimonial-quote">“</div>
-            <div class="testimonial-text">I had a very positive experience at Star Care Health Center. The service was professional, well-organized, and patient-friendly from start to finish. <a href="https://maps.app.goo.gl/RnPTj5BTCodhkW5E6">Read More</a></div>
-            <div class="testimonial-author">Arun Kumar</div>
-            <div class="testimonial-role">6 days ago</div>
-          </div>
-          <div class="testimonial-card">
-            <div class="testimonial-quote">“</div>
-            <div class="testimonial-text">Very Good Service from Ms Noreen and Mr Aamir.Star metro is lucky to have such Professionals to serve Patients.Thanks a lot.</div>
-            <div class="testimonial-author">Abdul Nawa</div>
-            <div class="testimonial-role">a week ago</div>
-          </div>
-          <div class="testimonial-card">
-            <div class="testimonial-quote">“</div>
-            <div class="testimonial-text">For us this is the best medical centre. In providing services and giving advise. It's a common man's best medical centre with most of the specialist and facilities. Love it.</div>
-            <div class="testimonial-author">Jaipal Reddy</div>
-            <div class="testimonial-role">2 weeks ago</div>
-          </div>
-          <div class="testimonial-card">
-            <div class="testimonial-quote">“</div>
-            <div class="testimonial-text">Starcare Clinic has always been our trusted clinic for regular checkups. The environment is clean and well-managed. <a href="https://maps.app.goo.gl/vAYEv1bzPvfe4x8DA"> Read more</a></div>
-            <div class="testimonial-author">Chanda Lakhwani</div>
-            <div class="testimonial-role">4 weeks ago</div>
-          </div>
-          <div class="testimonial-card">
-            <div class="testimonial-quote">“</div>
-            <div class="testimonial-text">I am very satisfied with the hospital service. The staff were polite, helpful, and professional, and the medical care was excellent. Clean environment and well-managed service. Highly recommended.</div>
-            <div class="testimonial-author">Renu Ratheesh</div>
-            <div class="testimonial-role">a month ago</div>
-          </div>
-          <div class="testimonial-card">
-            <div class="testimonial-quote">“</div>
-            <div class="testimonial-text">This is an amazing clinic with very kind and friendly staff. The doctors are caring and treat patients with respect and compassion. I am very grateful, especially to Dr. Sandiya. <a href="https://maps.app.goo.gl/9tfGGEMJ9m9ZoPfaA">Read more</a></div>
-            <div class="testimonial-author">Renu Ratheesh</div>
-            <div class="testimonial-role">a month ago</div>
-          </div>
-        </div>
+<div class="testimonials-slider">
+  <div class="testimonials-track" id="testimonialsTrack">
+
+    <div class="testimonial-card">
+      <div class="testimonial-quote">“</div>
+      <div class="testimonial-text">
+        I had a very positive experience at Metro Starcare Medical Centre. The service
+        was professional, well-organized, and patient-friendly from start to finish.
+        <a href="https://maps.app.goo.gl/RnPTj5BTCodhkW5E6">Read More</a>
       </div>
-      <div class="slider-dots" id="sliderDots"></div>
+      <div class="testimonial-author">Arun Kumar</div>
+      <div class="testimonial-role">6 days ago</div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-quote">“</div>
+      <div class="testimonial-text">
+        Very Good Service from Ms Noreen and Mr Aamir. Star metro is lucky to have such
+        professionals to serve patients. Thanks a lot.
+      </div>
+      <div class="testimonial-author">Abdul Nawa</div>
+      <div class="testimonial-role">a week ago</div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-quote">“</div>
+      <div class="testimonial-text">
+        For us this is the best medical centre. In providing services and giving
+        advice. It's a common man's best medical centre with most of the specialists
+        and facilities. Love it.
+      </div>
+      <div class="testimonial-author">Jaipal Reddy</div>
+      <div class="testimonial-role">2 weeks ago</div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-quote">“</div>
+      <div class="testimonial-text">
+        Metro Starcare Medical Centre has always been our trusted clinic for regular
+        checkups. The environment is clean and well-managed.
+        <a href="https://maps.app.goo.gl/vAYEv1bzPvfe4x8DA">Read more</a>
+      </div>
+      <div class="testimonial-author">Chanda Lakhwani</div>
+      <div class="testimonial-role">4 weeks ago</div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-quote">“</div>
+      <div class="testimonial-text">
+         Dr. Rasna is an amazing doctor! Super cooperative, patient, and caring. She checks on her patients with so much attention and took the time to personally call me 
+                 <a href="https://maps.app.goo.gl/zE9SXPCwGWncmSmE6">Read more</a>
+
+      </div>
+      <div class="testimonial-author">Fazeela</div>
+      <div class="testimonial-role">3 months ago</div>
+    </div>
+
+  </div>
+</div>   
+<div class="slider-dots" id="sliderDots"></div>
     </div>
   </section>
 
   <!-- CTA BAND  -->
   <div class="cta-band">
     <h2>Setting the Gold Standard in<br>Medical Care &amp; Patient Safety</h2>
-    <p>Our dedicated team is committed to delivering safe, effective, and compassionate care for every patient who walks through our doors.</p>
-    <div class="btn-group"><a href="contact.html" class="btn btn-white">Book an Appointment</a><a href="tel:+971 6 5611099" class="btn" style="background:rgba(255,255,255,0.15);color:white;border:1.5px solid rgba(255,255,255,0.35);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-        </svg>Call +971 6 5611099</a></div>
+    <p>Our dedicated team is committed to delivering safe, effective, and compassionate care for every patient who walks
+      through our doors.</p>
+    <div class="btn-group"><a href="contact.html" class="btn btn-white">Book an Appointment</a><a
+        href="tel:+971528415113" class="btn"
+        style="background:rgba(255,255,255,0.15);color:white;border:1.5px solid rgba(255,255,255,0.35);"><svg width="14"
+          height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path
+            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+        </svg>Call +971 52 841 5113</a></div>
   </div>
 
   <!-- CORPORATE  -->
   <section style="padding:88px 0; background:var(--off-white);">
     <div class="section" style="padding:0 32px;">
       <div class="corporate-wrap">
-        <div class="corporate-img fade-up"><img src="https://www.metrostarcare.ae/assets/images/about/2.jpg" alt="Corporate Healthcare"></div>
+        <div class="corporate-img fade-up"><img src="https://www.metrostarcare.ae/assets/images/about/2.jpg"
+            alt="Corporate Healthcare"></div>
         <div class="fade-up" style="transition-delay:0.2s">
           <div class="section-sub">For Organisations</div>
           <h2 class="section-title">Empowering Organisations<br>with Better Health Solutions</h2>
           <div class="divider"></div>
-          <p class="section-desc">Our Corporate Medical Privilege Card and wellness packages are designed to support the health of your employees and their families.</p>
+          <p class="section-desc">Our Corporate Medical Privilege Card and wellness packages are designed to support the
+            health of your employees and their families.</p>
           <div class="corp-features">
             <div class="corp-feat">
-              <div class="corp-feat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2">
+              <div class="corp-feat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A"
+                  stroke-width="2">
                   <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
                   <circle cx="9" cy="7" r="4" />
                   <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
@@ -1475,7 +1787,8 @@
               </div>
             </div>
             <div class="corp-feat">
-              <div class="corp-feat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2">
+              <div class="corp-feat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A"
+                  stroke-width="2">
                   <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
                 </svg></div>
               <div>
@@ -1484,7 +1797,8 @@
               </div>
             </div>
             <div class="corp-feat">
-              <div class="corp-feat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="2">
+              <div class="corp-feat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A"
+                  stroke-width="2">
                   <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
                   <polyline points="14 2 14 8 20 8" />
                 </svg></div>
@@ -1504,42 +1818,42 @@
     <div class="insurance-title">Accepted Insurance Providers</div>
     <div class="ticker-wrap">
       <div class="ticker-track">
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/Oman-Insurance.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/SAICOHEALTH.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/NGI.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/Nextcare.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/NAS.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/neuron.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/MSH.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/MetLife.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/mednet.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/lifeline.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/inayah.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/FMC.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/ecare.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/AXA.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/ALMADALLAH.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/AlBuhaira.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/Afiya.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/ADNIC.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/Oman-Insurance.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/SAICOHEALTH.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/NGI.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/Nextcare.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/NAS.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/neuron.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/MSH.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/MetLife.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/mednet.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/lifeline.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/inayah.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/FMC.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/ecare.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/AXA.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/ALMADALLAH.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/AlBuhaira.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/Afiya.jpg"></div>
-        <div class="insurance-card"><img src="https://www.metrostarcare.ae/storage/uploads/ADNIC.jpg"></div>
+        <div class="insurance-card"><img src="uploads/Oman-Insurance.jpg"></div>
+        <div class="insurance-card"><img src="uploads/SAICOHEALTH.jpg"></div>
+        <div class="insurance-card"><img src="uploads/NGI.jpg"></div>
+        <div class="insurance-card"><img src="uploads/Nextcare.jpg"></div>
+        <div class="insurance-card"><img src="uploads/NAS.jpg"></div>
+        <div class="insurance-card"><img src="uploads/neuron.jpg"></div>
+        <div class="insurance-card"><img src="uploads/MSH.jpg"></div>
+        <div class="insurance-card"><img src="uploads/MetLife.jpg"></div>
+        <div class="insurance-card"><img src="uploads/mednet.jpg"></div>
+        <div class="insurance-card"><img src="uploads/lifeline.jpg"></div>
+        <div class="insurance-card"><img src="uploads/inayah.jpg"></div>
+        <div class="insurance-card"><img src="uploads/FMC.jpg"></div>
+        <div class="insurance-card"><img src="uploads/ecare.jpg"></div>
+        <div class="insurance-card"><img src="uploads/AXA.jpg"></div>
+        <div class="insurance-card"><img src="uploads/ALMADALLAH.jpg"></div>
+        <div class="insurance-card"><img src="uploads/AlBuhaira.jpg"></div>
+        <div class="insurance-card"><img src="uploads/Afiya.jpg"></div>
+        <div class="insurance-card"><img src="uploads/ADNIC.jpg"></div>
+        <div class="insurance-card"><img src="uploads/Oman-Insurance.jpg"></div>
+        <div class="insurance-card"><img src="uploads/SAICOHEALTH.jpg"></div>
+        <div class="insurance-card"><img src="uploads/NGI.jpg"></div>
+        <div class="insurance-card"><img src="uploads/Nextcare.jpg"></div>
+        <div class="insurance-card"><img src="uploads/NAS.jpg"></div>
+        <div class="insurance-card"><img src="uploads/neuron.jpg"></div>
+        <div class="insurance-card"><img src="uploads/MSH.jpg"></div>
+        <div class="insurance-card"><img src="uploads/MetLife.jpg"></div>
+        <div class="insurance-card"><img src="uploads/mednet.jpg"></div>
+        <div class="insurance-card"><img src="uploads/lifeline.jpg"></div>
+        <div class="insurance-card"><img src="uploads/inayah.jpg"></div>
+        <div class="insurance-card"><img src="uploads/FMC.jpg"></div>
+        <div class="insurance-card"><img src="uploads/ecare.jpg"></div>
+        <div class="insurance-card"><img src="uploads/AXA.jpg"></div>
+        <div class="insurance-card"><img src="uploads/ALMADALLAH.jpg"></div>
+        <div class="insurance-card"><img src="uploads/AlBuhaira.jpg"></div>
+        <div class="insurance-card"><img src="uploads/Afiya.jpg"></div>
+        <div class="insurance-card"><img src="uploads/ADNIC.jpg"></div>
       </div>
     </div>
   </div>
@@ -1547,12 +1861,18 @@
   <!-- FOOTER  -->
   <footer>
     <div class="footer-inner">
-      <div class="footer-brand"><img src="https://www.metrostarcare.ae/assets/images/logo/logo.png" alt="Metro Starcare Logo">
-        <p>Metro Starcare Medical Centre, under Metro Medical Group, is committed to providing world-class healthcare services with compassion, excellence, and personalised attention for every patient.</p>
-        <div class="footer-socials" style="margin-top:20px;"><a href="https://www.instagram.com/starcare.uae" class="footer-social" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-            </svg></a><a href="https://www.facebook.com/share/15BroPchCk/" class="footer-social" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+      <div class="footer-brand"><img src="https://www.metrostarcare.ae/assets/images/logo/logo.png"
+          alt="Metro Starcare Logo">
+        <p>Metro Starcare Medical Centre, under Metro Medical Group, is committed to providing world-class healthcare
+          services with compassion, excellence, and personalised attention for every patient.</p>
+        <div class="footer-socials" style="margin-top:20px;"><a href="https://www.instagram.com/starcare.uae"
+            class="footer-social" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+            </svg></a><a href="https://www.facebook.com/share/15BroPchCk/" class="footer-social" target="_blank"><svg
+              width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
             </svg></a></div>
       </div>
       <div class="footer-col">
@@ -1565,6 +1885,10 @@
           <li><a href="services.html">ENT</a></li>
           <li><a href="services.html">Ophthalmology</a></li>
           <li><a href="services.html">Dermatology</a></li>
+          <li><a href="services.html">Cosmetology</a></li>
+          <li><a href="services.html">Radiology (Ultrasound & <br>X-Ray)</a></li>
+          <li><a href="services.html">Laboratory</a></li>
+          <li><a href="services.html">Pharmacy</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -1575,7 +1899,7 @@
           <li><a href="packages.html">Packages</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="careers.html">Careers</a></li>
-          <li><a href="team.html">Our Team</a></li>
+          <!--<li><a href="#">Our Team</a></li>-->
           <li><a href="news.html">News & Events</a></li>
           <li><a href="contact.html">Contact Us</a></li>
         </ul>
@@ -1583,13 +1907,22 @@
       <div class="footer-col">
         <h4>Contact</h4>
         <ul class="footer-contact">
-          <li><span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-              </svg></span><span>+971 6 5611099</span></li>
-          <li><span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <li><span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg></span><span>+971 52 841 5113</span></li>
+              <li><span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+     stroke="currentColor" stroke-width="2">
+  <rect x="3" y="5" width="18" height="14" rx="2"/>
+  <path d="M3 7l9 6 9-6"/>
+</svg></span><span>info@metrostarcare.ae</span></li>
+          <li><span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                 <circle cx="12" cy="10" r="3" />
               </svg></span><span>Malabar Plaza, Rolla, Sharjah, UAE</span></li>
+              
         </ul>
       </div>
     </div>
@@ -1598,17 +1931,85 @@
     </div>
   </footer>
 
-  <a href="https://wa.me/97165611099" class="floating-btn whatsapp-float" target="_blank" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
-  <a href="tel:+97165611099" class="floating-btn call-float" aria-label="Call"><i class="fas fa-phone"></i></a>
-  <button id="backToTop" class="floating-btn scroll-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+  <a href="https://wa.me/971528415113" class="floating-btn whatsapp-float" target="_blank"
+    aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <a href="tel:+971528415113" class="floating-btn call-float" aria-label="Call"><i class="fas fa-phone"></i></a>
+  <button id="backToTop" class="floating-btn scroll-top" aria-label="Back to top"><i
+      class="fas fa-arrow-up"></i></button>
 
   <script>
+    // Hero Slider
+    document.addEventListener("DOMContentLoaded", () => {
+      const track = document.getElementById("heroSliderTrack");
+      if (!track) return;
+      const slides = track.querySelectorAll(".hero-slide");
+      const dotsContainer = document.getElementById("heroNavDots");
+      const prevBtn = document.getElementById("heroPrevBtn");
+      const nextBtn = document.getElementById("heroNextBtn");
+      let currentIndex = 0;
+      let heroInterval;
+
+      function updateHeroSlider(index) {
+        track.style.transform = `translateX(-${index * 100}%)`;
+        const dots = dotsContainer.querySelectorAll(".hero-dot");
+        dots.forEach((dot, i) => {
+          if (i === index) dot.classList.add("active");
+          else dot.classList.remove("active");
+        });
+      }
+
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateHeroSlider(currentIndex);
+      }
+
+      function prevSlide() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateHeroSlider(currentIndex);
+      }
+
+      function startHeroAutoSlide() {
+        clearInterval(heroInterval);
+        heroInterval = setInterval(nextSlide, 7000);
+      }
+
+      if (slides.length > 0) {
+        slides.forEach((_, idx) => {
+          const dot = document.createElement("div");
+          dot.classList.add("hero-dot");
+          if (idx === 0) dot.classList.add("active");
+          dot.addEventListener("click", () => {
+            currentIndex = idx;
+            updateHeroSlider(currentIndex);
+            startHeroAutoSlide();
+          });
+          dotsContainer.appendChild(dot);
+        });
+
+        if (prevBtn) {
+          prevBtn.addEventListener("click", () => {
+            prevSlide();
+            startHeroAutoSlide();
+          });
+        }
+        if (nextBtn) {
+          nextBtn.addEventListener("click", () => {
+            nextSlide();
+            startHeroAutoSlide();
+          });
+        }
+
+        updateHeroSlider(0);
+        startHeroAutoSlide();
+      }
+    });
+
     window.addEventListener('scroll', () => {
       document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
     });
 
     // Doctors Slider - Infinite Circular Slider
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
 
       // Find the doctors preview section and hide it
       const originalDoctorsSection = document.querySelector('.doctors-preview');
@@ -1686,42 +2087,42 @@
       }
 
       const existingDoctors = [{
-          imgSrc: 'home_docs/rasna_munaifa_.png',
-          specialty: 'General Practice',
-          name: 'Dr. Rasna Munaifa Koroth',
-          deg: 'MBBS · Medical Director',
-          exp: 'Experienced',
-          profileHref: 'doctor-profile.html?id=rasna',
-          bookHref: 'contact.html',
-          isDirector: true
-        },
-        {
-          imgSrc: 'doctors/nidhin_k_padmanabhan.png',
-          specialty: 'Orthopedics',
-          name: 'Dr. Nidhin K Padmanabhan',
-          deg: 'MBBS, MS · Specialist Orthopedics',
-          exp: '13+ yrs exp',
-          profileHref: 'doctor-profile.html?id=nidhin',
-          bookHref: 'contact.html'
-        },
-        {
-          imgSrc: 'doctors/sandya_subashchandran.png',
-          specialty: 'Gynaecology',
-          name: 'Dr. Sandhya Subhashchandran',
-          deg: 'MBBS, MD · Specialist Gynaecologist',
-          exp: '22+ yrs exp',
-          profileHref: 'doctor-profile.html?id=sandhya',
-          bookHref: 'contact.html'
-        },
-        {
-          imgSrc: 'doctors/ali_akbar_abdul_salam.png',
-          specialty: 'ENT',
-          name: 'Dr. Ali Akbar',
-          deg: 'MBBS, MS · Specialist ENT',
-          exp: '24+ yrs exp',
-          profileHref: 'doctor-profile.html?id=ali',
-          bookHref: 'contact.html'
-        }
+        imgSrc: 'home_docs/rasna_munaifa_.png',
+        specialty: 'General Practice',
+        name: 'Dr. Rasna Munaifa Koroth',
+        deg: 'MBBS · Medical Director',
+        exp: 'Experienced',
+        profileHref: 'doctor-profile.html?id=rasna',
+        bookHref: 'contact.html',
+        isDirector: true
+      },
+      {
+        imgSrc: 'doctors/nidhin_k_padmanabhan.png',
+        specialty: 'Orthopedics',
+        name: 'Dr. Nidhin K Padmanabhan',
+        deg: 'MBBS, MS · Specialist Orthopedics',
+        exp: '13+ yrs exp',
+        profileHref: 'doctor-profile.html?id=nidhin',
+        bookHref: 'contact.html'
+      },
+      {
+        imgSrc: 'doctors/sandya_subashchandran.png',
+        specialty: 'Gynaecology',
+        name: 'Dr. Sandhya Subhashchandran',
+        deg: 'MBBS, MD · Specialist Gynaecologist',
+        exp: '22+ yrs exp',
+        profileHref: 'doctor-profile.html?id=sandhya',
+        bookHref: 'contact.html'
+      },
+      {
+        imgSrc: 'doctors/ali_akbar_abdul_salam.png',
+        specialty: 'ENT',
+        name: 'Dr. Ali Akbar',
+        deg: 'MBBS, MS · Specialist ENT',
+        exp: '24+ yrs exp',
+        profileHref: 'doctor-profile.html?id=ali',
+        bookHref: 'contact.html'
+      }
       ];
 
       async function getAllDoctors() {
@@ -1923,7 +2324,7 @@
         overlay.onclick = () => toggleMenu();
 
         // Close on ESC key
-        document.addEventListener('keydown', function(e) {
+        document.addEventListener('keydown', function (e) {
           if (e.key === 'Escape' && navLinks.classList.contains('active')) {
             toggleMenu();
           }
@@ -1938,7 +2339,7 @@
     }
 
     // Initialize on page load
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const hamburger = document.getElementById("hamburger");
       if (hamburger) {
         hamburger.onclick = toggleMenu;
@@ -1953,11 +2354,11 @@
     });
     document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
     const backToTopBtn = document.getElementById("backToTop");
-    window.onscroll = function() {
+    window.onscroll = function () {
       if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) backToTopBtn.style.display = "block";
       else backToTopBtn.style.display = "none";
     };
-    backToTopBtn.onclick = function() {
+    backToTopBtn.onclick = function () {
       window.scrollTo({
         top: 0,
         behavior: "smooth"

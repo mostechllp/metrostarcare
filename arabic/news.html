@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الأخبار والفعاليات | مركز ميترو ستاركير الطبي</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../shared.css">
+  <style>
+    /* ---- NAVBAR ---- */
+    .hamburger {
+      display: none;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    @media (max-width: 900px) {
+      .nav-links {
+        display: flex;
+        position: absolute;
+        top: 76px;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 32px;
+        gap: 16px;
+        border-top: 1px solid var(--border);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-10px);
+        transition: 0.3s ease;
+      }
+
+      .nav-links.active {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      .nav-links li {
+        width: 100%;
+      }
+
+      .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+      }
+
+      .nav-emergency {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex !important;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+      }
+
+      .hamburger span {
+        width: 24px;
+        height: 2px;
+        background: var(--text-dark);
+        display: block;
+      }
+    }
+
+    /* Page Hero */
+    .page-hero {
+      background: linear-gradient(135deg, var(--maroon-deep) 0%, var(--maroon) 55%, #C05078 100%);
+      padding: 100px 32px 80px;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    .page-hero-breadcrumb {
+      margin-bottom: 20px;
+      font-size: 0.85rem;
+      opacity: 0.8;
+    }
+
+    .page-hero-breadcrumb a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .page-hero-breadcrumb span {
+      margin: 0 8px;
+    }
+
+    .page-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .page-hero p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* News & Events Grid */
+    .news-section {
+      padding: 80px 32px;
+      background: var(--off-white);
+    }
+
+    .news-container {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .section-sub {
+      color: var(--maroon);
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      color: var(--maroon-dark);
+      margin-bottom: 16px;
+    }
+
+    .divider {
+      width: 60px;
+      height: 3px;
+      background: var(--maroon-light);
+      margin: 0 auto 20px;
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 40px;
+      margin-top: 20px;
+    }
+
+    .news-card {
+      background: white;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .news-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      border-color: var(--rose);
+    }
+
+    .news-image {
+      width: 100%;
+      height: 240px;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--rose-pale), var(--off-white));
+    }
+
+    .news-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .news-card:hover .news-image img {
+      transform: scale(1.05);
+    }
+
+    .news-date {
+      display: inline-block;
+      background: var(--maroon);
+      color: white;
+      font-size: 0.7rem;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin: 16px 20px 0;
+    }
+
+    .news-content {
+      padding: 20px 24px 24px;
+      flex: 1;
+    }
+
+    .news-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--maroon-dark);
+      line-height: 1.4;
+      margin-bottom: 12px;
+    }
+
+    .news-excerpt {
+      color: var(--text-mid);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .read-more-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--maroon);
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-decoration: none;
+      transition: gap 0.2s ease;
+    }
+
+    .read-more-link:hover {
+      gap: 12px;
+    }
+
+    /* Modal Styles for News Details */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      backdrop-filter: blur(5px);
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: white;
+      max-width: 800px;
+      width: 90%;
+      border-radius: 28px;
+      overflow: hidden;
+      animation: modalFadeIn 0.3s ease;
+      max-height: 85vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    @keyframes modalFadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .modal-header {
+      background: var(--maroon);
+      color: white;
+      padding: 20px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .modal-header h3 {
+      font-size: 1.3rem;
+      margin: 0;
+    }
+
+    .modal-close {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    .modal-close:hover {
+      opacity: 0.7;
+    }
+
+    .modal-body {
+      padding: 24px;
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    .modal-image {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 16px;
+      margin-bottom: 20px;
+    }
+
+    .modal-date {
+      color: var(--maroon);
+      font-size: 0.8rem;
+      margin-bottom: 12px;
+      display: inline-block;
+      background: var(--rose-pale);
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+
+    .modal-body h2 {
+      font-size: 1.4rem;
+      color: var(--maroon-dark);
+      margin-bottom: 16px;
+    }
+
+    .modal-body p {
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin-bottom: 16px;
+      font-size: 0.95rem;
+    }
+
+    .modal-footer {
+      padding: 16px 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      gap: 12px;
+      justify-content: flex-end;
+      flex-shrink: 0;
+    }
+
+    .btn-modal {
+      padding: 10px 24px;
+      border-radius: 40px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+
+    .btn-modal-primary {
+      background: var(--maroon);
+      color: white;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-modal-secondary {
+      background: var(--off-white);
+      color: var(--text-dark);
+      border: 1px solid var(--border);
+    }
+
+    @media (max-width: 768px) {
+      .news-section {
+        padding: 60px 20px;
+      }
+      .news-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="https://www.metrostarcare.ae/assets/images/logo/logo.png" alt="Metro Starcare Logo" onerror="this.style.display='none'">
+        <div class="nav-logo-text">
+          <span class="brand">ميترو ستاركير</span>
+          <span class="sub">مجموعة ميترو الطبية</span>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">الرئيسية</a></li>
+        <li><a href="about.html">من نحن</a></li>
+        <li><a href="doctors.html">الأطباء</a></li>
+        <li><a href="services.html">الخدمات</a></li>
+        <li><a href="packages.html">الباقات</a></li>
+        <li><a href="contact.html">اتصل بنا</a></li>
+      </ul>
+      <div class="nav-emergency">
+        <a href="tel:+971528415113" class="emergency-badge">
+          <span class="pulse"></span>
+          <span>تحتاج مساعدة؟ +971 52 841 5113</span>
+        </a>
+        <div class="nav-socials">
+          <a href="https://www.instagram.com/starcare.uae" class="nav-social-icon" target="_blank" aria-label="Instagram">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+            </svg>
+          </a>
+          <a href="https://www.facebook.com/share/15BroPchCk/" class="nav-social-icon" target="_blank" aria-label="Facebook">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="nav-lang-switch">
+        <button class="lang-btn" data-lang="en">EN</button>
+        <span class="lang-divider">|</span>
+        <button class="lang-btn active" data-lang="ar">عربي</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-breadcrumb"><a href="index.html">الرئيسية</a><span>›</span><span>الأخبار والفعاليات</span></div>
+    <h1>الأخبار والفعاليات</h1>
+    <p>تابع أحدث أخبارنا وفعالياتنا وندواتنا وحملات التوعية الصحية.</p>
+  </div>
+
+  <!-- NEWS & EVENTS SECTION -->
+  <section class="news-section">
+    <div class="news-container">
+      <div class="section-header">
+        <div class="section-sub">ابق على اطلاع</div>
+        <h2 class="section-title">آخر الأخبار والفعاليات</h2>
+        <div class="divider"></div>
+        <p style="color: var(--text-mid); max-width: 700px; margin: 0 auto;">اكتشف ما يحدث في مجموعة ميترو الطبية — من المشاريع الجديدة إلى الفعاليات المجتمعية والإنجازات الصحية.</p>
+      </div>
+
+      <div class="news-grid" id="newsGrid"></div>
+    </div>
+  </section>
+
+  <!-- MODAL FOR NEWS DETAILS -->
+  <div id="newsModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modalTitle">تفاصيل الخبر</h3>
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+      <div class="modal-footer">
+        <button class="btn-modal btn-modal-secondary" onclick="closeModal()">إغلاق</button>
+        <a href="contact.html" class="btn-modal btn-modal-primary">اتصل بنا</a>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand"><img src="https://www.metrostarcare.ae/assets/images/logo/logo.png" alt="Metro Starcare Logo">
+        <p>مركز ميترو ستاركير الطبي، تحت مجموعة ميترو الطبية، ملتزم بتقديم خدمات رعاية صحية عالمية المستوى برحابة صدر وتميز واهتمام شخصي لكل مريض.</p>
+        <div class="footer-socials" style="margin-top:20px;"><a href="https://www.instagram.com/starcare.uae" class="footer-social" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+            </svg></a><a href="https://www.facebook.com/share/15BroPchCk/" class="footer-social" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+            </svg></a></div>
+      </div>
+      <div class="footer-col">
+        <h4>الخدمات</h4>
+        <ul>
+          <li><a href="services.html">الطب العام</a></li>
+<li><a href="services.html">أمراض النساء والتوليد</a></li>
+<li><a href="services.html">طب الأطفال</a></li>
+<li><a href="services.html">جراحة العظام</a></li>
+<li><a href="services.html">أنف وأذن وحنجرة</a></li>
+<li><a href="services.html">طب العيون</a></li>
+<li><a href="services.html">الأمراض الجلدية</a></li>
+<li><a href="services.html">التجميل الطبي</a></li>
+<li><a href="services.html">الأشعة (السونار والأشعة السينية)</a></li>
+<li><a href="services.html">المختبر</a></li>
+<li><a href="services.html">الصيدلية</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>روابط سريعة</h4>
+        <ul>
+          <li><a href="about.html">من نحن</a></li>
+          <li><a href="doctors.html">أطبائنا</a></li>
+          <li><a href="packages.html">الباقات</a></li>
+          <li><a href="services.html">الخدمات</a></li>
+          <li><a href="careers.html">الوظائف</a></li>
+          <!--<li><a href="#">فريقنا</a></li>-->
+          <li><a href="news.html">الأخبار والفعاليات</a></li>
+          <li><a href="contact.html">اتصل بنا</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>اتصل بنا</h4>
+        <ul class="footer-contact">
+          <li><span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg></span><span>+971 52 841 5113</span></li>
+              <li><span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+     stroke="currentColor" stroke-width="2">
+  <rect x="3" y="5" width="18" height="14" rx="2"/>
+  <path d="M3 7l9 6 9-6"/>
+</svg></span><span>info@metrostarcare.ae</span></li>
+          <li><span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg></span><span>مالابار بلازا، رolla، الشارقة، الإمارات</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 مجموعة ميترو الطبية. جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/97152841511" class="floating-btn whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  <a href="tel:+97152841511" class="floating-btn call-float"><i class="fas fa-phone"></i></a>
+  <button id="backToTop" class="floating-btn scroll-top"><i class="fas fa-arrow-up"></i></button>
+
+  <script>
+    // News Data (Arabic)
+    const newsData = [{
+        id: 1,
+        title: "الحفل الختامي للذكرى العاشرة لمجموعة مترو الطبية يصبح حدثًا تاريخيًا",
+        date: "10 ديسمبر 2024",
+        excerpt: "إيذانًا بفصل جديد في تاريخ الشركات والرعاية الصحية في الكويت، أصبح الحفل الختامي للاحتفال بالذكرى العاشرة لمجموعة مترو الطبية حدثًا تاريخيًا...",
+        fullContent: "إيذانًا بفصل جديد في تاريخ الشركات والرعاية الصحية في الكويت، أصبح الحفل الختامي للاحتفال بالذكرى العاشرة لمجموعة مترو الطبية حدثًا تاريخيًا. جمع الاحتفال ضيوفًا متميزين ومتخصصين في الرعاية الصحية وقادة المجتمع لإحياء ذكرى عقد من التميز في تقديم الرعاية الصحية. سلط الحدث الضوء على رحلة المجموعة من بداياتها المتواضعة إلى أن تصبح مزودًا رائدًا للرعاية الصحية في المنطقة. استمتع الحضور بعروض ثقافية وحفلات تكريم للموظفين القدامى وخطابات ملهمة من القيادة. ألقى رئيس المجموعة مصطفى حمزة كلمة أمام الحضور، معربًا عن امتنانه للفريق المتفاني والمرضى المخلصين الذين كانوا جزءًا من هذه الرحلة الرائعة. كان الاحتفال بالذكرى العاشرة بمثابة شهادة على التزام المجموعة الثابت بتقديم خدمات رعاية صحية عالية الجودة للمجتمع.",
+        image: "https://www.metromedicalgroup.com/apt/assets/images/events/697db28db65eb_WhatsApp%20Image%202026-01-31%20at%201.12.39%20PM.jpeg"
+      },{
+        id: 2,
+        title: "مجموعة مترو الطبية الدولية تدخل قطاع السياحة في كيرالا بمشروع جديد",
+        date: "15 مارس 2025",
+        excerpt: "مجموعة مترو الطبية الدولية، التي اكتسبت سمعة قوية من الموثوقية والتميز في قطاع الرعاية الصحية في الكويت والإمارات، أطلقت أول مشروع لها في قطاع السياحة في الهند...",
+        fullContent: "مجموعة مترو الطبية الدولية، التي اكتسبت سمعة قوية من الموثوقية والتميز في قطاع الرعاية الصحية في الكويت والإمارات، أطلقت أول مشروع لها في قطاع السياحة في الهند. يمثل هذا التوسع الاستراتيجي علامة فارقة للمجموعة، مما يعرض التزامها بالتنويع والنمو خارج نطاق الرعاية الصحية. يهدف المشروع الجديد إلى جلب نفس معايير التميز والضيافة إلى صناعة السياحة، مما يخلق تجارب فريدة للمسافرين الذين يزورون كيرالا. من المتوقع أن تعزز المبادرة السياحة المحلية وتخلق فرص عمل جديدة في المنطقة. أعرب رئيس المجموعة مصطفى حمزة عن حماسه لهذا الفصل الجديد، مشيرًا إلى أن القيم الأساسية للمجموعة من الثقة والجودة والخدمة سيتم نقلها إلى هذا المسعى الجديد.",
+        image: "https://www.metromedicalgroup.com/apt/assets/images/events/699acd3a31064_WhatsApp%20Image%202026-02-21%20at%2010.22.01%20AM%20(1).jpeg"
+      },
+      {
+        id: 3,
+        title: "مجموعة مترو الطبية تطلق صيدلية المثقري ومركز ميترو آي بوينت في الجليب",
+        date: "28 فبراير 2025",
+        excerpt: "مجموعة مترو الطبية، الاسم الموثوق المرادف للجودة والموثوقية في قطاع الرعاية الصحية في الكويت، افتتحت رسميًا صيدليتها، صيدلية المثقري، في الجليب...",
+        fullContent: "مجموعة مترو الطبية، الاسم الموثوق المرادف للجودة والموثوقية في قطاع الرعاية الصحية في الكويت، افتتحت رسميًا صيدليتها، صيدلية المثقري، في الجليب. حضر حفل الافتتاح ضيوف متميزون ومتخصصون في الرعاية الصحية. بالإضافة إلى ذلك، أطلقت المجموعة مركز ميترو آي بوينت، وهو مركز متخصص لرعاية العيون، مما يزيد من توسيع خدماتها الصحية الشاملة. تقدم صيدلية المثقري مجموعة واسعة من المنتجات الصيدلانية، بما في ذلك الأدوية الموصوفة والأدوية التي لا تستلزم وصفة طبية والمكملات الصحية. يوفر مركز ميترو آي بوينت فحوصات عيون متخصصة وخدمات تشخيصية وعلاج لمختلف حالات العيون. يعكس هذا التوسع التزام المجموعة بجعل الرعاية الصحية عالية الجودة أكثر سهولة للمجتمع.",
+        image: "https://www.metromedicalgroup.com/apt/assets/images/events/69888255c504a_Screenshot%202026-02-08%20152618.png"
+      }
+    ];
+
+    function renderNews() {
+      const grid = document.getElementById("newsGrid");
+      grid.innerHTML = newsData.map(news => `
+        <div class="news-card">
+          <div class="news-image">
+            <img src="${news.image}" alt="${news.title}" onerror="this.src='https://via.placeholder.com/400x240?text=News+Image'">
+          </div>
+          <div class="news-date"><i class="far fa-calendar-alt" style="margin-left: 6px;"></i>${news.date}</div>
+          <div class="news-content">
+            <h3 class="news-title">${news.title}</h3>
+            <p class="news-excerpt">${news.excerpt.substring(0, 120)}${news.excerpt.length > 120 ? '...' : ''}</p>
+            <a href="javascript:void(0)" class="read-more-link" onclick="openModal(${news.id})">اقرأ المزيد <i class="fas fa-arrow-left"></i></a>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function openModal(id) {
+      const news = newsData.find(n => n.id === id);
+      if (!news) return;
+
+      document.getElementById("modalTitle").innerText = news.title;
+      document.getElementById("modalBody").innerHTML = `
+        <img src="${news.image}" alt="${news.title}" class="modal-image" onerror="this.src='https://via.placeholder.com/800x300?text=News+Image'">
+        <div class="modal-date"><i class="far fa-calendar-alt"></i> ${news.date}</div>
+        <h2>${news.title}</h2>
+        <p>${news.fullContent}</p>
+        <p><strong>لمزيد من المعلومات، يرجى الاتصال بنا على 511 841 52 971+ أو زيارة مركزنا.</strong></p>
+      `;
+      document.getElementById("newsModal").classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeModal() {
+      document.getElementById("newsModal").classList.remove("active");
+      document.body.style.overflow = "";
+    }
+
+    // Close modal on outside click
+    document.getElementById("newsModal").addEventListener("click", (e) => {
+      if (e.target === document.getElementById("newsModal")) closeModal();
+    });
+
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    function toggleMenu() {
+      const navLinks = document.getElementById("navLinks");
+      const hamburger = document.getElementById("hamburger");
+      if (navLinks && hamburger) {
+        navLinks.classList.toggle("active");
+        hamburger.classList.toggle("active");
+      }
+    }
+
+    const backToTopBtn = document.getElementById("backToTop");
+    window.onscroll = function() {
+      if (backToTopBtn) {
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+          backToTopBtn.style.display = "block";
+        } else {
+          backToTopBtn.style.display = "none";
+        }
+      }
+    };
+    if (backToTopBtn) {
+      backToTopBtn.onclick = function() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      };
+    }
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        if (btn.dataset.lang === 'en') window.location.href = '../news.html';
+        else if (btn.dataset.lang === 'ar') window.location.href = 'news.html';
+      });
+    });
+
+    if (window.location.pathname.includes('/arabic/')) {
+      const arBtn = document.querySelector('.lang-btn[data-lang="ar"]');
+      const enBtn = document.querySelector('.lang-btn[data-lang="en"]');
+      if (arBtn) arBtn.classList.add('active');
+      if (enBtn) enBtn.classList.remove('active');
+    } else {
+      const enBtn = document.querySelector('.lang-btn[data-lang="en"]');
+      const arBtn = document.querySelector('.lang-btn[data-lang="ar"]');
+      if (enBtn) enBtn.classList.add('active');
+      if (arBtn) arBtn.classList.remove('active');
+    }
+
+    renderNews();
+  </script>
+</body>
+
+</html>

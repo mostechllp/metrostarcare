@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>باقاتنا الصحية | مركز مترو ستار كير الطبي</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../shared.css">
+  <style>
+    /* ---- NAVBAR (identical to about.html) ---- */
+    .hamburger {
+      display: none;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    @media (max-width: 900px) {
+      .nav-links {
+        display: flex;
+        position: absolute;
+        top: 76px;
+        right: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 32px;
+        gap: 16px;
+        border-top: 1px solid var(--border);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-10px);
+        transition: 0.3s ease;
+      }
+
+      .nav-links.active {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      .nav-links li {
+        width: 100%;
+      }
+
+      .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+      }
+
+      .nav-emergency {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex !important;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+      }
+
+      .hamburger span {
+        width: 24px;
+        height: 2px;
+        background: var(--text-dark);
+        display: block;
+      }
+    }
+
+    /* Page Hero - matching about page style */
+    .page-hero {
+      background: linear-gradient(135deg, var(--maroon-deep) 0%, var(--maroon) 55%, #C05078 100%);
+      padding: 100px 32px 80px;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    .page-hero-breadcrumb {
+      margin-bottom: 20px;
+      font-size: 0.85rem;
+      opacity: 0.8;
+    }
+
+    .page-hero-breadcrumb a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .page-hero-breadcrumb span {
+      margin: 0 8px;
+    }
+
+    .page-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .page-hero p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Filter Bar */
+    .filter-bar {
+      background: white;
+      padding: 20px 32px;
+      border-bottom: 1px solid var(--border);
+       position: relative;
+      /*top: 76px;*/
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+    }
+    
+     @media (min-width: 992px) {
+      .filter-bar {
+        position: sticky;
+        top: 76px;
+        z-index: 10;
+      }
+    }
+
+    .filter-inner {
+      max-width: 1450px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    /* Custom Dropdowns (Filter & Sort) */
+    .filter-tabs-wrapper,
+    .sort-dropdown-wrapper {
+      position: relative;
+      flex: 1;
+      /*min-width: 200px;*/
+    }
+
+    .filter-mobile-toggle,
+    .sort-dropdown-toggle {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 10px 24px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--text-dark);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      height: 42px;
+    }
+
+    .filter-mobile-toggle:hover,
+    .sort-dropdown-toggle:hover {
+      border-color: var(--maroon);
+      background: var(--rose-pale);
+    }
+
+    .filter-tabs,
+    .sort-options {
+      display: none;
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      width: 100%;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 12px;
+      box-shadow: var(--shadow-md);
+      z-index: 100;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .filter-tabs.show,
+    .sort-options.show {
+      display: flex;
+    }
+
+    .filter-btn,
+    .sort-opt {
+      width: 100%;
+      text-align: right;
+      border: none;
+      background: transparent;
+      padding: 10px 16px;
+      border-radius: 12px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-dark);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .filter-btn:hover,
+    .sort-opt:hover {
+      background: var(--off-white);
+      color: var(--maroon);
+    }
+
+    .filter-btn.active,
+    .sort-opt.active {
+      background: var(--rose-pale);
+      color: var(--maroon);
+      font-weight: 600;
+    }
+
+    /* Hide mobile toggle on desktop, but keep wrapper structure */
+    @media (min-width: 769px) {
+      .filter-tabs-wrapper {
+        flex: 2;
+      }
+      .filter-mobile-toggle {
+        display: none;
+      }
+      .filter-tabs {
+        display: flex;
+        position: static;
+        flex-direction: row;
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        background: transparent;
+        gap: 12px;
+        width: auto;
+      }
+      .filter-btn {
+        width: auto;
+        background: var(--off-white);
+        border: 1px solid var(--border);
+        border-radius: 40px;
+      }
+      .filter-btn.active {
+        background: var(--maroon);
+        color: white;
+        border-color: var(--maroon);
+      }
+      
+      .sort-dropdown-wrapper {
+        max-width: 240px;
+      }
+    }
+
+    /* Packages Grid */
+    .packages-section {
+      padding: 60px 32px;
+      background: var(--off-white);
+    }
+
+    .packages-grid {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 32px;
+    }
+
+    .package-card {
+      background: white;
+      border-radius: 24px;
+      overflow: visible;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .package-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      border-color: var(--rose);
+    }
+
+    /* Price Badge */
+    .price-badge {
+      position: absolute;
+      top: -25px;
+      left: -25px; /* Mirror for RTL */
+      width: 80px;
+      height: 80px;
+      background: var(--maroon);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      line-height: 1.1;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      border-radius: 50%;
+      clip-path: polygon(50% 0%, 60% 8%, 72% 4%, 78% 16%, 90% 18%, 88% 30%,
+          100% 36%, 92% 48%, 98% 60%, 86% 64%, 82% 76%, 70% 74%,
+          60% 88%, 50% 80%, 40% 88%, 30% 74%, 18% 76%, 14% 64%,
+          2% 60%, 8% 48%, 0% 36%, 12% 30%, 10% 18%, 22% 16%,
+          28% 4%, 40% 8%);
+      z-index: 5;
+    }
+
+    .price-badge .amount {
+      font-size: 1.5rem;
+      font-weight: 800;
+    }
+
+    .price-badge .currency {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .package-header {
+      background: linear-gradient(135deg, var(--maroon), var(--maroon-light));
+      padding: 20px 20px;
+      color: white;
+      border-radius: 24px 24px 0 0;
+    }
+
+    .package-header h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+
+    .package-category {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: 0.8;
+      background: rgba(255, 255, 255, 0.2);
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+
+    .package-body {
+      padding: 20px 20px 16px;
+      flex: 1;
+    }
+
+    .package-desc {
+      color: var(--text-mid);
+      font-size: 0.85rem;
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+
+    .package-features {
+      list-style: none;
+      margin-top: 12px;
+    }
+
+    .package-features li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.75rem;
+      color: var(--text-soft);
+      margin-bottom: 8px;
+    }
+
+    .package-features li i {
+      color: var(--maroon);
+      font-size: 0.7rem;
+      width: 16px;
+    }
+
+    .package-footer {
+      padding: 12px 20px 20px;
+      border-top: 1px solid var(--border);
+    }
+
+    .view-details-btn {
+      width: 100%;
+      padding: 10px;
+      background: transparent;
+      border: 1.5px solid var(--maroon);
+      color: var(--maroon);
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .view-details-btn:hover {
+      background: var(--maroon);
+      color: white;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      backdrop-filter: blur(5px);
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: white;
+      max-width: 600px;
+      width: 90%;
+      border-radius: 28px;
+      overflow: hidden;
+      animation: modalFadeIn 0.3s ease;
+      max-height: 85vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    @keyframes modalFadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .modal-header {
+      background: var(--maroon);
+      color: white;
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .modal-header h3 {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+
+    .modal-close {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    .modal-close:hover {
+      opacity: 0.7;
+    }
+
+    .modal-body {
+      padding: 24px;
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    .modal-body p {
+      color: var(--text-mid);
+      line-height: 1.6;
+      margin-bottom: 14px;
+      font-size: 0.9rem;
+    }
+
+    .modal-body h4 {
+      color: var(--maroon);
+      margin: 18px 0 10px 0;
+      font-size: 1rem;
+    }
+
+    .modal-body ul {
+      list-style: none;
+      padding-right: 0;
+    }
+
+    .modal-body ul li {
+      padding: 6px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.85rem;
+    }
+
+    .modal-body ul li i {
+      color: var(--maroon);
+      width: 18px;
+    }
+
+    .modal-footer {
+      padding: 16px 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      gap: 12px;
+      justify-content: flex-start; /* flex-end in LTR is left in RTL, but we want buttons on left, so flex-start in RTL is right side. Wait. 
+                                      Actually, in RTL, start is right, end is left. We want 'Close' on left? No, usually buttons stay on left. */
+      flex-shrink: 0;
+    }
+
+    .btn-modal {
+      padding: 8px 20px;
+      border-radius: 40px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+
+    .btn-modal-primary {
+      background: var(--maroon);
+      color: white;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-modal-secondary {
+      background: var(--off-white);
+      color: var(--text-dark);
+      border: 1px solid var(--border);
+    }
+
+    /* Empty State */
+    .no-results {
+      text-align: center;
+      padding: 60px;
+      color: var(--text-soft);
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 768px) {
+      .filter-inner {
+        flex-direction: column;
+        align-items: stretch;
+        position: relative;
+        gap: 12px;
+      }
+      .filter-tabs-wrapper,
+      .sort-dropdown-wrapper {
+        width: 100%;
+      }
+      .packages-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR-->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="https://www.metrostarcare.ae/assets/images/logo/logo.png" alt="Starcare Logo"
+          onerror="this.style.display='none'">
+        <div class="nav-logo-text"><span class="brand">مترو ستار كير</span><span class="sub">مجموعة مترو الطبية</span>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="about.html">من نحن</a></li>
+        <li><a href="doctors.html">الأطباء</a></li>
+        <li><a href="services.html">الخدمات</a></li>
+        <li><a href="packages.html" class="active">الباقات</a></li>
+        <li><a href="contact.html">اتصل بنا</a></li>
+      </ul>
+      <div class="nav-emergency">
+        <a href="tel:+971528415113" class="emergency-badge">
+          <span class="pulse"></span>
+          <span>هل تحتاج مساعدة؟ +971 52 841 5113</span>
+        </a>
+        <div class="nav-socials">
+          <a href="https://www.instagram.com/starcare.uae" class="nav-social-icon" target="_blank"
+            aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+            </svg></a>
+          <a href="https://www.facebook.com/share/15BroPchCk/" class="nav-social-icon" target="_blank"
+            aria-label="Facebook"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+            </svg></a>
+        </div>
+      </div>
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+      <div class="nav-lang-switch">
+        <button class="lang-btn" data-lang="en">EN</button>
+        <span class="lang-divider">|</span>
+        <button class="lang-btn active" data-lang="ar">عربي</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-breadcrumb"><a href="index.html">الرئيسية</a><span>›</span><span>الباقات</span></div>
+    <h1>باقاتنا الصحية</h1>
+    <p>فحوصات صحية شاملة وباقات عافية مصممة خصيصاً لاحتياجاتك. اختر الخطة المثالية لمستقبل أكثر صحة.</p>
+  </div>
+
+  <!-- FILTER BAR -->
+  <div class="filter-bar">
+    <div class="filter-inner">
+      <div class="filter-tabs-wrapper">
+        <button class="filter-mobile-toggle" id="filterMobileToggle">
+          <span id="activeCategoryText">جميع الباقات</span>
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="filter-tabs" id="filterTabs">
+          <button class="filter-btn active" data-category="all">جميع الباقات</button>
+          <button class="filter-btn" data-category="general_health">الصحة العامة</button>
+          <button class="filter-btn" data-category="diabetes">السكري</button>
+          <button class="filter-btn" data-category="blood_test">فحص الدم</button>
+          <button class="filter-btn" data-category="women_health">صحة المرأة</button>
+          <button class="filter-btn" data-category="allergy">الحساسية</button>
+          <button class="filter-btn" data-category="general_fitness">اللياقة البدنية</button>
+          <button class="filter-btn" data-category="nutrition">التغذية</button>
+          <button class="filter-btn" data-category="advanced_health">الصحة المتقدمة</button>
+        </div>
+      </div>
+      <div class="sort-dropdown-wrapper">
+        <button class="sort-dropdown-toggle" id="sortDropdownToggle">
+          <span id="activeSortText">ترتيب حسب: المميز</span>
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="sort-options" id="sortOptions">
+          <button class="sort-opt active" data-value="default">ترتيب حسب: المميز</button>
+          <button class="sort-opt" data-value="name-asc">الاسم (أ-ي)</button>
+          <button class="sort-opt" data-value="name-desc">الاسم (ي-أ)</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PACKAGES GRID -->
+  <section class="packages-section">
+    <div class="packages-grid" id="packagesGrid"></div>
+  </section>
+
+  <!-- MODAL -->
+  <div id="packageModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modalTitle">تفاصيل الباقة</h3>
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+      <div class="modal-footer">
+        <button class="btn-modal btn-modal-secondary" onclick="closeModal()">إغلاق</button>
+        <a href="contact.html" class="btn-modal btn-modal-primary">حجز موعد</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand"><img src="https://www.metrostarcare.ae/assets/images/logo/logo.png"
+          alt="Metro Starcare Logo">
+        <p>يلتزم مركز مترو ستار كير الطبي، التابع لمجموعة مترو الطبية، بتقديم خدمات رعاية صحية عالمية المستوى بكل تعاطف وتميز واهتمام شخصي لكل مريض.</p>
+        <div class="footer-socials" style="margin-top:20px;"><a href="https://www.instagram.com/starcare.uae"
+            class="footer-social" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259 014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+            </svg></a><a href="https://www.facebook.com/share/15BroPchCk/" class="footer-social" target="_blank"><svg
+              width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+            </svg></a></div>
+      </div>
+      <div class="footer-col">
+        <h4>الخدمات</h4>
+        <ul>
+          <li><a href="services.html">الطب العام</a></li>
+<li><a href="services.html">أمراض النساء والتوليد</a></li>
+<li><a href="services.html">طب الأطفال</a></li>
+<li><a href="services.html">جراحة العظام</a></li>
+<li><a href="services.html">أنف وأذن وحنجرة</a></li>
+<li><a href="services.html">طب العيون</a></li>
+<li><a href="services.html">الأمراض الجلدية</a></li>
+<li><a href="services.html">التجميل الطبي</a></li>
+<li><a href="services.html">الأشعة (السونار والأشعة السينية)</a></li>
+<li><a href="services.html">المختبر</a></li>
+<li><a href="services.html">الصيدلية</a></li></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>روابط سريعة</h4>
+        <ul>
+          <li><a href="about.html">من نحن</a></li>
+          <li><a href="doctors.html">أطباؤنا</a></li>
+          <li><a href="packages.html">الباقات</a></li>
+          <li><a href="services.html">الخدمات</a></li>
+          <li><a href="careers.html">الوظائف</a></li>
+          <!--<li><a href="#">فريقنا</a></li>-->
+          <li><a href="news.html">الأخبار والفعاليات</a></li>
+          <li><a href="contact.html">اتصل بنا</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>الاتصال</h4>
+        <ul class="footer-contact">
+          <li><span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg></span><span>+971 52 841 5113</span></li>
+              <li><span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+     stroke="currentColor" stroke-width="2">
+  <rect x="3" y="5" width="18" height="14" rx="2"/>
+  <path d="M3 7l9 6 9-6"/>
+</svg></span><span>info@metrostarcare.ae</span></li>
+          <li><span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg></span><span>مالابار بلازا، رولا، الشارقة، الإمارات العربية المتحدة</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 مجموعة مترو الطبية. جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/97165611099" class="floating-btn whatsapp-float" target="_blank"><i
+      class="fab fa-whatsapp"></i></a>
+  <a href="tel:+971528415113" class="floating-btn call-float"><i class="fas fa-phone"></i></a>
+  <button id="backToTop" class="floating-btn scroll-top"><i class="fas fa-arrow-up"></i></button>
+
+  <script>
+    // Package Data with Arabic translations
+    const packagesData = [
+      {
+        id: 21,
+        name: "عروض الذكرى العاشرة للصحةة الصحية",
+        category: "general_health",
+        description: "عروض خاصة بمناسبة الذكرى السنوية العاشرة على الاستشارات والفحوصات المخبرية والتشخيصية والعلاجات بأسعار مخفضة.",
+        features: [
+          "أسعار خاصة على الاستشارات",
+          "خصومات على فحوصات المختبر والفيتامينات",
+          "عروض الأشعة والتشخيص",
+          "علاجات التجميل و PRP",
+          "جلسات العلاج الطبيعي",
+          "خدمات الأنف والأذن والحنجرة والعيون"
+        ],
+        packages: [
+          {
+            category_name: "الاستشارات",
+            services: [
+              { name: "استشارة طبيب عام", price: "49 درهم" },
+              { name: "استشارة أخصائي", price: "99 درهم" }
+            ]
+          },
+          {
+            category_name: "الفحوصات المخبرية",
+            services: [
+              { name: "عد الدم الكامل (CBC)", price: "30 درهم" },
+              { name: "فحص البول الروتيني", price: "30 درهم" },
+              { name: "البروتين التفاعلي C (CRP)", price: "40 درهم" },
+              { name: "فحص الإنفلونزا", price: "49 درهم" },
+              { name: "تروبونين I", price: "49 درهم" },
+              { name: "هرمون الحمل (Beta HCG)", price: "60 درهم" },
+              { name: "فيريتين (مخزون الحديد)", price: "69 درهم" }
+            ]
+          },
+          {
+            category_name: "فحوصات الفيتامينات والهرمونات",
+            services: [
+              { name: "فحص فيتامين د", price: "49 درهم" },
+              { name: "حقنة فيتامين د", price: "49 درهم" },
+              { name: "فيتامين ب12", price: "69 درهم" },
+              { name: "هرمون FSH", price: "69 درهم" },
+              { name: "هرمون LH", price: "69 درهم" },
+              { name: "فحص الغدة الدرقية", price: "49 درهم" },
+              { name: "ملف الغدة الدرقية", price: "99 درهم" }
+            ]
+          },
+          {
+            category_name: "فحوصات القلب",
+            services: [
+              { name: "تخطيط القلب (ECG)", price: "60 درهم" },
+              { name: "تخطيط القلب + تروبونين I", price: "99 درهم" }
+            ]
+          },
+          {
+            category_name: "الأشعة والتشخيص",
+            services: [
+              { name: "أشعة سينية (عرض واحد)", price: "49 درهم" },
+              { name: "أشعة فوق صوتية (سونار)", price: "175 درهم" },
+              { name: "فحص متخصص", price: "350 درهم" }
+            ]
+          },
+          {
+            category_name: "العلاج الطبيعي",
+            services: [
+              { name: "جلسة علاج طبيعي", price: "99 درهم" }
+            ]
+          },
+          {
+            category_name: "العلاجات التجميلية",
+            services: [
+              { name: "تقشير نضارة سريع", price: "149 درهم" },
+              { name: "تقشير مكافحة الشيخوخة", price: "299 درهم" },
+              { name: "التقشير الزجاجي", price: "299 درهم" },
+              { name: "بوتوكس (يبدأ من)", price: "200 درهم" },
+              { name: "تقشير مترو المميز", price: "199 درهم" },
+              { name: "حقن الجلوتاثيون الوريدية", price: "149 درهم" },
+              { name: "جلوتاثيون + فيتامين سي (وريدي)", price: "179 درهم" }
+            ]
+          },
+          {
+            category_name: "علاجات بلازما الصفائح الدموية (PRP)",
+            services: [
+              { name: "بلازما الشعر (PRP)", price: "149 درهم" },
+              { name: "بلازما الوجه (PRP)", price: "199 درهم" },
+              { name: "علاج GFC", price: "199 درهم" }
+            ]
+          },
+          {
+            category_name: "خدمات الأنف والأذن والحنجرة",
+            services: [
+              { name: "إزالة شمع الأذن", price: "30 درهم" },
+              { name: "فحص السمع", price: "99 درهم" },
+              { name: "ثقب الأذن بدون ألم + استشارة أنف وأذن وحنجرة", price: "99 درهم" },
+              { name: "منظار الأنف", price: "125 درهم" }
+            ]
+          },
+          {
+            category_name: "طب العيون",
+            services: [
+              { name: "استشارة طبيب عيون + فحص النظر", price: "90 درهم" },
+              { name: "استشارة طبيب عيون + إزالة جسم غريب + غيار للعين", price: "120 درهم" }
+            ]
+          }
+        ],
+        fullDetails: "احتفل معنا بالذكرى السنوية العاشرة مع هذه العروض الصحية الحصرية! نحن نقدم خصومات كبيرة في جميع أقسامنا الرئيسية بما في ذلك الطب العام والمختبر والأشعة والعلاج الطبيعي والأنف والأذن والحنجرة وطب العيون والعلاجات التجميلية. هدفنا هو جعل الرعاية الصحية عالية الجودة في متناول الجميع وبأسعار معقولة لمجتمعنا."
+      },
+
+      // 1. General Health
+      {
+          id: 1,
+          name: "عرض لقاح العمرة – 49 درهم",
+          category: "general_health",
+          description: "احمِ نفسك قبل رحلة العمرة مع باقة تطعيم ميسورة التكلفة.",
+          features: [
+            "لقاح العمرة",
+            "لقاح آمن ومعتمد",
+            "إعطاء سريع للتطعيم",
+            "استشارة طبيب متاحة",
+            "مناسب لجميع الفئات العمرية",
+            "رعاية صحية نظيفة واحترافية"
+          ],
+          fullDetails: "يضمن لك عرض لقاح العمرة هذا الحماية خلال رحلتك الروحية. يتوفر بسعر مناسب ويشمل لقاحًا آمنًا ومعتمدًا يتم تقديمه من قبل متخصصين في الرعاية الصحية ضمن بيئة نظيفة وآمنة."
+        },
+      {
+        id: 2,
+        name: "فحص العافية المصغر – 39 درهم",
+        category: "general_health",
+        description: "فحص عافية مصغر بأسعار معقولة للفحص الصحي السريع.",
+        features: [
+          "فحص ضغط الدم",
+          "سكر الدم (FBS/RBS)",
+          "الكوليسترول الكلي",
+          "إنزيم الكبد (SGPT)",
+          "حمض اليوريك",
+          "مؤشر كتلة الجسم (BMI)",
+          "استشارة طبيب عام مجانية"
+        ],
+        fullDetails: "تعتبر باقة العافية المصغرة هذه مثالية للأفراد والعائلات الذين يبحثون عن فحص صحي سريع واقتصادي."
+      },
+      {
+        id: 3,
+        name: "فحص العافية الصحي – 59 درهم",
+        category: "general_health",
+        description: "باقة فحص صحي ميسورة التكلفة للفحص الروتيني.",
+        features: [
+          "سكر الدم (FBS/RBS)",
+          "ملف الدهون",
+          "فحص الكبد",
+          "ملف الكلى",
+          "فحص ضغط الدم",
+          "مؤشر كتلة الجسم",
+          "استشارة طبيب عام مجانية"
+        ],
+        fullDetails: "مثالي للمراقبة الصحية المنتظمة والكشف المبكر."
+      },
+      {
+        id: 4,
+        name: "فحص الصحة الأساسي – 99 درهم",
+        category: "general_health",
+        description: "فحص صحي أساسي متقدم لتقييم مفصل.",
+        features: [
+          "سكر الدم",
+          "ملف الدهون",
+          "ملف الكلى",
+          "ملف الكبد",
+          "هرمون الغدة الدرقية (TSH)",
+          "تحليل البول الروتيني",
+          "مؤشر كتلة الجسم",
+          "ضغط الدم"
+        ],
+        fullDetails: "تقييم شامل للوظائف الرئيسية للجسم."
+      },
+
+      // 2. Diabetes
+      {
+        id: 5,
+        name: "باقة جلوكوفيت للسكري – 59 درهم",
+        category: "diabetes",
+        description: "باقة فحص السكري الأساسية.",
+        features: [
+          "FBS/RBS",
+          "السكر التراكمي (HbA1c)"
+        ],
+        fullDetails: "يساعد في مراقبة مستويات سكر الدم الفورية وطويلة المدى."
+      },
+
+      // 3. Blood Test
+      {
+        id: 6,
+        name: "باقة فقر الدم – 199 درهم",
+        category: "blood_test",
+        description: "باقة فحص فقر الدم الشاملة.",
+        features: [
+          "صورة الدم الكاملة (CBC)",
+          "الفيريتين",
+          "الحديد",
+          "القدرة الكلية لربط الحديد (TIBC)",
+          "فيتامين ب12"
+        ],
+        fullDetails: "يساعد في تشخيص أسباب التعب والضعف."
+      },
+
+      // 5. Women Health
+      {
+        id: 7,
+        name: "باقة اللياقة البدنية للسيدات – 199 درهم",
+        category: "women_health",
+        description: "تقييم شامل لصحة المرأة.",
+        features: [
+          "هرمون FSH",
+          "هرمون LH",
+          "هرمون TSH",
+          "فيتامين د",
+          "صورة دم كاملة",
+          "تخطيط القلب (ECG)"
+        ],
+        fullDetails: "يغطي الصحة الهرمونية والغذائية والعامة."
+      },
+
+      // 6. Allergy
+      {
+        id: 8,
+        name: "باقة حساسية الجلد – 199 درهم",
+        category: "allergy",
+        description: "يكشف عن حالات حساسية الجلد في وقت مبكر.",
+        features: [
+          "صورة دم كاملة",
+          "الأجسام المضادة (IgE)",
+          "العد المطلق للحمضات (AEC)"
+        ],
+        fullDetails: "يساعد في تحديد أسباب الحكة والطفح الجلدي."
+      },
+      {
+        id: 9,
+        name: "باقة حساسية الأنف – 599 درهم",
+        category: "allergy",
+        description: "تشخيص شامل لحساسية الأنف.",
+        features: [
+          "استشارة أنف وأذن وحنجرة",
+          "تنظير الأنف",
+          "اختبار الحساسية"
+        ],
+        fullDetails: "يساعد في تشخيص الحساسية التنفسية."
+      },
+
+      // 7. General Fitness
+      {
+        id: 10,
+        name: "باقة الصحة واللياقة – 149 درهم",
+        category: "general_fitness",
+        description: "مصممة لمراقبة نمط الحياة النشط.",
+        features: [
+          "تخطيط القلب (ECG)",
+          "فيتامين د",
+          "صورة دم كاملة",
+          "ملف الدهون",
+          "مؤشر كتلة الجسم"
+        ],
+        fullDetails: "يساعد في تتبع حالة اللياقة البدنية والتغذية."
+      },
+
+      // 8. Nutrition
+      {
+        id: 11,
+        name: "فحص فيتامين د – 49 درهم",
+        category: "nutrition",
+        description: "تحقق من نقص فيتامين د.",
+        features: [
+          "فحص فيتامين د",
+          "نتائج سريعة"
+        ],
+        fullDetails: "يدعم صحة العظام والجهاز المناعي."
+      },
+
+      // 9. Advanced Health
+      {
+        id: 12,
+        name: "فحص الصحة المتقدم – 199 درهم",
+        category: "advanced_health",
+        description: "فحص صحي متقدم كامل.",
+        features: [
+          "صورة دم كاملة",
+          "فحوصات السكري",
+          "الغدة الدرقية",
+          "الكبد والكلى",
+          "تخطيط القلب"
+        ],
+        fullDetails: "تقييم مفصل لكامل الجسم."
+      },
+      {
+        id: 13,
+        name: "فحص الصحة التنفيذي – 199 درهم",
+        category: "advanced_health",
+        description: "باقة صحية تنفيذية متعمقة.",
+        features: [
+          "صورة دم كاملة",
+          "السكري",
+          "فيتامين د",
+          "الكالسيوم"
+        ],
+        fullDetails: "تقييم صحي وقائي متقدم."
+      },
+      {
+    "id": 19,
+    "name": "استشارة صحة المرأة",
+    "category": "صحة_المرأة",
+    "description": "خدمة استشارة شاملة لأمراض النساء تركز على صحة المرأة وتشمل الرعاية الإنجابية، واضطرابات الهرمونات، والفحوصات الوقائية.",
+    "features": [
+        "علاج اضطراب الدورة الشهرية",
+        "رعاية الحمل",
+        "علاج تكيس المبايض (PCOS)",
+        "رعاية سن اليأس",
+        "الاستشارة بشأن وسائل منع الحمل",
+        "تركيب وإزالة اللولب (IUCD)",
+        "فحص السرطان (مثل مسحة عنق الرحم)",
+        "علاج اضطرابات الحيض",
+        "فحوصات العقم والعلاج الأولي"
+    ],
+    "fullDetails": "تقدم هذه الخدمة رعاية متكاملة لصحة المرأة بإشراف طبيبة متخصصة ذات خبرة عالية. تشمل الرعاية جميع مراحل حياة المرأة بدءًا من مشاكل الدورة الشهرية ورعاية الحمل، وصولًا إلى سن اليأس وتشخيص وعلاج العقم. كما توفر فحوصات وقائية مثل الكشف المبكر عن سرطان عنق الرحم وإرشادات طبية حول وسائل منع الحمل، مما يساعد على الحفاظ على صحة المرأة على المدى الطويل."
+    }
+
+    ];
+
+    let currentFilter = "all";
+    let currentSort = "default";
+
+    function getCategoryLabel(cat) {
+      const labels = {
+        "general_health": "الصحة العامة",
+        "diabetes": "السكري",
+        "blood_test": "فحص الدم",
+        "women_health": "صحة المرأة",
+        "allergy": "الحساسية",
+        "general_fitness": "اللياقة البدنية",
+        "nutrition": "التغذية",
+        "advanced_health": "الصحة المتقدمة"
+      };
+      return labels[cat] || cat;
+    }
+
+    function renderPackages() {
+      let filtered = packagesData.filter(pkg => currentFilter === "all" || pkg.category === currentFilter);
+
+      if (currentSort === "name-asc") filtered.sort((a, b) => a.name.localeCompare(b.name, 'ar'));
+      else if (currentSort === "name-desc") filtered.sort((a, b) => b.name.localeCompare(a.name, 'ar'));
+
+      const grid = document.getElementById("packagesGrid");
+      if (filtered.length === 0) {
+        grid.innerHTML = '<div class="no-results">لم يتم العثور على باقات في هذه الفئة. يرجى تجربة تصفية أخرى.</div>';
+        return;
+      }
+
+      grid.innerHTML = filtered.map(pkg => {
+        // Extract price and clean name
+        const priceMatch = pkg.name.match(/(.*)[–-]\s*(\d+)\s*(AED|درهم)/i);
+        const displayName = priceMatch ? priceMatch[1].trim() : pkg.name;
+        const priceAmount = priceMatch ? priceMatch[2] : "";
+
+        return `
+        <div class="package-card">
+          ${priceAmount ? `
+          <div class="price-badge">
+            <div class="amount">${priceAmount}</div>
+            <div class="currency">درهم</div>
+          </div>` : ''}
+          <div class="package-header">
+            <div class="package-category" style="margin-bottom:10px;">${getCategoryLabel(pkg.category)}</div>
+            <h3>${displayName}</h3>
+          </div>
+          <div class="package-body">
+            <p class="package-desc">${pkg.description}</p>
+            <ul class="package-features">
+              ${pkg.features.slice(0, 3).map(f => `<li><i class="fas fa-check-circle"></i> ${f}</li>`).join('')}
+              ${pkg.features.length > 3 ? `<li><i class="fas fa-ellipsis-h"></i> +${pkg.features.length - 3} خدمات أخرى</li>` : ''}
+            </ul>
+          </div>
+          <div class="package-footer">
+            <button class="view-details-btn" onclick="openModal(${pkg.id})">عرض التفاصيل</button>
+          </div>
+        </div>
+      `}).join('');
+    }
+
+    function openModal(id) {
+      const pkg = packagesData.find(p => p.id === id);
+      if (!pkg) return;
+
+      const priceMatch = pkg.name.match(/(.*)[–-]\s*(\d+)\s*(AED|درهم)/i);
+      const displayName = priceMatch ? priceMatch[1].trim() : pkg.name;
+
+      let featuresHtml = '';
+      if (pkg.packages) {
+        featuresHtml = pkg.packages.map(cat => `
+          <h4 style="color: var(--maroon); margin-top: 20px; margin-bottom: 10px; border-bottom: 1px solid var(--border); padding-bottom: 5px; font-size: 1rem;">
+            <i class="fas fa-tags" style="margin-left: 8px;"></i> ${cat.category_name}
+          </h4>
+          <ul style="margin-bottom: 15px;">
+            ${cat.services.map(s => `
+              <li style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.85rem;">
+                <span><i class="fas fa-check-circle" style="color: var(--maroon); margin-left: 8px; font-size: 0.8rem;"></i> ${s.name}</span>
+                <span style="font-weight: 700; color: var(--maroon); white-space: nowrap;">${s.price}</span>
+              </li>
+            `).join('')}
+          </ul>
+        `).join('');
+      } else {
+        featuresHtml = `
+          <h4><i class="fas fa-list-ul" style="margin-left: 8px;"></i> تتضمن الباقة:</h4>
+          <ul>
+            ${pkg.features.map(f => `<li><i class="fas fa-check-circle"></i> ${f}</li>`).join('')}
+          </ul>
+        `;
+      }
+
+      document.getElementById("modalTitle").innerText = displayName;
+      document.getElementById("modalBody").innerHTML = `
+        <p><strong>${pkg.description}</strong></p>
+        ${priceMatch ? `<p class="modal-price" style="color: var(--maroon); font-weight: 700; font-size: 1.2rem; margin-bottom: 15px;">السعر: ${priceMatch[2]} درهم</p>` : ''}
+        ${featuresHtml}
+        <h4 style="margin-top:20px;"><i class="fas fa-info-circle"></i> معلومات تفصيلية:</h4>
+        <p>${pkg.fullDetails}</p>
+        <p><strong>المدة:</strong> تكتمل عادة خلال 2-3 ساعات مع ظهور النتائج في غضون 24-48 ساعة.</p>
+        <p><strong>التحضير:</strong> قد يلزم الصيام لبعض الفحوصات. يرجى استشارة فريقنا للحصول على تعليمات محددة.</p>
+      `;
+      document.getElementById("packageModal").classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeModal() {
+      document.getElementById("packageModal").classList.remove("active");
+      document.body.style.overflow = "";
+    }
+
+    // Dropdown Toggles (Filter & Sort)
+    const filterMobileToggle = document.getElementById("filterMobileToggle");
+    const filterTabs = document.getElementById("filterTabs");
+    const activeCategoryText = document.getElementById("activeCategoryText");
+    const sortDropdownToggle = document.getElementById("sortDropdownToggle");
+    const sortOptions = document.getElementById("sortOptions");
+    const activeSortText = document.getElementById("activeSortText");
+
+    if (filterMobileToggle) {
+      filterMobileToggle.addEventListener("click", (e) => {
+        e.stopPropagation();
+        filterTabs.classList.toggle("show");
+        if (sortOptions) sortOptions.classList.remove("show");
+      });
+    }
+
+    if (sortDropdownToggle) {
+      sortDropdownToggle.addEventListener("click", (e) => {
+        e.stopPropagation();
+        sortOptions.classList.toggle("show");
+        if (filterTabs) filterTabs.classList.remove("show");
+      });
+    }
+
+    // Filter Category Selection
+    document.querySelectorAll(".filter-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        currentFilter = btn.dataset.category;
+        
+        if (activeCategoryText) activeCategoryText.innerText = btn.innerText;
+        if (window.innerWidth <= 768) filterTabs.classList.remove("show");
+        renderPackages();
+      });
+    });
+
+    // Sort Option Selection
+    document.querySelectorAll(".sort-opt").forEach(opt => {
+      opt.addEventListener("click", () => {
+        document.querySelectorAll(".sort-opt").forEach(o => o.classList.remove("active"));
+        opt.classList.add("active");
+        currentSort = opt.dataset.value;
+        
+        if (activeSortText) activeSortText.innerText = opt.innerText;
+        sortOptions.classList.remove("show");
+        renderPackages();
+      });
+    });
+
+    // Close dropdowns when clicking outside
+    document.addEventListener("click", (e) => {
+      if (filterTabs && !filterTabs.contains(e.target) && e.target !== filterMobileToggle) {
+        filterTabs.classList.remove("show");
+      }
+      if (sortOptions && !sortOptions.contains(e.target) && e.target !== sortDropdownToggle) {
+        sortOptions.classList.remove("show");
+      }
+    });
+
+    document.getElementById("packageModal").addEventListener("click", (e) => {
+      if (e.target === document.getElementById("packageModal")) closeModal();
+    });
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    function toggleMenu() {
+      const navLinks = document.getElementById("navLinks");
+      const hamburger = document.getElementById("hamburger");
+      if (navLinks && hamburger) {
+        navLinks.classList.toggle("active");
+        hamburger.classList.toggle("active");
+      }
+    }
+
+    // Back to top
+    const backToTopBtn = document.getElementById("backToTop");
+    window.onscroll = function () {
+      if (backToTopBtn) {
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+          backToTopBtn.style.display = "block";
+        } else {
+          backToTopBtn.style.display = "none";
+        }
+      }
+    };
+    if (backToTopBtn) {
+      backToTopBtn.onclick = function () {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      };
+    }
+
+    // Language switcher
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        if (btn.dataset.lang === 'en') window.location.href = '../packages.html';
+        else if (btn.dataset.lang === 'ar') window.location.href = 'packages.html';
+      });
+    });
+
+    // Initial render
+    renderPackages();
+  </script>
+</body>
+
+</html>

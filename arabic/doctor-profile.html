@@ -4,11 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>الملف الشخصي للطبيب | مترو ستاركير الطبي – مجموعة مترو الطبية</title>
+  <title>الملف الشخصي للطبيب | مركز ميترو ستاركير الطبي</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="../shared.css">
   <style>
     /* ---- NAVBAR ---- */
+
     .hamburger {
       display: none;
     }
@@ -25,7 +26,9 @@
       transform: rotate(-45deg) translate(5px, -5px);
     }
 
+    /* ---- MOBILE NAV ---- */
     @media (max-width: 900px) {
+
       .nav-links {
         display: flex;
         position: absolute;
@@ -38,6 +41,7 @@
         padding: 20px 32px;
         gap: 16px;
         border-top: 1px solid var(--border);
+
         opacity: 0;
         pointer-events: none;
         transform: translateY(-10px);
@@ -60,10 +64,12 @@
         padding: 10px 0;
       }
 
+      /* Hide desktop right section */
       .nav-emergency {
         display: none;
       }
 
+      /* Show hamburger */
       .hamburger {
         display: flex !important;
         flex-direction: column;
@@ -78,6 +84,7 @@
         display: block;
       }
     }
+
 
     /* ---- PROFILE HERO ---- */
     .profile-hero {
@@ -109,22 +116,12 @@
       opacity: 0.05;
     }
 
-    [dir="rtl"] .ph-shape-1 {
-      right: auto;
-      left: -80px;
-    }
-
     .ph-shape-2 {
       width: 250px;
       height: 250px;
       left: 5%;
       bottom: 0;
       opacity: 0.03;
-    }
-
-    [dir="rtl"] .ph-shape-2 {
-      left: auto;
-      right: 5%;
     }
 
     .profile-hero-inner {
@@ -140,6 +137,7 @@
       padding-bottom: 0;
     }
 
+    /* Doctor Photo */
     .profile-photo-wrap {
       position: relative;
       flex-shrink: 0;
@@ -173,6 +171,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      font-family: '', serif;
       font-size: 5rem;
       font-weight: 700;
       color: var(--maroon);
@@ -189,6 +188,7 @@
       text-align: center;
     }
 
+    /* Hero right content */
     .profile-hero-info {
       padding-bottom: 48px;
       color: white;
@@ -201,10 +201,6 @@
       font-size: 0.78rem;
       color: rgba(255, 255, 255, 0.5);
       margin-bottom: 24px;
-    }
-
-    [dir="rtl"] .breadcrumb {
-      flex-direction: row-reverse;
     }
 
     .breadcrumb a {
@@ -251,6 +247,7 @@
     }
 
     .profile-hero-info h1 {
+      font-family: '', serif;
       font-size: clamp(2rem, 4.5vw, 3rem);
       font-weight: 700;
       color: white;
@@ -334,6 +331,9 @@
       align-items: start;
     }
 
+    /* Main content */
+    .profile-main {}
+
     .profile-section {
       background: white;
       border-radius: 20px;
@@ -344,6 +344,7 @@
     }
 
     .profile-section-title {
+      font-family: '', serif;
       font-size: 1.2rem;
       font-weight: 700;
       color: var(--maroon-deep);
@@ -390,15 +391,10 @@
       background: var(--rose-pale);
       border-radius: 14px;
       padding: 22px 24px;
-      border-right: 4px solid var(--maroon);
+      border-left: 4px solid var(--maroon);
       font-size: 0.9rem;
       line-height: 1.8;
       color: var(--text-dark);
-    }
-
-    [dir="rtl"] .expertise-box {
-      border-right: none;
-      border-left: 4px solid var(--maroon);
     }
 
     .expertise-box strong {
@@ -426,6 +422,8 @@
     }
 
     /* Sidebar */
+    .profile-sidebar {}
+
     .sidebar-sticky {
       position: sticky;
       top: 100px;
@@ -441,6 +439,7 @@
     }
 
     .sidebar-appt-card h4 {
+      font-family: '', serif;
       font-size: 1.1rem;
       margin-bottom: 8px;
     }
@@ -560,10 +559,6 @@
       justify-content: center;
     }
 
-    [dir="rtl"] .back-link svg {
-      transform: rotate(180deg);
-    }
-
     .back-link:hover {
       background: var(--rose-pale);
       border-color: var(--maroon);
@@ -624,6 +619,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      font-family: '', serif;
       font-size: 1.4rem;
       font-weight: 700;
       color: var(--maroon);
@@ -643,6 +639,7 @@
       font-weight: 600;
     }
 
+    /* Responsive */
     @media (max-width: 1024px) {
       .profile-body-grid {
         grid-template-columns: 1fr;
@@ -685,6 +682,86 @@
         grid-template-columns: repeat(2, 1fr);
       }
     }
+
+    /* ---- SERVICE PILLS SECTION ---- */
+    .service-pills-section {
+      background: white;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      padding: 28px 32px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .service-pills-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--maroon-deep);
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--rose-pale);
+    }
+
+    .service-pills-title .icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: var(--rose-pale);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--maroon);
+    }
+
+    .pills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .service-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--rose-pale), white);
+      border: 1px solid var(--rose-blush);
+      border-radius: 40px;
+      padding: 8px 18px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--maroon);
+      transition: all 0.3s ease;
+      cursor: default;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+    }
+
+    .service-pill:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(139, 26, 74, 0.15);
+      border-color: var(--maroon-light);
+      background: linear-gradient(135deg, var(--rose-pale), #fff);
+    }
+
+    .service-pill svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+
+    /* Responsive styles for pills on mobile */
+    @media (max-width: 768px) {
+      .service-pills-section {
+        padding: 20px;
+      }
+
+      .service-pill {
+        padding: 6px 14px;
+        font-size: 0.75rem;
+      }
+    }
   </style>
 </head>
 
@@ -694,28 +771,29 @@
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
-        <img src="https://www.metrostarcare.ae/assets/images/logo/logo.png" alt="مترو ستاركير لوجو" onerror="this.style.display='none'">
+        <img src="https://www.metrostarcare.ae/assets/images/logo/logo.png" alt="Metro Starcare Logo" onerror="this.style.display='none'">
         <div class="nav-logo-text">
-          <span class="brand">مترو ستاركير</span>
-          <span class="sub">مجموعة مترو الطبية</span>
+          <span class="brand">ميترو ستاركير</span>
+          <span class="sub">مجموعة ميترو الطبية</span>
         </div>
       </a>
       <ul class="nav-links" id="navLinks">
-       <li><a href="about.html">الرئيسية</a></li>
+        <li><a href="index.html" class="active">الرئيسية</a></li>
         <li><a href="about.html">من نحن</a></li>
-        <li><a href="doctors.html" class="active">الأطباء</a></li>
+        <li><a href="doctors.html">الأطباء</a></li>
         <li><a href="services.html">الخدمات</a></li>
+        <li><a href="packages.html">الباقات</a></li>
         <li><a href="contact.html">اتصل بنا</a></li>
       </ul>
       <div class="nav-emergency">
-        <a href="tel:+97165611099" class="emergency-badge">
+        <a href="tel:+971528415113" class="emergency-badge">
           <span class="pulse"></span>
-          <span>حجز موعد: +971 6 5611099</span>
+          <span>تحتاج مساعدة؟ +971 52 841 5113</span>
         </a>
         <div class="nav-socials">
           <a href="https://www.instagram.com/starcare.uae" class="nav-social-icon" target="_blank" aria-label="Instagram">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z" />
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
             </svg>
           </a>
           <a href="https://www.facebook.com/share/15BroPchCk/" class="nav-social-icon" target="_blank" aria-label="Facebook">
@@ -744,140 +822,399 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
-      <div class="footer-brand">
-        <img src="https://www.metrostarcare.ae/assets/images/logo/logo.png" alt="مترو ستاركير لوجو">
-        <p>مركز مترو ستاركير الطبي، التابع لمجموعة مترو الطبية، ملتزم بتقديم خدمات رعاية صحية عالمية المستوى برحمة وتميز واهتمام شخصي لكل مريض.</p>
-        <div class="footer-socials" style="margin-top:20px;">
-          <a href="https://www.instagram.com/starcare.uae" class="footer-social" target="_blank">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z" />
-            </svg>
-          </a>
-          <a href="https://www.facebook.com/share/15BroPchCk/" class="footer-social" target="_blank">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+      <div class="footer-brand"><img src="https://www.metrostarcare.ae/assets/images/logo/logo.png" alt="Metro Starcare Logo">
+        <p>مركز ميترو ستاركير الطبي، تحت مجموعة ميترو الطبية، ملتزم بتقديم خدمات رعاية صحية عالمية المستوى برحابة صدر وتميز واهتمام شخصي لكل مريض.</p>
+        <div class="footer-socials" style="margin-top:20px;"><a href="https://www.instagram.com/starcare.uae" class="footer-social" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+            </svg></a><a href="https://www.facebook.com/share/15BroPchCk/" class="footer-social" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
               <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-            </svg>
-          </a>
-        </div>
+            </svg></a></div>
       </div>
       <div class="footer-col">
         <h4>الخدمات</h4>
         <ul>
           <li><a href="services.html">الطب العام</a></li>
-          <li><a href="services.html">طب النساء</a></li>
-          <li><a href="services.html">طب الأطفال</a></li>
-          <li><a href="services.html">جراحة العظام</a></li>
-          <li><a href="services.html">أنف وأذن وحنجرة</a></li>
-          <li><a href="services.html">طب العيون</a></li>
-          <li><a href="services.html">الأمراض الجلدية</a></li>
+<li><a href="services.html">أمراض النساء والتوليد</a></li>
+<li><a href="services.html">طب الأطفال</a></li>
+<li><a href="services.html">جراحة العظام</a></li>
+<li><a href="services.html">أنف وأذن وحنجرة</a></li>
+<li><a href="services.html">طب العيون</a></li>
+<li><a href="services.html">الأمراض الجلدية</a></li>
+<li><a href="services.html">التجميل الطبي</a></li>
+<li><a href="services.html">الأشعة (السونار والأشعة السينية)</a></li>
+<li><a href="services.html">المختبر</a></li>
+<li><a href="services.html">الصيدلية</a></li>>
         </ul>
       </div>
       <div class="footer-col">
         <h4>روابط سريعة</h4>
         <ul>
           <li><a href="about.html">من نحن</a></li>
-          <li><a href="doctors.html">أطباؤنا</a></li>
+          <li><a href="doctors.html">أطبائنا</a></li>
+          <li><a href="packages.html">الباقات</a></li>
           <li><a href="services.html">الخدمات</a></li>
-          <li><a href="../contact.html">اتصل بنا</a></li>
+          <li><a href="careers.html">الوظائف</a></li>
+          <!--<li><a href="#">فريقنا</a></li>-->
+          <li><a href="news.html">الأخبار والفعاليات</a></li>
+          <li><a href="contact.html">اتصل بنا</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>اتصل بنا</h4>
         <ul class="footer-contact">
-          <li>
-            <span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <li><span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-              </svg></span>
-            <span>+971 6 5611099</span>
-          </li>
-          <li>
-            <span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              </svg></span><span>+971 52 841 5113</span></li>
+              <li><span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+     stroke="currentColor" stroke-width="2">
+  <rect x="3" y="5" width="18" height="14" rx="2"/>
+  <path d="M3 7l9 6 9-6"/>
+</svg></span><span>info@metrostarcare.ae</span></li>
+          <li><span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                 <circle cx="12" cy="10" r="3" />
-              </svg></span>
-            <span>مولبلا بلازا، رولا، الشارقة، الإمارات</span>
-          </li>
+              </svg></span><span>مالابار بلازا، رolla، الشارقة، الإمارات</span></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 مجموعة مترو الطبية. جميع الحقوق محفوظة.</p>
+      <p>© 2025 مجموعة ميترو الطبية. جميع الحقوق محفوظة.</p>
     </div>
   </footer>
 
-  <a href="https://wa.me/97165611099" class="whatsapp-float" target="_blank" aria-label="واتساب">
+  <a href="https://wa.me/97152841511" class="floating-btn whatsapp-float" target="_blank" aria-label="واتساب">
     <i class="fab fa-whatsapp"></i>
   </a>
+  <a href="tel:+97152841511" class="floating-btn call-float" aria-label="اتصال">
+    <i class="fas fa-phone"></i>
+  </a>
 
-  <button id="backToTop" aria-label="العودة للأعلى">
+  <button id="backToTop" class="floating-btn scroll-top" aria-label="العودة للأعلى">
     <i class="fas fa-arrow-up"></i>
   </button>
 
   <script>
     // =============================================
-    // DOCTORS DATABASE — Arabic translations preserved
+    // DOCTORS DATABASE — all content from live site (Arabic Translation)
     // =============================================
-    const DOCTORS = [{
-        id: 'rasna',
-        name: 'د. راسنا منيفة كوروث',
-        prefix: 'د.',
-        firstName: 'راسنا',
-        title: 'طبيب عام',
-        role: 'المدير الطبي',
-        experience: null,
-        image: '../doctors/rasna_munaifa.png',
-        languages: ['الإنجليزية', 'الهندية', 'المالايالامية'],
-        qualifications: ['بكالوريوس طب وجراحة'],
-        tagline: 'ملتزمة بالرعاية الأولية الشاملة والرحيمة',
-        bio: [
-          'منذ بداية رحلتها الطبية، كانت <strong>الدكتورة راسنا منيفة</strong> مدفوعة بشغف عميق بالشفاء والتزام قوي بالرعاية التي تركز على المريض. بعد حصولها على <strong>بكالوريوس الطب والجراحة</strong>، اختارت التخصص ك<strong>طبيبة عامة</strong>، حيث يمكنها التركيز على بناء علاقات طويلة الأمد وموثوقة مع مرضاها وتكون نقطة الاتصال الأولى لمجموعة واسعة من المشاكل الصحية.',
-          'في <strong>مركز مترو ستاركير الطبي</strong>، تقدم الدكتورة راسنا <strong>رعاية شاملة لمرضى من جميع الأعمار</strong>، تدير الحالات الحادة والمزمنة مثل السكري وارتفاع ضغط الدم والربو والالتهابات والأمراض الموسمية. كما تشارك بنشاط في الرعاية الصحية الوقائية، مؤكدة على أهمية <strong>الفحوصات الدورية الروتينية والتطعيمات والفحوصات واستشارات نمط الحياة</strong> للحفاظ على صحة المرضى.',
-          'تمتد خبرتها السريرية لتشمل <strong>صحة المرأة وتنظيم الأسرة ورعاية الطفل</strong>، حيث تقدم إرشادات رحيمة وتثقيفاً صحياً واضحاً. كما تهتم بالاحتياجات الفريدة للمرضى المسنين، وتقدم رعاية شخصية لكبار السن لمساعدتهم على العيش بكرامة وراحة وثقة. بالإضافة إلى ذلك، تجيد الدكتورة راسنا إجراء <strong>الإجراءات الجراحية البسيطة</strong> مثل العناية بالجروح والغرز وإزالة الآفات.',
-          'ما يميز الدكتورة راسنا هو <strong>نهجها المتعاطف ومهارات التواصل الممتازة</strong>. تتقن <strong>الإنجليزية والهندية والمالايالامية</strong>، مما يساعدها على تجاوز الحواجز الثقافية واللغوية، وضمان أن يشعر مرضاها دائماً بالاستماع والفهم والدعم في رحلتهم الصحية.',
-          'بفضل <strong>فلسفتها التي تضع المريض أولاً وخبرتها السريرية وطبيعتها الرحيمة</strong>، تبرز <strong>الدكتورة راسنا منيفة</strong> كأكثر من مجرد طبيبة — إنها <strong>شريك موثوق في الصحة</strong>، توجه مرضاها نحو حياة أفضل وعافية طويلة الأمد.'
-        ],
-        expertise: null
-      },
-      {
-        id: 'farah',
-        name: 'د. فرح تل زنان',
-        prefix: 'د.',
-        firstName: 'فرح',
-        title: 'طبيب عام',
-        role: null,
-        experience: 'أكثر من 11 عاماً',
-        image: '../doctors/farah_thul_zanan.png',
-        languages: ['الإنجليزية', 'الهندية', 'الأردية', 'البنغالية'],
-        qualifications: ['بكالوريوس طب وجراحة'],
-        tagline: 'معالجة موثوقة في الرعاية الأولية',
-        bio: [
-          'بالنسبة <strong>للدكتورة فرح تل زنان</strong>، كونها طبيبة هو أكثر من مجرد مهنة — إنها دعوة للخدمة والشفاء وتمكين الأفراد من السيطرة على صحتهم. مع <strong>أكثر من 11 عاماً من الخبرة</strong> في <strong>الرعاية الأولية</strong>، كرست نفسها لتقديم <strong>رعاية طبية شاملة ورحيمة</strong> لمرضى من جميع الأعمار.',
-          'بدأت رحلة الدكتورة فرح الطبية <strong>بشهادة البكالوريوس في الطب والجراحة</strong>، مما زودها بالمعرفة والمهارات <strong>لتشخيص وإدارة والوقاية من مجموعة واسعة من الحالات الصحية</strong>. سواء كانت تعالج أمراضاً شائعة أو مخاوف طبية معقدة، فهي تؤمن <strong>بمنهج يركز على المريض</strong>، مما يضمن حصول كل فرد على <strong>رعاية شخصية مصممة حسب احتياجاته الفريدة</strong>.',
-          'تمتد خبرتها لتغطية مجموعة واسعة من <strong>الحالات المزمنة والحادة</strong>، من <strong>السكري وارتفاع ضغط الدم وأمراض القلب</strong> إلى <strong>الحالات التنفسية مثل الربو</strong>. كما أنها بارعة في إدارة <strong>الاختلالات الهرمونية وأمراض الكبد والكلى وفرط شحميات الدم</strong>، مما يضمن حصول مرضاها على تدخلات في الوقت المناسب تمنع المضاعفات.'
-        ],
-        expertise: 'كطبيبة عامة، <strong>الكشف المبكر</strong> هو أحد نقاط قوتها الرئيسية. تؤكد على <strong>الطب الوقائي</strong>، وتقدم <strong>الفحوصات الدورية والتطعيمات ورعاية ما قبل الولادة للنساء الحوامل</strong> لحماية الأم والطفل. في حالات الطوارئ، تجعلها مهارتها في إجراء <strong>الجراحات البسيطة للإصابات العرضية</strong> نقطة اتصال موثوقة للاحتياجات الطبية العاجلة. إلى جانب علاج الأمراض، تؤمن <strong>الدكتورة فرح بتثقيف مرضها</strong> حول حالاتهم، وتوجيههم نحو خيارات نمط حياة أكثر صحة.'
-      },
-      {
-        id: 'ali',
-        name: 'د. علي أكبر',
-        prefix: 'د.',
-        firstName: 'علي',
-        title: 'أخصائي أنف وأذن وحنجرة',
-        role: null,
-        experience: 'أكثر من 24 عاماً',
-        image: '../doctors/ali_akbar_abdul_salam.png',
-        languages: ['الإنجليزية', 'الهندية', 'المالايالامية', 'العربية', 'الأردية', 'التاميلية'],
-        qualifications: ['بكالوريوس طب وجراحة', 'أخصائي أنف وأذن وحنجرة'],
-        tagline: 'رحلة من التفاني في رعاية الأذن والأنف والحنجرة',
-        bio: [
-          'منذ سن مبكرة، كان <strong>الدكتور علي أكبر عبد السلام</strong> مفتوناً بتعقيدات جسم الإنسان، وخاصة الروابط الدقيقة بين الأذن والأنف والحنجرة. قاده هذا الشغف لممارسة مهنة الطب، حيث تخصص في أمراض الأنف والأذن والحنجرة، مكرساً أكثر من <strong>24 عاماً</strong> لمساعدة المرضى على التنفس بسهولة والسماع بشكل أفضل والعيش بحياة أكثر صحة.',
-          'طوال مسيرته المهنية، كان الدكتور علي أكبر في طليعة علاج <strong>التهاب الجيوب الأنفية واضطرابات السمع ومشاكل الصوت</strong>، حيث يقوم بتحديث معرفته باستمرار لدمج أحدث التطورات في العلوم الطبية. تمتد خبرته لتشمل <strong>إجراءات الجيوب الأنفية بالمنظار وإدارة توقف التنفس أثناء النوم ورعاية الأطفال في الأنف والأذن والحنجرة</strong>، مما يضمن حصول المرضى من جميع الأعمار على أفضل علاج ممكن.',
-          'إلى جانب مهاراته السريرية، يُعرف الدكتور علي أكبر بنهجه المتعاطف. يؤمن بأن <strong>كل مريض يستحق رعاية شخصية</strong>، يستمع بعناية إلى مخاوفهم ويصمم العلاجات لتناسب احتياجاتهم الفردية. سواء كان طفلاً يعاني من التهابات الأذن المتكررة أو بالغاً يبحث عن راحة من مشاكل الجيوب الأنفية المزمنة، فإن الدكتور علي أكبر ملتزم بإيجاد حلول تحسن نوعية حياتهم.',
-          'مع ثروة من الخبرة وقلب للشفاء، يواصل <strong>الدكتور علي أكبر عبد السلام</strong> إحداث الفرق، مريضاً تلو الآخر.'
-        ],
-        expertise: null
-      }];
+const DOCTORS = [
+{
+  id: 'rasna',
+  name: 'د. رسنا منيفة كوروث',
+  prefix: 'د.',
+  firstName: 'رسنا',
+  title: 'طبيبة عامة',
+  role: 'المديرة الطبية',
+  experience: null,
+  image: '../doctors/rasna_munaifa.png',
+  languages: ['الإنجليزية', 'الهندية', 'المالايالامية'],
+  qualifications: ['بكالوريوس الطب والجراحة'],
+  tagline: 'ملتزمة بتقديم رعاية أولية شاملة وإنسانية',
+  services: [
+    'الطب العام',
+    'صحة المرأة',
+    'إدارة الأمراض المزمنة',
+    'الرعاية الوقائية',
+    'رعاية كبار السن',
+    'الإجراءات الجراحية البسيطة',
+    'التطعيمات',
+    'الفحوصات الصحية'
+  ],
+  bio: [
+    'منذ بداية مسيرتها الطبية، كانت <strong>د. رسنا منيفة كوروث</strong> مدفوعة بشغف عميق للشفاء والتزام قوي بتقديم رعاية تركز على المريض. بعد إكمال <strong>بكالوريوس الطب والجراحة</strong>، اختارت التخصص كـ <strong>طبيبة عامة</strong>، حيث تمكنت من بناء علاقات طويلة الأمد قائمة على الثقة مع مرضاها، وتكون نقطة الاتصال الأولى لمجموعة واسعة من المشكلات الصحية.',
+    'في <strong>مركز ميترو ستاركير الطبي</strong>، تقدم د. رسنا <strong>رعاية شاملة للمرضى من جميع الأعمار</strong>، حيث تدير الحالات الحادة والمزمنة مثل السكري، ارتفاع ضغط الدم، الربو، العدوى، والأمراض الموسمية. كما تشارك بفعالية في الرعاية الوقائية، مؤكدة على أهمية <strong>الفحوصات الدورية، التطعيمات، الفحوصات الوقائية، والإرشاد الصحي</strong> للحفاظ على صحة المرضى.',
+    'تمتد خبرتها السريرية إلى <strong>صحة المرأة، وتنظيم الأسرة، وصحة الأطفال</strong>، حيث تقدم إرشادات طبية واضحة ورعاية إنسانية. كما تولي اهتمامًا خاصًا باحتياجات كبار السن، مقدمة رعاية مخصصة تساعدهم على العيش بكرامة وراحة وثقة. بالإضافة إلى ذلك، تتمتع د. رسنا بمهارة في إجراء <strong>الإجراءات الجراحية البسيطة</strong> مثل العناية بالجروح، والخياطة، وإزالة الآفات الجلدية، لضمان تلبية الاحتياجات الطبية بسرعة وكفاءة.',
+    'ما يميز د. رسنا هو <strong>نهجها الإنساني ومهاراتها الممتازة في التواصل</strong>. وبفضل إتقانها <strong>الإنجليزية والهندية والمالايالامية</strong>، فهي تتجاوز الحواجز اللغوية والثقافية، مما يجعل المرضى يشعرون دائمًا بالراحة والثقة والدعم.',
+    'بفضل <strong>فلسفتها التي تضع المريض أولاً، وخبرتها السريرية، وطبيعتها الرحيمة</strong>، تبرز <strong>د. رسنا منيفة كوروث</strong> ليس فقط كطبيبة، بل كشريك موثوق في الصحة، توجه مرضاها نحو حياة أفضل وصحة مستدامة.'
+  ],
+  expertise: null
+},
 
+// {
+//   id: 'farah',
+//   name: 'د. فرح طول زنن',
+//   prefix: 'د.',
+//   firstName: 'فرح',
+//   title: 'طبيبة عامة',
+//   role: null,
+//   experience: '+11 سنة',
+//   image: '../doctors/farah_thul_zanan.png',
+//   languages: ['الإنجليزية','الهندية','الأردية','البنغالية'],
+//   qualifications: ['بكالوريوس طب وجراحة'],
+//   tagline: 'معالجة موثوقة في الرعاية الأولية',
+//   services: ['الطب العام','إدارة السكري','ارتفاع ضغط الدم','الرعاية الوقائية','صحة المرأة'],
+//   bio: [
+//     'تعتبر الطب رسالة إنسانية لخدمة المرضى.',
+//     'لديها خبرة واسعة في تشخيص وعلاج الحالات المختلفة.',
+//     'تؤمن بالرعاية الشخصية لكل مريض.'
+//   ],
+//   expertise: 'تركز على الكشف المبكر والوقاية والتثقيف الصحي.'
+// },
+
+{
+  id: 'fatema',
+  name: 'د. فاطمة تج جهورة',
+  prefix: 'د.',
+  firstName: 'فاطمة',
+  title: 'طبيبة أسنان عامة',
+  role: null,
+  experience: '+11 سنة',
+  image: '../doctors/fatema_tuj_jahura.png',
+  languages: ['الإنجليزية','الهندية','الأردية','البنغالية'],
+  qualifications: ['بكالوريوس طب الأسنان'],
+  tagline: 'تصميم الابتسامة بثقة ودقة',
+  services: ['طب الأسنان العام','طب الأسنان التجميلي','علاج تجميلي','علاج محافظ'],
+  bio: [
+    'شغفها بابتسامة المرضى قادها لمجال طب الأسنان.',
+    'تستخدم أحدث التقنيات لعلاج المرضى بدون ألم.',
+    'تهتم بالأطفال وتعليمهم العناية بالأسنان.'
+  ],
+  expertise: 'متخصصة في تقويم الأسنان والعلاج التجميلي.'
+},
+
+{
+  id: 'ali',
+  name: 'د. علي أكبر',
+  prefix: 'د.',
+  firstName: 'علي',
+  title: 'أخصائي أنف وأذن وحنجرة',
+  role: null,
+  experience: '+24 سنة',
+  image: '../doctors/ali_akbar_abdul_salam.png',
+  languages: ['الإنجليزية','الهندية','المالايالامية','العربية','الأردية','التاميلية'],
+  qualifications: ['بكالوريوس طب وجراحة','أخصائي أنف وأذن وحنجرة'],
+  tagline: 'خبرة طويلة في رعاية الأنف والأذن والحنجرة',
+  services: ['علاج الجيوب الأنفية','مشاكل السمع','مشاكل الصوت','طب الأطفال','انقطاع التنفس'],
+  bio: [
+    'يمتلك خبرة طويلة في علاج أمراض الأنف والأذن والحنجرة.',
+    'يستخدم أحدث التقنيات الطبية.',
+    'يقدم رعاية شخصية لكل مريض.'
+  ],
+  expertise: null
+},
+
+{
+  id: 'nayana',
+  name: 'د. نايانا جوز',
+  prefix: 'د.',
+  firstName: 'نايانا',
+  title: 'طبيبة عامة',
+  role: null,
+  experience: '+5 سنوات',
+  image: '../doctors/nayana_jose.png',
+  languages: ['الإنجليزية','الهندية','المالايالامية','التاميلية','الغوجاراتية','البنجابية'],
+  qualifications: ['بكالوريوس طب وجراحة','دبلوم طب الأطفال'],
+  tagline: 'رعاية صحية إنسانية شاملة',
+  services: ['الطب العام','طب الأطفال','رعاية حديثي الولادة','صحة المرأة','تنظيم الأسرة'],
+  bio: [
+    'تؤمن بالعلاج الشامل والوقاية.',
+    'تهتم بصحة الأطفال والنساء.',
+    'تقدم استشارات صحية متكاملة.'
+  ],
+  expertise: null
+},
+
+{
+  id: 'pradeep',
+  name: 'د. براديب كومار شيتي',
+  prefix: 'د.',
+  firstName: 'براديب',
+  title: 'طبيب عيون',
+  role: null,
+  experience: '+29 سنة',
+  image: '../doctors/prateep_kumar_shetty.png',
+  languages: ['الإنجليزية','الهندية','العربية','المالايالامية','الكنادية','التولو'],
+  qualifications: ['بكالوريوس طب وجراحة','ماجستير عيون'],
+  tagline: 'خبير في رعاية العيون',
+  services: ['جراحة المياه البيضاء','الجلوكوما','اعتلال الشبكية','طب عيون الأطفال'],
+  bio: [
+    'خبرة طويلة في علاج أمراض العيون.',
+    'يقدم أحدث الحلول الجراحية.',
+    'يهتم بالوقاية والكشف المبكر.'
+  ],
+  expertise: 'متخصص في جراحات العيون المتقدمة.'
+},
+
+{
+  id: 'rajani',
+  name: 'د. رجاني تاشابيلي',
+  prefix: 'د.',
+  firstName: 'رجاني',
+  title: 'طبيبة عامة',
+  role: null,
+  experience: '+19 سنة',
+  image: '../doctors/rajani_thachappilly.png',
+  languages: ['الإنجليزية','المالايالامية','الهندية','التاميلية'],
+  qualifications: ['بكالوريوس طب وجراحة','دبلوم نساء وولادة'],
+  tagline: 'رحلة من العطاء والرعاية',
+  services: ['الطب العام','صحة المرأة','رعاية الحمل'],
+  bio: [
+    'متخصصة في صحة المرأة.',
+    'توفر رعاية شاملة ومريحة.',
+    'تساعد النساء في جميع مراحل الحياة.'
+  ],
+  expertise: null
+},
+
+{
+  id: 'sandhya',
+  name: 'د. سنديا سوباششاندران',
+  prefix: 'د.',
+  firstName: 'سنديا',
+  title: 'أخصائية نساء وولادة',
+  role: null,
+  experience: '+22 سنة',
+  image: '../doctors/sandya_subashchandran.png',
+  languages: ['الإنجليزية','المالايالامية','الهندية'],
+  qualifications: ['بكالوريوس طب وجراحة','ماجستير نساء وولادة','MRCOG'],
+  tagline: 'رعاية متقدمة لصحة المرأة',
+  services: ['الحمل عالي الخطورة','علاج العقم','الجراحة النسائية','سن اليأس'],
+  bio: [
+    'خبيرة في صحة المرأة والإنجاب.',
+    'تقدم علاجات متقدمة ومخصصة.',
+    'توفر رعاية إنسانية متكاملة.'
+  ],
+  expertise: null
+},
+
+{
+  id: 'nidhin',
+  name: 'د. نيدين ك بادمانابهان',
+  prefix: 'د.',
+  firstName: 'نيدين',
+  title: 'أخصائي جراحة العظام',
+  role: null,
+  experience: '+13 سنة',
+  image: '../doctors/nidhin_k_padmanabhan.png',
+  languages: ['الإنجليزية','المالايالامية','الهندية','الكنادية','التاميلية'],
+  qualifications: ['بكالوريوس طب وجراحة','ماجستير جراحة العظام'],
+  tagline: 'استعادة الحركة خطوة بخطوة',
+  services: ['تنظير المفاصل','الكسور','إصابات الرياضة','العمود الفقري','استبدال المفاصل'],
+  bio: [
+    'يساعد المرضى على استعادة الحركة.',
+    'يستخدم أحدث التقنيات.',
+    'يقدم رعاية شخصية دقيقة.'
+  ],
+  expertise: null
+},
+
+{
+  id: 'sreevidya',
+  name: 'د. سريفيديا أرون',
+  prefix: 'د.',
+  firstName: 'سريفيديا',
+  title: 'طبيبة أطفال',
+  role: 'أخصائية طب الأطفال',
+  experience: '7+ سنوات',
+  image: '../doctors/sreevidhya.png',
+  languages: ['الإنجليزية', 'الهندية', 'المالايالامية', 'التاميلية'],
+  qualifications: ['بكالوريوس الطب والجراحة', 'دكتوراه في طب الأطفال'],
+  tagline: 'ملتزمة بنمو صحي، مناعة قوية، ومستقبل مشرق لطفلك.',
+  services: [
+    'إدارة متقدمة للحساسية',
+    'رعاية متخصصة للربو',
+    'اضطرابات الجهاز التنفسي لدى الأطفال',
+    'طب الأطفال العام',
+    'رعاية حديثي الولادة والرضع',
+    'دعم وحدات العناية المركزة لحديثي الولادة والأطفال',
+    'التطعيمات واللقاحات',
+    'استشارات النمو والتغذية',
+    'إدارة الأمراض المزمنة'
+  ],
+  bio: [
+    '<strong>د. سريفيديا أرون</strong> هي <strong>طبيبة أطفال</strong> متميزة وذات خبرة تزيد عن <strong>7 سنوات</strong> في تقديم رعاية طبية قائمة على الأدلة وبروح إنسانية. تكرّس مسيرتها المهنية لصحة ورفاهية <strong>حديثي الولادة والرضع والأطفال والمراهقين</strong>، مع التركيز على التشخيص المبكر والرعاية الوقائية.',
+    'من خلال خبرتها الواسعة في <strong>المستشفيات التخصصية ومتعددة التخصصات</strong>، طورت اهتمامًا خاصًا في <strong>إدارة الحساسية والربو</strong>. كما تتمتع بخبرة في علاج اضطرابات الجهاز التنفسي لدى الأطفال وتقديم خطط طويلة الأمد للسيطرة على الربو، وهو ما كان محور أطروحتها حول <strong>نقص المغنيسيوم لدى الأطفال المصابين بالربو القصبي</strong>.',
+    'إلى جانب رعاية الجهاز التنفسي، تقدم خدمات شاملة في طب الأطفال تشمل <strong>رعاية حديثي الولادة، تقييم النمو والتغذية، وإدارة الأمراض المزمنة</strong>. وهي شغوفة بشكل خاص بـ <strong>طب الأطفال الوقائي</strong>، حيث تؤكد على أهمية التطعيمات في الوقت المناسب ومتابعة تطور الطفل.',
+    'تُعرف د. سريفيديا بنهجها <strong>المتمركز حول الأسرة</strong>، حيث تحرص على توجيه الأهل حول احتياجات أطفالهم الغذائية ومراحل نموهم. وبفضل إتقانها للغات <strong>الإنجليزية، المالايالامية، التاميلية، والهندية</strong>، تضمن تواصلًا واضحًا وفعالًا مع العائلات من مختلف الخلفيات.',
+    'مع اهتمامها المستمر بـ <strong>الأبحاث السريرية في طب الأطفال</strong> وسجلها في نشر الحالات الطبية، تواصل د. سريفيديا أرون الجمع بين التميز الأكاديمي والممارسة الطبية الرحيمة، مساهمةً في بناء مستقبل أكثر صحة وإشراقًا للأجيال القادمة.'
+  ],
+  expertise: 'تركيز خاص على إدارة الحساسية والربو'
+},
+
+{
+  id: 'vipul',
+  name: 'د. فيبول بول توماس',
+  prefix: 'د.',
+  firstName: 'فيبول',
+  title: 'أخصائي جلدية',
+  role: null,
+  experience: '+14 سنة',
+  image: '../doctors/vipul_paul_thomas.png',
+  languages: ['الإنجليزية','الهندية','المالايالامية','التاميلية'],
+  qualifications: ['بكالوريوس طب وجراحة','دكتوراه جلدية'],
+  tagline: 'استعادة الثقة بالبشرة',
+  services: ['حب الشباب','الصدفية','تساقط الشعر','علاج تجميلي'],
+  bio: [
+    'يعالج مختلف أمراض الجلد.',
+    'يوفر حلول تجميلية حديثة.',
+    'يركز على راحة المريض.'
+  ],
+  expertise: null
+},
+
+{
+  id: 'hanitta',
+  name: 'الأستاذة هانيتا تيموثي',
+  prefix: 'أ.',
+  firstName: 'هانيتا',
+  title: 'العلاج الطبيعي',
+  role: null,
+  experience: null,
+  image: '../doctors/hanitta_thimotti.png',
+  languages: ['الإنجليزية','الهندية','المالايالامية','التاميلية'],
+  qualifications: ['بكالوريوس علاج طبيعي','ماجستير أعصاب'],
+  tagline: 'إعادة التأهيل برعاية إنسانية',
+  services: ['إعادة التأهيل','العلاج العصبي','إصابات الرياضة'],
+  bio: [
+    'تساعد المرضى على استعادة الحركة.',
+    'توفر خطط علاج مخصصة.',
+    'تعتمد على أساليب حديثة.'
+  ],
+  expertise: null
+},
+
+{
+  id: 'salih',
+  name: 'د. محمد صالح',
+  prefix: 'د.',
+  firstName: 'محمد',
+  title: 'طبيب عام',
+  role: null,
+  experience: '+12 سنة',
+  image: '../doctors/muhd_salih.png',
+  languages: ['الإنجليزية','الهندية','المالايالامية','التاميلية'],
+  qualifications: ['بكالوريوس طب وجراحة'],
+  tagline: 'رعاية صحية يومية موثوقة',
+  services: ['الطب العام','الأمراض المزمنة','الوقاية','استشارات صحية'],
+  bio: [
+    'يركز على بناء علاقة ثقة مع المرضى.',
+    'يعالج الأمراض الحادة والمزمنة.',
+    'يشجع على الوقاية ونمط الحياة الصحي.'
+  ],
+  expertise: null
+},
+
+{
+  id: 'shemy',
+  name: 'د. شيمي سيبو',
+  prefix: 'د.',
+  firstName: 'شيمي',
+  title: 'علم الأمراض',
+  role: null,
+  experience: 'خبيرة',
+  image: '../doctors/shemy_seebu.jpeg',
+  languages: ['الإنجليزية','المالايالامية','الهندية','التاميلية'],
+  qualifications: ['...'],
+  tagline: 'الدقة في كل تشخيص',
+  bio: [
+    'متخصصة في التحاليل المخبرية.',
+    'تقدم نتائج دقيقة وموثوقة.',
+    'تلعب دوراً مهماً في التشخيص.'
+  ],
+  expertise: null
+}
+
+];
     // Get doctor from URL param
     function getDoctorFromURL() {
       const params = new URLSearchParams(window.location.search);
@@ -890,12 +1227,41 @@
     }
 
     function getInitials(name) {
-      return name.replace(/^(د\.|أ\.)\s/i, '').split(' ').slice(0, 2).map(n => n[0]).join('');
+      return name.replace(/^(د\.|أ\.|السيدة\.)\s/i, '').split(' ').slice(0, 2).map(n => n[0]).join('');
+    }
+
+    function renderServicePills(doc) {
+      const services = doc.services || ['استشارة عامة', 'فحوصات صحية', 'رعاية وقائية', 'علاج شخصي'];
+
+      return `
+    <div class="service-pills-section fade-up">
+      <div class="service-pills-title">
+        <div class="icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 12V8H4v4M12 4v16M8 12h8M3 12h18M3 12v4a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-4"/>
+          </svg>
+        </div>
+        الخدمات والتخصصات
+      </div>
+      <div class="pills-container">
+        ${services.map(service => `
+          <div class="service-pill">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            ${service}
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `;
     }
 
     function renderProfile() {
       const doc = getDoctorFromURL();
-      document.title = `${doc.name} | مترو ستاركير الطبي`;
+      document.title = `${doc.name} | مركز ميترو ستاركير الطبي`;
+
+      const otherDocs = DOCTORS.filter(d => d.id !== doc.id).slice(0, 4);
 
       // ---- HERO ----
       const heroHTML = `
@@ -913,7 +1279,7 @@
       </div>
       <div class="profile-hero-info fade-up" style="transition-delay:0.15s">
         <div class="breadcrumb">
-          <a href="../index.html">الرئيسية</a>
+          <a href="index.html">الرئيسية</a>
           <span>›</span>
           <a href="doctors.html">الأطباء</a>
           <span>›</span>
@@ -930,13 +1296,13 @@
           ${doc.qualifications.map(q => `<div class="meta-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>${q}</div>`).join('')}
         </div>
         <div class="profile-hero-btns">
-          <a href="../contact.html" class="btn btn-white">
+          <a href="contact.html" class="btn btn-white">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            احجز موعداً
+            احجز موعدًا
           </a>
-          <a href="tel:+97165611099" class="btn-ghost-white">
+          <a href="tel:+971528415113" class="btn-ghost-white">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            اتصل +971 6 5611099
+            اتصل +971 52 841 5113   
           </a>
         </div>
       </div>
@@ -944,8 +1310,6 @@
   </section>`;
 
       // ---- BODY ----
-      const otherDocs = DOCTORS.filter(d => d.id !== doc.id).slice(0, 4);
-
       const bodyHTML = `
   <section class="profile-body">
     <div class="profile-body-grid">
@@ -955,6 +1319,8 @@
         <div class="profile-section fade-up" style="padding:28px 36px;background:linear-gradient(135deg,var(--maroon-deep),var(--maroon));color:white;border:none;">
           <div style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;line-height:1.5;opacity:0.95;">"${doc.tagline}"</div>
         </div>` : ''}
+
+         ${renderServicePills(doc)}
 
         <div class="profile-section fade-up">
           <div class="profile-section-title">
@@ -984,7 +1350,7 @@
             <div class="icon">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3l14 9-14 9V3z"/></svg>
             </div>
-            اللغات المتحدث بها
+            اللغات المستخدمة
           </div>
           <div class="languages-wrap">
             ${doc.languages.map(l => `<span class="lang-tag">${l}</span>`).join('')}
@@ -996,16 +1362,16 @@
       <div class="profile-sidebar">
         <div class="sidebar-sticky">
           <div class="sidebar-appt-card">
-            <h4>احجز موعداً</h4>
+            <h4>احجز موعدًا</h4>
             <p>احجز استشارة مع ${doc.prefix === 'أ.' ? doc.name : 'الدكتور/ة ' + doc.firstName} اليوم — نحن هنا للمساعدة.</p>
-            <a href="tel:+97165611099" class="appt-phone">
+            <a href="tel:+971 52 841 5113" class="appt-phone">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              +971 6 5611099
+              +971 52 841 5113
             </a>
             <div class="appt-divider">أو</div>
-            <a href="../contact.html" class="appt-visit">
+            <a href="contact.html" class="appt-visit">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              طلب موعد
+              إرسال طلب موعد
             </a>
           </div>
 
@@ -1019,11 +1385,11 @@
             ${doc.experience ? `<div class="info-row"><span class="lbl">الخبرة</span><span class="val">${doc.experience}</span></div>` : ''}
             <div class="info-row">
               <span class="lbl">الموقع</span>
-              <span class="val">مولبلا بلازا، رولا، الشارقة</span>
+              <span class="val">مالابار بلازا، رolla، الشارقة</span>
             </div>
             <div class="info-row">
               <span class="lbl">اللغات</span>
-              <span class="val">${doc.languages.join(', ')}</span>
+              <span class="val">${doc.languages.join('، ')}</span>
             </div>
           </div>
 
@@ -1048,7 +1414,7 @@
   <section class="other-doctors">
     <div class="section" style="padding-top:0;padding-bottom:0;">
       <div class="section-sub fade-up">فريقنا الطبي</div>
-      <h2 class="section-title fade-up">تعرف على أخصائيين آخرين</h2>
+      <h2 class="section-title fade-up">تعرف على أطباء آخرين</h2>
       <div class="divider fade-up"></div>
       <div class="other-doctors-grid">
         ${otherDocs.map(d => `
@@ -1063,7 +1429,7 @@
         </a>`).join('')}
       </div>
       <div style="text-align:center;margin-top:36px;">
-        <a href="doctors.html" class="btn btn-primary">جميع الأطباء</a>
+        <a href="doctors.html" class="btn btn-primary">عرض جميع الأطباء</a>
       </div>
     </div>
   </section>`;
@@ -1086,24 +1452,49 @@
     });
 
     function toggleMenu() {
-      document.getElementById("navLinks").classList.toggle("active");
-      document.getElementById("hamburger").classList.toggle("active");
+      const navLinks = document.getElementById("navLinks");
+      const hamburger = document.getElementById("hamburger");
+      navLinks.classList.toggle("active");
+      hamburger.classList.toggle("active");
     }
 
     renderProfile();
 
     const backToTopBtn = document.getElementById("backToTop");
     window.onscroll = function() {
-      backToTopBtn.style.display = (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) ? "block" : "none";
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        backToTopBtn.style.display = "block";
+      } else {
+        backToTopBtn.style.display = "none";
+      }
     };
-    backToTopBtn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
+    backToTopBtn.onclick = function() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
 
-    // Language switching
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.addEventListener('click', () => {
-        if (btn.dataset.lang === 'en') window.location.href = '../doctor-profile.html' + window.location.search;
+        const params = window.location.search; // ✅ keeps ?id=sandhya
+    
+        if (btn.dataset.lang === 'en') {
+          window.location.href = '../doctor-profile.html' + params;
+        } else if (btn.dataset.lang === 'ar') {
+          window.location.href = 'doctor-profile.html' + params;
+        }
       });
     });
+
+    if (window.location.pathname.includes('/arabic/')) {
+      const arBtn = document.querySelector('.lang-btn[data-lang="ar"]');
+      const enBtn = document.querySelector('.lang-btn[data-lang="en"]');
+      if (arBtn) arBtn.classList.add('active');
+      if (enBtn) enBtn.classList.remove('active');
+    } else {
+      const enBtn = document.querySelector('.lang-btn[data-lang="en"]');
+      const arBtn = document.querySelector('.lang-btn[data-lang="ar"]');
+      if (enBtn) enBtn.classList.add('active');
+      if (arBtn) arBtn.classList.remove('active');
+    }
   </script>
 </body>
 
