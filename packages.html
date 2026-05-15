@@ -121,15 +121,23 @@
       background: white;
       padding: 20px 32px;
       border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 76px;
+      position: relative;
+      /*top: 76px;*/
       z-index: 10;
       background: rgba(255, 255, 255, 0.98);
       backdrop-filter: blur(10px);
     }
 
+    @media (min-width: 992px) {
+      .filter-bar {
+        position: sticky;
+        top: 76px;
+        z-index: 10;
+      }
+    }
+
     .filter-inner {
-      max-width: 1280px;
+      max-width: 1450px;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
@@ -163,14 +171,123 @@
       border-color: var(--maroon);
     }
 
-    .sort-select {
-      padding: 8px 16px;
-      border-radius: 40px;
-      border: 1px solid var(--border);
+    /* Custom Dropdowns (Filter & Sort) */
+    .filter-tabs-wrapper,
+    .sort-dropdown-wrapper {
+      position: relative;
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .filter-mobile-toggle,
+    .sort-dropdown-toggle {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 10px 24px;
       background: white;
+      border: 1px solid var(--border);
+      border-radius: 40px;
+      font-weight: 600;
       font-size: 0.85rem;
       color: var(--text-dark);
       cursor: pointer;
+      transition: all 0.2s ease;
+      height: 42px;
+    }
+
+    .filter-mobile-toggle:hover,
+    .sort-dropdown-toggle:hover {
+      border-color: var(--maroon);
+      background: var(--rose-pale);
+    }
+
+    .filter-tabs,
+    .sort-options {
+      display: none;
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      width: 100%;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 12px;
+      box-shadow: var(--shadow-md);
+      z-index: 100;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .filter-tabs.show,
+    .sort-options.show {
+      display: flex;
+    }
+
+    .filter-btn,
+    .sort-opt {
+      width: 100%;
+      text-align: left;
+      border: none;
+      background: transparent;
+      padding: 10px 16px;
+      border-radius: 12px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-dark);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .filter-btn:hover,
+    .sort-opt:hover {
+      background: var(--off-white);
+      color: var(--maroon);
+    }
+
+    .filter-btn.active,
+    .sort-opt.active {
+      background: var(--rose-pale);
+      color: var(--maroon);
+      font-weight: 600;
+    }
+
+    /* Hide mobile toggle on desktop, but keep wrapper structure */
+    @media (min-width: 769px) {
+      .filter-tabs-wrapper {
+        flex: 2;
+      }
+      .filter-mobile-toggle {
+        display: none;
+      }
+      .filter-tabs {
+        display: flex;
+        position: static;
+        flex-direction: row;
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        background: transparent;
+        gap: 12px;
+        width: auto;
+      }
+      .filter-btn {
+        width: auto;
+        background: var(--off-white);
+        border: 1px solid var(--border);
+        border-radius: 40px;
+      }
+      .filter-btn.active {
+        background: var(--maroon);
+        color: white;
+        border-color: var(--maroon);
+      }
+      
+      /* Sort dropdown remains a dropdown on desktop too for style consistency */
+      .sort-dropdown-wrapper {
+        max-width: 220px;
+      }
     }
 
     /* Packages Grid */
@@ -190,18 +307,64 @@
     .package-card {
       background: white;
       border-radius: 24px;
-      overflow: hidden;
+      overflow: visible;
+      /* Changed to visible to allow the badge to pop out */
       box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
       transition: all 0.3s ease;
       border: 1px solid var(--border);
       display: flex;
       flex-direction: column;
+      position: relative;
+      /* For badge positioning */
     }
 
     .package-card:hover {
       transform: translateY(-6px);
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
       border-color: var(--rose);
+    }
+
+    /* Price Badge */
+    .price-badge {
+      position: absolute;
+      top: -25px;
+      /* Half outside */
+      right: -25px;
+      /* Half outside */
+      width: 80px;
+      height: 80px;
+      background: var(--maroon);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      /*z-index: 20;*/
+      line-height: 1.1;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      /*border: 2px solid white;*/
+      border-radius: 50%;
+      /* Serrated burst shape using multiple shadows or svg would be better, 
+         but for CSS only with border, we'll use a very many-pointed star */
+      clip-path: polygon(50% 0%, 60% 8%, 72% 4%, 78% 16%, 90% 18%, 88% 30%,
+          100% 36%, 92% 48%, 98% 60%, 86% 64%, 82% 76%, 70% 74%,
+          60% 88%, 50% 80%, 40% 88%, 30% 74%, 18% 76%, 14% 64%,
+          2% 60%, 8% 48%, 0% 36%, 12% 30%, 10% 18%, 22% 16%,
+          28% 4%, 40% 8%);
+    }
+
+    .price-badge .amount {
+      font-size: 1.5rem;
+      font-weight: 800;
+    }
+
+    .price-badge .currency {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     /* Package Image */
@@ -230,6 +393,8 @@
       background: linear-gradient(135deg, var(--maroon), var(--maroon-light));
       padding: 20px 20px;
       color: white;
+      border-radius: 24px 24px 0 0;
+      /* Maintain rounded corners without overflow:hidden */
     }
 
     .package-header h3 {
@@ -457,14 +622,13 @@
       .filter-inner {
         flex-direction: column;
         align-items: stretch;
+        position: relative;
+        gap: 12px;
       }
 
-      .filter-tabs {
-        justify-content: center;
-      }
-
-      .sort-select {
-        align-self: center;
+      .filter-tabs-wrapper,
+      .sort-dropdown-wrapper {
+        width: 100%;
       }
 
       .packages-grid {
@@ -480,8 +644,10 @@
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
-        <img src="https://www.metrostarcare.ae/assets/images/logo/logo.png" alt="Starcare Logo" onerror="this.style.display='none'">
-        <div class="nav-logo-text"><span class="brand">Metro Starcare</span><span class="sub">Metro Medical Group</span></div>
+        <img src="https://www.metrostarcare.ae/assets/images/logo/logo.png" alt="Starcare Logo"
+          onerror="this.style.display='none'">
+        <div class="nav-logo-text"><span class="brand">Metro Starcare</span><span class="sub">Metro Medical Group</span>
+        </div>
       </a>
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Home</a></li>
@@ -492,16 +658,20 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
       <div class="nav-emergency">
-        <a href="tel:+97165611099" class="emergency-badge">
+        <a href="tel:+971528415113" class="emergency-badge">
           <span class="pulse"></span>
           <span>Need help? +971 52 841 5113</span>
         </a>
         <div class="nav-socials">
-          <a href="https://www.instagram.com/starcare.uae" class="nav-social-icon" target="_blank"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z" />
+          <a href="https://www.instagram.com/starcare.uae" class="nav-social-icon" target="_blank"
+            aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
             </svg></a>
-          <a href="https://www.facebook.com/share/15BroPchCk/" class="nav-social-icon" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+          <a href="https://www.facebook.com/share/15BroPchCk/" class="nav-social-icon" target="_blank"
+            aria-label="Facebook"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
             </svg></a>
         </div>
       </div>
@@ -518,25 +688,41 @@
   <div class="page-hero">
     <div class="page-hero-breadcrumb"><a href="index.html">Home</a><span>›</span><span>Packages</span></div>
     <h1>Our Health Packages</h1>
-    <p>Comprehensive health checkups and wellness packages tailored to your needs. Choose the perfect plan for a healthier tomorrow.</p>
+    <p>Comprehensive health checkups and wellness packages tailored to your needs. Choose the perfect plan for a
+      healthier tomorrow.</p>
   </div>
 
   <!-- FILTER BAR -->
   <div class="filter-bar">
     <div class="filter-inner">
-      <div class="filter-tabs" id="filterTabs">
-        <button class="filter-btn active" data-category="all">All Packages</button>
-        <button class="filter-btn" data-category="wellness">Wellness</button>
-        <button class="filter-btn" data-category="full-body">Full Body</button>
-        <button class="filter-btn" data-category="cardiac">Cardiac</button>
-        <button class="filter-btn" data-category="aesthetics">Aesthetics</button>
-        <button class="filter-btn" data-category="child">Child Health</button>
+      <div class="filter-tabs-wrapper">
+        <button class="filter-mobile-toggle" id="filterMobileToggle">
+          <span id="activeCategoryText">All Packages</span>
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="filter-tabs" id="filterTabs">
+          <button class="filter-btn active" data-category="all">All Packages</button>
+          <button class="filter-btn" data-category="general_health">General Health</button>
+          <button class="filter-btn" data-category="diabetes">Diabetes</button>
+          <button class="filter-btn" data-category="blood_test">Blood Test</button>
+          <button class="filter-btn" data-category="women_health">Women Health</button>
+          <button class="filter-btn" data-category="allergy">Allergy</button>
+          <button class="filter-btn" data-category="general_fitness">General Fitness</button>
+          <button class="filter-btn" data-category="nutrition">Nutrition</button>
+          <button class="filter-btn" data-category="advanced_health">Advanced Health</button>
+        </div>
       </div>
-      <select class="sort-select" id="sortSelect">
-        <option value="default">Sort by: Featured</option>
-        <option value="name-asc">Name (A-Z)</option>
-        <option value="name-desc">Name (Z-A)</option>
-      </select>
+      <div class="sort-dropdown-wrapper">
+        <button class="sort-dropdown-toggle" id="sortDropdownToggle">
+          <span id="activeSortText">Sort by: Featured</span>
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="sort-options" id="sortOptions">
+          <button class="sort-opt active" data-value="default">Sort by: Featured</button>
+          <button class="sort-opt" data-value="name-asc">Name (A-Z)</button>
+          <button class="sort-opt" data-value="name-desc">Name (Z-A)</button>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -563,23 +749,35 @@
   <!-- FOOTER (identical to about.html) -->
   <footer>
     <div class="footer-inner">
-      <div class="footer-brand"><img src="https://www.metrostarcare.ae/assets/images/logo/logo.png" alt="Metro Starcare Logo">
-        <p>Metro Starcare Medical Centre, under Metro Medical Group, is committed to providing world-class healthcare services with compassion, excellence, and personalised attention for every patient.</p>
-        <div class="footer-socials" style="margin-top:20px;"><a href="https://www.instagram.com/starcare.uae" class="footer-social" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z" />
-            </svg></a><a href="https://www.facebook.com/share/15BroPchCk/" class="footer-social" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+      <div class="footer-brand"><img src="https://www.metrostarcare.ae/assets/images/logo/logo.png"
+          alt="Metro Starcare Logo">
+        <p>Metro Starcare Medical Centre, under Metro Medical Group, is committed to providing world-class healthcare
+          services with compassion, excellence, and personalised attention for every patient.</p>
+        <div class="footer-socials" style="margin-top:20px;"><a href="https://www.instagram.com/starcare.uae"
+            class="footer-social" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+            </svg></a><a href="https://www.facebook.com/share/15BroPchCk/" class="footer-social" target="_blank"><svg
+              width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
             </svg></a></div>
       </div>
       <div class="footer-col">
         <h4>Services</h4>
         <ul>
           <li><a href="services.html">General Medicine</a></li>
+           <li><a href="services.html">General Medicine</a></li>
           <li><a href="services.html">Gynecology</a></li>
           <li><a href="services.html">Pediatrics</a></li>
           <li><a href="services.html">Orthopedics</a></li>
           <li><a href="services.html">ENT</a></li>
           <li><a href="services.html">Ophthalmology</a></li>
+          <li><a href="services.html">Dermatology</a></li>
+          <li><a href="services.html">Cosmetology</a></li>
+          <li><a href="services.html">Radiology (Ultrasound & <br>X-Ray)</a></li>
+          <li><a href="services.html">Laboratory</a></li>
+          <li><a href="services.html">Pharmacy</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -590,7 +788,7 @@
           <li><a href="packages.html">Packages</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="careers.html">Careers</a></li>
-          <li><a href="team.html">Our Team</a></li>
+          <!--<li><a href="#">Our Team</a></li>-->
           <li><a href="news.html">News & Events</a></li>
           <li><a href="contact.html">Contact Us</a></li>
         </ul>
@@ -598,10 +796,18 @@
       <div class="footer-col">
         <h4>Contact</h4>
         <ul class="footer-contact">
-          <li><span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-              </svg></span><span>+971 6 5611099</span></li>
-          <li><span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <li><span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg></span><span>+971 52 841 5113</span></li>
+              <li><span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+     stroke="currentColor" stroke-width="2">
+  <rect x="3" y="5" width="18" height="14" rx="2"/>
+  <path d="M3 7l9 6 9-6"/>
+</svg></span><span>info@metrostarcare.ae</span></li>
+          <li><span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                 <circle cx="12" cy="10" r="3" />
               </svg></span><span>Malabar Plaza, Rolla, Sharjah, UAE</span></li>
@@ -613,114 +819,349 @@
     </div>
   </footer>
 
-  <a href="https://wa.me/97165611099" class="floating-btn whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
-  <a href="tel:+97165611099" class="floating-btn call-float"><i class="fas fa-phone"></i></a>
+  <a href="https://wa.me/97165611099" class="floating-btn whatsapp-float" target="_blank"><i
+      class="fab fa-whatsapp"></i></a>
+  <a href="tel:+971528415113" class="floating-btn call-float"><i class="fas fa-phone"></i></a>
   <button id="backToTop" class="floating-btn scroll-top"><i class="fas fa-arrow-up"></i></button>
 
   <script>
     // Package Data with image URLs (based on original site structure)
-    const packagesData = [{
-        id: 1,
-        name: "Metro Platinum Full Body Check",
-        category: "full-body",
-        description: "Comprehensive full body health screening with advanced diagnostics including CBC, lipid profile, liver & kidney function, thyroid, vitamin D, and more. Includes physician consultation.",
-        features: ["Complete Blood Count", "Lipid Profile", "Liver & Kidney Function", "Thyroid Profile", "Vitamin D & B12", "Physician Consultation"],
-        fullDetails: "This premium package offers a complete assessment of your overall health. Ideal for individuals over 35 or those wanting a thorough health evaluation. Results are reviewed by a senior physician with personalized recommendations.",
-        image: "https://www.metromedicalgroup.com/apt/assets/images/packages/69c8c8362730c_Platinum-Full-Body-Check-02.jpg"
+    const packagesData = [
+      {
+        id: 21,
+        name: "10th Anniversary Health Offers",
+        category: "general_health",
+        description: "Special anniversary offers on consultations, lab tests, diagnostics, and wellness treatments at discounted prices.",
+        features: [
+          "Special prices on Consultations",
+          "Discounted Lab & Vitamin Tests",
+          "Radiology & Diagnostic offers",
+          "Aesthetic & PRP treatments",
+          "Physiotherapy sessions",
+          "ENT & Ophthalmology services"
+        ],
+        packages: [
+          {
+            category_name: "Consultations",
+            services: [
+              { name: "GP Consultation", price: "49 AED" },
+              { name: "Specialist Consultation", price: "99 AED" }
+            ]
+          },
+          {
+            category_name: "Lab Tests",
+            services: [
+              { name: "CBC", price: "30 AED" },
+              { name: "Urine Routine", price: "30 AED" },
+              { name: "CRP", price: "40 AED" },
+              { name: "Influenza Test", price: "49 AED" },
+              { name: "Troponin I", price: "49 AED" },
+              { name: "Beta HCG", price: "60 AED" },
+              { name: "Ferritin", price: "69 AED" }
+            ]
+          },
+          {
+            category_name: "Vitamin & Hormone Tests",
+            services: [
+              { name: "Vitamin D Test", price: "49 AED" },
+              { name: "Vitamin D Injection", price: "49 AED" },
+              { name: "Vitamin B12", price: "69 AED" },
+              { name: "FSH", price: "69 AED" },
+              { name: "LH", price: "69 AED" },
+              { name: "Thyroid Test", price: "49 AED" },
+              { name: "Thyroid Profile Test", price: "99 AED" }
+            ]
+          },
+          {
+            category_name: "Cardiac Tests",
+            services: [
+              { name: "ECG", price: "60 AED" },
+              { name: "ECG + Troponin I", price: "99 AED" }
+            ]
+          },
+          {
+            category_name: "Radiology & Diagnostics",
+            services: [
+              { name: "X-Ray Single View", price: "49 AED" },
+              { name: "Ultrasound", price: "175 AED" },
+              { name: "Specialised Scan", price: "350 AED" }
+            ]
+          },
+          {
+            category_name: "Physiotherapy",
+            services: [
+              { name: "Physiotherapy Session", price: "99 AED" }
+            ]
+          },
+          {
+            category_name: "Aesthetic Treatments",
+            services: [
+              { name: "Quick Glow Peel", price: "149 AED" },
+              { name: "Anti-Ageing Peeling", price: "299 AED" },
+              { name: "Glass Peeling", price: "299 AED" },
+              { name: "Botox (starting from)", price: "200 AED" },
+              { name: "Metro Signature Peel", price: "199 AED" },
+              { name: "Glutathione Drip", price: "149 AED" },
+              { name: "Glutathione + Vitamin C Drip", price: "179 AED" }
+            ]
+          },
+          {
+            category_name: "PRP Treatments",
+            services: [
+              { name: "PRP (Hair)", price: "149 AED" },
+              { name: "PRP (Face)", price: "199 AED" },
+              { name: "GFC", price: "199 AED" }
+            ]
+          },
+          {
+            category_name: "ENT Services",
+            services: [
+              { name: "Ear Wax Removal", price: "30 AED" },
+              { name: "Hearing Test", price: "99 AED" },
+              { name: "Painless Ear Piercing + ENT Consultation", price: "99 AED" },
+              { name: "Nasal Endoscopy", price: "125 AED" }
+            ]
+          },
+          {
+            category_name: "Ophthalmology",
+            services: [
+              { name: "Ophthalmologist Consultation + Refraction", price: "90 AED" },
+              { name: "Ophthal Consultation + Foreign Body Removal + Eye Dressing", price: "120 AED" }
+            ]
+          }
+        ],
+        fullDetails: "Celebrate our anniversary with these exclusive health offers! We are providing significant discounts across all our major departments including General Medicine, Laboratory, Radiology, Physiotherapy, ENT, Ophthalmology and Aesthetic treatments. Our goal is to make high-quality healthcare accessible and affordable for everyone in our community."
       },
+
+      // 1. General Health
+      {
+          id: 1,
+          name: "Umrah Vaccination Offer – 49 AED",
+          category: "general_health",
+          description: "Protect yourself before your Umrah journey with an affordable vaccination package.",
+          features: [
+            "Umrah Vaccination",
+            "Safe & Certified Vaccine",
+            "Quick Administration",
+            "Doctor Consultation Available",
+            "Suitable for All Age Groups",
+            "Hygienic & Professional Care"
+          ],
+          fullDetails: "This special Umrah vaccination offer ensures you stay protected during your spiritual journey. Available at an affordable price, the package includes a safe and certified vaccine administered by healthcare professionals in a hygienic environment."
+        },
       {
         id: 2,
-        name: "FIT BODY SCREENING PACKAGE",
-        category: "wellness",
-        description: "Fitness-focused screening covering body composition analysis, cardiovascular risk assessment, and basic metabolic panel.",
-        features: ["Body Composition Analysis", "Cardiovascular Risk", "Basic Metabolic Panel", "Nutritional Assessment"],
-        fullDetails: "Perfect for fitness enthusiasts and those starting a new wellness journey. Includes detailed body composition analysis to track progress.",
-        image: "https://www.metromedicalgroup.com/apt/assets/images/packages/69b948ea53041_Fit-Body-Screening-02.jpg"
+        name: "Mini Wellness Health Checkup – 39 AED",
+        category: "general_health",
+        description: "Affordable mini wellness checkup for quick health screening.",
+        features: [
+          "Blood Pressure Check",
+          "Blood Sugar (FBS/RBS)",
+          "Total Cholesterol",
+          "SGPT (Liver Enzyme)",
+          "Uric Acid",
+          "BMI (Body Mass Index)",
+          "Free GP Consultation"
+        ],
+        fullDetails: "This mini wellness package is ideal for individuals and families looking for a quick and budget-friendly health checkup."
       },
       {
         id: 3,
-        name: "MOUNJARO PACKAGE",
-        category: "wellness",
-        description: "Weight management program with Mounjaro (tirzepatide) injections. Includes medical consultation and follow-up monitoring.",
-        features: ["Medical Consultation", "Mounjaro Injection", "Monthly Follow-up", "Weight Tracking"],
-        fullDetails: "Comprehensive weight management solution with the latest GIP/GLP-1 receptor agonist. Includes initial assessment, prescription, and ongoing monitoring by our specialist.",
-        image: "https://www.metromedicalgroup.com/apt/assets/images/packages/69b946d1daf36_MOUNJARO-PACKAGE-02.jpg"
+        name: "Wellness Health Checkup – 59 AED",
+        category: "general_health",
+        description: "Affordable wellness health checkup package for routine screening.",
+        features: [
+          "Blood Sugar (FBS/RBS)",
+          "Lipid Profile",
+          "Liver Screening",
+          "Kidney Profile",
+          "Blood Pressure Check",
+          "BMI",
+          "Free GP Consultation"
+        ],
+        fullDetails: "Ideal for regular health monitoring and early detection."
       },
       {
         id: 4,
-        name: "Ramadan Health Checkup Package",
-        category: "wellness",
-        description: "Pre-Ramadan health assessment to ensure safe fasting. Includes hydration status, metabolic profile, and dietary guidance.",
-        features: ["Hydration Assessment", "Metabolic Profile", "Dietary Guidance", "Physician Consultation"],
-        fullDetails: "Essential checkup before the holy month to identify any risks associated with fasting. Tailored recommendations for a healthy Ramadan experience.",
-        image: "https://www.metromedicalgroup.com/apt/assets/images/packages/6991bf926e2ae_RAMADAN-PACKAGE-2026-02.jpg"
+        name: "Essential Health Checkup – 99 AED",
+        category: "general_health",
+        description: "Advanced essential health checkup for detailed assessment.",
+        features: [
+          "Blood Sugar",
+          "Lipid Profile",
+          "Kidney Profile",
+          "Liver Profile",
+          "TSH",
+          "Urine Routine",
+          "BMI",
+          "Blood Pressure"
+        ],
+        fullDetails: "Comprehensive evaluation of body’s key functions."
       },
+
+      // 2. Diabetes
       {
         id: 5,
-        name: "Winter Wellness Package",
-        category: "wellness",
-        description: "Seasonal wellness screening focusing on immunity, vitamin deficiencies, and respiratory health.",
-        features: ["Immunity Profile", "Vitamin D & B12", "Respiratory Assessment", "Flu Vaccination"],
-        fullDetails: "Prepare for the winter season with this immunity-focused package. Includes flu vaccination and comprehensive vitamin screening.",
-        image: "https://www.metromedicalgroup.com/apt/assets/images/packages/69ad7a42e1d17_WINTER-PACKAGE-02.jpg"
+        name: "Glucofit Diabetes Package – 59 AED",
+        category: "diabetes",
+        description: "Essential diabetes screening package.",
+        features: [
+          "FBS/RBS",
+          "HbA1c"
+        ],
+        fullDetails: "Helps monitor both immediate and long-term blood sugar levels."
       },
+
+      // 3. Blood Test
       {
         id: 6,
-        name: "Skin Whitening",
-        category: "aesthetics",
-        description: "Advanced skin brightening treatment with glutathione and vitamin C infusion. Consultation included.",
-        features: ["Glutathione Infusion", "Vitamin C", "Skin Analysis", "Follow-up"],
-        fullDetails: "Safe and effective skin brightening treatment using premium quality glutathione and antioxidants. Results typically visible after 3-4 sessions.",
-        image: "https://www.metromedicalgroup.com/apt/assets/images/packages/69b682b52ef2c_Skin-Whitening-Offer-2.jpg"
+        name: "Anemia Package – 199 AED",
+        category: "blood_test",
+        description: "Comprehensive anemia screening package.",
+        features: [
+          "CBC",
+          "Ferritin",
+          "Iron",
+          "TIBC",
+          "Vitamin B12"
+        ],
+        fullDetails: "Helps diagnose causes of fatigue and weakness."
       },
+
+      // 5. Women Health
       {
         id: 7,
-        name: "PRP THERAPY",
-        category: "aesthetics",
-        description: "Platelet-Rich Plasma therapy for hair restoration and skin rejuvenation. Includes consultation and one session.",
-        features: ["Blood Draw & Processing", "PRP Injection", "Consultation", "Post-care Instructions"],
-        fullDetails: "Harness your body's natural healing power with PRP therapy. Effective for hair loss treatment, facial rejuvenation, and scar improvement.",
-        image: "https://www.metromedicalgroup.com/apt/assets/images/packages/69b683d317a5b_PRP-Offer---2.jpg"
+        name: "Female Fitness Package – 199 AED",
+        category: "women_health",
+        description: "Comprehensive female health evaluation.",
+        features: [
+          "FSH",
+          "LH",
+          "TSH",
+          "Vitamin D",
+          "CBC",
+          "ECG"
+        ],
+        fullDetails: "Covers hormonal, nutritional, and overall health."
       },
+
+      // 6. Allergy
       {
         id: 8,
-        name: "FILLER",
-        category: "aesthetics",
-        description: "Dermal filler treatment for facial volume restoration and wrinkle correction. Includes consultation by specialist.",
-        features: ["Consultation", "Premium Hyaluronic Acid Filler", "Treatment Session", "Follow-up"],
-        fullDetails: "Restore facial volume and reduce fine lines with our premium dermal fillers. Performed by experienced aesthetic specialists.",
-        image: "https://www.metromedicalgroup.com/apt/assets/images/packages/69b683db2be7d_Filler-Offer---2.jpg"
+        name: "Skin Allergy Package – 199 AED",
+        category: "allergy",
+        description: "Detects skin allergy conditions early.",
+        features: [
+          "CBC",
+          "IgE",
+          "AEC"
+        ],
+        fullDetails: "Helps identify causes of itching and rashes."
       },
       {
         id: 9,
-        name: "BOTOX",
-        category: "aesthetics",
-        description: "Botulinum toxin treatment for wrinkles and fine lines. Safe, effective, and minimally invasive.",
-        features: ["Consultation", "Botox Treatment", "Area Assessment", "Aftercare"],
-        fullDetails: "Reduce the appearance of expression lines with our expert Botox treatments. Natural-looking results with minimal downtime.",
-        image: "https://www.metromedicalgroup.com/apt/assets/images/packages/69b680e073cbc_BOTOX-Offer---2.jpg"
+        name: "Nasal Allergy Package – 599 AED",
+        category: "allergy",
+        description: "Comprehensive nasal allergy diagnosis.",
+        features: [
+          "ENT Consultation",
+          "Nasal Endoscopy",
+          "Allergy Test"
+        ],
+        fullDetails: "Helps diagnose respiratory allergies."
       },
+
+      // 7. General Fitness
       {
         id: 10,
-        name: "Premium Full Body Package",
-        category: "full-body",
-        description: "Elite comprehensive health assessment with advanced imaging and specialist consultations.",
-        features: ["Complete Blood Work", "Advanced Imaging", "Cardiac Assessment", "Specialist Consultation", "Personalized Report"],
-        fullDetails: "Our most comprehensive health package includes full body imaging, cardiac stress test, and consultations with multiple specialists. Ideal for executives and those seeking the highest level of preventive care.",
-        image: "https://www.metromedicalgroup.com/apt/assets/images/packages/69b683ebea909_Premiem-Full-Body-Package---B8-2.jpg"
+        name: "Fitness Health Package – 149 AED",
+        category: "general_fitness",
+        description: "Designed for active lifestyle monitoring.",
+        features: [
+          "ECG",
+          "Vitamin D",
+          "CBC",
+          "Lipid Profile",
+          "BMI"
+        ],
+        fullDetails: "Helps track fitness and nutritional status."
       },
+
+      // 8. Nutrition
+      {
+        id: 11,
+        name: "Vitamin D Test – 49 AED",
+        category: "nutrition",
+        description: "Check Vitamin D deficiency.",
+        features: [
+          "Vitamin D Test",
+          "Quick Results"
+        ],
+        fullDetails: "Supports bone and immune health."
+      },
+
+      // 9. Advanced Health
+      {
+        id: 12,
+        name: "Advanced Health Checkup – 199 AED",
+        category: "advanced_health",
+        description: "Complete advanced health screening.",
+        features: [
+          "CBC",
+          "Diabetes Tests",
+          "Thyroid",
+          "Liver & Kidney",
+          "ECG"
+        ],
+        fullDetails: "Detailed full body evaluation."
+      },
+      {
+        id: 13,
+        name: "Executive Health Checkup – 199 AED",
+        category: "advanced_health",
+        description: "In-depth executive health package.",
+        features: [
+          "CBC",
+          "Diabetes",
+          "Vitamin D",
+          "Calcium"
+        ],
+        fullDetails: "Advanced preventive health assessment."
+      },
+      {
+        id: 19,
+        name: "Women’s Care Consultation",
+        category: "women_health",
+        description: "Comprehensive gynecology consultation service focused on women’s health, covering reproductive care, hormonal issues, and preventive screenings.",
+        features: [
+            "Irregular Periods Treatment",
+            "Pregnancy Care",
+            "PCOS Management",
+            "Menopause Care",
+            "Contraceptive Advice",
+            "IUCD Insertion & Removal",
+            "Cancer Screening (Cervical Cytology)",
+            "Menstrual Disorder Treatment",
+            "Infertility Workup & Basic Treatment"
+        ],
+        fullDetails: "This women’s healthcare service is led by an experienced gynecologist, providing complete care for all stages of a woman’s life. From menstrual health and pregnancy care to menopause management and infertility evaluation, the consultation ensures personalized diagnosis and treatment. Preventive screenings like cervical cancer tests and expert guidance on contraception further support long-term wellness. Ideal for women seeking trusted and comprehensive gynecological care."
+      }
     ];
+
 
     let currentFilter = "all";
     let currentSort = "default";
 
     function getCategoryLabel(cat) {
       const labels = {
-        "wellness": "Wellness",
-        "full-body": "Full Body",
-        "cardiac": "Cardiac",
-        "aesthetics": "Aesthetics",
-        "child": "Child Health"
+        "general_health": "General Health",
+        "diabetes": "Diabetes",
+        "blood_test": "Blood Test",
+        "women_health": "Women Health",
+        "allergy": "Allergy",
+        "general_fitness": "General Fitness",
+        "nutrition": "Nutrition",
+        "advanced_health": "Advanced Health"
       };
       return labels[cat] || cat;
     }
@@ -742,14 +1183,22 @@
         return;
       }
 
-      grid.innerHTML = filtered.map(pkg => `
+      grid.innerHTML = filtered.map(pkg => {
+        // Extract price and clean name
+        const priceMatch = pkg.name.match(/(.*)[–-]\s*(\d+)\s*AED/i);
+        const displayName = priceMatch ? priceMatch[1].trim() : pkg.name;
+        const priceAmount = priceMatch ? priceMatch[2] : "";
+
+        return `
         <div class="package-card">
-          <div class="package-image">
-            <img src="${getImageUrl(pkg)}" alt="${pkg.name}" onerror="this.src='https://via.placeholder.com/400x220?text=Health+Package'">
-          </div>
+          ${priceAmount ? `
+          <div class="price-badge">
+            <div class="amount">${priceAmount}</div>
+            <div class="currency">AED</div>
+          </div>` : ''}
           <div class="package-header">
-            <div class="package-category">${getCategoryLabel(pkg.category)}</div>
-            <h3>${pkg.name}</h3>
+            <div class="package-category" style="margin-bottom:10px;">${getCategoryLabel(pkg.category)}</div>
+            <h3>${displayName}</h3>
           </div>
           <div class="package-body">
             <p class="package-desc">${pkg.description}</p>
@@ -762,24 +1211,49 @@
             <button class="view-details-btn" onclick="openModal(${pkg.id})">View Details</button>
           </div>
         </div>
-      `).join('');
+      `}).join('');
     }
 
     function openModal(id) {
       const pkg = packagesData.find(p => p.id === id);
       if (!pkg) return;
 
-      document.getElementById("modalTitle").innerText = pkg.name;
+      const priceMatch = pkg.name.match(/(.*)[–-]\s*(\d+)\s*AED/i);
+      const displayName = priceMatch ? priceMatch[1].trim() : pkg.name;
+
+      let featuresHtml = '';
+      if (pkg.packages) {
+        featuresHtml = pkg.packages.map(cat => `
+          <h4 style="color: var(--maroon); margin-top: 20px; margin-bottom: 10px; border-bottom: 1px solid var(--border); padding-bottom: 5px; font-size: 1rem;">
+            <i class="fas fa-tags" style="margin-right: 8px;"></i> ${cat.category_name}
+          </h4>
+          <ul style="margin-bottom: 15px;">
+            ${cat.services.map(s => `
+              <li style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.85rem;">
+                <span><i class="fas fa-check-circle" style="color: var(--maroon); margin-right: 8px; font-size: 0.8rem;"></i> ${s.name}</span>
+                <span style="font-weight: 700; color: var(--maroon); white-space: nowrap;">${s.price}</span>
+              </li>
+            `).join('')}
+          </ul>
+        `).join('');
+      } else {
+        featuresHtml = `
+          <h4><i class="fas fa-list-ul" style="margin-right: 8px;"></i> Package Includes:</h4>
+          <ul>
+            ${pkg.features.map(f => `<li><i class="fas fa-check-circle"></i> ${f}</li>`).join('')}
+          </ul>
+        `;
+      }
+
+      document.getElementById("modalTitle").innerText = displayName;
       document.getElementById("modalBody").innerHTML = `
         <p><strong>${pkg.description}</strong></p>
-        <h4><i class="fas fa-list-ul" style="margin-right: 8px;"></i> Package Includes:</h4>
-        <ul>
-          ${pkg.features.map(f => `<li><i class="fas fa-check-circle"></i> ${f}</li>`).join('')}
-        </ul>
-        <h4><i class="fas fa-info-circle"></i> Detailed Information:</h4>
+        ${priceMatch ? `<p class="modal-price" style="color: var(--maroon); font-weight: 700; font-size: 1.2rem; margin-bottom: 15px;">Price: ${priceMatch[2]} AED</p>` : ''}
+        ${featuresHtml}
+        <h4 style="margin-top:20px;"><i class="fas fa-info-circle"></i> Detailed Information:</h4>
         <p>${pkg.fullDetails}</p>
         <p><strong>Duration:</strong> Typically completed within 2-3 hours with results in 24-48 hours.</p>
-        <p><strong>Preparation:</strong> Fasting required for 10-12 hours before blood tests. Please consult our team for specific instructions.</p>
+        <p><strong>Preparation:</strong> Fasting may be required for some tests. Please consult our team for specific instructions.</p>
       `;
       document.getElementById("packageModal").classList.add("active");
       document.body.style.overflow = "hidden";
@@ -790,19 +1264,64 @@
       document.body.style.overflow = "";
     }
 
-    // Event Listeners
+    // Dropdown Toggles (Filter & Sort)
+    const filterMobileToggle = document.getElementById("filterMobileToggle");
+    const filterTabs = document.getElementById("filterTabs");
+    const activeCategoryText = document.getElementById("activeCategoryText");
+    const sortDropdownToggle = document.getElementById("sortDropdownToggle");
+    const sortOptions = document.getElementById("sortOptions");
+    const activeSortText = document.getElementById("activeSortText");
+
+    if (filterMobileToggle) {
+      filterMobileToggle.addEventListener("click", (e) => {
+        e.stopPropagation();
+        filterTabs.classList.toggle("show");
+        if (sortOptions) sortOptions.classList.remove("show");
+      });
+    }
+
+    if (sortDropdownToggle) {
+      sortDropdownToggle.addEventListener("click", (e) => {
+        e.stopPropagation();
+        sortOptions.classList.toggle("show");
+        if (filterTabs) filterTabs.classList.remove("show");
+      });
+    }
+
+    // Filter Category Selection
     document.querySelectorAll(".filter-btn").forEach(btn => {
       btn.addEventListener("click", () => {
         document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
         btn.classList.add("active");
         currentFilter = btn.dataset.category;
+        
+        if (activeCategoryText) activeCategoryText.innerText = btn.innerText;
+        if (window.innerWidth <= 768) filterTabs.classList.remove("show");
         renderPackages();
       });
     });
 
-    document.getElementById("sortSelect").addEventListener("change", (e) => {
-      currentSort = e.target.value;
-      renderPackages();
+    // Sort Option Selection
+    document.querySelectorAll(".sort-opt").forEach(opt => {
+      opt.addEventListener("click", () => {
+        document.querySelectorAll(".sort-opt").forEach(o => o.classList.remove("active"));
+        opt.classList.add("active");
+        currentSort = opt.dataset.value;
+        
+        if (activeSortText) activeSortText.innerText = opt.innerText;
+        sortOptions.classList.remove("show");
+        renderPackages();
+      });
+    });
+
+    // Close dropdowns when clicking outside
+    document.addEventListener("click", (e) => {
+      if (filterTabs && !filterTabs.contains(e.target) && e.target !== filterMobileToggle) {
+        filterTabs.classList.remove("show");
+      }
+      if (sortOptions && !sortOptions.contains(e.target) && e.target !== sortDropdownToggle) {
+        sortOptions.classList.remove("show");
+      }
     });
 
     document.getElementById("packageModal").addEventListener("click", (e) => {
@@ -826,7 +1345,7 @@
 
     // Back to top
     const backToTopBtn = document.getElementById("backToTop");
-    window.onscroll = function() {
+    window.onscroll = function () {
       if (backToTopBtn) {
         if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
           backToTopBtn.style.display = "block";
@@ -836,7 +1355,7 @@
       }
     };
     if (backToTopBtn) {
-      backToTopBtn.onclick = function() {
+      backToTopBtn.onclick = function () {
         window.scrollTo({
           top: 0,
           behavior: "smooth"

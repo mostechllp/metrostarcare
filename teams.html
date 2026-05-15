@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Team | Metro Starcare Medical Centre</title>
+  <meta name="description"
+    content="Meet the dedicated team of medical experts, nurses, and staff at Metro Starcare Medical Centre. Our team is committed to providing world-class healthcare with compassion.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    /* Team Page Specific Styles */
+    .team-section {
+      padding: 80px 32px;
+      background: var(--off-white);
+    }
+
+    .team-container {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .department-group {
+      margin-bottom: 100px;
+      text-align: center;
+    }
+
+    .department-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .dept-header {
+      margin-bottom: 40px;
+    }
+
+    .dept-title {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      color: var(--maroon-dark);
+      margin-bottom: 12px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .dept-title::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--maroon-light);
+    }
+
+    .dept-desc {
+      color: var(--text-mid);
+      max-width: 700px;
+      margin: 20px auto 0;
+      font-size: 1.1rem;
+    }
+
+    .dept-photo-wrap {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      border: 4px solid white;
+      transition: var(--transition);
+    }
+
+    .dept-photo-wrap:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 30px 60px rgba(139, 26, 74, 0.25);
+    }
+
+    .dept-photo {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.8s ease;
+    }
+
+    .dept-photo-wrap:hover .dept-photo {
+      transform: scale(1.03);
+    }
+
+    .dept-stats {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 30px;
+    }
+
+    .dept-stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .dept-stat-num {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--maroon);
+    }
+
+    .dept-stat-label {
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 768px) {
+      .team-section {
+        padding: 60px 20px;
+      }
+
+      .department-group {
+        margin-bottom: 60px;
+      }
+
+      .dept-stats {
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="https://www.metrostarcare.ae/assets/images/logo/logo.png" alt="Starcare Logo"
+          onerror="this.style.display='none'">
+        <div class="nav-logo-text"><span class="brand">Metro Starcare</span><span class="sub">Metro Medical Group</span>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="doctors.html">Doctors</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="packages.html">Packages</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-emergency">
+        <a href="tel:+971528415113" class="emergency-badge">
+          <span class="pulse"></span>
+          <span>Need help? +971 52 841 5113</span>
+        </a>
+      </div>
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+      <div class="nav-lang-switch">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <span class="lang-divider">|</span>
+        <button class="lang-btn" data-lang="ar">عربي</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-breadcrumb"><a href="index.html">Home</a><span>›</span><span>Our Team</span></div>
+    <h1>Our Dedicated Team</h1>
+    <p>The backbone of Metro Starcare is our group of passionate professionals committed to your well-being.</p>
+  </div>
+
+  <!-- TEAM SECTION -->
+  <section class="team-section">
+    <div class="team-container">
+
+      <!-- Medical Team -->
+      <div class="department-group">
+        <div class="dept-header">
+          <div class="section-sub">Healthcare Experts</div>
+          <h2 class="dept-title">Our Medical Team</h2>
+          <p class="dept-desc">Our highly qualified doctors bring years of expertise across multiple specialties to
+            provide you with the best medical care.</p>
+        </div>
+        <div class="dept-photo-wrap">
+          <img src="assets/images/team/medical_team.png" alt="Medical Team" class="dept-photo">
+        </div>
+        <div class="dept-stats">
+          <div class="dept-stat">
+            <span class="dept-stat-num">25+</span>
+            <span class="dept-stat-label">Specialists</span>
+          </div>
+          <div class="dept-stat">
+            <span class="dept-stat-num">15+</span>
+            <span class="dept-stat-label">Departments</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nursing Team -->
+      <div class="department-group">
+        <div class="dept-header">
+          <div class="section-sub">Compassionate Care</div>
+          <h2 class="dept-title">Our Nursing Team</h2>
+          <p class="dept-desc">Our nurses are the heart of our patient care, providing round-the-clock support with
+            empathy and professionalism.</p>
+        </div>
+        <div class="dept-photo-wrap">
+          <img src="assets/images/team/nursing_team.png" alt="Nursing Team" class="dept-photo">
+        </div>
+        <div class="dept-stats">
+          <div class="dept-stat">
+            <span class="dept-stat-num">40+</span>
+            <span class="dept-stat-label">Qualified Nurses</span>
+          </div>
+          <div class="dept-stat">
+            <span class="dept-stat-num">24/7</span>
+            <span class="dept-stat-label">Patient Care</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lab Team -->
+      <div class="department-group">
+        <div class="dept-header">
+          <div class="section-sub">Diagnostic Excellence</div>
+          <h2 class="dept-title">Our Laboratory Team</h2>
+          <p class="dept-desc">Equipped with state-of-the-art technology, our lab technicians ensure accurate and timely
+            diagnostics for effective treatment.</p>
+        </div>
+        <div class="dept-photo-wrap">
+          <img src="assets/images/team/lab_team.png" alt="Laboratory Team" class="dept-photo">
+        </div>
+        <div class="dept-stats">
+          <div class="dept-stat">
+            <span class="dept-stat-num">100%</span>
+            <span class="dept-stat-label">Accuracy</span>
+          </div>
+          <div class="dept-stat">
+            <span class="dept-stat-num">Fast</span>
+            <span class="dept-stat-label">Turnaround</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Admin Team -->
+      <div class="department-group">
+        <div class="dept-header">
+          <div class="section-sub">Seamless Experience</div>
+          <h2 class="dept-title">Administrative & Support Team</h2>
+          <p class="dept-desc">Our dedicated administrative staff works tirelessly behind the scenes to ensure your
+            visit is smooth and hassle-free.</p>
+        </div>
+        <div class="dept-photo-wrap">
+          <img src="assets/images/team/admin_team.png" alt="Administrative Team" class="dept-photo">
+        </div>
+        <div class="dept-stats">
+          <div class="dept-stat">
+            <span class="dept-stat-num">Friendly</span>
+            <span class="dept-stat-label">Support</span>
+          </div>
+          <div class="dept-stat">
+            <span class="dept-stat-num">Efficient</span>
+            <span class="dept-stat-label">Management</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER  -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand"><img src="https://www.metrostarcare.ae/assets/images/logo/logo.png"
+          alt="Metro Starcare Logo">
+        <p>Metro Starcare Medical Centre, under Metro Medical Group, is committed to providing world-class healthcare
+          services with compassion, excellence, and personalised attention for every patient.</p>
+        <div class="footer-socials" style="margin-top:20px;"><a href="https://www.instagram.com/starcare.uae"
+            class="footer-social" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+            </svg></a><a href="https://www.facebook.com/share/15BroPchCk/" class="footer-social" target="_blank"><svg
+              width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+            </svg></a></div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">General Medicine</a></li>
+          <li><a href="services.html">Gynecology</a></li>
+          <li><a href="services.html">Pediatrics</a></li>
+          <li><a href="services.html">Orthopedics</a></li>
+          <li><a href="services.html">ENT</a></li>
+          <li><a href="services.html">Ophthalmology</a></li>
+          <li><a href="services.html">Dermatology</a></li>
+          <li><a href="services.html">Cosmetology</a></li>
+          <li><a href="services.html">Radiology (Ultrasound & <br>X-Ray)</a></li>
+          <li><a href="services.html">Laboratory</a></li>
+          <li><a href="services.html">Pharmacy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="doctors.html">Our Doctors</a></li>
+          <li><a href="packages.html">Packages</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <!--<li><a href="#">Our Team</a></li>-->
+          <li><a href="news.html">News & Events</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul class="footer-contact">
+          <li><span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg></span><span>+971 52 841 5113</span></li>
+          <li><span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <rect x="3" y="5" width="18" height="14" rx="2" />
+                <path d="M3 7l9 6 9-6" />
+              </svg></span><span>info@metrostarcare.ae</span></li>
+          <li><span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg></span><span>Malabar Plaza, Rolla, Sharjah, UAE</span></li>
+
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Metro Medical Group. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/971528415113" class="floating-btn whatsapp-float" target="_blank"
+    aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <a href="tel:+971528415113" class="floating-btn call-float" aria-label="Call"><i class="fas fa-phone"></i></a>
+  <button id="backToTop" class="floating-btn scroll-top" aria-label="Back to top"><i
+      class="fas fa-arrow-up"></i></button>
+
+  <script>
+    // Mobile menu toggle with overlay
+    function toggleMenu() {
+      const navLinks = document.getElementById("navLinks");
+      const hamburger = document.getElementById("hamburger");
+      const body = document.body;
+
+      // Create overlay if it doesn't exist
+      let overlay = document.querySelector('.nav-overlay');
+      if (!overlay) {
+        overlay = document.createElement('div');
+        overlay.className = 'nav-overlay';
+        document.body.appendChild(overlay);
+      }
+
+      const isOpen = navLinks.classList.contains("active");
+
+      if (!isOpen) {
+        // Open menu
+        navLinks.classList.add("active");
+        hamburger.classList.add("active");
+        overlay.classList.add("active");
+        body.classList.add("menu-open");
+
+        // Add delay to list items
+        const items = navLinks.querySelectorAll('li');
+        items.forEach((item, index) => {
+          item.style.setProperty('--i', index);
+        });
+
+        // Close on overlay click
+        overlay.onclick = () => toggleMenu();
+
+        // Close on ESC key
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+            toggleMenu();
+          }
+        });
+      } else {
+        // Close menu
+        navLinks.classList.remove("active");
+        hamburger.classList.remove("active");
+        overlay.classList.remove("active");
+        body.classList.remove("menu-open");
+      }
+    }
+
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', function () {
+      const hamburger = document.getElementById("hamburger");
+      if (hamburger) {
+        hamburger.onclick = toggleMenu;
+      }
+    });
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 40) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Back to top button
+    const backToTopBtn = document.getElementById("backToTop");
+    window.onscroll = function () {
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        backToTopBtn.style.display = "block";
+      } else {
+        backToTopBtn.style.display = "none";
+      }
+    };
+    backToTopBtn.onclick = function () {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    };
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        if (btn.dataset.lang === 'en') window.location.href = 'index.html';
+        else if (btn.dataset.lang === 'ar') window.location.href = 'arabic/index.html';
+      });
+    });
+
+    if (window.location.pathname.includes('/arabic/')) {
+      document.querySelector('.lang-btn[data-lang="ar"]').classList.add('active');
+      document.querySelector('.lang-btn[data-lang="en"]').classList.remove('active');
+    } else {
+      document.querySelector('.lang-btn[data-lang="en"]').classList.add('active');
+      document.querySelector('.lang-btn[data-lang="ar"]').classList.remove('active');
+    }
+  </script>
+</body>
+
+</html>

@@ -1204,7 +1204,7 @@ body.rtl .nav-lang-switch {
   .nav-lang-switch {
     position: absolute !important;
     bottom: 15px !important;
-    right: 120px !important;
+    right: 140px !important;
     transform: none !important;
     background: white !important;
     border: 1px solid var(--border) !important;
