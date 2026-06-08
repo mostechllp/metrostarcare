@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /uploads/
 
 Sitemap: https://www.metrostarcare.ae/sitemap.xml

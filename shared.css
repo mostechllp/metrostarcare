@@ -456,7 +456,7 @@ body {
 }
 .doctor-exp {
   font-size: 0.78rem;
-  color: #6b7280; /* soft gray */
+  color: var(--maroon-deep); /* soft gray */
   margin-top: 4px;
   font-weight: 500;
 }
@@ -469,7 +469,7 @@ body {
 
 .doctor-exp {
   font-size: 0.72rem;
-  color: #9ca3af; /* lighter = less visual tension */
+  color: var(--maroon-deep); /* lighter = less visual tension */
   font-weight: 500;
 }
 .doctor-card-footer {
@@ -676,6 +676,7 @@ footer {
   line-height: 1.75;
   opacity: 0.7;
   max-width: 280px;
+  color: rgba(255, 255, 255, 0.8);
 }
 .footer-col h4 {
   font-size: 1rem;
@@ -729,8 +730,9 @@ footer {
   gap: 12px;
 }
 .footer-bottom p {
-  font-size: 0.8rem;
-  opacity: 0.5;
+    color: #fff;
+    font-size: 0.8rem;
+    opacity: 0.65;
 }
 .footer-socials {
   display: flex;
