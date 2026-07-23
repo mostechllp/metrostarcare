@@ -1,4 +1,3 @@
-
 ### AutoSSL-Satellite Don't Edit Below This Line ###
 <IfModule mod_rewrite.c>
 	RewriteEngine On
@@ -34,14 +33,14 @@ Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains
 	RewriteCond %{QUERY_STRING} ^id=rasna$
 	RewriteRule ^doctor-profile\.html$ /doctors/general-practice/dr-rasna? [R=301,L]
 
-	RewriteCond %{QUERY_STRING} ^id=nidhin$
-	RewriteRule ^doctor-profile\.html$ /doctors/orthopedics/dr-nidhin? [R=301,L]
-
 	RewriteCond %{QUERY_STRING} ^id=sandhya$
 	RewriteRule ^doctor-profile\.html$ /doctors/gynaecologist/dr-sandhya? [R=301,L]
 
 	RewriteCond %{QUERY_STRING} ^id=ali$
 	RewriteRule ^doctor-profile\.html$ /doctors/ent/dr-ali? [R=301,L]
+
+	RewriteCond %{QUERY_STRING} ^id=yashwanth$
+	RewriteRule ^doctor-profile\.html$ /doctors/general-surgery/dr-yashwanth? [R=301,L]
 
 	RewriteCond %{QUERY_STRING} ^id=pradeep$
 	RewriteRule ^doctor-profile\.html$ /doctors/ophthalmologist/dr-pradeep? [R=301,L]
@@ -52,6 +51,9 @@ Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains
 	RewriteCond %{QUERY_STRING} ^id=fatema$
 	RewriteRule ^doctor-profile\.html$ /doctors/dentist/dr-fatema? [R=301,L]
 
+	RewriteCond %{QUERY_STRING} ^id=akshay$
+	RewriteRule ^doctor-profile\.html$ /doctors/dentist/dr-akshay? [R=301,L]
+
 	RewriteCond %{QUERY_STRING} ^id=salih$
 	RewriteRule ^doctor-profile\.html$ /doctors/practitioner/dr-salih? [R=301,L]
 
@@ -60,9 +62,6 @@ Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains
 
 	RewriteCond %{QUERY_STRING} ^id=sreevidya$
 	RewriteRule ^doctor-profile\.html$ /doctors/pediatrician/dr-sreevidya? [R=301,L]
-
-	RewriteCond %{QUERY_STRING} ^id=nayana$
-	RewriteRule ^doctor-profile\.html$ /doctors/practitioner/dr-nayana? [R=301,L]
 
 	RewriteCond %{QUERY_STRING} ^id=shemy$
 	RewriteRule ^doctor-profile\.html$ /doctors/pathology/dr-shemy? [R=301,L]
@@ -73,9 +72,6 @@ Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains
 	# 301 Redirects for Query String Doctor Profiles (Arabic)
 	RewriteCond %{QUERY_STRING} ^id=rasna$
 	RewriteRule ^arabic/doctor-profile\.html$ /arabic/doctors/general-practice/dr-rasna? [R=301,L]
-
-	RewriteCond %{QUERY_STRING} ^id=nidhin$
-	RewriteRule ^arabic/doctor-profile\.html$ /arabic/doctors/orthopedics/dr-nidhin? [R=301,L]
 
 	RewriteCond %{QUERY_STRING} ^id=sandhya$
 	RewriteRule ^arabic/doctor-profile\.html$ /arabic/doctors/gynaecologist/dr-sandhya? [R=301,L]
@@ -101,8 +97,6 @@ Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains
 	RewriteCond %{QUERY_STRING} ^id=sreevidya$
 	RewriteRule ^arabic/doctor-profile\.html$ /arabic/doctors/pediatrician/dr-sreevidya? [R=301,L]
 
-	RewriteCond %{QUERY_STRING} ^id=nayana$
-	RewriteRule ^arabic/doctor-profile\.html$ /arabic/doctors/practitioner/dr-nayana? [R=301,L]
 
 	RewriteCond %{QUERY_STRING} ^id=shemy$
 	RewriteRule ^arabic/doctor-profile\.html$ /arabic/doctors/pathology/dr-shemy? [R=301,L]
@@ -117,7 +111,10 @@ Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains
 
 	RewriteCond %{ENV:REDIRECT_STATUS} ^$
 	RewriteRule ^about\.html$ /about [R=301,L]
-
+	
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^blogs\.html$ /blogs [R=301,L]
+	
 	RewriteCond %{ENV:REDIRECT_STATUS} ^$
 	RewriteRule ^doctors\.html$ /doctors [R=301,L]
 
@@ -135,6 +132,25 @@ Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains
 
 	RewriteCond %{ENV:REDIRECT_STATUS} ^$
 	RewriteRule ^news\.html$ /news [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^ent\.html$ /services/ent [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^physiotherapy\.html$ /services/physiotherapy [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^pediatrics\.html$ /services/pediatrics [R=301,L]
+
+	RewriteCond %{THE_REQUEST} \s//+general-doctor-sharjah [NC]
+	RewriteRule ^ /general-doctor-sharjah [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^general-doctor-sharjah\.html$ /general-doctor-sharjah [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^general-medicine-doctor-sharjah\.html$ /general-medicine-doctor-sharjah [R=301,L]
+
 
 	# 301 Redirects for HTML Extension Pages (Arabic)
 	RewriteCond %{ENV:REDIRECT_STATUS} ^$
@@ -161,39 +177,80 @@ Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains
 	RewriteCond %{ENV:REDIRECT_STATUS} ^$
 	RewriteRule ^arabic/news\.html$ /arabic/news [R=301,L]
 
-	# Specific Rewrite to fix 403 Forbidden on /doctors (because a folder named 'doctors' exists)
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^arabic/general-doctor-sharjah\.html$ /arabic/general-doctor-sharjah [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^arabic/general-medicine-doctor-sharjah\.html$ /arabic/general-medicine-doctor-sharjah [R=301,L]
+
+
+	# Specific Rewrites to fix 403 Forbidden (because a real folder exists with this name)
+	RewriteRule ^blogs/?$ blogs.html [L]
+	
+	# Fallback: fix relative asset paths broken by /blog/ rewrite
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^blogs/(css|js|images|assets|fonts)/(.*)$ /$1/$2 [L]
+	
 	RewriteRule ^doctors/?$ doctors.html [L]
 	RewriteRule ^arabic/doctors/?$ arabic/doctors.html [L]
 
-	# Internal Rewrites for Doctor Profiles
-	RewriteRule ^doctors/general-practice/dr-rasna/?$ /doc_profiles/dr-rasna-munaifa.html [L]
-	RewriteRule ^doctors/orthopedics/dr-nidhin/?$ /doc_profiles/dr-nidhin-padmanabhan.html [L]
-	RewriteRule ^doctors/gynaecologist/dr-sandhya/?$ /doc_profiles/dr-sandhya-subhashchandran.html [L]
-	RewriteRule ^doctors/ent/dr-ali/?$ /doc_profiles/dr-ali-akbar.html [L]
-	RewriteRule ^doctors/ophthalmologist/dr-pradeep/?$ /doc_profiles/dr-pradeep-kumar-shetty.html [L]
-	RewriteRule ^doctors/dermatologist/dr-vipul/?$ /doc_profiles/dr-vipul-paul-thomas.html [L]
-	RewriteRule ^doctors/dentist/dr-fatema/?$ /doc_profiles/dr-fatema-tuj-jahura.html [L]
-	RewriteRule ^doctors/practitioner/dr-salih/?$ /doc_profiles/dr-muhammed-salih.html [L]
-	RewriteRule ^doctors/practitioner/dr-rajani/?$ /doc_profiles/dr-rajani-thachappilly.html [L]
-	RewriteRule ^doctors/pediatrician/dr-sreevidya/?$ /doc_profiles/dr-sreevidya-arun.html [L]
-	RewriteRule ^doctors/practitioner/dr-nayana/?$ /doc_profiles/dr-nayana-jose.html [L]
-	RewriteRule ^doctors/pathology/dr-shemy/?$ /doc_profiles/dr-shemy-seebu.html [L]
-	RewriteRule ^doctors/physiotherapydr/dr-hanitta/?$ /doc_profiles/ms-hanitta-thimothy.html [L]
+	# Internal Rewrites for Services
+	RewriteRule ^services/ent/?$ ent.html [L]
+	RewriteRule ^services/physiotherapy/?$ physiotherapy.html [L]
+	RewriteRule ^services/pediatrics/?$ pediatrics.html [L]
+	RewriteRule ^services/dermatology/?$ dermatology.html [L]
 
-	# Internal Rewrites for Doctor Profiles (Arabic)
-	RewriteRule ^arabic/doctors/general-practice/dr-rasna/?$ /arabic/doctors/dr-rasna-munaifa.html [L]
-	RewriteRule ^arabic/doctors/orthopedics/dr-nidhin/?$ /arabic/doctors/dr-nidhin-padmanabhan.html [L]
-	RewriteRule ^arabic/doctors/gynaecologist/dr-sandhya/?$ /arabic/doctors/dr-sandhya-subhashchandran.html [L]
-	RewriteRule ^arabic/doctors/ent/dr-ali/?$ /arabic/doctors/dr-ali-akbar.html [L]
-	RewriteRule ^arabic/doctors/ophthalmologist/dr-pradeep/?$ /arabic/doctors/dr-pradeep-kumar-shetty.html [L]
-	RewriteRule ^arabic/doctors/dermatologist/dr-vipul/?$ /arabic/doctors/dr-vipul-paul-thomas.html [L]
-	RewriteRule ^arabic/doctors/dentist/dr-fatema/?$ /arabic/doctors/dr-fatema-tuj-jahura.html [L]
-	RewriteRule ^arabic/doctors/practitioner/dr-salih/?$ /arabic/doctors/dr-muhammed-salih.html [L]
-	RewriteRule ^arabic/doctors/practitioner/dr-rajani/?$ /arabic/doctors/dr-rajani-thachappilly.html [L]
-	RewriteRule ^arabic/doctors/pediatrician/dr-sreevidya/?$ /arabic/doctors/dr-sreevidya-arun.html [L]
-	RewriteRule ^arabic/doctors/practitioner/dr-nayana/?$ /arabic/doctors/dr-nayana-jose.html [L]
-	RewriteRule ^arabic/doctors/pathology/dr-shemy/?$ /arabic/doctors/dr-shemy-seebu.html [L]
-	RewriteRule ^arabic/doctors/physiotherapydr/dr-hanitta/?$ /arabic/doctors/ms-hanitta-thimothy.html [L]
+
+	# 301 Redirects for Short Doctor URLs
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^doctors/general-practice/dr-rasna/?$ /doctors/general-practice/dr-rasna-munaifa [R=301,L]
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^doctors/gynaecologist/dr-sandhya/?$ /doctors/gynaecologist/dr-sandhya-subhashchandran [R=301,L]
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^doctors/ent/dr-ali/?$ /doctors/ent/dr-ali-akbar [R=301,L]
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^doctors/ophthalmologist/dr-pradeep/?$ /doctors/ophthalmologist/dr-pradeep-kumar-shetty [R=301,L]
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^doctors/dermatologist/dr-vipul/?$ /doctors/dermatologist/dr-vipul-paul-thomas [R=301,L]
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^doctors/dentist/dr-fatema/?$ /doctors/dentist/dr-fatema-tuj-jahura [R=301,L]
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^doctors/practitioner/dr-salih/?$ /doctors/practitioner/dr-muhammed-salih [R=301,L]
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^doctors/practitioner/dr-rajani/?$ /doctors/practitioner/dr-rajani-thachappilly [R=301,L]
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^doctors/pediatrician/dr-sreevidya/?$ /doctors/pediatrician/dr-sreevidya-arun [R=301,L]
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^doctors/pathology/dr-shemy/?$ /doctors/pathology/dr-shemy-seebu [R=301,L]
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^doctors/physiotherapydr/dr-hanitta/?$ /doctors/physiotherapydr/ms-hanitta-thimothy [R=301,L]
+
+	# 301 Redirects for Short Doctor URLs (Arabic)
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^arabic/doctors/general-practice/dr-rasna/?$ /arabic/doctors/general-practice/dr-rasna-munaifa [R=301,L]
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^arabic/doctors/gynaecologist/dr-sandhya/?$ /arabic/doctors/gynaecologist/dr-sandhya-subhashchandran [R=301,L]
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^arabic/doctors/ent/dr-ali/?$ /arabic/doctors/ent/dr-ali-akbar [R=301,L]
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^arabic/doctors/ophthalmologist/dr-pradeep/?$ /arabic/doctors/ophthalmologist/dr-pradeep-kumar-shetty [R=301,L]
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^arabic/doctors/dermatologist/dr-vipul/?$ /arabic/doctors/dermatologist/dr-vipul-paul-thomas [R=301,L]
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^arabic/doctors/dentist/dr-fatema/?$ /arabic/doctors/dentist/dr-fatema-tuj-jahura [R=301,L]
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^arabic/doctors/practitioner/dr-salih/?$ /arabic/doctors/practitioner/dr-muhammed-salih [R=301,L]
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^arabic/doctors/practitioner/dr-rajani/?$ /arabic/doctors/practitioner/dr-rajani-thachappilly [R=301,L]
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^arabic/doctors/pediatrician/dr-sreevidya/?$ /arabic/doctors/pediatrician/dr-sreevidya-arun [R=301,L]
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^arabic/doctors/pathology/dr-shemy/?$ /arabic/doctors/pathology/dr-shemy-seebu [R=301,L]
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^arabic/doctors/physiotherapydr/dr-hanitta/?$ /arabic/doctors/physiotherapydr/ms-hanitta-thimothy [R=301,L]
+	
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^blogs/family-health-checkups-sharjah\.html$ /blogs/family-health-checkups-sharjah [R=301,L]
 
 	# Internal Rewrite for Clean URLs (e.g., /about silently loads /about.html)
 	RewriteCond %{REQUEST_FILENAME} !-d

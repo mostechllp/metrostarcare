@@ -1,0 +1,13 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/services/ent", "destination": "/ent.html" },
+    { "source": "/services/physiotherapy", "destination": "/physiotherapy.html" },
+    { "source": "/services/pediatrics", "destination": "/pediatrics.html" },
+    { "source": "/arabic/services/ent", "destination": "/arabic/ent.html" },
+    { "source": "/arabic/services/physiotherapy", "destination": "/arabic/physiotherapy.html" },
+    { "source": "/arabic/services/pediatrics", "destination": "/arabic/pediatrics.html" },
+    { "source": "/services/dermatology", "destination": "/dermatology.html" },
+    { "source": "/arabic/services/dermatology", "destination": "/arabic/dermatology.html" }
+  ]
+}

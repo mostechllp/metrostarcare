@@ -6,6 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>الملف الشخصي للطبيب | مركز ميترو ستاركير الطبي</title>
+  <link href="/assets/images/favicon/favicon.webp" rel="icon" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="../shared.css">
   <!-- Google Tag Manager -->
@@ -15,762 +16,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-THFF86K7');</script>
 <!-- End Google Tag Manager -->
-  <style>
-    /* ---- NAVBAR ---- */
-
-    .hamburger {
-      display: none;
-    }
-
-    .hamburger.active span:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .hamburger.active span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .hamburger.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(5px, -5px);
-    }
-
-    /* ---- MOBILE NAV ---- */
-    @media (max-width: 900px) {
-
-      .nav-links {
-        display: flex;
-        position: absolute;
-        top: 76px;
-        left: 0;
-        width: 100%;
-        background: white;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 20px 32px;
-        gap: 16px;
-        border-top: 1px solid var(--border);
-
-        opacity: 0;
-        pointer-events: none;
-        transform: translateY(-10px);
-        transition: 0.3s ease;
-      }
-
-      .nav-links.active {
-        opacity: 1;
-        pointer-events: auto;
-        transform: translateY(0);
-      }
-
-      .nav-links li {
-        width: 100%;
-      }
-
-      .nav-links a {
-        display: block;
-        width: 100%;
-        padding: 10px 0;
-      }
-
-      /* Hide desktop right section */
-      .nav-emergency {
-        display: none;
-      }
-
-      /* Show hamburger */
-      .hamburger {
-        display: flex !important;
-        flex-direction: column;
-        gap: 5px;
-        cursor: pointer;
-      }
-
-      .hamburger span {
-        width: 24px;
-        height: 2px;
-        background: var(--text-dark);
-        display: block;
-      }
-    }
-
-
-    /* ---- PROFILE HERO ---- */
-    .profile-hero {
-      background: linear-gradient(135deg, var(--maroon-deep) 0%, var(--maroon) 60%, #C05078 100%);
-      padding: 130px 0 0;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .profile-hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Ccircle cx='40' cy='40' r='30'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-      pointer-events: none;
-    }
-
-    .ph-shape {
-      position: absolute;
-      border-radius: 50%;
-      background: white;
-    }
-
-    .ph-shape-1 {
-      width: 450px;
-      height: 450px;
-      right: -80px;
-      top: -100px;
-      opacity: 0.05;
-    }
-
-    .ph-shape-2 {
-      width: 250px;
-      height: 250px;
-      left: 5%;
-      bottom: 0;
-      opacity: 0.03;
-    }
-
-    .profile-hero-inner {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 32px;
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 52px;
-      align-items: end;
-      padding-bottom: 0;
-    }
-
-    /* Doctor Photo */
-    .profile-photo-wrap {
-      position: relative;
-      flex-shrink: 0;
-      width: 260px;
-      align-self: flex-end;
-    }
-
-    .profile-photo-frame {
-      width: 260px;
-      height: 320px;
-      border-radius: 24px 24px 0 0;
-      overflow: hidden;
-      background: linear-gradient(160deg, var(--rose-blush), var(--rose));
-      position: relative;
-      box-shadow: 0 -20px 60px rgba(0, 0, 0, 0.25);
-      border: 3px solid rgba(255, 255, 255, 0.2);
-      border-bottom: none;
-    }
-
-    .profile-photo-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top center;
-      display: block;
-    }
-
-    .profile-photo-fallback {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: '', serif;
-      font-size: 5rem;
-      font-weight: 700;
-      color: var(--maroon);
-      opacity: 0.4;
-    }
-
-    .profile-photo-badge {
-      position: absolute;
-      bottom: -1px;
-      left: 0;
-      right: 0;
-      background: linear-gradient(to top, rgba(74, 13, 40, 0.95), transparent);
-      padding: 24px 16px 14px;
-      text-align: center;
-    }
-
-    /* Hero right content */
-    .profile-hero-info {
-      padding-bottom: 48px;
-      color: white;
-    }
-
-    .breadcrumb {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.78rem;
-      color: rgba(255, 255, 255, 0.5);
-      margin-bottom: 24px;
-    }
-
-    .breadcrumb a {
-      color: rgba(255, 255, 255, 0.5);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .breadcrumb a:hover {
-      color: var(--rose);
-    }
-
-    .breadcrumb span {
-      color: rgba(255, 255, 255, 0.3);
-    }
-
-    .breadcrumb strong {
-      color: rgba(255, 255, 255, 0.8);
-      font-weight: 500;
-    }
-
-    .profile-specialty-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: var(--rose);
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      padding: 6px 16px;
-      border-radius: 30px;
-      margin-bottom: 18px;
-      backdrop-filter: blur(10px);
-    }
-
-    .profile-specialty-badge .dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--rose);
-    }
-
-    .profile-hero-info h1 {
-      font-family: '', serif;
-      font-size: clamp(2rem, 4.5vw, 3rem);
-      font-weight: 700;
-      color: white;
-      line-height: 1.15;
-      margin-bottom: 10px;
-    }
-
-    .profile-hero-info .dept-tag {
-      font-size: 1rem;
-      color: rgba(255, 255, 255, 0.7);
-      margin-bottom: 28px;
-      font-weight: 400;
-    }
-
-    .profile-hero-info .dept-tag strong {
-      color: white;
-      font-weight: 600;
-    }
-
-    .profile-meta-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 32px;
-    }
-
-    .meta-tag {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      color: rgba(255, 255, 255, 0.85);
-      font-size: 0.8rem;
-      padding: 7px 14px;
-      border-radius: 8px;
-    }
-
-    .meta-tag svg {
-      opacity: 0.7;
-    }
-
-    .profile-hero-btns {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .btn-ghost-white {
-      padding: 11px 22px;
-      background: rgba(255, 255, 255, 0.12);
-      border: 1.5px solid rgba(255, 255, 255, 0.3);
-      color: white;
-      border-radius: 10px;
-      font-size: 0.88rem;
-      font-weight: 600;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: all 0.25s;
-    }
-
-    .btn-ghost-white:hover {
-      background: rgba(255, 255, 255, 0.22);
-    }
-
-    /* ---- PROFILE BODY ---- */
-    .profile-body {
-      padding: 72px 0 88px;
-      background: var(--off-white);
-    }
-
-    .profile-body-grid {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 32px;
-      display: grid;
-      grid-template-columns: 1fr 340px;
-      gap: 52px;
-      align-items: start;
-    }
-
-    /* Main content */
-    .profile-main {}
-
-    .profile-section {
-      background: white;
-      border-radius: 20px;
-      border: 1px solid var(--border);
-      padding: 36px 40px;
-      margin-bottom: 24px;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .profile-section-title {
-      font-family: '', serif;
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--maroon-deep);
-      margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding-bottom: 16px;
-      border-bottom: 2px solid var(--rose-pale);
-    }
-
-    .profile-section-title .icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 10px;
-      background: var(--rose-pale);
-      color: var(--maroon);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .profile-bio {
-      font-size: 0.92rem;
-      line-height: 1.85;
-      color: var(--text-dark);
-    }
-
-    .profile-bio p {
-      margin-bottom: 16px;
-    }
-
-    .profile-bio p:last-child {
-      margin-bottom: 0;
-    }
-
-    .profile-bio strong {
-      color: var(--maroon-deep);
-      font-weight: 700;
-    }
-
-    .expertise-box {
-      background: var(--rose-pale);
-      border-radius: 14px;
-      padding: 22px 24px;
-      border-left: 4px solid var(--maroon);
-      font-size: 0.9rem;
-      line-height: 1.8;
-      color: var(--text-dark);
-    }
-
-    .expertise-box strong {
-      color: var(--maroon-deep);
-    }
-
-    .languages-wrap {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 4px;
-    }
-
-    .lang-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: white;
-      border: 1.5px solid var(--border);
-      color: var(--text-dark);
-      font-size: 0.8rem;
-      font-weight: 600;
-      padding: 6px 14px;
-      border-radius: 8px;
-    }
-
-    /* Sidebar */
-    .profile-sidebar {}
-
-    .sidebar-sticky {
-      position: sticky;
-      top: 100px;
-    }
-
-    .sidebar-appt-card {
-      background: linear-gradient(135deg, var(--maroon-deep), var(--maroon));
-      border-radius: 20px;
-      padding: 28px;
-      color: white;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    .sidebar-appt-card h4 {
-      font-family: '', serif;
-      font-size: 1.1rem;
-      margin-bottom: 8px;
-    }
-
-    .sidebar-appt-card p {
-      font-size: 0.8rem;
-      color: rgba(255, 255, 255, 0.7);
-      margin-bottom: 22px;
-      line-height: 1.6;
-    }
-
-    .appt-phone {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      background: white;
-      color: var(--maroon);
-      border-radius: 12px;
-      padding: 13px 20px;
-      font-weight: 800;
-      font-size: 1rem;
-      text-decoration: none;
-      transition: all 0.2s;
-      margin-bottom: 12px;
-    }
-
-    .appt-phone:hover {
-      transform: scale(1.03);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-    }
-
-    .appt-divider {
-      font-size: 0.72rem;
-      color: rgba(255, 255, 255, 0.4);
-      margin: 12px 0;
-    }
-
-    .appt-visit {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      background: rgba(255, 255, 255, 0.15);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      color: white;
-      border-radius: 12px;
-      padding: 11px 20px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.2s;
-    }
-
-    .appt-visit:hover {
-      background: rgba(255, 255, 255, 0.25);
-    }
-
-    .sidebar-info-card {
-      background: white;
-      border-radius: 20px;
-      border: 1px solid var(--border);
-      padding: 24px 26px;
-      margin-bottom: 20px;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .sidebar-info-card h5 {
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--maroon);
-      font-weight: 700;
-      margin-bottom: 16px;
-    }
-
-    .info-row {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      padding: 10px 0;
-      border-bottom: 1px solid var(--border);
-      font-size: 0.84rem;
-    }
-
-    .info-row:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-
-    .info-row .lbl {
-      color: var(--text-soft);
-      min-width: 88px;
-      font-weight: 500;
-    }
-
-    .info-row .val {
-      color: var(--text-dark);
-      font-weight: 600;
-      line-height: 1.4;
-    }
-
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--maroon);
-      font-size: 0.85rem;
-      font-weight: 600;
-      text-decoration: none;
-      padding: 10px 18px;
-      border: 1.5px solid var(--rose);
-      border-radius: 10px;
-      background: white;
-      transition: all 0.2s;
-      width: 100%;
-      justify-content: center;
-    }
-
-    .back-link:hover {
-      background: var(--rose-pale);
-      border-color: var(--maroon);
-    }
-
-    /* Other doctors section */
-    .other-doctors {
-      padding: 72px 0;
-      background: white;
-      border-top: 1px solid var(--border);
-    }
-
-    .other-doctors-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      margin-top: 40px;
-    }
-
-    .mini-doctor-card {
-      background: var(--off-white);
-      border-radius: 16px;
-      border: 1px solid var(--border);
-      padding: 20px;
-      text-align: center;
-      transition: var(--transition);
-      cursor: pointer;
-      text-decoration: none;
-      display: block;
-    }
-
-    .mini-doctor-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-md);
-      border-color: var(--rose);
-    }
-
-    .mini-doc-photo {
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      margin: 0 auto 12px;
-      overflow: hidden;
-      background: linear-gradient(135deg, var(--rose-blush), var(--rose));
-      border: 2px solid var(--rose);
-    }
-
-    .mini-doc-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top;
-    }
-
-    .mini-doc-initials {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: '', serif;
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--maroon);
-      opacity: 0.5;
-    }
-
-    .mini-doc-name {
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--text-dark);
-      margin-bottom: 4px;
-    }
-
-    .mini-doc-dept {
-      font-size: 0.72rem;
-      color: var(--maroon);
-      font-weight: 600;
-    }
-
-    /* Responsive */
-    @media (max-width: 1024px) {
-      .profile-body-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .sidebar-sticky {
-        position: static;
-      }
-
-      .other-doctors-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 768px) {
-      .profile-hero-inner {
-        grid-template-columns: 1fr;
-      }
-
-      .profile-photo-wrap {
-        width: 180px;
-      }
-
-      .profile-photo-frame {
-        width: 180px;
-        height: 220px;
-      }
-
-      .other-doctors-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 480px) {
-      .profile-section {
-        padding: 24px 20px;
-      }
-
-      .other-doctors-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    /* ---- SERVICE PILLS SECTION ---- */
-    .service-pills-section {
-      background: white;
-      border-radius: 20px;
-      border: 1px solid var(--border);
-      padding: 28px 32px;
-      margin-bottom: 24px;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .service-pills-title {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--maroon-deep);
-      margin-bottom: 20px;
-      padding-bottom: 12px;
-      border-bottom: 2px solid var(--rose-pale);
-    }
-
-    .service-pills-title .icon {
-      width: 32px;
-      height: 32px;
-      border-radius: 8px;
-      background: var(--rose-pale);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--maroon);
-    }
-
-    .pills-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .service-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: linear-gradient(135deg, var(--rose-pale), white);
-      border: 1px solid var(--rose-blush);
-      border-radius: 40px;
-      padding: 8px 18px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--maroon);
-      transition: all 0.3s ease;
-      cursor: default;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
-    }
-
-    .service-pill:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(139, 26, 74, 0.15);
-      border-color: var(--maroon-light);
-      background: linear-gradient(135deg, var(--rose-pale), #fff);
-    }
-
-    .service-pill svg {
-      width: 16px;
-      height: 16px;
-      flex-shrink: 0;
-    }
-
-    /* Responsive styles for pills on mobile */
-    @media (max-width: 768px) {
-      .service-pills-section {
-        padding: 20px;
-      }
-
-      .service-pill {
-        padding: 6px 14px;
-        font-size: 0.75rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="/arabic/doctor-profile-style.css">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
@@ -894,7 +140,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <li><a href="services.html">التجميل الطبي</a></li>
 <li><a href="services.html">الأشعة (السونار والأشعة السينية)</a></li>
 <li><a href="services.html">المختبر</a></li>
-<li><a href="services.html">الصيدلية</a></li>>
+<li><a href="services.html">الصيدلية</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -915,12 +161,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <ul class="footer-contact">
           <li><span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-              </svg></span><span>+971 52 841 5113</span></li>
+              </svg></span><span><a href="tel:+971528415113" style="color: inherit; text-decoration: none; text-underline-offset: 4px; transition: color 0.3s;" onmouseover="this.style.color='var(--rose, #db2c66)'" onmouseout="this.style.color='inherit'">+971 52 841 5113</a></span></li>
               <li><span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"
      stroke="currentColor" stroke-width="2">
   <rect x="3" y="5" width="18" height="14" rx="2"/>
   <path d="M3 7l9 6 9-6"/>
-</svg></span><span>info@metrostarcare.ae</span></li>
+</svg></span><span><a href="mailto:info@metrostarcare.ae" style="color: inherit; text-decoration: none; text-underline-offset: 4px; transition: color 0.3s;" onmouseover="this.style.color='var(--rose, #db2c66)'" onmouseout="this.style.color='inherit'">info@metrostarcare.ae</a></span></li>
           <li><span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                 <circle cx="12" cy="10" r="3" />
@@ -928,8 +174,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>© 2026 مجموعة ميترو الطبية. جميع الحقوق محفوظة.</p>
+   <div class="footer-bottom">
+      <p>© جميع الحقوق محفوظة | تم التطوير بواسطة شركة موستك لحلول الأعمال</p>
     </div>
   </footer>
 
@@ -946,7 +192,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <script>
     // =============================================
-    // DOCTORS DATABASE — all content from live site (Arabic Translation)
+    // DOCTORS DATABASE — Arabic Translation (including Dr. Lenoy)
     // =============================================
 const DOCTORS = [
 {
@@ -961,16 +207,7 @@ const DOCTORS = [
   languages: ['الإنجليزية', 'الهندية', 'المالايالامية'],
   qualifications: ['بكالوريوس الطب والجراحة'],
   tagline: 'ملتزمة بتقديم رعاية أولية شاملة وإنسانية',
-  services: [
-    'الطب العام',
-    'صحة المرأة',
-    'إدارة الأمراض المزمنة',
-    'الرعاية الوقائية',
-    'رعاية كبار السن',
-    'الإجراءات الجراحية البسيطة',
-    'التطعيمات',
-    'الفحوصات الصحية'
-  ],
+  services: ['الطب العام', 'صحة المرأة', 'إدارة الأمراض المزمنة', 'الرعاية الوقائية', 'رعاية كبار السن', 'الإجراءات الجراحية البسيطة', 'التطعيمات', 'الفحوصات الصحية'],
   bio: [
     'منذ بداية مسيرتها الطبية، كانت <strong>د. رسنا منيفة كوروث</strong> مدفوعة بشغف عميق للشفاء والتزام قوي بتقديم رعاية تركز على المريض. بعد إكمال <strong>بكالوريوس الطب والجراحة</strong>، اختارت التخصص كـ <strong>طبيبة عامة</strong>، حيث تمكنت من بناء علاقات طويلة الأمد قائمة على الثقة مع مرضاها، وتكون نقطة الاتصال الأولى لمجموعة واسعة من المشكلات الصحية.',
     'في <strong>مركز ميترو ستاركير الطبي</strong>، تقدم د. رسنا <strong>رعاية شاملة للمرضى من جميع الأعمار</strong>، حيث تدير الحالات الحادة والمزمنة مثل السكري، ارتفاع ضغط الدم، الربو، العدوى، والأمراض الموسمية. كما تشارك بفعالية في الرعاية الوقائية، مؤكدة على أهمية <strong>الفحوصات الدورية، التطعيمات، الفحوصات الوقائية، والإرشاد الصحي</strong> للحفاظ على صحة المرضى.',
@@ -981,26 +218,92 @@ const DOCTORS = [
   expertise: null
 },
 
-// {
-//   id: 'farah',
-//   name: 'د. فرح طول زنن',
-//   prefix: 'د.',
-//   firstName: 'فرح',
-//   title: 'طبيبة عامة',
-//   role: null,
-//   experience: '+11 سنة',
-//   image: '../doctors/farah_thul_zanan.webp',
-//   languages: ['الإنجليزية','الهندية','الأردية','البنغالية'],
-//   qualifications: ['بكالوريوس طب وجراحة'],
-//   tagline: 'معالجة موثوقة في الرعاية الأولية',
-//   services: ['الطب العام','إدارة السكري','ارتفاع ضغط الدم','الرعاية الوقائية','صحة المرأة'],
-//   bio: [
-//     'تعتبر الطب رسالة إنسانية لخدمة المرضى.',
-//     'لديها خبرة واسعة في تشخيص وعلاج الحالات المختلفة.',
-//     'تؤمن بالرعاية الشخصية لكل مريض.'
-//   ],
-//   expertise: 'تركز على الكشف المبكر والوقاية والتثقيف الصحي.'
-// },
+// NEW: Dr. Yashwanth Nag M N - Arabic
+{
+  id: 'yashwanth',
+  name: 'د. ياشوانث ناج إم إن',
+  prefix: 'د.',
+  firstName: 'ياشوانث',
+  title: 'جراح عام وجراحة المناظير',
+  role: null,
+  experience: '+6 سنوات',
+  image: '../doctors/yashwanth_nag.webp',
+  languages: ['الإنجليزية', 'الكانادا', 'الهندية', 'المالايالامية'],
+  qualifications: ['بكالوريوس الطب والجراحة', 'ماجستير الجراحة العامة', 'دبلوم البورد الوطني للجراحة العامة', 'زمالة في أمراض الشرج', 'دبلوم في الجراحة محدودة التدخل'],
+  tagline: 'الدقة في الجراحة، الرحمة في الرعاية — جراحة المناظير والجراحة العامة المتقدمة',
+  services: ['جراحة المناظير', 'الجراحة الروبوتية', 'أمراض الشرج', 'جراحة المرارة', 'إصلاح الفتق', 'استئصال الزائدة الدودية', 'جراحة القولون والمستقيم', 'إجراءات الجراحة العامة'],
+  bio: [
+    '<strong>د. ياشوانث ناج إم إن</strong> هو <strong>جراح عام وجراح مناظير</strong> يتمتع بخبرة تزيد عن <strong>6 سنوات من الخبرة السريرية والأكاديمية بعد الدراسات العليا</strong>. أكمل <strong>ماجستير الجراحة العامة</strong> من كلية الطب الحكومية في كوزيكود، كيرالا، حيث ركزت أطروحته على "المسار المتكرر للعصب الحنجري وتغيراته" — مما يعكس التزامه العميق بالدقة الجراحية وسلامة المرضى.',
+    'مدفوعًا بشغفه بـ <strong>تقنيات الجراحة محدودة التدخل</strong>، حصل د. ياشوانث على زمالات متقدمة بما في ذلك <strong>زمالة ودبلوم في الجراحة محدودة التدخل</strong> من مستشفى لاباروسكوبي العالمي في دلهي، و<strong>زمالة في أمراض الشرج</strong> من معهد الجراحة الطبية ومحدودة التدخل في مومباي. هذه المؤهلات زودته بخبرة في <strong>الجراحة بالمنظار والجراحة الروبوتية</strong>، مما يتيح للمرضى التعافي بشكل أسرع، وألم أقل، وندبات أصغر.',
+    'تشمل مجموعته الجراحية مجموعة واسعة من الإجراءات: من <strong>استئصال المرارة بالمنظار، وإصلاح الفتق، واستئصال الزائدة الدودية، وجراحات القولون والمستقيم</strong> إلى علاجات أمراض الشرج المتقدمة للبواسير، والشقوق، والناسور. كما أنه ماهر في إدارة الحالات الجراحية الطارئة وإجراء الجراحات العامة الروتينية بعناية فائقة.',
+    'يؤمن د. ياشوانث <strong>بفلسفة المريض أولاً</strong>، مما يضمن أن يتلقى كل فرد شرحًا واضحًا لحالته، وخيارات علاجية مبنية على الأدلة، ودعمًا إنسانيًا طوال رحلته الجراحية. أسلوبه الهادئ، وتميزه الجراحي، وتفانيه في التعلم المستمر جعلوه اسمًا موثوقًا في الرعاية الجراحية في مركز ميترو ستاركير الطبي.',
+    'بإتقانه <strong>الإنجليزية والكانادا والهندية والمالايالامية</strong>، يتواصل بسهولة مع المرضى من خلفيات متنوعة، مما يضمن أن اللغة لا تصبح عائقًا أمام رعاية جراحية عالية الجودة. سواء كانت عملية منظار مخططة أو جراحة عامة طارئة، فإن <strong>د. ياشوانث ناج إم إن</strong> ملتزم بتقديم حلول جراحية آمنة وفعالة وحديثة.'
+  ],
+  expertise: 'الجراحة محدودة التدخل وجراحة المناظير، أمراض الشرج، الإجراءات بمساعدة الروبوت، الجراحة العامة المتقدمة'
+},
+
+// NEW: Dr. Akshay Paduvilavi Anil - Arabic
+{
+  id: 'akshay',
+  name: 'د. أكشاي بادوفيلافي أنيل',
+  prefix: 'د.',
+  firstName: 'أكشاي',
+  title: 'طبيب أسنان عام',
+  role: 'مرخص من وزارة الصحة',
+  experience: '+12 سنة',
+  image: '../doctors/akshay_paduvilavi.webp',
+  languages: ['الإنجليزية', 'الهندية', 'المالايالامية'],
+  qualifications: ['طبيب أسنان عام مرخص من وزارة الصحة (الإمارات)', 'طبيب أسنان عام مرخص من دائرة الصحة (الإمارات)', 'مسجل في مجلس كيرالا لطب الأسنان، الهند'],
+  tagline: 'ملتزم بإنشاء ابتسامات صحية وواثقة من خلال رعاية أسنان متقدمة ورحيمة',
+  services: ['طب الأسنان التجميلي وتجميل الابتسامة', 'علاج قناة الجذر (علاج الجذور بجلسة واحدة)', 'التيجان والجسور وأطقم الأسنان', 'تبييض الأسنان وتبييض الليزر', 'طب أسنان الأطفال', 'خلع الأسنان وجراحة الفم البسيطة', 'القشور والحشوات التجميلية', 'ترميم تاج الزرعات', 'طب الأسنان الوقائي والعائلي'],
+  bio: [
+    '<strong>د. أكشاي بادوفيلافي أنيل</strong> هو <strong>طبيب أسنان عام</strong> ذو خبرة تزيد عن <strong>12 عامًا من الخبرة السريرية</strong> في جميع أنحاء الإمارات والهند. إنه ملتزم بتقديم رعاية أسنان عالية الجودة تركز على المريض مع التركيز على الراحة والدقة وصحة الفم على المدى الطويل.',
+    'بفضل خبرته الواسعة في <strong>طب الأسنان الترميمي والتجميلي والوقائي والجراحي</strong>، يقدم د. أكشاي مجموعة واسعة من خدمات الأسنان بما في ذلك <strong>علاج قناة الجذر، وخلع الأسنان، وتبييض الأسنان، والقشور، والتيجان والجسور، وأطقم الأسنان، ورعاية أسنان الأطفال، وترميم الزرعات</strong>. وهو ماهر في الإجراءات المتقدمة مثل <strong>تصميم الابتسامة الرقمي، والتبييض بالليزر، وإدارة الأسنان المنطمرة، وإجراءات جراحة الفم البسيطة</strong>.',
+    'معروف <strong>بأسلوبه اللطيف ومهاراته التشخيصية الممتازة</strong>، يؤمن د. أكشاي بتثقيف المرضى وإنشاء خطط علاج شخصية لتحقيق ابتسامات صحية وواثقة. إنه يأخذ الوقت الكافي لفهم مخاوف كل مريض وأهدافه الفريدة، مما يضمن أن كل زيارة هي تجربة إيجابية ومريحة.',
+    'يحمل د. أكشاي تراخيص نشطة من <strong>وزارة الصحة (MOH) في الإمارات</strong> و<strong>دائرة الصحة (DOH) في الإمارات</strong>، وهو مسجل أيضًا في <strong>مجلس كيرالا لطب الأسنان، الهند</strong>. يضمن التزامه بالتعليم المستمر أنه يظل في طليعة تقنيات وتقنيات طب الأسنان الحديثة.',
+    'سواء كنت بحاجة إلى فحص روتيني، أو تجميل كامل للابتسامة، أو رعاية أسنان طارئة، فإن <strong>د. أكشاي بادوفيلافي أنيل</strong> ملتزم بتزويدك بأعلى مستوى من رعاية الأسنان في بيئة دافئة ومرحبة.'
+  ],
+  expertise: 'طب الأسنان التجميلي، علاج الجذور بجلسة واحدة، التيجان والجسور، طب أسنان الأطفال، جراحة الفم البسيطة'
+},
+
+// NEW: Dr. Lenoy Leelakrishnan Remadevi - Arabic
+{
+  id: 'lenoy',
+  name: 'د. لینوي ليلاكريشنان ريماديفي',
+  prefix: 'د.',
+  firstName: 'لينوي',
+  title: 'طبيب عام وأخصائي سكري',
+  role: 'مرخص من وزارة الصحة ودائرة الصحة',
+  experience: '+19 سنة',
+  image: '../doctors_images/lenoy.webp',
+  languages: ['الإنجليزية', 'المالايالامية', 'الهندية', 'التاميلية', 'الروسية'],
+  qualifications: [
+    'دكتوراه في الطب (معادل لبكالوريوس الطب والجراحة) – جامعة كوبان الطبية الحكومية، روسيا',
+    'ماجستير في أبحاث العلوم العصبية – جامعة أستون، برمنغهام، المملكة المتحدة',
+    'زمالة في طب السكري – أكاديمية رويال ليفربول وميدفيرستي، المملكة المتحدة',
+    'معتمد في الإنعاش القلبي الرئوي المتقدم والأساسي (جمعية القلب الأمريكية)',
+    'مرخص من وزارة الصحة ودائرة الصحة | تم التحقق من البيانات'
+  ],
+  tagline: 'ملتزم بتقديم رعاية شاملة تركز على المريض مع التركيز على الطب المبني على الأدلة والعلاج الرحيم.',
+  services: [
+    'الطب العام',
+    'طب السكري وإدارة مرض السكري',
+    'إدارة العناية المركزة والرعاية الحرجة',
+    'طب الطوارئ',
+    'إدارة ارتفاع ضغط الدم والأمراض المزمنة',
+    'رعاية كبار السن والرعاية الوقائية',
+    'الطب الباطني',
+    'تقييم مخاطر القلب والأوعية الدموية'
+  ],
+  bio: [
+    '<strong>د. لينوي ليلاكريشنان ريماديفي</strong> هو <strong>طبيب عام وأخصائي سكري</strong> يتمتع بخبرة تزيد عن <strong>19 عامًا من الخبرة السريرية</strong> في الإمارات وعُمان والهند والمملكة المتحدة. وهو ملتزم بتقديم رعاية شاملة تركز على المريض مع التركيز على الطب المبني على الأدلة والعلاج الرحيم.',
+    'يحمل د. لينوي <strong>دكتوراه في الطب (معادل لبكالوريوس الطب والجراحة) من جامعة كوبان الطبية الحكومية في روسيا</strong>، و<strong>ماجستير في أبحاث العلوم العصبية من جامعة أستون في المملكة المتحدة</strong>، و<strong>زمالة في طب السكري من أكاديمية رويال ليفربول وميدفيرستي في المملكة المتحدة</strong>. وهو أيضًا <strong>معتمد في الإنعاش القلبي الرئوي المتقدم والأساسي</strong> من جمعية القلب الأمريكية، مما يضمن قدرته على التعامل مع حالات الطوارئ الطبية المعقدة بأعلى مستوى من الرعاية.',
+    'بفضل خبرته الواسعة في <strong>الطب العام، طب السكري، إدارة العناية المركزة والرعاية الحرجة، طب الطوارئ، وإدارة الأمراض المزمنة</strong>، يتمتع د. لينوي بسجل حافل في إدارة الحالات الحادة والمزمنة بدقة وتعاطف. تمنحه خبرته في الرعاية الحرجة والطوارئ في عدة دول منظورًا فريدًا لتقديم رعاية صحية عالية الجودة في ظل ظروف متنوعة.',
+    'يولي د. لينوي اهتمامًا خاصًا <strong>لإدارة السكري والرعاية الوقائية</strong>، حيث يمكّن المرضى بالمعرفة والأدوات التي يحتاجونها لإدارة حالاتهم بشكل فعال وتحسين جودة حياتهم. وهو يؤمن بنهج شامل للصحة، يعالج ليس فقط الأعراض ولكن الأسباب الكامنة وراء المرض.',
+    'بفضل إتقانه <strong>الإنجليزية والمالايالامية والهندية والتاميلية والروسية</strong>، يستطيع د. لينوي التواصل مع مجموعة واسعة من المرضى، مما يضمن تواصلًا واضحًا وتجربة رعاية صحية مريحة. يضمن التزامه بالتعلم المستمر والتطوير المهني أنه يظل في طليعة التقدم الطبي، مما يعود بالفائدة على كل مريض يراه.'
+  ],
+  expertise: 'الطب العام، طب السكري، الرعاية الحرجة، طب الطوارئ، إدارة الأمراض المزمنة'
+},
 
 {
   id: 'fatema',
@@ -1040,27 +343,6 @@ const DOCTORS = [
     'يمتلك خبرة طويلة في علاج أمراض الأنف والأذن والحنجرة.',
     'يستخدم أحدث التقنيات الطبية.',
     'يقدم رعاية شخصية لكل مريض.'
-  ],
-  expertise: null
-},
-
-{
-  id: 'nayana',
-  name: 'د. نايانا جوز',
-  prefix: 'د.',
-  firstName: 'نايانا',
-  title: 'طبيبة عامة',
-  role: null,
-  experience: '+5 سنوات',
-  image: '../doctors/nayana_jose.webp',
-  languages: ['الإنجليزية','الهندية','المالايالامية','التاميلية','الغوجاراتية','البنجابية'],
-  qualifications: ['بكالوريوس طب وجراحة','دبلوم طب الأطفال'],
-  tagline: 'رعاية صحية إنسانية شاملة',
-  services: ['الطب العام','طب الأطفال','رعاية حديثي الولادة','صحة المرأة','تنظيم الأسرة'],
-  bio: [
-    'تؤمن بالعلاج الشامل والوقاية.',
-    'تهتم بصحة الأطفال والنساء.',
-    'تقدم استشارات صحية متكاملة.'
   ],
   expertise: null
 },
@@ -1124,27 +406,6 @@ const DOCTORS = [
     'خبيرة في صحة المرأة والإنجاب.',
     'تقدم علاجات متقدمة ومخصصة.',
     'توفر رعاية إنسانية متكاملة.'
-  ],
-  expertise: null
-},
-
-{
-  id: 'nidhin',
-  name: 'د. نيدين ك بادمانابهان',
-  prefix: 'د.',
-  firstName: 'نيدين',
-  title: 'أخصائي جراحة العظام',
-  role: null,
-  experience: '+13 سنة',
-  image: '../doctors/nidhin_k_padmanabhan.webp',
-  languages: ['الإنجليزية','المالايالامية','الهندية','الكنادية','التاميلية'],
-  qualifications: ['بكالوريوس طب وجراحة','ماجستير جراحة العظام'],
-  tagline: 'استعادة الحركة خطوة بخطوة',
-  services: ['تنظير المفاصل','الكسور','إصابات الرياضة','العمود الفقري','استبدال المفاصل'],
-  bio: [
-    'يساعد المرضى على استعادة الحركة.',
-    'يستخدم أحدث التقنيات.',
-    'يقدم رعاية شخصية دقيقة.'
   ],
   expertise: null
 },
@@ -1264,7 +525,6 @@ const DOCTORS = [
   ],
   expertise: null
 }
-
 ];
     function getDoctorFromURL() {
       const params = new URLSearchParams(window.location.search);
@@ -1276,7 +536,9 @@ const DOCTORS = [
       
       const path = window.location.pathname;
       if (path.includes('/dr-rasna')) return DOCTORS.find(d => d.id === 'rasna');
-      if (path.includes('/dr-nidhin')) return DOCTORS.find(d => d.id === 'nidhin');
+      if (path.includes('/dr-yashwanth')) return DOCTORS.find(d => d.id === 'yashwanth');
+      if (path.includes('/dr-akshay')) return DOCTORS.find(d => d.id === 'akshay');
+      if (path.includes('/dr-lenoy')) return DOCTORS.find(d => d.id === 'lenoy');
       if (path.includes('/dr-sandhya')) return DOCTORS.find(d => d.id === 'sandhya');
       if (path.includes('/dr-ali')) return DOCTORS.find(d => d.id === 'ali');
       if (path.includes('/dr-pradeep')) return DOCTORS.find(d => d.id === 'pradeep');
@@ -1285,7 +547,6 @@ const DOCTORS = [
       if (path.includes('/dr-salih')) return DOCTORS.find(d => d.id === 'salih');
       if (path.includes('/dr-rajani')) return DOCTORS.find(d => d.id === 'rajani');
       if (path.includes('/dr-sreevidya')) return DOCTORS.find(d => d.id === 'sreevidya');
-      if (path.includes('/dr-nayana')) return DOCTORS.find(d => d.id === 'nayana');
       if (path.includes('/dr-shemy')) return DOCTORS.find(d => d.id === 'shemy');
       if (path.includes('/dr-hanitta')) return DOCTORS.find(d => d.id === 'hanitta');
 
@@ -1329,7 +590,9 @@ const DOCTORS = [
       
       const canonicalMap = {
         'rasna': '/doctors/general-practice/dr-rasna',
-        'nidhin': '/doctors/orthopedics/dr-nidhin',
+        'yashwanth': '/doctors/surgeon/dr-yashwanth',
+        'akshay': '/doctors/dentist/dr-akshay',
+        'lenoy': '/doctors/general-practice/dr-lenoy',
         'sandhya': '/doctors/gynaecologist/dr-sandhya',
         'ali': '/doctors/ent/dr-ali',
         'pradeep': '/doctors/ophthalmologist/dr-pradeep',
@@ -1338,7 +601,6 @@ const DOCTORS = [
         'salih': '/doctors/practitioner/dr-salih',
         'rajani': '/doctors/practitioner/dr-rajani',
         'sreevidya': '/doctors/pediatrician/dr-sreevidya',
-        'nayana': '/doctors/practitioner/dr-nayana',
         'shemy': '/doctors/pathology/dr-shemy',
         'hanitta': '/doctors/physiotherapydr/dr-hanitta'
       };
@@ -1362,6 +624,7 @@ const DOCTORS = [
       <div class="profile-photo-wrap fade-up">
         <div class="profile-photo-frame">
           <img src="${doc.image}" alt="${doc.name}"
+            style="${doc.id === 'yashwanth' ? 'object-fit: cover; object-position: 50% 35%; transform: scale(0.88);' : ''}"
             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
           <div class="profile-photo-fallback" style="display:none">${getInitials(doc.name)}</div>
           <div class="profile-photo-badge"></div>
@@ -1454,7 +717,7 @@ const DOCTORS = [
           <div class="sidebar-appt-card">
             <h4>احجز موعدًا</h4>
             <p>احجز استشارة مع ${doc.prefix === 'أ.' ? doc.name : 'الدكتور/ة ' + doc.firstName} اليوم — نحن هنا للمساعدة.</p>
-            <a href="tel:+971 52 841 5113" class="appt-phone">
+            <a href="tel:+971528415113" class="appt-phone">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
               +971 52 841 5113
             </a>
@@ -1564,8 +827,7 @@ const DOCTORS = [
 
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.addEventListener('click', () => {
-        const params = window.location.search; // ✅ keeps ?id=sandhya
-    
+        const params = window.location.search;
         if (btn.dataset.lang === 'en') {
           window.location.href = '../doctor-profile.html' + params;
         } else if (btn.dataset.lang === 'ar') {

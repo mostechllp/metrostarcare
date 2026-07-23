@@ -7,537 +7,29 @@
   <title>Careers | Metro Starcare Medical Centre</title>
   <meta name="description" content="Join Metro StarCare Medical Centre in Sharjah and build a rewarding healthcare career with a passionate, expert team committed to world-class patient care.">
   <link rel="canonical" href="https://www.metrostarcare.ae/careers">
+  <link href="assets/images/favicon/favicon.webp" rel="icon">
+  <meta property="og:image" content="https://www.metrostarcare.ae/assets/imgages/favicon/favicon.webp">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="shared.css">
   <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-THFF86K7');</script>
-<!-- End Google Tag Manager -->
-  <style>
-    /* ---- NAVBAR (identical to other pages) ---- */
-    .hamburger {
-      display: none;
-    }
-
-    .hamburger.active span:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .hamburger.active span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .hamburger.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(5px, -5px);
-    }
-
-    @media (max-width: 900px) {
-      .nav-links {
-        display: flex;
-        position: absolute;
-        top: 76px;
-        left: 0;
-        width: 100%;
-        background: white;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 20px 32px;
-        gap: 16px;
-        border-top: 1px solid var(--border);
-        opacity: 0;
-        pointer-events: none;
-        transform: translateY(-10px);
-        transition: 0.3s ease;
-      }
-
-      .nav-links.active {
-        opacity: 1;
-        pointer-events: auto;
-        transform: translateY(0);
-      }
-
-      .nav-links li {
-        width: 100%;
-      }
-
-      .nav-links a {
-        display: block;
-        width: 100%;
-        padding: 10px 0;
-      }
-
-      .nav-emergency {
-        display: none;
-      }
-
-      .hamburger {
-        display: flex !important;
-        flex-direction: column;
-        gap: 5px;
-        cursor: pointer;
-      }
-
-      .hamburger span {
-        width: 24px;
-        height: 2px;
-        background: var(--text-dark);
-        display: block;
-      }
-    }
-
-    /* Page Hero */
-    .page-hero {
-      background: linear-gradient(135deg, var(--maroon-deep) 0%, var(--maroon) 55%, #C05078 100%);
-      padding: 100px 32px 80px;
-      text-align: center;
-      color: white;
-      position: relative;
-    }
-
-    .page-hero-breadcrumb {
-      margin-bottom: 20px;
-      font-size: 0.85rem;
-      opacity: 0.8;
-    }
-
-    .page-hero-breadcrumb a {
-      color: white;
-      text-decoration: none;
-    }
-
-    .page-hero-breadcrumb span {
-      margin: 0 8px;
-    }
-
-    .page-hero h1 {
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      margin-bottom: 16px;
-      font-weight: 700;
-    }
-
-    .page-hero p {
-      font-size: 1.1rem;
-      opacity: 0.9;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    /* Careers Section */
-    .careers-section {
-      padding: 80px 32px;
-      background: var(--off-white);
-    }
-
-    .careers-container {
-      max-width: 1280px;
-      margin: 0 auto;
-    }
-
-    .section-header {
-      text-align: center;
-      margin-bottom: 48px;
-    }
-
-    .section-sub {
-      color: var(--maroon);
-      font-size: 0.85rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-      font-weight: 600;
-    }
-
-    .section-title {
-      font-size: clamp(1.8rem, 4vw, 2.5rem);
-      color: var(--maroon-dark);
-      margin-bottom: 16px;
-    }
-
-    .divider {
-      width: 60px;
-      height: 3px;
-      background: var(--maroon-light);
-      margin: 0 auto 20px;
-    }
-
-    .jobs-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-      gap: 32px;
-      margin-top: 20px;
-    }
-
-    .job-card {
-      background: white;
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
-      transition: all 0.3s ease;
-      border: 1px solid var(--border);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .job-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-      border-color: var(--rose);
-    }
-
-    .job-header {
-      background: linear-gradient(135deg, var(--maroon), var(--maroon-light));
-      padding: 20px 24px;
-      color: white;
-    }
-
-    .job-header h3 {
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-      line-height: 1.3;
-    }
-
-    .job-badge {
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.2);
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-size: 0.7rem;
-      margin-top: 8px;
-    }
-
-    .job-body {
-      padding: 20px 24px;
-      flex: 1;
-    }
-
-    .job-deadline {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--rose-pale);
-      padding: 10px 14px;
-      border-radius: 12px;
-      margin-bottom: 16px;
-      font-size: 0.8rem;
-    }
-
-    .job-deadline i {
-      color: var(--maroon);
-      font-size: 1rem;
-    }
-
-    .job-deadline span {
-      color: var(--text-dark);
-      font-weight: 500;
-    }
-
-    .job-deadline .date {
-      color: var(--maroon);
-      font-weight: 600;
-      margin-left: auto;
-    }
-
-    .job-description {
-      color: var(--text-mid);
-      font-size: 0.85rem;
-      line-height: 1.6;
-      margin-bottom: 16px;
-    }
-
-    .job-requirements {
-      list-style: none;
-      margin-top: 12px;
-    }
-
-    .job-requirements li {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 0.75rem;
-      color: var(--text-soft);
-      margin-bottom: 8px;
-    }
-
-    .job-requirements li i {
-      color: var(--maroon);
-      font-size: 0.7rem;
-      margin-top: 3px;
-    }
-
-    .job-footer {
-      padding: 16px 24px 24px;
-      border-top: 1px solid var(--border);
-    }
-
-    .view-details-btn {
-      width: 100%;
-      padding: 12px;
-      background: transparent;
-      border: 1.5px solid var(--maroon);
-      color: var(--maroon);
-      border-radius: 40px;
-      font-weight: 600;
-      font-size: 0.85rem;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .view-details-btn:hover {
-      background: var(--maroon);
-      color: white;
-    }
-
-    /* How to Apply Section */
-    .apply-section {
-      background: white;
-      border-radius: 24px;
-      padding: 40px;
-      margin-top: 60px;
-      text-align: center;
-      border: 1px solid var(--border);
-    }
-
-    .apply-section h3 {
-      font-size: 1.5rem;
-      color: var(--maroon-dark);
-      margin-bottom: 16px;
-    }
-
-    .apply-section p {
-      color: var(--text-mid);
-      margin-bottom: 24px;
-    }
-
-    .apply-email {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      background: var(--maroon);
-      color: white;
-      padding: 12px 28px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.2s ease;
-      max-width: 100%;
-      word-break: break-all;
-    }
-
-    .apply-email:hover {
-      background: var(--maroon-light);
-      transform: translateY(-2px);
-    }
-
-    /* Modal Styles */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      z-index: 1000;
-      justify-content: center;
-      align-items: center;
-      backdrop-filter: blur(5px);
-    }
-
-    .modal.active {
-      display: flex;
-    }
-
-    .modal-content {
-      background: white;
-      max-width: 750px;
-      width: 90%;
-      border-radius: 28px;
-      overflow: hidden;
-      animation: modalFadeIn 0.3s ease;
-      max-height: 85vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    @keyframes modalFadeIn {
-      from {
-        opacity: 0;
-        transform: scale(0.95);
-      }
-
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-
-    .modal-header {
-      background: var(--maroon);
-      color: white;
-      padding: 20px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-shrink: 0;
-    }
-
-    .modal-header h3 {
-      font-size: 1.3rem;
-      margin: 0;
-    }
-
-    .modal-close {
-      background: none;
-      border: none;
-      color: white;
-      font-size: 1.5rem;
-      cursor: pointer;
-      transition: opacity 0.2s;
-    }
-
-    .modal-close:hover {
-      opacity: 0.7;
-    }
-
-    .modal-body {
-      padding: 28px 32px;
-      overflow-y: auto;
-      flex: 1;
-    }
-
-    .modal-poster {
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-      border-radius: 16px;
-      margin-bottom: 24px;
-      background: var(--off-white);
-      max-height: none;
-    }
-
-    .modal-date-box {
-      display: flex;
-      gap: 20px;
-      background: var(--rose-pale);
-      padding: 12px 20px;
-      border-radius: 16px;
-      margin-bottom: 24px;
-      flex-wrap: wrap;
-    }
-
-    .modal-date-item {
-      flex: 1;
-    }
-
-    .modal-date-label {
-      font-size: 0.7rem;
-      color: var(--text-soft);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .modal-date-value {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--maroon);
-      margin-top: 4px;
-    }
-
-    .modal-body h4 {
-      color: var(--maroon);
-      margin: 20px 0 12px 0;
-      font-size: 1.1rem;
-    }
-
-    .modal-body p {
-      color: var(--text-mid);
-      line-height: 1.7;
-      margin-bottom: 16px;
-      font-size: 0.95rem;
-    }
-
-    .modal-body ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .modal-body ul li {
-      padding: 8px 0;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      border-bottom: 1px solid var(--border);
-      font-size: 0.9rem;
-    }
-
-    .modal-body ul li i {
-      color: var(--maroon);
-      width: 20px;
-    }
-
-    .modal-footer {
-      padding: 16px 24px;
-      border-top: 1px solid var(--border);
-      display: flex;
-      gap: 12px;
-      justify-content: flex-end;
-      flex-shrink: 0;
-    }
-
-    .btn-modal {
-      padding: 10px 24px;
-      border-radius: 40px;
-      border: none;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 0.85rem;
-      text-decoration: none;
-      display: inline-block;
-    }
-
-    .btn-modal-primary {
-      background: var(--maroon);
-      color: white;
-    }
-
-    .btn-modal-secondary {
-      background: var(--off-white);
-      color: var(--text-dark);
-      border: 1px solid var(--border);
-    }
-
-    @media (max-width: 768px) {
-      .careers-section {
-        padding: 60px 20px;
-      }
-
-      .jobs-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .modal-body {
-        padding: 20px;
-      }
-
-      .modal-date-box {
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .apply-section {
-        padding: 30px 15px;
-      }
-
-      .apply-email {
-        padding: 12px 16px;
-        font-size: 0.81rem;
-      }
-    }
-  </style>
+  <script>
+    (function(w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-THFF86K7');
+  </script>
+  <!-- End Google Tag Manager -->
+  <link rel="stylesheet" href="/careers-style.css">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
@@ -556,47 +48,46 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   <!-- Local Business Schema -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Metro Starcare METRO MEDICAL GROUP",
-    "image": "/assets/images/logo/logo.webp",
-    "@id": "",
-    "url": "/",
-    "telephone": "+971 52 841 5113",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Malabar Plaza, Rolla",
-      "addressLocality": "Sharjah",
-      "postalCode": "",
-      "addressCountry": "AE"
-    }  
-  }
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Metro Starcare METRO MEDICAL GROUP",
+      "image": "/assets/images/logo/logo.webp",
+      "@id": "",
+      "url": "/",
+      "telephone": "+971 52 841 5113",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Malabar Plaza, Rolla",
+        "addressLocality": "Sharjah",
+        "postalCode": "",
+        "addressCountry": "AE"
+      }
+    }
   </script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org/", 
-  "@type": "BreadcrumbList", 
-  "itemListElement": [{
-    "@type": "ListItem", 
-    "position": 1, 
-    "name": "Home",
-    "item": "https://www.metrostarcare.ae/"  
-  },{
-    "@type": "ListItem", 
-    "position": 2, 
-    "name": "Careers",
-    "item": "https://www.metrostarcare.ae/careers"  
-  }]
-}
-</script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.metrostarcare.ae/"
+      }, {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Careers",
+        "item": "https://www.metrostarcare.ae/careers"
+      }]
+    }
+  </script>
 </head>
 
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-THFF86K7"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-THFF86K7" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
   <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
@@ -618,12 +109,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span>Need help? +971 52 841 5113</span>
         </a>
         <div class="nav-socials">
-          <a href="https://www.instagram.com/starcare.uae" class="nav-social-icon" target="_blank" aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-            </svg></a>
-          <a href="https://www.facebook.com/share/15BroPchCk/" class="nav-social-icon" target="_blank" aria-label="Facebook"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-            </svg></a>
+          <a href="https://www.instagram.com/starcare.uae" class="nav-social-icon" target="_blank" aria-label="Instagram"><i class="fab fa-instagram" style="font-size: 1.2rem;"></i></a>
+          <a href="https://www.facebook.com/share/15BroPchCk/" class="nav-social-icon" target="_blank" aria-label="Facebook"><i class="fab fa-facebook" style="font-size: 1.2rem;"></i></a>
+          <a href="https://www.linkedin.com/company/metro-starcare/posts/?feedView=all" class="nav-social-icon" target="_blank" aria-label="Facebook">
+            <i class="fab fa-linkedin" style="font-size: 1.2rem;"></i>
+          </a>
         </div>
       </div>
       <div class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
@@ -634,71 +124,73 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
   </nav>
-<main>
+  <main>
 
 
-  <!-- PAGE HERO -->
-  <div class="page-hero">
-    <div class="page-hero-breadcrumb"><a href="index.html">Home</a><span>›</span><span>Careers</span></div>
-    <h1>Join Our Team</h1>
-    <p>We are always looking for talented professionals to join our growing team. Explore our current openings and find where you fit in.</p>
-  </div>
+    <!-- PAGE HERO -->
+    <div class="page-hero">
+      <div class="page-hero-breadcrumb"><a href="index.html">Home</a><span>›</span><span>Careers</span></div>
+      <h1>Join Our Team</h1>
+      <p>We are always looking for talented professionals to join our growing team. Explore our current openings and find where you fit in.</p>
+    </div>
 
-  <!-- CAREERS SECTION -->
-  <section class="careers-section">
-    <div class="careers-container">
-      <div class="section-header">
-        <div class="section-sub">Current Openings</div>
-        <h2 class="section-title">Explore Career Opportunities</h2>
-        <div class="divider"></div>
-        <p style="color: var(--text-mid); max-width: 700px; margin: 0 auto;">Be part of a trusted healthcare team committed to excellence and compassionate patient care.</p>
+    <!-- CAREERS SECTION -->
+    <section class="careers-section">
+      <div class="careers-container">
+        <div class="section-header">
+          <div class="section-sub">Current Openings</div>
+          <h2 class="section-title">Explore Career Opportunities</h2>
+          <div class="divider"></div>
+          <p style="color: var(--text-mid); max-width: 700px; margin: 0 auto;">Be part of a trusted healthcare team committed to excellence and compassionate patient care.</p>
+        </div>
+
+        <div class="jobs-grid" id="jobsGrid"></div>
+
+        <!-- How to Apply Section -->
+        <div class="apply-section">
+          <h3>How to Apply</h3>
+          <p>To apply for any position, please send your CV and cover letter with the job title in the subject line.</p>
+          <a href="mailto:careers@metromedicalgroupuae.com" class="apply-email">
+            <i class="fas fa-envelope"></i> careers@metromedicalgroupuae.com
+          </a>
+        </div>
       </div>
+    </section>
 
-      <div class="jobs-grid" id="jobsGrid"></div>
-
-      <!-- How to Apply Section -->
-      <div class="apply-section">
-        <h3>How to Apply</h3>
-        <p>To apply for any position, please send your CV and cover letter with the job title in the subject line.</p>
-        <a href="mailto:careers@metromedicalgroupuae.com" class="apply-email">
-          <i class="fas fa-envelope"></i> careers@metromedicalgroupuae.com
-        </a>
+    <!-- MODAL FOR JOB DETAILS -->
+    <div id="jobModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 id="modalTitle">Job Details</h3>
+          <button class="modal-close" onclick="closeModal()">&times;</button>
+        </div>
+        <div class="modal-body" id="modalBody"></div>
+        <div class="modal-footer">
+          <button class="btn-modal btn-modal-secondary" onclick="closeModal()">Close</button>
+          <a href="mailto:careers@metromedicalgroupuae.com" class="btn-modal btn-modal-primary">Apply Now</a>
+        </div>
       </div>
     </div>
-  </section>
 
-  <!-- MODAL FOR JOB DETAILS -->
-  <div id="jobModal" class="modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 id="modalTitle">Job Details</h3>
-        <button class="modal-close" onclick="closeModal()">&times;</button>
-      </div>
-      <div class="modal-body" id="modalBody"></div>
-      <div class="modal-footer">
-        <button class="btn-modal btn-modal-secondary" onclick="closeModal()">Close</button>
-        <a href="mailto:careers@metromedicalgroupuae.com" class="btn-modal btn-modal-primary">Apply Now</a>
-      </div>
-    </div>
-  </div>
+    <!-- FOOTER -->
 
-  <!-- FOOTER -->
-  
-</main>
-<footer>
+  </main>
+  <footer>
     <div class="footer-inner">
       <div class="footer-brand"><img src="/assets/images/logo/logo.webp" alt="Metro Starcare Logo">
         <p>Metro Starcare Medical Centre, under Metro Medical Group, is committed to providing world-class healthcare services with compassion, excellence, and personalised attention for every patient.</p>
-        <div class="footer-socials" style="margin-top:20px;"><a href="https://www.instagram.com/starcare.uae" class="footer-social" target="_blank" aria-label="Instagram"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-            </svg></a><a href="https://www.facebook.com/share/15BroPchCk/" class="footer-social" target="_blank" aria-label="Facebook"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-            </svg></a></div>
+        <div class="footer-socials" style="margin-top:20px;"><a href="https://www.instagram.com/starcare.uae"
+            class="footer-social" target="_blank" aria-label="Instagram"><i class="fab fa-instagram" style="font-size: 1.2rem;"></i></a>
+            <a href="https://www.facebook.com/share/15BroPchCk/" class="footer-social" target="_blank" aria-label="Facebook">
+                <i class="fab fa-facebook" style="font-size: 1.2rem;"></i></a>
+                <a href="https://www.linkedin.com/company/metro-starcare/posts/?feedView=all" class="footer-social" target="_blank" aria-label="Facebook">
+                <i class="fab fa-linkedin" style="font-size: 1.2rem;"></i></a>
+                </div>
       </div>
       <div class="footer-col">
         <h4>Services</h4>
         <ul>
-           <li><a href="services.html">General Medicine</a></li>
+          <li><a href="services.html">General Medicine</a></li>
           <li><a href="services.html">Gynecology</a></li>
           <li><a href="services.html">Pediatrics</a></li>
           <li><a href="services.html">Orthopedics</a></li>
@@ -722,6 +214,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <!--<li><a href="#">Our Team</a></li>-->
           <li><a href="news.html">News & Events</a></li>
           <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="blogs.html">Blogs</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -729,12 +222,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <ul class="footer-contact">
           <li><span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-              </svg></span><span>+971 52 841 5113</span></li>
-              <li><span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"
-     stroke="currentColor" stroke-width="2">
-  <rect x="3" y="5" width="18" height="14" rx="2"/>
-  <path d="M3 7l9 6 9-6"/>
-</svg></span><span>info@metrostarcare.ae</span></li>
+              </svg></span><span><a href="tel:+971528415113" style="color: inherit; text-decoration: none; text-underline-offset: 4px; transition: color 0.3s;" onmouseover="this.style.color='var(--rose, #db2c66)'" onmouseout="this.style.color='inherit'">+971 52 841 5113</a></span></li>
+          <li><span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="5" width="18" height="14" rx="2" />
+                <path d="M3 7l9 6 9-6" />
+              </svg></span><span><a href="mailto:&#105;&#110;&#102;&#111;&#64;&#109;&#101;&#116;&#114;&#111;&#115;&#116;&#97;&#114;&#99;&#97;&#114;&#101;&#46;&#97;&#101;" style="color: inherit; text-decoration: none; text-underline-offset: 4px; transition: color 0.3s;" onmouseover="this.style.color='var(--rose, #db2c66)'" onmouseout="this.style.color='inherit'">&#105;&#110;&#102;&#111;&#64;&#109;&#101;&#116;&#114;&#111;&#115;&#116;&#97;&#114;&#99;&#97;&#114;&#101;&#46;&#97;&#101;</a></span></li>
           <li><span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                 <circle cx="12" cy="10" r="3" />
@@ -743,7 +235,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 Metro Medical Group. All rights reserved.</p>
+            <p>© All Rights Reserved | Developed by Mostech Business Solutions</p>
     </div>
   </footer>
 
@@ -776,74 +268,74 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         posterImage: "posters/radiology_specialist.jpeg"
       },
       {
-          id: 2,
-          title: "Laser Technician",
-          validFrom: "May 2026",
-          validUntil: "Open until filled",
-          location: "Sharjah, UAE",
-          description: "We are looking for a skilled and experienced Laser Technician to join our growing team.",
-          requirements: [
-            "DHA/MOH/DOH License or Eligibility",
-            "Minimum 2 years of experience in laser treatments",
-            "Expertise in hair removal, skin rejuvenation & aesthetic procedures",
-            "Good communication and patient care skills",
-            "Ability to work in a fast-paced environment"
-          ],
-          perks: [
-            "Competitive salary package",
-            "Friendly & professional work environment",
-            "Career growth opportunities"
-          ],
-          contact: {
-            email: "careers@metromedicalgroupuae.com",
-            phone: ["052 841 5113", "06 561 1099"]
-          },
-          posterImage: "posters/laser_technician.jpeg"
+        id: 2,
+        title: "Laser Technician",
+        validFrom: "May 2026",
+        validUntil: "Open until filled",
+        location: "Sharjah, UAE",
+        description: "We are looking for a skilled and experienced Laser Technician to join our growing team.",
+        requirements: [
+          "DHA/MOH/DOH License or Eligibility",
+          "Minimum 2 years of experience in laser treatments",
+          "Expertise in hair removal, skin rejuvenation & aesthetic procedures",
+          "Good communication and patient care skills",
+          "Ability to work in a fast-paced environment"
+        ],
+        perks: [
+          "Competitive salary package",
+          "Friendly & professional work environment",
+          "Career growth opportunities"
+        ],
+        contact: {
+          email: "careers@metromedicalgroupuae.com",
+          phone: ["052 841 5113", "06 561 1099"]
         },
-        {
-      id: 3,
-      title: "Lab Technician",
-      validFrom: "May 11, 2026",
-      validUntil: "Open until filled",
-      location: "Sharjah, UAE",
-      description: "We are looking for a qualified Lab Technician to join Metro Starcare Medical Centre in Sharjah. The ideal candidate should have experience in sample collection and laboratory procedures with sound knowledge in hematology, biochemistry, and microbiology.",
-      requirements: [
-        "DHA/MOH License or Eligibility",
-        "Experience in sample collection & laboratory procedures",
-        "Knowledge in hematology, biochemistry & microbiology",
-        "Good communication and computer skills",
-        "UAE experience preferred"
-      ],
-      perks: [
-        "Competitive Salary Package",
-        "Professional & Supportive Work Environment",
-        "Modern Laboratory Facilities",
-        "Career Growth Opportunities"
-      ],
-      posterImage: "posters/lab_technician.jpeg"
-    },
-    {
-      id: 4,
-      title: "Front Office Executive",
-      validFrom: "May 11, 2026",
-      validUntil: "Open until filled",
-      location: "Sharjah, UAE",
-      description: "Metro Starcare Medical Centre is seeking a Front Office Executive with excellent communication and customer service skills to manage patient appointments, reception activities, and insurance coordination efficiently.",
-      requirements: [
-        "Excellent communication & customer service skills",
-        "Experience in hospital/clinic reception preferred",
-        "Knowledge of appointment handling & insurance process",
-        "Computer proficiency required",
-        "Arabic speaking is an added advantage"
-      ],
-      perks: [
-        "Attractive Salary Package",
-        "Friendly & Professional Workplace",
-        "Career Development Opportunities",
-        "Immediate Joining Preferred"
-      ],
-      posterImage: "posters/lab_technician.jpeg"
-    }
+        posterImage: "posters/laser_technician.jpeg"
+      },
+      {
+        id: 3,
+        title: "Lab Technician",
+        validFrom: "May 11, 2026",
+        validUntil: "Open until filled",
+        location: "Sharjah, UAE",
+        description: "We are looking for a qualified Lab Technician to join Metro Starcare Medical Centre in Sharjah. The ideal candidate should have experience in sample collection and laboratory procedures with sound knowledge in hematology, biochemistry, and microbiology.",
+        requirements: [
+          "DHA/MOH License or Eligibility",
+          "Experience in sample collection & laboratory procedures",
+          "Knowledge in hematology, biochemistry & microbiology",
+          "Good communication and computer skills",
+          "UAE experience preferred"
+        ],
+        perks: [
+          "Competitive Salary Package",
+          "Professional & Supportive Work Environment",
+          "Modern Laboratory Facilities",
+          "Career Growth Opportunities"
+        ],
+        posterImage: "posters/lab_technician.jpeg"
+      },
+      {
+        id: 4,
+        title: "Front Office Executive",
+        validFrom: "May 11, 2026",
+        validUntil: "Open until filled",
+        location: "Sharjah, UAE",
+        description: "Metro Starcare Medical Centre is seeking a Front Office Executive with excellent communication and customer service skills to manage patient appointments, reception activities, and insurance coordination efficiently.",
+        requirements: [
+          "Excellent communication & customer service skills",
+          "Experience in hospital/clinic reception preferred",
+          "Knowledge of appointment handling & insurance process",
+          "Computer proficiency required",
+          "Arabic speaking is an added advantage"
+        ],
+        perks: [
+          "Attractive Salary Package",
+          "Friendly & Professional Workplace",
+          "Career Development Opportunities",
+          "Immediate Joining Preferred"
+        ],
+        posterImage: "posters/lab_technician.jpeg"
+      }
     ];
 
     function renderJobs() {
