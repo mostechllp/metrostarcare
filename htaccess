@@ -1,4 +1,3 @@
-
 ### AutoSSL-Satellite Don't Edit Below This Line ###
 <IfModule mod_rewrite.c>
 	RewriteEngine On
@@ -112,7 +111,20 @@ Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains
 
 	RewriteCond %{ENV:REDIRECT_STATUS} ^$
 	RewriteRule ^about\.html$ /about [R=301,L]
+	
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^blogs\.html$ /blogs [R=301,L]
 
+	# 301 Redirects for Singular 'blog' URLs to 'blogs'
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^blog\.html$ /blogs [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^blog/?$ /blogs [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^blog/(.*)$ /blogs/$1 [R=301,L]
+	
 	RewriteCond %{ENV:REDIRECT_STATUS} ^$
 	RewriteRule ^doctors\.html$ /doctors [R=301,L]
 
@@ -181,7 +193,14 @@ Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains
 	RewriteCond %{ENV:REDIRECT_STATUS} ^$
 	RewriteRule ^arabic/general-medicine-doctor-sharjah\.html$ /arabic/general-medicine-doctor-sharjah [R=301,L]
 
-	# Specific Rewrite to fix 403 Forbidden on /doctors (because a folder named 'doctors' exists)
+
+	# Specific Rewrites to fix 403 Forbidden (because a real folder exists with this name)
+	RewriteRule ^blogs/?$ blogs.html [L]
+	
+	# Fallback: fix relative asset paths broken by /blog/ rewrite
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^blogs/(css|js|images|assets|fonts)/(.*)$ /$1/$2 [L]
+	
 	RewriteRule ^doctors/?$ doctors.html [L]
 	RewriteRule ^arabic/doctors/?$ arabic/doctors.html [L]
 
@@ -189,6 +208,7 @@ Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains
 	RewriteRule ^services/ent/?$ ent.html [L]
 	RewriteRule ^services/physiotherapy/?$ physiotherapy.html [L]
 	RewriteRule ^services/pediatrics/?$ pediatrics.html [L]
+	RewriteRule ^services/dermatology/?$ dermatology.html [L]
 
 
 	# 301 Redirects for Short Doctor URLs
@@ -238,6 +258,9 @@ Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains
 	RewriteRule ^arabic/doctors/pathology/dr-shemy/?$ /arabic/doctors/pathology/dr-shemy-seebu [R=301,L]
 	RewriteCond %{ENV:REDIRECT_STATUS} ^$
 	RewriteRule ^arabic/doctors/physiotherapydr/dr-hanitta/?$ /arabic/doctors/physiotherapydr/ms-hanitta-thimothy [R=301,L]
+	
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^blogs/(.+)\.html$ /blogs/$1 [R=301,L]
 
 	# Internal Rewrite for Clean URLs (e.g., /about silently loads /about.html)
 	RewriteCond %{REQUEST_FILENAME} !-d

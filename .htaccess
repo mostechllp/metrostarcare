@@ -114,6 +114,16 @@ Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains
 	
 	RewriteCond %{ENV:REDIRECT_STATUS} ^$
 	RewriteRule ^blogs\.html$ /blogs [R=301,L]
+
+	# 301 Redirects for Singular 'blog' URLs to 'blogs'
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^blog\.html$ /blogs [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^blog/?$ /blogs [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^blog/(.*)$ /blogs/$1 [R=301,L]
 	
 	RewriteCond %{ENV:REDIRECT_STATUS} ^$
 	RewriteRule ^doctors\.html$ /doctors [R=301,L]
@@ -250,7 +260,7 @@ Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains
 	RewriteRule ^arabic/doctors/physiotherapydr/dr-hanitta/?$ /arabic/doctors/physiotherapydr/ms-hanitta-thimothy [R=301,L]
 	
 	RewriteCond %{ENV:REDIRECT_STATUS} ^$
-	RewriteRule ^blogs/family-health-checkups-sharjah\.html$ /blogs/family-health-checkups-sharjah [R=301,L]
+	RewriteRule ^blogs/(.+)\.html$ /blogs/$1 [R=301,L]
 
 	# Internal Rewrite for Clean URLs (e.g., /about silently loads /about.html)
 	RewriteCond %{REQUEST_FILENAME} !-d

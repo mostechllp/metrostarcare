@@ -8,6 +8,10 @@
     { "source": "/arabic/services/physiotherapy", "destination": "/arabic/physiotherapy.html" },
     { "source": "/arabic/services/pediatrics", "destination": "/arabic/pediatrics.html" },
     { "source": "/services/dermatology", "destination": "/dermatology.html" },
-    { "source": "/arabic/services/dermatology", "destination": "/arabic/dermatology.html" }
+    { "source": "/arabic/services/dermatology", "destination": "/arabic/dermatology.html" },
+    { "source": "/blogs", "destination": "/blogs.html" },
+    { "source": "/blog", "destination": "/blogs.html" },
+    { "source": "/blog.html", "destination": "/blogs.html" },
+    { "source": "/blog/:slug", "destination": "/blogs/:slug.html" }
   ]
 }

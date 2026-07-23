@@ -295,159 +295,204 @@
       gap: 32px;
     }
 
-    .package-card {
+    .package-card,
+    .pkg-card {
       background: white;
-      border-radius: 24px;
+      border-radius: 20px;
       overflow: visible;
-      /* Changed to visible to allow the badge to pop out */
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
       transition: all 0.3s ease;
       border: 1px solid var(--border);
       display: flex;
       flex-direction: column;
       position: relative;
-      /* For badge positioning */
     }
 
-    .package-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-      border-color: var(--rose);
+    .package-card:hover,
+    .pkg-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+      border-color: var(--maroon);
     }
 
-    /* Price Badge */
-    .price-badge {
+    /* Price Badge - Multi-pointed Serrated Star Burst */
+    .price-badge,
+    .pkg-price-badge {
       position: absolute;
-      top: -25px;
-      /* Half outside */
-      right: -25px;
-      /* Half outside */
-      width: 80px;
-      height: 80px;
-      background: var(--maroon);
+      top: -15px;
+      right: -15px;
+      width: 70px;
+      height: 70px;
+      background: var(--maroon, #A62B55);
       color: white;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      /*z-index: 20;*/
-      line-height: 1.1;
       text-align: center;
-      font-family: 'Poppins', sans-serif;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-      /*border: 2px solid white;*/
-      border-radius: 50%;
-      /* Serrated burst shape using multiple shadows or svg would be better, 
-         but for CSS only with border, we'll use a very many-pointed star */
-      clip-path: polygon(50% 0%, 60% 8%, 72% 4%, 78% 16%, 90% 18%, 88% 30%,
-          100% 36%, 92% 48%, 98% 60%, 86% 64%, 82% 76%, 70% 74%,
-          60% 88%, 50% 80%, 40% 88%, 30% 74%, 18% 76%, 14% 64%,
-          2% 60%, 8% 48%, 0% 36%, 12% 30%, 10% 18%, 22% 16%,
-          28% 4%, 40% 8%);
+      line-height: 1;
+      z-index: 10;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      clip-path: polygon(
+        50% 0%, 59% 7%, 70% 3%, 76% 13%, 87% 12%, 90% 23%, 
+        99% 27%, 97% 38%, 100% 50%, 97% 62%, 99% 73%, 90% 77%, 
+        87% 88%, 76% 87%, 70% 97%, 59% 93%, 50% 100%, 41% 93%, 
+        30% 97%, 24% 87%, 13% 88%, 10% 77%, 1% 73%, 3% 62%, 
+        0% 50%, 3% 38%, 1% 27%, 10% 23%, 13% 12%, 24% 13%, 
+        30% 3%, 41% 7%
+      );
     }
 
-    .price-badge .amount {
-      font-size: 1.5rem;
+    .price-badge .amount,
+    .pkg-price-badge .amount {
+      font-size: 1.25rem;
       font-weight: 800;
+      line-height: 1;
+      display: block;
+      color: white;
     }
 
-    .price-badge .currency {
-      font-size: 0.7rem;
+    .price-badge .currency,
+    .pkg-price-badge .currency {
+      font-size: 0.65rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    /* Package Image */
-    .package-image {
-      width: 100%;
-      height: 220px;
-      overflow: hidden;
-      background: linear-gradient(135deg, var(--rose-pale), var(--off-white));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .package-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-
-    .package-card:hover .package-image img {
-      transform: scale(1.03);
-    }
-
-    .package-header {
-      background: linear-gradient(135deg, var(--maroon), var(--maroon-light));
-      padding: 20px 20px;
+      line-height: 1;
+      margin-top: 3px;
+      display: block;
       color: white;
-      border-radius: 24px 24px 0 0;
-      /* Maintain rounded corners without overflow:hidden */
+      letter-spacing: 0.5px;
     }
 
-    .package-header h3 {
-      font-size: 1.2rem;
+    /* Special Badge */
+    .pkg-badge {
+      position: absolute;
+      top: -15px;
+      right: -15px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-size: 0.75rem;
       font-weight: 700;
-      margin-bottom: 6px;
-      line-height: 1.3;
+      box-shadow: 0 4px 12px rgba(217, 119, 6, 0.35);
+      z-index: 10;
+    }
+
+    .package-header,
+    .pkg-header {
+      background: var(--maroon, #A62B55);
+      padding: 24px 20px 20px;
+      color: white;
+      border-radius: 20px 20px 0 0;
+      position: relative;
+    }
+
+    .package-header h3,
+    .pkg-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 10px 0 0 0;
+      line-height: 1.35;
+      color: white;
     }
 
     .package-category {
       font-size: 0.65rem;
       text-transform: uppercase;
       letter-spacing: 1px;
-      opacity: 0.8;
-      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      background: rgba(255, 255, 255, 0.25);
       display: inline-block;
       padding: 4px 12px;
       border-radius: 20px;
+      font-weight: 600;
     }
 
-    .package-body {
-      padding: 20px 20px 16px;
+    .package-body,
+    .pkg-body {
+      padding: 24px 20px 20px;
       flex: 1;
+      display: flex;
+      flex-direction: column;
     }
 
-    .package-desc {
-      color: var(--text-mid);
-      font-size: 0.85rem;
+    .package-desc,
+    .pkg-desc {
+      color: var(--text-mid, #555);
+      font-size: 0.88rem;
       line-height: 1.5;
-      margin-bottom: 16px;
+      margin: 0 0 18px 0;
     }
 
-    .package-features {
+    .package-features,
+    .pkg-features {
       list-style: none;
-      margin-top: 12px;
+      margin: 0;
+      padding: 0;
     }
 
-    .package-features li {
+    .package-features li,
+    .pkg-features li {
       display: flex;
       align-items: center;
-      gap: 8px;
-      font-size: 0.75rem;
-      color: var(--text-soft);
-      margin-bottom: 8px;
+      gap: 10px;
+      font-size: 0.85rem;
+      color: var(--text-dark, #333);
+      margin-bottom: 10px;
     }
 
-    .package-features li i {
-      color: var(--maroon);
-      font-size: 0.7rem;
+    .package-features li i,
+    .pkg-features li i {
+      color: var(--maroon, #A62B55);
+      font-size: 0.85rem;
       width: 16px;
+      flex-shrink: 0;
     }
 
-    .package-footer {
-      padding: 12px 20px 20px;
-      border-top: 1px solid var(--border);
+    .package-features li.more-services,
+    .pkg-features li.more-services {
+      color: var(--text-soft, #666);
+      font-size: 0.82rem;
     }
 
-    .view-details-btn {
+    .package-features li.more-services i,
+    .pkg-features li.more-services i {
+      color: var(--text-soft, #666);
+    }
+
+    .package-footer,
+    .pkg-footer {
+      padding: 16px 20px 24px;
+      background: white;
+      border-radius: 0 0 20px 20px;
+    }
+
+    .view-details-btn,
+    .pkg-btn,
+    .pkg-btn-details {
       width: 100%;
-      padding: 10px;
+      padding: 11px 20px;
       background: transparent;
-      border: 1.5px solid var(--maroon);
+      border: 1.5px solid var(--maroon, #A62B55);
+      color: var(--maroon, #A62B55);
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.88rem;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      display: block;
+      box-sizing: border-box;
+    }
+
+    .view-details-btn:hover,
+    .pkg-btn:hover,
+    .pkg-btn-details:hover {
+      background: var(--maroon, #A62B55);
+      color: white;
+    }
       color: var(--maroon);
       border-radius: 40px;
       font-weight: 600;

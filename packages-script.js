@@ -346,15 +346,15 @@
     }
 
     function renderPackages() {
+      const grid = document.getElementById("packagesGrid");
+      if (!grid) return;
+
       let filtered = packagesData.filter(pkg => currentFilter === "all" || pkg.category === currentFilter);
 
-      if (currentSort === "name-asc") filtered.sort((a, b) => a.name.localeCompare(b.name));
-      else if (currentSort === "name-desc") filtered.sort((a, b) => b.name.localeCompare(a.name));
-
-      const grid = document.getElementById("packagesGrid");
-      if (filtered.length === 0) {
-        grid.innerHTML = '<div class="no-results">No packages found in this category. Please try another filter.</div>';
-        return;
+      if (currentSort === "name-asc") {
+        filtered.sort((a, b) => a.name.localeCompare(b.name));
+      } else if (currentSort === "name-desc") {
+        filtered.sort((a, b) => b.name.localeCompare(a.name));
       }
 
       grid.innerHTML = filtered.map(pkg => {
@@ -364,21 +364,21 @@
         const priceAmount = priceMatch ? priceMatch[2] : "";
 
         return `
-        <div class="package-card">
+        <div class="package-card" data-category="${pkg.category}">
           ${priceAmount ? `
           <div class="price-badge">
-            <div class="amount">${priceAmount}</div>
-            <div class="currency">AED</div>
+            <span class="amount">${priceAmount}</span>
+            <span class="currency">AED</span>
           </div>` : ''}
           <div class="package-header">
-            <div class="package-category" style="margin-bottom:10px;">${getCategoryLabel(pkg.category)}</div>
+            <div class="package-category">${getCategoryLabel(pkg.category)}</div>
             <h3>${displayName}</h3>
           </div>
           <div class="package-body">
             <p class="package-desc">${pkg.description}</p>
             <ul class="package-features">
               ${pkg.features.slice(0, 3).map(f => `<li><i class="fas fa-check-circle"></i> ${f}</li>`).join('')}
-              ${pkg.features.length > 3 ? `<li><i class="fas fa-ellipsis-h"></i> +${pkg.features.length - 3} more services</li>` : ''}
+              ${pkg.features.length > 3 ? `<li class="more-services"><i class="fas fa-ellipsis-h" style="margin-right: 4px;"></i> +${pkg.features.length - 3} more services</li>` : ''}
             </ul>
           </div>
           <div class="package-footer">
