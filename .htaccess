@@ -150,7 +150,13 @@ Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains
 	RewriteRule ^physiotherapy\.html$ /services/physiotherapy [R=301,L]
 
 	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^gynecology\.html$ /services/gynecology [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
 	RewriteRule ^pediatrics\.html$ /services/pediatrics [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^general-medicine\.html$ /services/general-medicine [R=301,L]
 
 	RewriteCond %{THE_REQUEST} \s//+general-doctor-sharjah [NC]
 	RewriteRule ^ /general-doctor-sharjah [R=301,L]
@@ -196,6 +202,7 @@ Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains
 
 	# Specific Rewrites to fix 403 Forbidden (because a real folder exists with this name)
 	RewriteRule ^blogs/?$ blogs.html [L]
+	RewriteRule ^services/?$ services.html [L]
 	
 	# Fallback: fix relative asset paths broken by /blog/ rewrite
     RewriteCond %{REQUEST_FILENAME} !-f
@@ -209,6 +216,8 @@ Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains
 	RewriteRule ^services/physiotherapy/?$ physiotherapy.html [L]
 	RewriteRule ^services/pediatrics/?$ pediatrics.html [L]
 	RewriteRule ^services/dermatology/?$ dermatology.html [L]
+	RewriteRule ^services/gynecology/?$ gynecology.html [L]
+	RewriteRule ^services/general-medicine/?$ general-medicine.html [L]
 
 
 	# 301 Redirects for Short Doctor URLs
