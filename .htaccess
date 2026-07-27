@@ -36,6 +36,9 @@ Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains
 	RewriteCond %{QUERY_STRING} ^id=sandhya$
 	RewriteRule ^doctor-profile\.html$ /doctors/gynaecologist/dr-sandhya? [R=301,L]
 
+	RewriteCond %{QUERY_STRING} ^id=fareeda$
+	RewriteRule ^doctor-profile\.html$ /doctors/gynaecologist/dr-fareeda-mammu? [R=301,L]
+
 	RewriteCond %{QUERY_STRING} ^id=ali$
 	RewriteRule ^doctor-profile\.html$ /doctors/ent/dr-ali? [R=301,L]
 
@@ -75,6 +78,9 @@ Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains
 
 	RewriteCond %{QUERY_STRING} ^id=sandhya$
 	RewriteRule ^arabic/doctor-profile\.html$ /arabic/doctors/gynaecologist/dr-sandhya? [R=301,L]
+
+	RewriteCond %{QUERY_STRING} ^id=fareeda$
+	RewriteRule ^arabic/doctor-profile\.html$ /arabic/doctors/gynaecologist/dr-fareeda-mammu? [R=301,L]
 
 	RewriteCond %{QUERY_STRING} ^id=ali$
 	RewriteRule ^arabic/doctor-profile\.html$ /arabic/doctors/ent/dr-ali? [R=301,L]
@@ -226,6 +232,8 @@ Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains
 	RewriteCond %{ENV:REDIRECT_STATUS} ^$
 	RewriteRule ^doctors/gynaecologist/dr-sandhya/?$ /doctors/gynaecologist/dr-sandhya-subhashchandran [R=301,L]
 	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^doctors/gynaecologist/dr-fareeda/?$ /doctors/gynaecologist/dr-fareeda-mammu [R=301,L]
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
 	RewriteRule ^doctors/ent/dr-ali/?$ /doctors/ent/dr-ali-akbar [R=301,L]
 	RewriteCond %{ENV:REDIRECT_STATUS} ^$
 	RewriteRule ^doctors/ophthalmologist/dr-pradeep/?$ /doctors/ophthalmologist/dr-pradeep-kumar-shetty [R=301,L]
@@ -249,6 +257,8 @@ Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains
 	RewriteRule ^arabic/doctors/general-practice/dr-rasna/?$ /arabic/doctors/general-practice/dr-rasna-munaifa [R=301,L]
 	RewriteCond %{ENV:REDIRECT_STATUS} ^$
 	RewriteRule ^arabic/doctors/gynaecologist/dr-sandhya/?$ /arabic/doctors/gynaecologist/dr-sandhya-subhashchandran [R=301,L]
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^arabic/doctors/gynaecologist/dr-fareeda/?$ /arabic/doctors/gynaecologist/dr-fareeda-mammu [R=301,L]
 	RewriteCond %{ENV:REDIRECT_STATUS} ^$
 	RewriteRule ^arabic/doctors/ent/dr-ali/?$ /arabic/doctors/ent/dr-ali-akbar [R=301,L]
 	RewriteCond %{ENV:REDIRECT_STATUS} ^$
