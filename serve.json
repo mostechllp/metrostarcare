@@ -12,6 +12,11 @@
     { "source": "/blogs", "destination": "/blogs.html" },
     { "source": "/blog", "destination": "/blogs.html" },
     { "source": "/blog.html", "destination": "/blogs.html" },
-    { "source": "/blog/:slug", "destination": "/blogs/:slug.html" }
+    { "source": "/blog/:slug", "destination": "/blogs/:slug.html" },
+    { "source": "/arabic/blogs", "destination": "/arabic/blogs.html" },
+    { "source": "/arabic/blog", "destination": "/arabic/blogs.html" },
+    { "source": "/arabic/blog.html", "destination": "/arabic/blogs.html" },
+    { "source": "/arabic/blog/:slug", "destination": "/arabic/blogs/:slug.html" },
+    { "source": "/arabic/blogs/:slug", "destination": "/arabic/blogs/:slug.html" }
   ]
 }

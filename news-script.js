@@ -108,8 +108,12 @@ document.addEventListener("DOMContentLoaded", () => {
   // Language switcher
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
-      if (btn.dataset.lang === 'en') window.location.href = 'news.html';
-      else if (btn.dataset.lang === 'ar') window.location.href = 'arabic/news.html';
+      const isArabicPage = window.location.pathname.includes('/arabic/');
+      if (btn.dataset.lang === 'en') {
+        window.location.href = isArabicPage ? '../news.html' : 'news.html';
+      } else if (btn.dataset.lang === 'ar') {
+        window.location.href = isArabicPage ? 'news.html' : 'arabic/news.html';
+      }
     });
   });
 

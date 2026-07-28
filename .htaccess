@@ -200,6 +200,19 @@ Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains
 	RewriteRule ^arabic/news\.html$ /arabic/news [R=301,L]
 
 	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^arabic/blogs\.html$ /arabic/blogs [R=301,L]
+
+	# 301 Redirects for Singular 'blog' URLs to 'blogs' (Arabic)
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^arabic/blog\.html$ /arabic/blogs [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^arabic/blog/?$ /arabic/blogs [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^arabic/blog/(.*)$ /arabic/blogs/$1 [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
 	RewriteRule ^arabic/general-doctor-sharjah\.html$ /arabic/general-doctor-sharjah [R=301,L]
 
 	RewriteCond %{ENV:REDIRECT_STATUS} ^$
@@ -208,11 +221,14 @@ Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains
 
 	# Specific Rewrites to fix 403 Forbidden (because a real folder exists with this name)
 	RewriteRule ^blogs/?$ blogs.html [L]
+	RewriteRule ^arabic/blogs/?$ arabic/blogs.html [L]
 	RewriteRule ^services/?$ services.html [L]
 	
 	# Fallback: fix relative asset paths broken by /blog/ rewrite
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^blogs/(css|js|images|assets|fonts)/(.*)$ /$1/$2 [L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^arabic/blogs/(css|js|images|assets|fonts)/(.*)$ /$1/$2 [L]
 	
 	RewriteRule ^doctors/?$ doctors.html [L]
 	RewriteRule ^arabic/doctors/?$ arabic/doctors.html [L]

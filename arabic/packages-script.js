@@ -535,8 +535,12 @@
     // Language switcher
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
-        if (btn.dataset.lang === 'en') window.location.href = '../packages.html';
-        else if (btn.dataset.lang === 'ar') window.location.href = 'packages.html';
+        const isArabicPage = window.location.pathname.includes('/arabic/');
+        if (btn.dataset.lang === 'en') {
+          window.location.href = isArabicPage ? '../packages.html' : 'packages.html';
+        } else if (btn.dataset.lang === 'ar') {
+          window.location.href = isArabicPage ? 'packages.html' : 'arabic/packages.html';
+        }
       });
     });
 

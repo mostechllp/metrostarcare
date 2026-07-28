@@ -152,6 +152,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="packages-grid" id="packagesGrid"></div>
   </section>
 
+  <!-- PREVENTIVE HEALTH & PACKAGES GUIDE SECTION -->
+  <div style="max-width: 1200px; margin: 60px auto 0 auto; padding: 40px; background: #ffffff; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.04);">
+    <h2 style="color: var(--maroon, #8b1a4a); font-size: 1.8rem; margin-bottom: 16px; text-align: center;">فحوصات طبية وقائية شاملة في الشارقة</h2>
+    <p style="color: var(--text-dark, #333); font-size: 1.05rem; line-height: 1.7; margin-bottom: 24px; text-align: center; max-width: 850px; margin-left: auto; margin-right: auto;">
+      في مركز ميترو ستاركير الطبي، الرولة، الشارقة، نؤمن بأن الاكتشاف المبكر هو المفتاح للحفاظ على الصحة والعافية الدائمة. تم تصميم باقاتنا الصحية المخصصة بواسطة أطباء متخصصين لتقييم وظائف الأعضاء الحيوية، والكشف عن المخاطر الصحية الصامتة، وتقديم نصائح صحية قيمة.
+    </p>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 30px;">
+      <div style="background: #f8fafc; padding: 24px; border-radius: 10px; border-right: 4px solid var(--maroon, #8b1a4a);">
+        <h3 style="font-size: 1.15rem; color: var(--maroon, #8b1a4a); margin-bottom: 10px;"><i class="fas fa-heartbeat" style="color: var(--maroon, #8b1a4a); margin-left: 8px;"></i> العافية العامة وصحة القلب</h3>
+        <p style="font-size: 0.95rem; color: #555; line-height: 1.6;">تقييم مستويات الدهون، ضغط الدم، سكر الدم، تخطيط القلب (ECG)، ومؤشرات التروپونين لحماية جهاز القلب والأوعية الدموية وإدارة المخاطر الأيضية.</p>
+      </div>
+
+      <div style="background: #f8fafc; padding: 24px; border-radius: 10px; border-right: 4px solid var(--maroon, #8b1a4a);">
+        <h3 style="font-size: 1.15rem; color: var(--maroon, #8b1a4a); margin-bottom: 10px;"><i class="fas fa-vial" style="color: var(--maroon, #8b1a4a); margin-left: 8px;"></i> فحوصات مخبرية شاملة</h3>
+        <p style="font-size: 0.95rem; color: #555; line-height: 1.6;">فحص تفصيلي لتعداد الدم الكامل (CBC)، فايتامين د3، فايتامين ب12، وظائف الغدة الدرقية (TSH/T3/T4)، إنزيمات الكبد، ووظائف الكلى.</p>
+      </div>
+
+      <div style="background: #f8fafc; padding: 24px; border-radius: 10px; border-right: 4px solid var(--maroon, #8b1a4a);">
+        <h3 style="font-size: 1.15rem; color: var(--maroon, #8b1a4a); margin-bottom: 10px;"><i class="fas fa-venus" style="color: var(--maroon, #8b1a4a); margin-left: 8px;"></i> صحة المرأة والرعاية المتخصصة</h3>
+        <p style="font-size: 0.95rem; color: #555; line-height: 1.6;">فحوصات هرمونية مخصصة (FSH, LH, Prolactin)، استشارات النساء والتوليد، السونار للحوض، والعلاجات التجميلية للبشرة والشعر.</p>
+      </div>
+    </div>
+  </div>
+
   <!-- MODAL -->
   <div id="packageModal" class="modal">
     <div class="modal-content">
@@ -212,6 +237,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <!--<li><a href="#">فريقنا</a></li>-->
           <li><a href="news.html">الأخبار والفعاليات</a></li>
           <li><a href="contact.html">اتصل بنا</a></li>
+          <li><a href="blogs.html">المدونات</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -782,8 +808,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     // Language switcher
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
-        if (btn.dataset.lang === 'en') window.location.href = '../packages.html';
-        else if (btn.dataset.lang === 'ar') window.location.href = 'packages.html';
+        const isArabicPage = window.location.pathname.includes('/arabic/');
+        if (btn.dataset.lang === 'en') {
+          window.location.href = isArabicPage ? '../packages.html' : 'packages.html';
+        } else if (btn.dataset.lang === 'ar') {
+          window.location.href = isArabicPage ? 'packages.html' : 'arabic/packages.html';
+        }
       });
     });
 

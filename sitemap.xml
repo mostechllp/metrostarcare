@@ -176,12 +176,36 @@
        <changefreq>daily</changefreq>
        <priority>0.4096</priority>
   </url>
-  <url>
-       <loc>https://www.metrostarcare.ae/blogs/family-health-checkups-sharjah</loc>
-       <lastmod>2026-06-29T00:00:00+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.4096</priority>
-  </url>
+   <url>
+        <loc>https://www.metrostarcare.ae/blogs/family-health-checkups-sharjah</loc>
+        <lastmod>2026-06-29T00:00:00+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.4096</priority>
+   </url>
+   <url>
+        <loc>https://www.metrostarcare.ae/blogs/family-health-clinic-sharjah</loc>
+        <lastmod>2026-07-28T00:00:00+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.4096</priority>
+   </url>
+   <url>
+        <loc>https://www.metrostarcare.ae/arabic/blogs</loc>
+        <lastmod>2026-07-28T00:00:00+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6400</priority>
+   </url>
+   <url>
+        <loc>https://www.metrostarcare.ae/arabic/blogs/family-health-checkups-sharjah</loc>
+        <lastmod>2026-07-28T00:00:00+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.4096</priority>
+   </url>
+   <url>
+        <loc>https://www.metrostarcare.ae/arabic/blogs/family-health-clinic-sharjah</loc>
+        <lastmod>2026-07-28T00:00:00+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.4096</priority>
+   </url>
   <url>
        <loc>https://www.metrostarcare.ae/gynecologist-in-sharjah</loc>
        <lastmod>2026-07-27T13:47:48+00:00</lastmod>
