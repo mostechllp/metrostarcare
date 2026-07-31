@@ -391,7 +391,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 مجموعة ميترو الطبية. جميع الحقوق محفوظة.</p>
+      <p>© جميع الحقوق محفوظة | تم التطوير بواسطة <a href="https://mostech.ae/" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;"><strong>شركة موستك لحلول الأعمال</strong></a></p>
     </div>
   </footer>
 
@@ -423,10 +423,31 @@
 
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
-        if (btn.dataset.lang === 'en') window.location.href = '../../blogs/family-health-clinic-sharjah.html';
-        else if (btn.dataset.lang === 'ar') window.location.href = 'family-health-clinic-sharjah.html';
+        const hasHtml = window.location.pathname.endsWith('.html');
+        const ext = hasHtml ? '.html' : '';
+        if (btn.dataset.lang === 'en') {
+          window.location.href = '/blogs/family-health-clinic-sharjah' + ext;
+        } else if (btn.dataset.lang === 'ar') {
+          window.location.href = '/arabic/blogs/family-health-clinic-sharjah' + ext;
+        }
       });
     });
+
+    if (window.location.pathname.includes('/arabic/')) {
+      const arBtn = document.querySelector('.lang-btn[data-lang="ar"]');
+      const enBtn = document.querySelector('.lang-btn[data-lang="en"]');
+      if (arBtn && enBtn) {
+        arBtn.classList.add('active');
+        enBtn.classList.remove('active');
+      }
+    } else {
+      const enBtn = document.querySelector('.lang-btn[data-lang="en"]');
+      const arBtn = document.querySelector('.lang-btn[data-lang="ar"]');
+      if (enBtn && arBtn) {
+        enBtn.classList.add('active');
+        arBtn.classList.remove('active');
+      }
+    }
   </script>
 </body>
 

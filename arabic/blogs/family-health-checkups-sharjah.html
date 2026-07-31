@@ -345,7 +345,7 @@
           <li><a href="../careers.html">الوظائف</a></li>
           <li><a href="../news.html">الأخبار والفعاليات</a></li>
           <li><a href="../contact.html">اتصل بنا</a></li>
-          <li><a href="../blogs.html">المدونات</a></li>
+          <li><a href="/arabic/blogs">المدونات</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -390,10 +390,31 @@
 
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
-        if (btn.dataset.lang === 'en') window.location.href = '../../blogs/family-health-checkups-sharjah.html';
-        else if (btn.dataset.lang === 'ar') window.location.href = 'family-health-checkups-sharjah.html';
+        const hasHtml = window.location.pathname.endsWith('.html');
+        const ext = hasHtml ? '.html' : '';
+        if (btn.dataset.lang === 'en') {
+          window.location.href = '/blogs/family-health-checkups-sharjah' + ext;
+        } else if (btn.dataset.lang === 'ar') {
+          window.location.href = '/arabic/blogs/family-health-checkups-sharjah' + ext;
+        }
       });
     });
+
+    if (window.location.pathname.includes('/arabic/')) {
+      const arBtn = document.querySelector('.lang-btn[data-lang="ar"]');
+      const enBtn = document.querySelector('.lang-btn[data-lang="en"]');
+      if (arBtn && enBtn) {
+        arBtn.classList.add('active');
+        enBtn.classList.remove('active');
+      }
+    } else {
+      const enBtn = document.querySelector('.lang-btn[data-lang="en"]');
+      const arBtn = document.querySelector('.lang-btn[data-lang="ar"]');
+      if (enBtn && arBtn) {
+        enBtn.classList.add('active');
+        arBtn.classList.remove('active');
+      }
+    }
   </script>
 </body>
 

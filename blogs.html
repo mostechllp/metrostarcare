@@ -67,6 +67,25 @@
         <!-- Blog Card 1 -->
         <div class="blog-card fade-up visible">
           <div class="blog-img-wrap">
+            <img src="uploads/1741466280_5.webp" alt="Common Causes of Joint Pain & When to Consult an Orthopedic Doctor">
+          </div>
+          
+          <div class="blog-content">
+            <div class="blog-date">31-07-2026</div>
+            <h2 class="blog-title">Common Causes of Joint Pain & When to Consult an Orthopedic Doctor</h2>
+            
+            <a href="blogs/orthopedic-doctor-for-joint-pain-sharjah.html" class="blog-read-more">
+              <span>Read More</span>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Blog Card 2 -->
+        <div class="blog-card fade-up visible">
+          <div class="blog-img-wrap">
             <img src="uploads/How to Choose the Right Family Health Clinic in Sharjah.webp" alt="How to Choose the Right Family Health Clinic in Sharjah">
           </div>
           
@@ -83,7 +102,7 @@
           </div>
         </div>
 
-        <!-- Blog Card 2 -->
+        <!-- Blog Card 3 -->
         <div class="blog-card fade-up visible">
           <div class="blog-img-wrap">
             <img src="uploads/Benefits of Regular Family Health Checkups in Sharjah.jpeg" alt="Benefits of Regular Family Health Checkups in Sharjah">
@@ -189,7 +208,7 @@
           <li><a href="careers.html">Careers</a></li>
           <li><a href="news.html">News & Events</a></li>
           <li><a href="contact.html">Contact Us</a></li>
-          <li><a href="blogs.html">Blogs</a></li>
+          <li><a href="/blogs">Blogs</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -243,8 +262,8 @@
 
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
-        if (btn.dataset.lang === 'en') window.location.href = 'blogs.html';
-        else if (btn.dataset.lang === 'ar') window.location.href = 'arabic/blogs.html';
+        if (btn.dataset.lang === 'en') window.location.href = '/blogs';
+        else if (btn.dataset.lang === 'ar') window.location.href = '/arabic/blogs';
       });
     });
   </script>

@@ -297,6 +297,9 @@ Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains
 	RewriteCond %{ENV:REDIRECT_STATUS} ^$
 	RewriteRule ^blogs/(.+)\.html$ /blogs/$1 [R=301,L]
 
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^arabic/blogs/(.+)\.html$ /arabic/blogs/$1 [R=301,L]
+
 	# Internal Rewrite for Clean URLs (e.g., /about silently loads /about.html)
 	RewriteCond %{REQUEST_FILENAME} !-d
 	RewriteCond %{REQUEST_FILENAME}\.html -f
