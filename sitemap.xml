@@ -1,221 +1,135 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<?xml-stylesheet type="text/css" href="https://www.xml-sitemaps.com/css/sitemap.css"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-       <loc>https://www.metrostarcare.ae/</loc>
-       <lastmod>2026-07-27T13:47:48+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>1.0000</priority>
+    <loc>https://www.metrostarcare.ae/</loc>
   </url>
   <url>
-       <loc>https://www.metrostarcare.ae/about</loc>
-       <lastmod>2026-07-25T07:47:35+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
+    <loc>https://www.metrostarcare.ae/about</loc>
   </url>
   <url>
-       <loc>https://www.metrostarcare.ae/doctors</loc>
-       <lastmod>2026-07-27T13:47:48+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
+    <loc>https://www.metrostarcare.ae/doctors</loc>
   </url>
   <url>
-       <loc>https://www.metrostarcare.ae/services</loc>
-       <lastmod>2026-07-25T07:47:35+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
+    <loc>https://www.metrostarcare.ae/services</loc>
   </url>
   <url>
-       <loc>https://www.metrostarcare.ae/packages</loc>
-       <lastmod>2026-07-28T13:51:52+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
+    <loc>https://www.metrostarcare.ae/packages</loc>
   </url>
   <url>
-       <loc>https://www.metrostarcare.ae/contact</loc>
-       <lastmod>2026-07-25T07:47:35+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
+    <loc>https://www.metrostarcare.ae/contact</loc>
   </url>
   <url>
-       <loc>https://www.metrostarcare.ae/careers</loc>
-       <lastmod>2026-07-28T13:51:52+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
+    <loc>https://www.metrostarcare.ae/careers</loc>
   </url>
   <url>
-       <loc>https://www.metrostarcare.ae/news</loc>
-       <lastmod>2026-07-25T07:47:35+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
+    <loc>https://www.metrostarcare.ae/news</loc>
   </url>
   <url>
-       <loc>https://www.metrostarcare.ae/blogs</loc>
-       <lastmod>2026-07-28T13:51:52+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
+    <loc>https://www.metrostarcare.ae/blogs</loc>
   </url>
   <url>
-       <loc>https://www.metrostarcare.ae/doctors/general-practice/dr-rasna-munaifa</loc>
-       <lastmod>2026-07-25T07:47:34+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.5120</priority>
+    <loc>https://www.metrostarcare.ae/doctors/general-practice/dr-rasna-munaifa</loc>
   </url>
   <url>
-       <loc>https://www.metrostarcare.ae/doctors/general-surgery/dr-yashwanth-nag</loc>
-       <lastmod>2026-07-25T07:47:34+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.5120</priority>
+    <loc>https://www.metrostarcare.ae/doctors/general-surgery/dr-yashwanth-nag</loc>
   </url>
   <url>
-       <loc>https://www.metrostarcare.ae/doctors/gynaecologist/dr-fareeda-mammu</loc>
-       <lastmod>2026-07-27T13:48:37+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.5120</priority>
+    <loc>https://www.metrostarcare.ae/doctors/gynaecologist/dr-fareeda-mammu</loc>
   </url>
   <url>
-       <loc>https://www.metrostarcare.ae/doctors/ent/dr-ali-akbar</loc>
-       <lastmod>2026-07-25T07:47:34+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.5120</priority>
+    <loc>https://www.metrostarcare.ae/doctors/ent/dr-ali-akbar</loc>
   </url>
   <url>
-       <loc>https://www.metrostarcare.ae/doctors/ophthalmologist/dr-pradeep-kumar-shetty</loc>
-       <lastmod>2026-07-25T07:47:34+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.5120</priority>
+    <loc>https://www.metrostarcare.ae/doctors/ophthalmologist/dr-pradeep-kumar-shetty</loc>
   </url>
   <url>
-       <loc>https://www.metrostarcare.ae/doctors/dermatologist/dr-vipul-paul-thomas</loc>
-       <lastmod>2026-07-25T07:47:34+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.5120</priority>
+    <loc>https://www.metrostarcare.ae/doctors/dermatologist/dr-vipul-paul-thomas</loc>
   </url>
   <url>
-       <loc>https://www.metrostarcare.ae/doctors/dentist/dr-fatema-tuj-jahura</loc>
-       <lastmod>2026-07-25T07:47:34+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.5120</priority>
+    <loc>https://www.metrostarcare.ae/doctors/dentist/dr-fatema-tuj-jahura</loc>
   </url>
   <url>
-       <loc>https://www.metrostarcare.ae/doctors/dentist/dr-akshay-paduvilavi</loc>
-       <lastmod>2026-07-25T07:47:34+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.5120</priority>
+    <loc>https://www.metrostarcare.ae/doctors/dentist/dr-akshay-paduvilavi</loc>
   </url>
   <url>
-       <loc>https://www.metrostarcare.ae/doctors/practitioner/dr-muhammed-salih</loc>
-       <lastmod>2026-07-25T07:47:34+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.5120</priority>
+    <loc>https://www.metrostarcare.ae/doctors/practitioner/dr-muhammed-salih</loc>
   </url>
   <url>
-       <loc>https://www.metrostarcare.ae/doctors/practitioner/dr-rajani-thachappilly</loc>
-       <lastmod>2026-07-25T07:47:34+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.5120</priority>
+    <loc>https://www.metrostarcare.ae/doctors/practitioner/dr-rajani-thachappilly</loc>
   </url>
   <url>
-       <loc>https://www.metrostarcare.ae/doctors/pediatrician/dr-sreevidya-arun</loc>
-       <lastmod>2026-07-25T07:47:34+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.5120</priority>
+    <loc>https://www.metrostarcare.ae/doctors/pediatrician/dr-sreevidya-arun</loc>
   </url>
   <url>
-       <loc>https://www.metrostarcare.ae/doctors/pathology/dr-shemy-seebu</loc>
-       <lastmod>2026-07-25T07:47:34+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.5120</priority>
+    <loc>https://www.metrostarcare.ae/doctors/pathology/dr-shemy-seebu</loc>
   </url>
   <url>
-       <loc>https://www.metrostarcare.ae/doctors/physician/lenoy-leelakrishnan</loc>
-       <lastmod>2026-07-25T07:47:34+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.5120</priority>
+    <loc>https://www.metrostarcare.ae/doctors/physician/lenoy-leelakrishnan</loc>
   </url>
   <url>
-       <loc>https://www.metrostarcare.ae/doctors/physiotherapydr/ms-hanitta-thimothy</loc>
-       <lastmod>2026-07-25T07:47:34+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.5120</priority>
+    <loc>https://www.metrostarcare.ae/doctors/physiotherapydr/ms-hanitta-thimothy</loc>
   </url>
   <url>
-       <loc>https://www.metrostarcare.ae/services/general-medicine</loc>
-       <lastmod>2026-07-27T13:47:48+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.5120</priority>
+    <loc>https://www.metrostarcare.ae/services/general-medicine</loc>
   </url>
   <url>
-       <loc>https://www.metrostarcare.ae/services/gynecology</loc>
-       <lastmod>2026-07-27T13:47:48+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.5120</priority>
+    <loc>https://www.metrostarcare.ae/services/gynecology</loc>
   </url>
   <url>
-       <loc>https://www.metrostarcare.ae/services/ent</loc>
-       <lastmod>2026-07-27T13:47:48+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.5120</priority>
+    <loc>https://www.metrostarcare.ae/services/ent</loc>
   </url>
   <url>
-       <loc>https://www.metrostarcare.ae/services/dermatology</loc>
-       <lastmod>2026-07-25T07:47:35+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.5120</priority>
+    <loc>https://www.metrostarcare.ae/services/dermatology</loc>
   </url>
   <url>
-       <loc>https://www.metrostarcare.ae/pediatrics</loc>
-       <lastmod>2026-07-27T13:47:48+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.4096</priority>
+    <loc>https://www.metrostarcare.ae/pediatrics</loc>
   </url>
   <url>
-       <loc>https://www.metrostarcare.ae/physiotherapy</loc>
-       <lastmod>2026-07-25T07:47:35+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.4096</priority>
+    <loc>https://www.metrostarcare.ae/physiotherapy</loc>
   </url>
   <url>
-       <loc>https://www.metrostarcare.ae/blogs/family-health-clinic-sharjah</loc>
-       <lastmod>2026-07-28T00:00:00+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.4096</priority>
+    <loc>https://www.metrostarcare.ae/blogs/family-health-clinic-sharjah</loc>
   </url>
   <url>
-       <loc>https://www.metrostarcare.ae/blogs/family-health-checkups-sharjah</loc>
-       <lastmod>2026-06-29T00:00:00+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.4096</priority>
+    <loc>https://www.metrostarcare.ae/blogs/family-health-checkups-sharjah</loc>
   </url>
   <url>
-       <loc>https://www.metrostarcare.ae/gynecologist-in-sharjah</loc>
-       <lastmod>2026-07-27T13:47:48+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.3277</priority>
+    <loc>https://www.metrostarcare.ae/gynecologist-in-sharjah</loc>
   </url>
   <url>
-       <loc>https://www.metrostarcare.ae/pediatric-clinic-in-sharjah</loc>
-       <lastmod>2026-07-27T13:47:48+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.3277</priority>
+    <loc>https://www.metrostarcare.ae/pediatric-clinic-in-sharjah</loc>
   </url>
   <url>
-       <loc>https://www.metrostarcare.ae/general-doctor-sharjah</loc>
-       <lastmod>2026-07-27T13:47:48+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.2621</priority>
+    <loc>https://www.metrostarcare.ae/general-doctor-sharjah</loc>
   </url>
   <url>
-       <loc>https://www.metrostarcare.ae/healthcare-clinic-in-sharjah</loc>
-       <lastmod>2026-07-27T13:47:48+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.2621</priority>
+    <loc>https://www.metrostarcare.ae/healthcare-clinic-in-sharjah</loc>
   </url>
   <url>
-       <loc>https://www.metrostarcare.ae/family-clinic-in-sharjah</loc>
-       <lastmod>2026-07-27T13:47:48+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.2621</priority>
+    <loc>https://www.metrostarcare.ae/family-clinic-in-sharjah</loc>
   </url>
-<url><loc>https://www.metrostarcare.ae/medical-center-in-sharjah</loc><lastmod>2026-07-31T00:00:00+00:00</lastmod><changefreq>daily</changefreq><priority>0.5120</priority></url><url><loc>https://www.metrostarcare.ae/child-specialist-sharjah</loc><lastmod>2026-07-31T00:00:00+00:00</lastmod><changefreq>daily</changefreq><priority>0.5120</priority></url><url><loc>https://www.metrostarcare.ae/general-medicine-doctor-sharjah</loc><lastmod>2026-07-31T00:00:00+00:00</lastmod><changefreq>daily</changefreq><priority>0.5120</priority></url><url><loc>https://www.metrostarcare.ae/ent-clinic-in-sharjah</loc><lastmod>2026-07-31T00:00:00+00:00</lastmod><changefreq>daily</changefreq><priority>0.5120</priority></url><url><loc>https://www.metrostarcare.ae/dental-clinic-in-sharjah</loc><lastmod>2026-07-31T00:00:00+00:00</lastmod><changefreq>daily</changefreq><priority>0.5120</priority></url><url><loc>https://www.metrostarcare.ae/dermatologist-in-sharjah</loc><lastmod>2026-07-31T00:00:00+00:00</lastmod><changefreq>daily</changefreq><priority>0.5120</priority></url><url><loc>https://www.metrostarcare.ae/blogs/orthopedic-doctor-for-joint-pain-sharjah</loc><lastmod>2026-07-31T00:00:00+00:00</lastmod><changefreq>daily</changefreq><priority>0.5120</priority></url></urlset>
+  <url>
+    <loc>https://www.metrostarcare.ae/medical-center-in-sharjah</loc>
+  </url>
+  <url>
+    <loc>https://www.metrostarcare.ae/child-specialist-sharjah</loc>
+  </url>
+  <url>
+    <loc>https://www.metrostarcare.ae/general-medicine-doctor-sharjah</loc>
+  </url>
+  <url>
+    <loc>https://www.metrostarcare.ae/ent-clinic-in-sharjah</loc>
+  </url>
+  <url>
+    <loc>https://www.metrostarcare.ae/dental-clinic-in-sharjah</loc>
+  </url>
+  <url>
+    <loc>https://www.metrostarcare.ae/dermatologist-in-sharjah</loc>
+  </url>
+  <url>
+    <loc>https://www.metrostarcare.ae/blogs/orthopedic-doctor-for-joint-pain-sharjah</loc>
+  </url>
+  <url>
+    <loc>https://www.metrostarcare.ae/blogs/pediatric-clinic-in-sharjah-child-healthcare</loc>
+  </url>
+</urlset>
