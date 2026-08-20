@@ -240,6 +240,8 @@ Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains
 	RewriteRule ^services/dermatology/?$ dermatology.html [L]
 	RewriteRule ^services/gynecology/?$ gynecology.html [L]
 	RewriteRule ^services/general-medicine/?$ general-medicine.html [L]
+	RewriteRule ^services/orthopedics/?$ orthopedics.html [L]
+	RewriteRule ^arabic/services/orthopedics/?$ arabic/orthopedics.html [L]
 
 
 	# 301 Redirects for Short Doctor URLs
