@@ -419,9 +419,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
         if (btn.dataset.lang === 'en') {
-          window.location.href = 'general-medicine.html';
+          window.location.href = '/services/general-medicine';
         } else if (btn.dataset.lang === 'ar') {
-          window.location.href = 'arabic/general-medicine.html';
+          window.location.href = '/arabic/services/general-medicine';
         }
       });
     });

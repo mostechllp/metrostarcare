@@ -392,6 +392,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     backToTopBtn.onclick = function() {
       window.scrollTo({
         top: 0,
+        behavior: "smooth"
+      });
+    };
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        if (btn.dataset.lang === 'en') {
+          window.location.href = '/services/ent';
+        } else if (btn.dataset.lang === 'ar') {
+          window.location.href = '/arabic/services/ent';
+        }
+      });
+    });
+
+    if (window.location.pathname.includes('/arabic/')) {
+      document.querySelector('.lang-btn[data-lang="ar"]').classList.add('active');
+      document.querySelector('.lang-btn[data-lang="en"]').classList.remove('active');
+    } else {
       document.querySelector('.lang-btn[data-lang="en"]').classList.add('active');
       document.querySelector('.lang-btn[data-lang="ar"]').classList.remove('active');
     }

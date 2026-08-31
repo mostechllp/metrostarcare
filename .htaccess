@@ -164,6 +164,9 @@ Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains
 	RewriteCond %{ENV:REDIRECT_STATUS} ^$
 	RewriteRule ^general-medicine\.html$ /services/general-medicine [R=301,L]
 
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^dental\.html$ /services/dental [R=301,L]
+
 	RewriteCond %{THE_REQUEST} \s//+general-doctor-sharjah [NC]
 	RewriteRule ^ /general-doctor-sharjah [R=301,L]
 
@@ -213,6 +216,33 @@ Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains
 	RewriteRule ^arabic/blog/(.*)$ /arabic/blogs/$1 [R=301,L]
 
 	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^arabic/ent\.html$ /arabic/services/ent [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^arabic/physiotherapy\.html$ /arabic/services/physiotherapy [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^arabic/pediatrics\.html$ /arabic/services/pediatrics [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^arabic/orthopedics\.html$ /arabic/services/orthopedics [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^arabic/ophthalmology\.html$ /arabic/services/ophthalmology [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^arabic/dermatology\.html$ /arabic/services/dermatology [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^arabic/gynecology\.html$ /arabic/services/gynecology [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^arabic/general-medicine\.html$ /arabic/services/general-medicine [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^arabic/dental\.html$ /arabic/services/dental [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
 	RewriteRule ^arabic/general-doctor-sharjah\.html$ /arabic/general-doctor-sharjah [R=301,L]
 
 	RewriteCond %{ENV:REDIRECT_STATUS} ^$
@@ -223,6 +253,7 @@ Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains
 	RewriteRule ^blogs/?$ blogs.html [L]
 	RewriteRule ^arabic/blogs/?$ arabic/blogs.html [L]
 	RewriteRule ^services/?$ services.html [L]
+	RewriteRule ^arabic/services/?$ arabic/services.html [L]
 	
 	# Fallback: fix relative asset paths broken by /blog/ rewrite
     RewriteCond %{REQUEST_FILENAME} !-f
@@ -241,7 +272,17 @@ Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains
 	RewriteRule ^services/gynecology/?$ gynecology.html [L]
 	RewriteRule ^services/general-medicine/?$ general-medicine.html [L]
 	RewriteRule ^services/orthopedics/?$ orthopedics.html [L]
+	RewriteRule ^services/ophthalmology/?$ ophthalmology.html [L]
+	RewriteRule ^services/dental/?$ dental.html [L]
+	RewriteRule ^arabic/services/ent/?$ arabic/ent.html [L]
+	RewriteRule ^arabic/services/physiotherapy/?$ arabic/physiotherapy.html [L]
+	RewriteRule ^arabic/services/pediatrics/?$ arabic/pediatrics.html [L]
+	RewriteRule ^arabic/services/dermatology/?$ arabic/dermatology.html [L]
+	RewriteRule ^arabic/services/gynecology/?$ arabic/gynecology.html [L]
+	RewriteRule ^arabic/services/general-medicine/?$ arabic/general-medicine.html [L]
 	RewriteRule ^arabic/services/orthopedics/?$ arabic/orthopedics.html [L]
+	RewriteRule ^arabic/services/ophthalmology/?$ arabic/ophthalmology.html [L]
+	RewriteRule ^arabic/services/dental/?$ arabic/dental.html [L]
 
 
 	# 301 Redirects for Short Doctor URLs

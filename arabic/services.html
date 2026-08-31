@@ -2,6 +2,7 @@
 <html lang="ar" dir="rtl">
 
 <head>
+  <base href="/arabic/">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>خدماتنا | مركز ميترو ستاركير الطبي – مجموعة ميترو الطبية</title>
@@ -202,6 +203,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="slc-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M12 12v8M9 18l3 3 3-3"/></svg></div>
           <h3>طب العيون</h3>
           <p>رعاية متخصصة للرؤية وصحة العين، بما في ذلك خدمات التشخيص والعلاج لجميع الحالات.</p>
+          <!-- <a href="/arabic/services/ophthalmology" class="slc-more" style="text-decoration:none; display:inline-block; margin-top:10px; color:var(--maroon-dark); font-weight:600;">اقرأ المزيد <span>←</span></a> -->
         </div>
         <div class="service-list-card fade-up">
           <div class="slc-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
@@ -433,9 +435,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
         if (btn.dataset.lang === 'en') {
-          window.location.href = '../services.html';
+          window.location.href = '/services';
         } else if (btn.dataset.lang === 'ar') {
-          window.location.href = 'services.html';
+          window.location.href = '/arabic/services';
         }
       });
     });

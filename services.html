@@ -240,7 +240,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </svg></div>
           <h3>Ophthalmology</h3>
           <p>Specialised care for vision and eye health, including diagnostic and treatment services for all conditions.</p>
-          <!-- <div class="slc-more">Learn More <span>→</span></div> -->
+          <a href="/services/ophthalmology" class="slc-more" style="text-decoration:none; display:inline-block; margin-top:10px; color:var(--maroon-dark); font-weight:600;">Learn More <span>→</span></a>
         </div>
         <div class="service-list-card fade-up">
           <div class="slc-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -258,7 +258,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </svg></div>
           <h3>Dental</h3>
           <p>Complete dental care including preventive, restorative, and cosmetic dentistry for the whole family.</p>
-          <!-- <div class="slc-more">Learn More <span>→</span></div> -->
+          <a href="/services/dental" class="slc-more" style="text-decoration:none; display:inline-block; margin-top:10px; color:var(--maroon-dark); font-weight:600;">Learn More <span>→</span></a>
         </div>
         <div class="service-list-card fade-up" style="transition-delay:0.2s">
           <div class="slc-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -516,9 +516,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
         if (btn.dataset.lang === 'en') {
-          window.location.href = 'services.html';
+          window.location.href = '/services';
         } else if (btn.dataset.lang === 'ar') {
-          window.location.href = 'arabic/services.html';
+          window.location.href = '/arabic/services';
         }
       });
     });
