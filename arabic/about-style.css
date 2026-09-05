@@ -167,6 +167,7 @@
       margin-bottom: 16px;
     }
 
+    .value-card h3,
     .value-card h4 {
       font-size: 1rem;
       font-weight: 700;

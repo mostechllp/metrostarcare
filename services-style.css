@@ -277,6 +277,7 @@
       text-align: center;
       transition: var(--transition);
       backdrop-filter: blur(10px);
+      color: white;
     }
 
     .priv-card:hover {
@@ -295,10 +296,11 @@
       margin: 0 auto 18px;
     }
 
+    .priv-card h3,
     .priv-card h4 {
-      font-family: '', serif;
       font-size: 1.05rem;
-      color: white;
+      font-weight: 700;
+      color: #ffffff !important;
       margin-bottom: 8px;
     }
 

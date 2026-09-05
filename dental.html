@@ -71,8 +71,50 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     },{
       "@type": "ListItem", 
       "position": 3, 
-      "name": "Dental Care & Treatments at Metro  Starcare, Sharjah",
+      "name": "Dental Care & Treatments at Metro Starcare, Sharjah",
       "item": "https://www.metrostarcare.ae/services/dental"  
+    }]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "What are the common dental treatments available at Metro Starcare?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We offer comprehensive dental care including dental implants, root canal treatments, teeth cleaning & scaling, cosmetic fillings, crowns & bridges, and extractions."
+      }
+    },{
+      "@type": "Question",
+      "name": "How often should I visit the dentist for a routine check-up?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is recommended to visit your dentist every 6 months for routine evaluation and professional cleaning to prevent tooth decay and gum disease."
+      }
+    },{
+      "@type": "Question",
+      "name": "What are the main benefits of dental implants?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dental implants provide a permanent, natural-looking solution for missing teeth. They preserve jawbone health and restore full chewing capability and aesthetic confidence."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do you provide pediatric dental care for children?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we offer gentle, child-friendly dental examinations, preventative fluoride applications, and cavity treatments tailored for infants, children, and teenagers."
+      }
+    },{
+      "@type": "Question",
+      "name": "How can I manage and treat tooth sensitivity?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our dentists will diagnose the root cause—such as enamel erosion or gum recession—and recommend specialized fluoride treatments, desensitizing agents, or protective restorations."
+      }
     }]
   }
   </script>
@@ -171,6 +213,108 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h2 style="color:var(--maroon-dark); font-size:1.6rem; margin-bottom:16px; margin-top:40px;">Supporting Long-Term Oral Health</h2>
       
       <p style="color:var(--text-mid);font-size:1.05rem;line-height:1.8; text-align: justify; margin-bottom:40px;">Good oral health is not only about addressing existing problems but also includes implementing measures that guarantee dental hygiene. The patient should make sure that he or she brushes, flosses, and visits the dentist regularly depending on his or her needs. Good oral care allows solving such problems as tooth sensitivity, gum sensitivity, cavities in teeth, and cracked teeth, which could negatively impact daily activities. Dental examinations would enable the patient to learn how to take care of his or her teeth properly.</p>
+
+      <!-- FAQ Section -->
+      <style>
+      .faq-container {
+        background-color: var(--rose-pale, #faeef3); 
+        padding: 40px; 
+        border-radius: 16px; 
+        margin-top: 60px;
+      }
+      .faq-item {
+        background-color: #f7e1e8; 
+        margin-bottom: 12px; 
+        border-radius: 8px; 
+        overflow: hidden; 
+        transition: all 0.3s ease;
+      }
+      .faq-question {
+        padding: 16px 20px; 
+        font-weight: 600; 
+        color: var(--maroon-dark, #5a1c3b); 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center;
+        cursor: pointer;
+      }
+      .faq-answer {
+        max-height: 0; 
+        overflow: hidden; 
+        transition: max-height 0.4s ease; 
+        padding: 0 20px;
+      }
+      .faq-item.active .faq-answer {
+        max-height: 500px;
+      }
+      .faq-icon {
+        transition: transform 0.3s ease;
+      }
+      .faq-item.active .faq-icon {
+        transform: rotate(180deg);
+      }
+      </style>
+      <script>
+        function toggleFaq(el) {
+          el.parentElement.classList.toggle('active');
+        }
+      </script>
+
+      <div class="faq-container">
+        <h2 style="text-align: center; color: var(--maroon-dark); margin-bottom: 30px; font-size: 2rem;">Frequently Asked Questions (FAQs)</h2>
+        
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            1. What are the common dental treatments available at Metro Starcare?
+            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+          </div>
+          <div class="faq-answer">
+            <p style="padding-bottom: 16px; margin: 0; color: var(--text-mid); font-size: 1rem; line-height: 1.6;">We offer comprehensive dental care including dental implants, root canal treatments, teeth cleaning & scaling, cosmetic fillings, crowns & bridges, and extractions.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            2. How often should I visit the dentist for a routine check-up?
+            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+          </div>
+          <div class="faq-answer">
+            <p style="padding-bottom: 16px; margin: 0; color: var(--text-mid); font-size: 1rem; line-height: 1.6;">It is recommended to visit your dentist every 6 months for routine evaluation and professional cleaning to prevent tooth decay and gum disease.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            3. What are the main benefits of dental implants?
+            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+          </div>
+          <div class="faq-answer">
+            <p style="padding-bottom: 16px; margin: 0; color: var(--text-mid); font-size: 1rem; line-height: 1.6;">Dental implants provide a permanent, natural-looking solution for missing teeth. They preserve jawbone health and restore full chewing capability and aesthetic confidence.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            4. Do you provide pediatric dental care for children?
+            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+          </div>
+          <div class="faq-answer">
+            <p style="padding-bottom: 16px; margin: 0; color: var(--text-mid); font-size: 1rem; line-height: 1.6;">Yes, we offer gentle, child-friendly dental examinations, preventative fluoride applications, and cavity treatments tailored for infants, children, and teenagers.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            5. How can I manage and treat tooth sensitivity?
+            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+          </div>
+          <div class="faq-answer">
+            <p style="padding-bottom: 16px; margin: 0; color: var(--text-mid); font-size: 1rem; line-height: 1.6;">Our dentists will diagnose the root cause—such as enamel erosion or gum recession—and recommend specialized fluoride treatments, desensitizing agents, or protective restorations.</p>
+          </div>
+        </div>
+
+      </div>
+      <!-- End FAQ Section -->
 
       <div style="text-align:center; margin-top:40px;">
         <a href="contact.html" class="btn btn-primary" style="display:inline-block; padding:14px 32px; background:var(--maroon); color:#fff; text-decoration:none; border-radius:6px; font-weight:600; font-size:1.05rem;">Book an Appointment</a>

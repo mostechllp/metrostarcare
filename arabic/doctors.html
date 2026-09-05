@@ -120,7 +120,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- FILTER BAR -->
   <div class="filter-bar">
     <div class="filter-inner">
-      <select class="filter-select" id="deptFilter" onchange="filterDoctors()">
+      <select class="filter-select" id="deptFilter" onchange="filterDoctors()" aria-label="تصفية حسب التخصص">
         <option value="all">جميع التخصصات</option>
         <option value="general">الطب العام</option>
         <option value="surgery">الجراحة العامة</option>
@@ -139,7 +139,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <circle cx="11" cy="11" r="8" />
           <line x1="21" y1="21" x2="16.65" y2="16.65" />
         </svg>
-        <input type="text" placeholder="ابحث عن طبيب بالاسم..." id="searchInput" oninput="filterDoctors()">
+        <input type="text" placeholder="ابحث عن طبيب بالاسم..." id="searchInput" oninput="filterDoctors()" aria-label="ابحث عن طبيب بالاسم">
       </div>
     </div>
   </div>

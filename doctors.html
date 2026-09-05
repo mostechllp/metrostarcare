@@ -130,7 +130,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- FILTER BAR -->
   <div class="filter-bar">
     <div class="filter-inner">
-      <select class="filter-select" id="deptFilter" onchange="filterDoctors()">
+      <select class="filter-select" id="deptFilter" onchange="filterDoctors()" aria-label="Filter by Specialty">
         <option value="all">All Specialties</option>
         <option value="general">General Medicine</option>
         <option value="gyn">Gynecology</option>
@@ -150,7 +150,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <circle cx="11" cy="11" r="8" />
           <line x1="21" y1="21" x2="16.65" y2="16.65" />
         </svg>
-        <input type="text" placeholder="Search doctor by name..." id="searchInput" oninput="filterDoctors()">
+        <input type="text" placeholder="Search doctor by name..." id="searchInput" oninput="filterDoctors()" aria-label="Search doctor by name">
       </div>
     </div>
   </div>

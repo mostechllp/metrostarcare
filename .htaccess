@@ -167,6 +167,24 @@ Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains
 	RewriteCond %{ENV:REDIRECT_STATUS} ^$
 	RewriteRule ^dental\.html$ /services/dental [R=301,L]
 
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^dermatology\.html$ /services/dermatology [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^orthopedics\.html$ /services/orthopedics [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^ophthalmology\.html$ /services/ophthalmology [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^radiology\.html$ /services/radiology [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^pathology\.html$ /services/pathology [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^pharmacy\.html$ /services/pharmacy [R=301,L]
+
 	RewriteCond %{THE_REQUEST} \s//+general-doctor-sharjah [NC]
 	RewriteRule ^ /general-doctor-sharjah [R=301,L]
 
@@ -175,6 +193,33 @@ Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains
 
 	RewriteCond %{ENV:REDIRECT_STATUS} ^$
 	RewriteRule ^general-medicine-doctor-sharjah\.html$ /general-medicine-doctor-sharjah [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^child-specialist-sharjah\.html$ /child-specialist-sharjah [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^dental-clinic-in-sharjah\.html$ /dental-clinic-in-sharjah [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^dermatologist-in-sharjah\.html$ /dermatologist-in-sharjah [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^ent-clinic-in-sharjah\.html$ /ent-clinic-in-sharjah [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^family-clinic-in-sharjah\.html$ /family-clinic-in-sharjah [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^gynecologist-in-sharjah\.html$ /gynecologist-in-sharjah [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^healthcare-clinic-in-sharjah\.html$ /healthcare-clinic-in-sharjah [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^medical-center-in-sharjah\.html$ /medical-center-in-sharjah [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^pediatric-clinic-in-sharjah\.html$ /pediatric-clinic-in-sharjah [R=301,L]
 
 
 	# 301 Redirects for HTML Extension Pages (Arabic)
@@ -243,10 +288,46 @@ Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains
 	RewriteRule ^arabic/dental\.html$ /arabic/services/dental [R=301,L]
 
 	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^arabic/radiology\.html$ /arabic/services/radiology [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^arabic/pathology\.html$ /arabic/services/pathology [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^arabic/pharmacy\.html$ /arabic/services/pharmacy [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
 	RewriteRule ^arabic/general-doctor-sharjah\.html$ /arabic/general-doctor-sharjah [R=301,L]
 
 	RewriteCond %{ENV:REDIRECT_STATUS} ^$
 	RewriteRule ^arabic/general-medicine-doctor-sharjah\.html$ /arabic/general-medicine-doctor-sharjah [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^arabic/child-specialist-sharjah\.html$ /arabic/child-specialist-sharjah [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^arabic/dental-clinic-in-sharjah\.html$ /arabic/dental-clinic-in-sharjah [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^arabic/dermatologist-in-sharjah\.html$ /arabic/dermatologist-in-sharjah [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^arabic/ent-clinic-in-sharjah\.html$ /arabic/ent-clinic-in-sharjah [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^arabic/family-clinic-in-sharjah\.html$ /arabic/family-clinic-in-sharjah [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^arabic/gynecologist-in-sharjah\.html$ /arabic/gynecologist-in-sharjah [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^arabic/healthcare-clinic-in-sharjah\.html$ /arabic/healthcare-clinic-in-sharjah [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^arabic/medical-center-in-sharjah\.html$ /arabic/medical-center-in-sharjah [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^arabic/pediatric-clinic-in-sharjah\.html$ /arabic/pediatric-clinic-in-sharjah [R=301,L]
 
 
 	# Specific Rewrites to fix 403 Forbidden (because a real folder exists with this name)
@@ -274,6 +355,9 @@ Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains
 	RewriteRule ^services/orthopedics/?$ orthopedics.html [L]
 	RewriteRule ^services/ophthalmology/?$ ophthalmology.html [L]
 	RewriteRule ^services/dental/?$ dental.html [L]
+	RewriteRule ^services/radiology/?$ radiology.html [L]
+	RewriteRule ^services/pathology/?$ pathology.html [L]
+	RewriteRule ^services/pharmacy/?$ pharmacy.html [L]
 	RewriteRule ^arabic/services/ent/?$ arabic/ent.html [L]
 	RewriteRule ^arabic/services/physiotherapy/?$ arabic/physiotherapy.html [L]
 	RewriteRule ^arabic/services/pediatrics/?$ arabic/pediatrics.html [L]
@@ -283,6 +367,9 @@ Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains
 	RewriteRule ^arabic/services/orthopedics/?$ arabic/orthopedics.html [L]
 	RewriteRule ^arabic/services/ophthalmology/?$ arabic/ophthalmology.html [L]
 	RewriteRule ^arabic/services/dental/?$ arabic/dental.html [L]
+	RewriteRule ^arabic/services/radiology/?$ arabic/radiology.html [L]
+	RewriteRule ^arabic/services/pathology/?$ arabic/pathology.html [L]
+	RewriteRule ^arabic/services/pharmacy/?$ arabic/pharmacy.html [L]
 
 
 	# 301 Redirects for Short Doctor URLs

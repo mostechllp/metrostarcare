@@ -372,7 +372,7 @@
           </div>` : ''}
           <div class="package-header">
             <div class="package-category">${getCategoryLabel(pkg.category)}</div>
-            <h3>${displayName}</h3>
+            <h2 style="font-size: 1.25rem; font-weight: 700; margin: 10px 0 0 0; line-height: 1.35; color: white;">${displayName}</h2>
           </div>
           <div class="package-body">
             <p class="package-desc">${pkg.description}</p>
