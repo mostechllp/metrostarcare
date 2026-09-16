@@ -465,27 +465,6 @@ const DOCTORS = [
 },
 
 {
-  id: 'hanitta',
-  name: 'الأستاذة هانيتا تيموثي',
-  prefix: 'أ.',
-  firstName: 'هانيتا',
-  title: 'العلاج الطبيعي',
-  role: null,
-  experience: null,
-  image: '../doctors/hanitta_thimotti.webp',
-  languages: ['الإنجليزية','الهندية','المالايالامية','التاميلية'],
-  qualifications: ['بكالوريوس علاج طبيعي','ماجستير أعصاب'],
-  tagline: 'إعادة التأهيل برعاية إنسانية',
-  services: ['إعادة التأهيل','العلاج العصبي','إصابات الرياضة'],
-  bio: [
-    'تساعد المرضى على استعادة الحركة.',
-    'توفر خطط علاج مخصصة.',
-    'تعتمد على أساليب حديثة.'
-  ],
-  expertise: null
-},
-
-{
   id: 'salih',
   name: 'د. محمد صالح',
   prefix: 'د.',
@@ -548,7 +527,6 @@ const DOCTORS = [
       if (path.includes('/dr-rajani')) return DOCTORS.find(d => d.id === 'rajani');
       if (path.includes('/dr-sreevidya')) return DOCTORS.find(d => d.id === 'sreevidya');
       if (path.includes('/dr-shemy')) return DOCTORS.find(d => d.id === 'shemy');
-      if (path.includes('/dr-hanitta')) return DOCTORS.find(d => d.id === 'hanitta');
 
       return DOCTORS[0];
     }
@@ -601,8 +579,7 @@ const DOCTORS = [
         'salih': '/doctors/practitioner/dr-salih',
         'rajani': '/doctors/practitioner/dr-rajani',
         'sreevidya': '/doctors/pediatrician/dr-sreevidya',
-        'shemy': '/doctors/pathology/dr-shemy',
-        'hanitta': '/doctors/physiotherapydr/dr-hanitta'
+        'shemy': '/doctors/pathology/dr-shemy'
       };
       const canonicalUrl = canonicalMap[doc.id] || '/doctors';
       let link = document.querySelector('link[rel="canonical"]');

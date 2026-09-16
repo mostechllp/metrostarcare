@@ -128,7 +128,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </svg></a></div>
       </div>
       <div class="footer-col">
-        <h4>الخدمات</h4>
+        <h3>الخدمات</h3>
         <ul>
           <li><a href="services.html">الطب العام</a></li>
 <li><a href="services.html">أمراض النساء والتوليد</a></li>
@@ -144,7 +144,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>روابط سريعة</h4>
+        <h3>روابط سريعة</h3>
         <ul>
           <li><a href="about.html">من نحن</a></li>
           <li><a href="doctors.html">أطبائنا</a></li>
@@ -157,7 +157,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>اتصل بنا</h4>
+        <h3>اتصل بنا</h3>
         <ul class="footer-contact">
           <li><span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
@@ -484,27 +484,6 @@ const DOCTORS = [
 },
 
 {
-  id: 'hanitta',
-  name: 'الأستاذة هانيتا تيموثي',
-  prefix: 'أ.',
-  firstName: 'هانيتا',
-  title: 'العلاج الطبيعي',
-  role: null,
-  experience: null,
-  image: '../doctors/hanitta_thimotti.webp',
-  languages: ['الإنجليزية','الهندية','المالايالامية','التاميلية'],
-  qualifications: ['بكالوريوس علاج طبيعي','ماجستير أعصاب'],
-  tagline: 'إعادة التأهيل برعاية إنسانية',
-  services: ['إعادة التأهيل','العلاج العصبي','إصابات الرياضة'],
-  bio: [
-    'تساعد المرضى على استعادة الحركة.',
-    'توفر خطط علاج مخصصة.',
-    'تعتمد على أساليب حديثة.'
-  ],
-  expertise: null
-},
-
-{
   id: 'salih',
   name: 'د. محمد صالح',
   prefix: 'د.',
@@ -568,7 +547,6 @@ const DOCTORS = [
       if (path.includes('/dr-rajani')) return DOCTORS.find(d => d.id === 'rajani');
       if (path.includes('/dr-sreevidya')) return DOCTORS.find(d => d.id === 'sreevidya');
       if (path.includes('/dr-shemy')) return DOCTORS.find(d => d.id === 'shemy');
-      if (path.includes('/dr-hanitta')) return DOCTORS.find(d => d.id === 'hanitta');
 
       return DOCTORS[0];
     }
@@ -622,8 +600,7 @@ const DOCTORS = [
         'salih': '/doctors/practitioner/dr-salih',
         'rajani': '/doctors/practitioner/dr-rajani',
         'sreevidya': '/doctors/pediatrician/dr-sreevidya',
-        'shemy': '/doctors/pathology/dr-shemy',
-        'hanitta': '/doctors/physiotherapydr/dr-hanitta'
+        'shemy': '/doctors/pathology/dr-shemy'
       };
       const canonicalUrl = canonicalMap[doc.id] || '/doctors';
       let link = document.querySelector('link[rel="canonical"]');

@@ -67,7 +67,7 @@ Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains
 	RewriteRule ^doctor-profile\.html$ /doctors/pathology/dr-shemy? [R=301,L]
 
 	RewriteCond %{QUERY_STRING} ^id=hanitta$
-	RewriteRule ^doctor-profile\.html$ /doctors/physiotherapydr/dr-hanitta? [R=301,L]
+	RewriteRule ^doctor-profile\.html$ /doctors? [R=301,L]
 
 	# 301 Redirects for Query String Doctor Profiles (Arabic)
 	RewriteCond %{QUERY_STRING} ^id=rasna$
@@ -102,7 +102,7 @@ Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains
 	RewriteRule ^arabic/doctor-profile\.html$ /arabic/doctors/pathology/dr-shemy? [R=301,L]
 
 	RewriteCond %{QUERY_STRING} ^id=hanitta$
-	RewriteRule ^arabic/doctor-profile\.html$ /arabic/doctors/physiotherapydr/dr-hanitta? [R=301,L]
+	RewriteRule ^arabic/doctor-profile\.html$ /arabic/doctors? [R=301,L]
 
 	# 301 Redirects for HTML Extension Pages
 	# ENV:REDIRECT_STATUS check prevents infinite loops when internally rewriting back to .html
@@ -249,7 +249,9 @@ Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains
 	RewriteCond %{ENV:REDIRECT_STATUS} ^$
 	RewriteRule ^doctors/pathology/dr-shemy/?$ /doctors/pathology/dr-shemy-seebu [R=301,L]
 	RewriteCond %{ENV:REDIRECT_STATUS} ^$
-	RewriteRule ^doctors/physiotherapydr/dr-hanitta/?$ /doctors/physiotherapydr/ms-hanitta-thimothy [R=301,L]
+	RewriteRule ^doctors/physiotherapydr/(dr-hanitta|ms-hanitta-thimothy)(\.html)?/?$ /doctors [R=301,L]
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^doctors/ms-hanitta-thimothy(\.html)?/?$ /doctors [R=301,L]
 
 	# 301 Redirects for Short Doctor URLs (Arabic)
 	RewriteCond %{ENV:REDIRECT_STATUS} ^$
@@ -273,7 +275,9 @@ Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains
 	RewriteCond %{ENV:REDIRECT_STATUS} ^$
 	RewriteRule ^arabic/doctors/pathology/dr-shemy/?$ /arabic/doctors/pathology/dr-shemy-seebu [R=301,L]
 	RewriteCond %{ENV:REDIRECT_STATUS} ^$
-	RewriteRule ^arabic/doctors/physiotherapydr/dr-hanitta/?$ /arabic/doctors/physiotherapydr/ms-hanitta-thimothy [R=301,L]
+	RewriteRule ^arabic/doctors/physiotherapydr/(dr-hanitta|ms-hanitta-thimothy)(\.html)?/?$ /arabic/doctors [R=301,L]
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^arabic/doctors/ms-hanitta-thimothy(\.html)?/?$ /arabic/doctors [R=301,L]
 	
 	RewriteCond %{ENV:REDIRECT_STATUS} ^$
 	RewriteRule ^blogs/(.+)\.html$ /blogs/$1 [R=301,L]

@@ -141,7 +141,7 @@
                 </div>
       </div>
       <div class="footer-col">
-        <h4>Services</h4>
+        <h3>Services</h3>
         <ul>
           <li><a href="services.html">General Medicine</a></li>
           <li><a href="services.html">Gynecology</a></li>
@@ -157,7 +157,7 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Quick Links</h4>
+        <h3>Quick Links</h3>
         <ul>
           <li><a href="about.html">About Us</a></li>
           <li><a href="doctors.html">Our Doctors</a></li>
@@ -171,7 +171,7 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Contact</h4>
+        <h3>Contact</h3>
         <ul class="footer-contact">
           <li><span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
@@ -511,37 +511,6 @@
         expertise: null
       },
       {
-        id: 'hanitta',
-        name: 'Ms. Hanitta Thimothy',
-        meta: {
-          title: 'Ms. Hanitta - Physiotherapist in Sharjah - Metro Starcare',
-          description: 'Expert physiotherapist specializing in musculoskeletal and neurological rehab. Personalized, evidence-based care for surgery, sports injuries and chronic pain.'
-        },
-        prefix: 'Ms.',
-        firstName: 'Hanitta',
-        title: 'Physiotherapy',
-        role: null,
-        experience: null,
-        image: 'doctors_images/hanitta_thimotti.webp',
-        languages: ['English', 'Hindi', 'Malayalam', 'Tamil'],
-        qualifications: ['BPT (Bachelor of Physiotherapy)', 'MNT (Master\'s in Neurology)'],
-        tagline: 'A Compassionate Journey in Physiotherapy',
-        services: [
-          'Orthopedic Rehabilitation',
-          'Neurological Rehabilitation',
-          'Sports Injury Recovery',
-          'Post-Surgical Rehabilitation',
-        ],
-        bio: [
-          'For <strong>Ms. Hanitta Thimothy</strong>, physiotherapy is more than just a profession—it\'s a calling to help others regain their strength, mobility, and confidence. Ms. Hanitta has dedicated herself to improving the lives of those recovering from injuries, surgeries, and chronic conditions.',
-          'Her journey began with a passion for <strong>movement and rehabilitation</strong>, which led her to pursue a <strong>Bachelor\'s in Physiotherapy (BPT)</strong> and a <strong>Master\'s in Neurology (MNT)</strong>. Ms. Hanitta quickly developed a special interest in <strong>musculoskeletal and neurological rehabilitation</strong>, realizing the profound impact physiotherapy could have in restoring people\'s <strong>mobility and quality of life</strong>.',
-          'In her career, she has worked tirelessly with patients of all ages, tailoring each treatment plan to meet individual needs. Whether she\'s helping someone recover after <strong>surgery</strong>, guiding an athlete through <strong>sports injuries</strong>, or supporting elderly patients with <strong>chronic pain management</strong>, her approach is always <strong>personalized, compassionate, and evidence-based</strong>.',
-          'Ms. Hanitta\'s expertise covers a wide range of areas: from <strong>orthopedic rehabilitation</strong> and <strong>neurological rehabilitation</strong> for conditions like <strong>stroke, Parkinson\'s disease, and multiple sclerosis</strong>, to <strong>geriatric physiotherapy</strong>, <strong>pediatric physiotherapy</strong>, and <strong>vestibular rehabilitation</strong>. She is also trained in <strong>manual therapy techniques</strong>, including massage and myofascial release.',
-          'Through her <strong>holistic and patient-centered approach</strong>, Ms. Hanitta Thimothy has helped countless individuals regain control over their bodies and their lives.'
-        ],
-        expertise: null
-      },
-      {
         id: 'salih',
         name: 'Dr. Muhammed Salih',
         meta: {
@@ -664,7 +633,6 @@
       if (path.includes('/dr-rajani')) return DOCTORS.find(d => d.id === 'rajani');
       if (path.includes('/dr-sreevidya')) return DOCTORS.find(d => d.id === 'sreevidya');
       if (path.includes('/dr-shemy')) return DOCTORS.find(d => d.id === 'shemy');
-      if (path.includes('/dr-hanitta')) return DOCTORS.find(d => d.id === 'hanitta');
       if (path.includes('/dr-lenoy')) return DOCTORS.find(d => d.id === 'lenoy');
 
       return DOCTORS[0]; // default to Rasna
@@ -741,7 +709,6 @@
         'rajani': '/doctors/practitioner/dr-rajani',
         'sreevidya': '/doctors/pediatrician/dr-sreevidya',
         'shemy': '/doctors/pathology/dr-shemy',
-        'hanitta': '/doctors/physiotherapydr/dr-hanitta',
         'lenoy': '/doctors/general-practice/dr-lenoy'
       };
       const canonicalUrl = canonicalMap[doc.id] || '/doctors';
