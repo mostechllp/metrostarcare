@@ -974,8 +974,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           const parser = new DOMParser();
           const doc = parser.parseFromString(html, 'text/html');
 
-          const doctorCards = doc.querySelectorAll('.doctor-card-v2');
-          const doctorsData = [];
+          const doctorCards = Array.from(doc.querySelectorAll('.doctor-card-v2'));
+
+doctorCards.sort((a, b) => {
+  const aOrder = parseInt(a.dataset.order, 10);
+  const bOrder = parseInt(b.dataset.order, 10);
+  const aVal = isNaN(aOrder) ? 9999 : aOrder;
+  const bVal = isNaN(bOrder) ? 9999 : bOrder;
+  return aVal - bVal;
+});
+
+const doctorsData = [];
 
           doctorCards.forEach((card) => {
             const img = card.querySelector('.photo img');
@@ -1007,49 +1016,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         }
       }
 
-      const existingDoctors = [{
-        imgSrc: 'home_docs/rasna_munaifa_.webp',
-        specialty: 'General Practice',
-        name: 'Dr. Rasna Munaifa Koroth',
-        deg: 'MBBS · Medical Director',
-        exp: 'Experienced',
-        profileHref: '/doctors/general-practice/dr-rasna-munaifa',
-        bookHref: 'contact.html',
-        isDirector: true
-      },
-      {
-        imgSrc: 'doctors_images/fareeda_mammu.webp',
-        specialty: 'Gynaecology',
-        name: 'Dr. Fareeda Mammu',
-        deg: 'MBBS · Specialist Obstetrics & Gynaecology',
-        exp: '22+ yrs exp',
-        profileHref: '/doctors/gynaecologist/dr-fareeda-mammu',
-        bookHref: 'contact.html'
-      },
-      {
-        imgSrc: 'doctors_images/ali_akbar_abdul_salam.webp',
-        specialty: 'ENT',
-        name: 'Dr. Ali Akbar',
-        deg: 'MBBS, MS · Specialist ENT',
-        exp: '24+ yrs exp',
-        profileHref: '/doctors/ent/dr-ali-akbar',
-        bookHref: 'contact.html'
-      }
-      ];
+      // ✅ Featured: Medical Director (only prepended, not duplicated from grid)
+const featuredDirector = {
+  imgSrc: 'home_docs/rasna_munaifa_.webp',
+  specialty: 'General Practice',
+  name: 'Dr. Rasna Munaifa Koroth',
+  deg: 'MBBS · Medical Director',
+  exp: 'Experienced',
+  profileHref: '/doctors/general-practice/dr-rasna-munaifa',
+  bookHref: 'contact.html',
+  isDirector: true
+};
 
-      async function getAllDoctors() {
-        const fetchedDoctors = await fetchAllDoctors();
-        const allDoctors = [...existingDoctors];
-        const existingNames = new Set(existingDoctors.map(d => d.name));
+async function getAllDoctors() {
+  // 1) Director first
+  const allDoctors = [featuredDirector];
+  const existingNames = new Set([featuredDirector.name]);
 
-        for (const doc of fetchedDoctors) {
-          if (!existingNames.has(doc.name)) {
-            allDoctors.push(doc);
-            existingNames.add(doc.name);
-          }
-        }
-        return allDoctors;
-      }
+  // 2) Sorted cards from doctors.html (already sorted by data-order)
+  const fetchedDoctors = await fetchAllDoctors();
+
+  for (const doc of fetchedDoctors) {
+    if (!existingNames.has(doc.name)) {
+      allDoctors.push(doc);
+      existingNames.add(doc.name);
+    }
+  }
+
+  return allDoctors;
+}
 
       let currentIndex = 0;
       let autoInterval;

@@ -1,0 +1,97 @@
+/* ============================================================
+   Dr. Fasil Variyathodi — Arabic Profile Stylesheet (Part 2)
+   "Meet Other Specialists" section
+   ============================================================ */
+
+.other-specialists-section {
+  padding: 60px 32px;
+  background: white;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.section-title-wrap {
+  margin-bottom: 40px;
+}
+
+.os-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.os-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fffafb;
+  border: 1px solid #faeef1;
+  border-radius: 16px;
+  padding: 30px;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.os-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(139, 26, 74, 0.08);
+}
+
+.os-img-wrap {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--rose-pale);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.os-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.os-card h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.os-card span {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--maroon);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+.btn-fill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--maroon-deep);
+  color: white;
+  padding: 14px 32px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn-fill:hover {
+  background: var(--maroon) !important;
+}
+
+@media (max-width: 768px) {
+  .os-grid { grid-template-columns: 1fr !important; }
+}
