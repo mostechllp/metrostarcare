@@ -110,7 +110,7 @@
       // 1. General Health
       {
           id: 1,
-          name: "عرض لقاح العمرة – 49 درهم",
+          name: "عرض لقاح العمرة – 60 درهم",
           category: "general_health",
           description: "احمِ نفسك قبل رحلة العمرة مع باقة تطعيم ميسورة التكلفة.",
           features: [

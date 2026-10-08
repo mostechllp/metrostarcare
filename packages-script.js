@@ -1,116 +1,11 @@
 
     // Package Data with image URLs (based on original site structure)
     const packagesData = [
-      {
-        id: 21,
-        name: "10th Anniversary Health Offers",
-        category: "general_health",
-        description: "Special anniversary offers on consultations, lab tests, diagnostics, and wellness treatments at discounted prices.",
-        features: [
-          "Special prices on Consultations",
-          "Discounted Lab & Vitamin Tests",
-          "Radiology & Diagnostic offers",
-          "Aesthetic & PRP treatments",
-          "Physiotherapy sessions",
-          "ENT & Ophthalmology services"
-        ],
-        packages: [
-          {
-            category_name: "Consultations",
-            services: [
-              { name: "GP Consultation", price: "49 AED" },
-              { name: "Specialist Consultation", price: "99 AED" }
-            ]
-          },
-          {
-            category_name: "Lab Tests",
-            services: [
-              { name: "CBC", price: "30 AED" },
-              { name: "Urine Routine", price: "30 AED" },
-              { name: "CRP", price: "40 AED" },
-              { name: "Influenza Test", price: "49 AED" },
-              { name: "Troponin I", price: "49 AED" },
-              { name: "Beta HCG", price: "60 AED" },
-              { name: "Ferritin", price: "69 AED" }
-            ]
-          },
-          {
-            category_name: "Vitamin & Hormone Tests",
-            services: [
-              { name: "Vitamin D Test", price: "49 AED" },
-              { name: "Vitamin D Injection", price: "49 AED" },
-              { name: "Vitamin B12", price: "69 AED" },
-              { name: "FSH", price: "69 AED" },
-              { name: "LH", price: "69 AED" },
-              { name: "Thyroid Test", price: "49 AED" },
-              { name: "Thyroid Profile Test", price: "99 AED" }
-            ]
-          },
-          {
-            category_name: "Cardiac Tests",
-            services: [
-              { name: "ECG", price: "60 AED" },
-              { name: "ECG + Troponin I", price: "99 AED" }
-            ]
-          },
-          {
-            category_name: "Radiology & Diagnostics",
-            services: [
-              { name: "X-Ray Single View", price: "49 AED" },
-              { name: "Ultrasound", price: "175 AED" },
-              { name: "Specialised Scan", price: "350 AED" }
-            ]
-          },
-          {
-            category_name: "Physiotherapy",
-            services: [
-              { name: "Physiotherapy Session", price: "99 AED" }
-            ]
-          },
-          {
-            category_name: "Aesthetic Treatments",
-            services: [
-              { name: "Quick Glow Peel", price: "149 AED" },
-              { name: "Anti-Ageing Peeling", price: "299 AED" },
-              { name: "Glass Peeling", price: "299 AED" },
-              { name: "Botox (starting from)", price: "200 AED" },
-              { name: "Metro Signature Peel", price: "199 AED" },
-              { name: "Glutathione Drip", price: "149 AED" },
-              { name: "Glutathione + Vitamin C Drip", price: "179 AED" }
-            ]
-          },
-          {
-            category_name: "PRP Treatments",
-            services: [
-              { name: "PRP (Hair)", price: "149 AED" },
-              { name: "PRP (Face)", price: "199 AED" },
-              { name: "GFC", price: "199 AED" }
-            ]
-          },
-          {
-            category_name: "ENT Services",
-            services: [
-              { name: "Ear Wax Removal", price: "30 AED" },
-              { name: "Hearing Test", price: "99 AED" },
-              { name: "Painless Ear Piercing + ENT Consultation", price: "99 AED" },
-              { name: "Nasal Endoscopy", price: "125 AED" }
-            ]
-          },
-          {
-            category_name: "Ophthalmology",
-            services: [
-              { name: "Ophthalmologist Consultation + Refraction", price: "90 AED" },
-              { name: "Ophthal Consultation + Foreign Body Removal + Eye Dressing", price: "120 AED" }
-            ]
-          }
-        ],
-        fullDetails: "Celebrate our anniversary with these exclusive health offers! We are providing significant discounts across all our major departments including General Medicine, Laboratory, Radiology, Physiotherapy, ENT, Ophthalmology and Aesthetic treatments. Our goal is to make high-quality healthcare accessible and affordable for everyone in our community."
-      },
-
+      
       // 1. General Health
       {
           id: 1,
-          name: "Umrah Vaccination Offer – 49 AED",
+          name: "Umrah Vaccination Offer – 60 AED",
           category: "general_health",
           description: "Protect yourself before your Umrah journey with an affordable vaccination package.",
           features: [
@@ -319,7 +214,211 @@
             "Infertility Workup & Basic Treatment"
         ],
         fullDetails: "This women’s healthcare service is led by an experienced gynecologist, providing complete care for all stages of a woman’s life. From menstrual health and pregnancy care to menopause management and infertility evaluation, the consultation ensures personalized diagnosis and treatment. Preventive screenings like cervical cancer tests and expert guidance on contraception further support long-term wellness. Ideal for women seeking trusted and comprehensive gynecological care."
-      }
+      },
+      {
+  id: 22,
+  name: "Basic Pregnancy Package – 1750 AED",
+  category: "women_health",
+  description: "Complete maternity care for a healthy mother and happy baby — 5 obstetric consultations and 2 ultrasound scans.",
+  features: [
+    "Obstetric Consultation – 5 Visits",
+    "Normal Ultrasound – 2",
+    "Anomaly Scan – 1",
+    "NT Scan – 1",
+    "Laboratory Tests: CBC, RBS, Urine Analysis, VDRL, PPBS, Blood Group, Blood Type, TSH",
+    "Monitoring: Blood Pressure & BMI",
+    "Regular Antenatal Check-ups",
+    "Personalized Care & Guidance"
+  ],
+  fullDetails: "The Basic Pregnancy Package at Metro Starcare Medical Centre provides essential antenatal care for expecting mothers. It includes 5 obstetric consultations, 2 normal ultrasounds, and key scans (Anomaly and NT), plus a comprehensive lab panel (CBC, RBS, Urine Analysis, VDRL, PPBS, Blood Group, Blood Type, TSH) and routine monitoring of blood pressure and BMI. Designed to give you and your baby complete, worry-free care throughout your pregnancy."
+},
+{
+  id: 23,
+  name: "Executive Pregnancy Package – 2500 AED",
+  category: "women_health",
+  description: "Advanced maternity care with 7 obstetric consultations, 3 ultrasounds, and extended laboratory tests.",
+  features: [
+    "Obstetric Consultation – 7 Visits",
+    "Normal Ultrasound – 3",
+    "NT Scan – 1",
+    "Anomaly Scan – 1",
+    "Laboratory Tests: CBC 3, HCV, RBS, TSH, VDRL, GTT, HIV, HBSAG, Blood Group, RUBELLA, Blood Type, Urine Analysis 2",
+    "Monitoring: Blood Pressure & BMI",
+    "Advanced Ultrasound Scans",
+    "Essential Lab Investigations"
+  ],
+  fullDetails: "The Executive Pregnancy Package offers an enhanced level of maternity care with 7 obstetric consultations, 3 normal ultrasounds, and both NT and Anomaly scans. The laboratory panel is expanded to include CBC 3, HCV, RBS, TSH, VDRL, GTT, HIV, HBSAG, Blood Group, Rubella, Blood Type, and Urine Analysis (2), along with continuous blood pressure and BMI monitoring. Ideal for expecting mothers who want a more thorough, monitored pregnancy journey."
+},
+{
+  id: 24,
+  name: "Premium Pregnancy Package – 3250 AED",
+  category: "women_health",
+  description: "Our most comprehensive maternity package — 10 consultations, 4 ultrasounds, and the full lab panel for complete peace of mind.",
+  features: [
+    "Obstetric Consultation – 10 Visits",
+    "Normal Ultrasound – 4",
+    "NT Scan – 1",
+    "Anomaly Scan – 1",
+    "Laboratory Tests: CBC 4, HIV, HCV, VDRL, TSH, GTT, HBSAG, HbA1c, Urine Analysis 3, Urine Culture & Sensitivity, Blood Group, Blood Type, Blood Sugar Fasting 2, Blood Sugar Post Pandial",
+    "Monitoring: Blood Pressure & BMI",
+    "Advanced Ultrasound Scans",
+    "Essential Lab Investigations",
+    "Personalized Care & Guidance",
+    "Peace of Mind for You & Your Baby"
+  ],
+  fullDetails: "The Premium Pregnancy Package is our most complete maternity offering — 10 obstetric consultations, 4 normal ultrasounds, NT and Anomaly scans, and an extensive laboratory panel (CBC 4, HIV, HCV, VDRL, TSH, GTT, HBSAG, HbA1c, Urine Analysis 3, Urine Culture & Sensitivity, Blood Group, Blood Type, Blood Sugar Fasting 2, Blood Sugar Post Pandial). Includes ongoing blood pressure and BMI monitoring for total peace of mind throughout your pregnancy."
+},
+
+// Metro Premium Wellness Package
+{
+  id: 25,
+  name: "Metro Premium Wellness Package – 299 AED",
+  category: "advanced_health",
+  description: "A complete checkup for complete peace of mind — covering hemogram, diabetic, lipid, liver, kidney, thyroid profiles, ECG, vision, and dental consultation.",
+  features: [
+    "Complete Hemogram (CBC – 19 Parameters)",
+    "Diabetic Test: FBS / RBS, HbA1c",
+    "Lipid Profile: Total Cholesterol, Triglycerides, LDL, VLDL, HDL, Non-HDL",
+    "Liver Profile: SGPT, SGOT, ALP, Total Bilirubin, Direct Bilirubin, GGT, Total Protein, Albumin, Globulin",
+    "Kidney Profile: Urea, Creatinine, GFR, Uric Acid",
+    "Thyroid Profile: TSH, FT3, FT4",
+    "Additional Wellness Tests: Phosphorus, Magnesium, Iron, CRP, ECG, Vision Screening, Dental Consultation, Doctor's Report Review",
+    "Urine Routine, BMI, Blood Pressure"
+  ],
+  fullDetails: "The Metro Premium Wellness Package is a comprehensive preventive health checkup designed for complete peace of mind. It includes a 19-parameter Complete Hemogram, diabetic screening (FBS/RBS, HbA1c), full Lipid Profile, Liver Profile (SGPT, SGOT, ALP, Bilirubin, GGT, Total Protein, Albumin, Globulin), Kidney Profile (Urea, Creatinine, GFR, Uric Acid), Thyroid Profile (TSH, FT3, FT4), plus additional wellness tests including Phosphorus, Magnesium, Iron, CRP, ECG, Vision Screening, Dental Consultation, Urine Routine, BMI, Blood Pressure, and a Doctor's Report Review. Complete care. Complete wellness."
+},
+
+// Iron Test
+{
+  id: 26,
+  name: "Iron Test – 49 AED",
+  category: "blood_test",
+  description: "Feeling unusually tired or weak? An iron test measures iron in your blood and helps your doctor investigate low or high iron levels.",
+  features: [
+    "Iron Test",
+    "Quick Results",
+    "Detects Iron Deficiency or Excess",
+    "Doctor Consultation Available"
+  ],
+  fullDetails: "Feeling unusually tired or weak? An iron test measures iron levels in your blood and helps your doctor investigate low or high iron levels. Low iron directly affects how oxygen travels through your body, leaving you constantly drained. Get your levels checked today for just 49 AED. Ask your doctor if this test is right for you."
+},
+
+// Magnesium Test
+{
+  id: 27,
+  name: "Magnesium Test – 49 AED",
+  category: "nutrition",
+  description: "Sudden muscle cramps or unexplained fatigue? A magnesium test helps check for an imbalance that may contribute to these symptoms.",
+  features: [
+    "Magnesium Test",
+    "Quick Results",
+    "Detects Magnesium Imbalance",
+    "Supports Muscle & Nerve Health"
+  ],
+  fullDetails: "Waking up with sudden leg cramps or feeling exhausted even after 8 hours of sleep? It might not just be 'a long week' — it could be a hidden magnesium deficiency. Magnesium plays a vital role in muscle recovery, nerve function, and steady energy levels. Don't guess — check your levels today for just 49 AED. Ask your doctor if this test is right for you."
+},
+
+// Phosphorus Test
+{
+  id: 28,
+  name: "Phosphorus Test – 49 AED",
+  category: "nutrition",
+  description: "Understand your mineral balance. A phosphorus test helps assess bone and kidney health as part of a complete evaluation.",
+  features: [
+    "Phosphorus Test",
+    "Quick Results",
+    "Supports Bone Health Assessment",
+    "Supports Kidney Health Evaluation"
+  ],
+  fullDetails: "Did you know mineral balance is the secret to strong bones and healthy kidney function? Phosphorus works closely with calcium to keep your body's foundation solid. Assess your mineral balance with our Phosphorus Test for just 49 AED. Ask your doctor if this test is right for you."
+},
+
+// Vitamin D & B12 Package
+{
+  id: 29,
+  name: "Vitamin D & B12 Package – 120 AED",
+  category: "nutrition",
+  description: "Small tests, a big difference for your family's health. Keep everyone active, strong, and healthy.",
+  features: [
+    "Vitamin D Test",
+    "Vitamin B12 Test",
+    "Suitable for All Age Groups",
+    "Supports Energy, Immunity & Nerve Health",
+    "Supports Overall Well-being"
+  ],
+  fullDetails: "Your family's energy and immunity start with the right nutrition. Low Vitamin D can lead to bone weakness, while low B12 causes low energy and nerve issues. Keep everyone active, strong, and healthy with our complete Vitamin D & B12 Checkup for just 120 AED. Suitable for all age groups, essential for energy, immunity & nerve health. Know your levels — take control."
+},
+
+// Anaemia Screening Package
+{
+  id: 30,
+  name: "Anaemia Screening Package – 149 AED",
+  category: "blood_test",
+  description: "Essential tests for a healthier tomorrow. Comprehensive iron profile to diagnose the cause of fatigue and weakness.",
+  features: [
+    "Peripheral Smear (PS)",
+    "Iron",
+    "Total Iron-Binding Capacity (TIBC)",
+    "Unsaturated Iron-Binding Capacity (UIBC)",
+    "Transferrin",
+    "Ferritin"
+  ],
+  fullDetails: "Feeling constantly exhausted or low on energy? It might be time to check your iron levels. Our Anaemia Screening Package includes a full Iron Profile: Peripheral Smear (PS), Iron, Total Iron-Binding Capacity (TIBC), Unsaturated Iron-Binding Capacity (UIBC), Transferrin, and Ferritin. Get a complete diagnosis of the cause of fatigue, weakness, and low energy for just 149 AED."
+},
+
+// Cardiac Plus Package
+{
+  id: 31,
+  name: "Cardiac Plus Package – 199 AED",
+  category: "advanced_health",
+  description: "Care for your heart, live for tomorrow. A comprehensive heart health screening to assess your cardiac health.",
+  features: [
+    "Creatinine",
+    "Troponin I",
+    "CK-MB",
+    "Magnesium",
+    "Apolipoprotein A1",
+    "Apolipoprotein B",
+    "hs-CRP",
+    "ECG"
+  ],
+  fullDetails: "Care for your heart so it can keep caring for you. Keep doing what you love with confidence through our targeted Cardiac Plus Package. Includes essential cardiac markers — Troponin I, CK-MB, hs-CRP, Apolipoprotein A1, Apolipoprotein B, Creatinine, Magnesium, and ECG — to ensure your heart beats strong every day. Because a healthy heart keeps you going stronger."
+},
+
+// Cardiac Essentials Package
+{
+  id: 32,
+  name: "Cardiac Essentials Package – 149 AED",
+  category: "advanced_health",
+  description: "Essential tests for better heart health. A carefully selected panel to assess important cardiac and cardiovascular markers.",
+  features: [
+    "Creatinine",
+    "Apolipoprotein A1",
+    "Apolipoprotein B",
+    "hs-CRP"
+  ],
+  fullDetails: "Small steps lead to big heart protection! Stay ahead of your cardiovascular health with our Cardiac Essentials Package. Features key markers — hs-CRP, Apolipoprotein A1 & B, and Creatinine — to help you stay informed and proactive. Essential tests for better heart health at just 149 AED."
+},
+
+// Cardiac Comprehensive Package
+{
+  id: 33,
+  name: "Cardiac Comprehensive Package – 299 AED",
+  category: "advanced_health",
+  description: "Prevention today for a healthier tomorrow. Complete cardiac, metabolic, and mineral evaluation in one package.",
+  features: [
+    "CBC – Complete Blood Count",
+    "Lipid Profile: Total Cholesterol, LDL, Triglycerides, VLDL, HDL, Non-HDL",
+    "Kidney Function Test: Urea, Uric Acid, Creatinine, GFR",
+    "Minerals: Magnesium, Phosphorus, Vitamin D, Calcium",
+    "Thyroid: TSH (Thyroid Stimulating Hormone)",
+    "Diabetes Screening: FBS/RBS, HbA1c",
+    "Liver Function: SGOT, SGPT, GGT",
+    "Heart Health: Troponin I, CK-MB, Apolipoprotein A & B, hs-CRP",
+    "Assessments & Consultation: ECG, Blood Pressure, BMI, GP Consultation"
+  ],
+  fullDetails: "Prevention today means a healthier, happier tomorrow for you and your family! Prioritize your complete wellness with our Cardiac Comprehensive Package. From key cardiac markers to full lipid, kidney, liver, diabetes, and essential mineral profiles — get an all-in-one health check designed to give you total peace of mind. Comprehensive. Complete. Protective."
+}
     ];
 
 
