@@ -11,12 +11,23 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="../shared.css">
   <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-THFF86K7');</script>
-<!-- End Google Tag Manager -->
+  <script>
+    (function(w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-THFF86K7');
+  </script>
+  <!-- End Google Tag Manager -->
   <link rel="stylesheet" href="doctors-style.css">
 
   <!-- Open Graph / Facebook -->
@@ -36,31 +47,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   <!-- Local Business Schema -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Metro Starcare METRO MEDICAL GROUP",
-    "image": "/assets/images/logo/logo.webp",
-    "@id": "",
-    "url": "/",
-    "telephone": "+971 52 841 5113",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Malabar Plaza, Rolla",
-      "addressLocality": "Sharjah",
-      "postalCode": "",
-      "addressCountry": "AE"
-    }  
-  }
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Metro Starcare METRO MEDICAL GROUP",
+      "image": "/assets/images/logo/logo.webp",
+      "@id": "",
+      "url": "/",
+      "telephone": "+971 52 841 5113",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Malabar Plaza, Rolla",
+        "addressLocality": "Sharjah",
+        "postalCode": "",
+        "addressCountry": "AE"
+      }
+    }
   </script>
 
 </head>
 
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-THFF86K7"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-THFF86K7" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
   <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
@@ -107,415 +117,585 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
   </nav>
-<main>
+  <main>
 
 
-  <!-- PAGE HERO -->
-  <div class="page-hero">
-    <div class="page-hero-breadcrumb"><a href="index.html">الرئيسية</a><span>›</span><span>أطباؤنا</span></div>
-    <h1>فريقك الموثوق من<br>متخصصي الرعاية الصحية</h1>
-    <p>أطباء خبراء ملتزمون بصحتك — تخصصات متنوعة، رعاية شخصية، نتائج استثنائية.</p>
-  </div>
+    <!-- PAGE HERO -->
+    <div class="page-hero">
+      <div class="page-hero-breadcrumb"><a href="index.html">الرئيسية</a><span>›</span><span>أطباؤنا</span></div>
+      <h1>فريقك الموثوق من<br>متخصصي الرعاية الصحية</h1>
+      <p>أطباء خبراء ملتزمون بصحتك — تخصصات متنوعة، رعاية شخصية، نتائج استثنائية.</p>
+    </div>
 
-  <!-- FILTER BAR -->
-  <div class="filter-bar">
-    <div class="filter-inner">
-      <select class="filter-select" id="deptFilter" onchange="filterDoctors()" aria-label="تصفية حسب التخصص">
-        <option value="all">جميع التخصصات</option>
-        <option value="general">الطب العام</option>
-        <option value="surgery">الجراحة العامة</option>
-        <option value="gyn">أمراض النساء</option>
-        <option value="ent">أنف وأذن وحنجرة</option>
-        <option value="ophthal">طب العيون</option>
-        <option value="derma">الأمراض الجلدية</option>
-        <option value="dental">طب الأسنان</option>
-        <option value="path">علم الأمراض</option>
-        <option value="physio">العلاج الطبيعي</option>
-        <option value="peds">طب الأطفال</option>
-        <option value="diabetes">طب السكري</option>
-      </select>
-      <div class="filter-search">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <!-- FILTER BAR -->
+    <div class="filter-bar">
+      <div class="filter-inner">
+        <select class="filter-select" id="deptFilter" onchange="filterDoctors()" aria-label="تصفية حسب التخصص">
+          <option value="all">جميع التخصصات</option>
+          <option value="general">الطب العام</option>
+          <option value="surgery">الجراحة العامة</option>
+          <option value="gyn">أمراض النساء</option>
+          <option value="ent">أنف وأذن وحنجرة</option>
+          <option value="ophthal">طب العيون</option>
+          <option value="ortho">جراحة العظام</option>
+          <option value="derma">الأمراض الجلدية</option>
+          <option value="dental">طب الأسنان</option>
+          <option value="radio">الأشعة</option>
+          <option value="path">علم الأمراض</option>
+          <option value="physio">العلاج الطبيعي</option>
+          <option value="peds">طب الأطفال</option>
+          <option value="diabetes">طب السكري</option>
+        </select>
+        <div class="filter-search">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          </svg>
+          <input type="text" placeholder="ابحث عن طبيب بالاسم..." id="searchInput" oninput="filterDoctors()" aria-label="ابحث عن طبيب بالاسم">
+        </div>
+      </div>
+    </div>
+
+    <!-- DIRECTOR FEATURE -->
+    <div class="director-feature">
+      <div class="director-feature-inner">
+        <div style="display:flex;justify-content:center;">
+          <div class="director-feature-photo">
+            <img src="../doctors_images/rasna_munaifa.webp" alt="Dr. Rasna Munaifa Koroth" onerror="this.style.display='none';document.getElementById('dirPh').style.display='flex'">
+            <div class="placeholder-inner" id="dirPh" style="display:none;">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+              <p style="color:rgba(255,255,255,0.5);font-size:0.75rem;margin-top:10px;text-align:center;padding:0 16px;">د. راسنا منيفة</p>
+            </div>
+          </div>
+        </div>
+        <div class="director-feature-text">
+          <div class="eyebrow">⭐ مميز — المدير الطبي</div>
+          <h2>د. راسنا منيفة كوروث</h2>
+          <p class="role">بكالوريوس طب وجراحة · طبيب عام · مجموعة ميترو الطبية</p>
+          <p>تقود الدكتورة راسنا مجموعة ميترو الطبية برؤية تقوم على الرحمة ورعاية المرضى كأولوية. لقد شكلت خبرتها التي تزيد عن عقد في الممارسة العامة والقيادة الطبية مركز ستاركير ليصبح المؤسسة الموثوقة التي هو عليه اليوم.</p>
+          <div class="dir-chips">
+            <div class="dir-chip">الممارسة العامة</div>
+            <div class="dir-chip">القيادة الطبية</div>
+            <div class="dir-chip">رعاية المرضى</div>
+          </div>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;">
+            <a href="/arabic/doctors/general-practice/dr-rasna" class="btn btn-white">عرض الملف الشخصي الكامل</a>
+            <a href="contact.html" class="btn" style="background:rgba(255,255,255,0.15);color:white;border:1.5px solid rgba(255,255,255,0.3);">احجز استشارة</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DOCTORS GRID -->
+    <div class="doctors-section">
+      <div class="section-header-row">
+        <div>
+          <div class="section-sub">أخصائيو</div>
+          <h2 class="section-title">أطباء خبراء ملتزمون بصحتك</h2>
+        </div>
+        <div id="docCount" style="font-size:0.85rem;color:var(--text-soft);">عرض <strong id="countNum">16</strong> طبيب</div>
+      </div>
+      <div class="doctors-grid" id="doctorsGrid">
+
+        <!-- Dr. Yashwanth Nag M N - General & Laparoscopic Surgeon -->
+        <div class="doctor-card-v2 fade-up" data-dept="surgery" data-name="yashwanth nag mn" data-order="30">
+          <div class="photo">
+            <img src="../doctors_images/yashwanth_nag.webp" alt="د. ياشوانث ناج إم إن" style="object-fit: cover; object-position: 50% 30%; transform: scale(1.0); width: 100%; height: 120%;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph-box" style="display:none">
+              <div class="ph-circle"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="1.5">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg></div>
+              <p class="ph-name">د. ياشوانث ناج إم إن</p>
+            </div>
+          </div>
+          <div class="info">
+            <span class="spec-tag">الجراحة العامة</span>
+            <div class="name">د. ياشوانث ناج إم إن</div>
+            <div class="deg">بكالوريوس طب وجراحة، ماجستير، دبلوم البورد الوطني · جراح عام وجراحة مناظير</div>
+            <div class="exp-badge" style="display: inline-flex; align-items: center; gap: 6px; background: var(--rose-pale); padding: 4px 10px; border-radius: 20px; margin-bottom: 14px; width: fit-content;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--maroon)" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+              <span style="font-size: 0.7rem; font-weight: 600; color: var(--maroon);">+6 سنوات خبرة</span>
+            </div>
+            <div class="card-btns">
+              <a href="/arabic/doctors/general-surgery/dr-yashwanth-nag.html" class="card-btn-sm card-btn-outline">الملف الشخصي</a>
+              <a href="contact.html" class="card-btn-sm card-btn-fill">احجز</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dr. Fareeda Mammu -->
+        <div class="doctor-card-v2 fade-up" data-dept="gyn" data-name="fareeda mammu" data-order="20">
+          <div class="photo">
+            <img src="../doctors_images/fareeda_mammu.webp" alt="د. فريدة مامو" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph-box" style="display:none">
+              <div class="ph-circle"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="1.5">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg></div>
+              <p class="ph-name">د. فريدة مامو</p>
+            </div>
+          </div>
+          <div class="info">
+            <span class="spec-tag">أمراض النساء والتوليد</span>
+            <div class="name">د. فريدة مامو</div>
+            <div class="deg">بكالوريوس طب وجراحة · أخصائية أمراض النساء والتوليد</div>
+            <div class="exp-badge" style="display: inline-flex; align-items: center; gap: 6px; background: var(--rose-pale); padding: 4px 10px; border-radius: 20px; margin-bottom: 14px; width: fit-content;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--maroon)" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+              <span style="font-size: 0.7rem; font-weight: 600; color: var(--maroon);">+22 سنة خبرة</span>
+            </div>
+            <div class="card-btns">
+              <a href="/arabic/doctors/gynaecologist/dr-fareeda-mammu" class="card-btn-sm card-btn-outline">الملف الشخصي</a>
+              <a href="contact.html" class="card-btn-sm card-btn-fill">احجز</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dr. Ali Akbar -->
+        <div class="doctor-card-v2 fade-up" data-dept="ent" data-name="ali akbar" data-order="40">
+          <div class="photo">
+            <img src="../doctors_images/ali_akbar_abdul_salam.webp" alt="Dr. Ali Akbar" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph-box" style="display:none">
+              <div class="ph-circle"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="1.5">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg></div>
+              <p class="ph-name">د. علي أكبر</p>
+            </div>
+          </div>
+          <div class="info">
+            <span class="spec-tag">أنف وأذن وحنجرة</span>
+            <div class="name">د. علي أكبر</div>
+            <div class="deg">بكالوريوس طب وجراحة · أخصائي أنف وأذن وحنجرة</div>
+            <div class="exp-badge" style="display: inline-flex; align-items: center; gap: 6px; background: var(--rose-pale); padding: 4px 10px; border-radius: 20px; margin-bottom: 14px; width: fit-content;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--maroon)" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+              <span style="font-size: 0.7rem; font-weight: 600; color: var(--maroon);">+24 سنة خبرة</span>
+            </div>
+            <div class="card-btns">
+              <a href="/arabic/doctors/ent/dr-ali-akbar.html" class="card-btn-sm card-btn-outline">الملف الشخصي</a>
+              <a href="contact.html" class="card-btn-sm card-btn-fill">احجز</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dr. Pradeep Kumar Shetty -->
+        <div class="doctor-card-v2 fade-up" data-dept="ophthal" data-name="pradeep kumar shetty" data-order="50">
+          <div class="photo">
+            <img src="../doctors_images/prateep_kumar_shetty.webp" alt="Dr. Pradeep Kumar Shetty" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph-box" style="display:none">
+              <div class="ph-circle"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="1.5">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg></div>
+              <p class="ph-name">د. براديب كومار شيتي</p>
+            </div>
+          </div>
+          <div class="info">
+            <span class="spec-tag">طب العيون</span>
+            <div class="name">د. براديب كومار شيتي</div>
+            <div class="deg">بكالوريوس طب وجراحة، ماجستير · أخصائي عيون</div>
+            <div class="exp-badge" style="display: inline-flex; align-items: center; gap: 6px; background: var(--rose-pale); padding: 4px 10px; border-radius: 20px; margin-bottom: 14px; width: fit-content;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--maroon)" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+              <span style="font-size: 0.7rem; font-weight: 600; color: var(--maroon);">+29 سنة خبرة</span>
+            </div>
+            <div class="card-btns">
+              <a href="/arabic/doctors/ophthalmologist/dr-pradeep-kumar-shetty.html" class="card-btn-sm card-btn-outline">الملف الشخصي</a>
+              <a href="contact.html" class="card-btn-sm card-btn-fill">احجز</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dr. Vipul Paul Thomas -->
+        <div class="doctor-card-v2 fade-up" data-dept="derma" data-name="vipul paul thomas" data-order="120">
+          <div class="photo">
+            <img src="../doctors_images/vipul_paul_thomas.webp" alt="Dr. Vipul Paul Thomas" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph-box" style="display:none">
+              <div class="ph-circle"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="1.5">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg></div>
+              <p class="ph-name">د. فيبول بول توماس</p>
+            </div>
+          </div>
+          <div class="info">
+            <span class="spec-tag">الأمراض الجلدية</span>
+            <div class="name">د. فيبول بول توماس</div>
+            <div class="deg">بكالوريوس طب وجراحة، دكتوراه · أخصائي أمراض جلدية</div>
+            <div class="exp-badge" style="display: inline-flex; align-items: center; gap: 6px; background: var(--rose-pale); padding: 4px 10px; border-radius: 20px; margin-bottom: 14px; width: fit-content;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--maroon)" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+              <span style="font-size: 0.7rem; font-weight: 600; color: var(--maroon);">+14 سنة خبرة</span>
+            </div>
+            <div class="card-btns">
+              <a href="/arabic/doctors/dermatologist/dr-vipul-paul-thomas.html" class="card-btn-sm card-btn-outline">الملف الشخصي</a>
+              <a href="contact.html" class="card-btn-sm card-btn-fill">احجز</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dr. Nedhina E.K. - Specialist Ophthalmologist -->
+        <div class="doctor-card-v2 fade-up" data-dept="ophthal" data-name="nedhina e.k." data-order="60">
+          <div class="photo">
+            <img src="../doctors_images/nedhina_ek.webp" alt="د. نيدهينا إي كيه" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph-box" style="display:none">
+              <div class="ph-circle"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="1.5">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg></div>
+              <p class="ph-name">د. نيدهينا إي كيه</p>
+            </div>
+          </div>
+          <div class="info">
+            <span class="spec-tag">طب العيون</span>
+            <div class="name">د. نيدهينا إي كيه</div>
+            <div class="deg">بكالوريوس طب وجراحة، دبلوم البورد الوطني · أخصائية عيون وجراحة الساد</div>
+            <div class="exp-badge" style="display: inline-flex; align-items: center; gap: 6px; background: var(--rose-pale); padding: 4px 10px; border-radius: 20px; margin-bottom: 14px; width: fit-content;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--maroon)" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+              <span style="font-size: 0.7rem; font-weight: 600; color: var(--maroon);">+8 سنوات خبرة</span>
+            </div>
+            <div class="card-btns">
+              <a href="/arabic/doctors/ophthalmologist/dr-nedhina-ek.html" class="card-btn-sm card-btn-outline">الملف الشخصي</a>
+              <a href="contact.html" class="card-btn-sm card-btn-fill">احجز</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dr. Deepu Sunitha Soman - Orthopaedic Surgeon -->
+        <div class="doctor-card-v2 fade-up" data-dept="ortho" data-name="deepu sunitha soman" data-order="70">
+          <div class="photo">
+            <img src="../doctors_images/deepu_soman.webp" alt="د. ديبو سونيثا سومان" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph-box" style="display:none">
+              <div class="ph-circle"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="1.5">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg></div>
+              <p class="ph-name">د. ديبو سونيثا سومان</p>
+            </div>
+          </div>
+          <div class="info">
+            <span class="spec-tag">جراحة العظام</span>
+            <div class="name">د. ديبو سونيثا سومان</div>
+            <div class="deg">بكالوريوس طب وجراحة، دبلوم البورد الوطني، دبلوم · جراحة العظام</div>
+            <div class="exp-badge" style="display: inline-flex; align-items: center; gap: 6px; background: var(--rose-pale); padding: 4px 10px; border-radius: 20px; margin-bottom: 14px; width: fit-content;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--maroon)" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+              <span style="font-size: 0.7rem; font-weight: 600; color: var(--maroon);">+3 سنوات خبرة</span>
+            </div>
+            <div class="card-btns">
+              <a href="/arabic/doctors/orthopaedic/dr-deepu-soman.html" class="card-btn-sm card-btn-outline">الملف الشخصي</a>
+              <a href="contact.html" class="card-btn-sm card-btn-fill">احجز</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dr. Rasheek Ahammed - General Practitioner -->
+        <div class="doctor-card-v2 fade-up" data-dept="general" data-name="rasheek ahammed" data-order="80">
+          <div class="photo">
+            <img src="../doctors_images/rasheek_ahammed.webp" alt="د. رشيك أحمد" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph-box" style="display:none">
+              <div class="ph-circle"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="1.5">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg></div>
+              <p class="ph-name">د. رشيك أحمد</p>
+            </div>
+          </div>
+          <div class="info">
+            <span class="spec-tag">الطب العام</span>
+            <div class="name">د. رشيك أحمد</div>
+            <div class="deg">بكالوريوس طب وجراحة، دبلوم البورد الوطني (طب الطوارئ) · طبيب عام وأخصائي طوارئ</div>
+            <div class="exp-badge" style="display: inline-flex; align-items: center; gap: 6px; background: var(--rose-pale); padding: 4px 10px; border-radius: 20px; margin-bottom: 14px; width: fit-content;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--maroon)" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+              <span style="font-size: 0.7rem; font-weight: 600; color: var(--maroon);">+8 سنوات خبرة</span>
+            </div>
+            <div class="card-btns">
+              <a href="/arabic/doctors/general-practice/dr-rasheek-ahammed.html" class="card-btn-sm card-btn-outline">الملف الشخصي</a>
+              <a href="contact.html" class="card-btn-sm card-btn-fill">احجز</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dr. Elham Ahmed Elgabaly Moustafa - Consultant Radiologist -->
+        <div class="doctor-card-v2 fade-up" data-dept="radio" data-name="elham ahmed elgabaly moustafa" data-order="85">
+          <div class="photo">
+            <img src="../doctors_images/elham_ahmed.webp" alt="د. إلهام أحمد الجبالي مصطفى" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph-box" style="display:none">
+              <div class="ph-circle"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="1.5">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg></div>
+              <p class="ph-name">د. إلهام أحمد الجبالي مصطفى</p>
+            </div>
+          </div>
+          <div class="info">
+            <span class="spec-tag">الأشعة</span>
+            <div class="name">د. إلهام أحمد الجبالي مصطفى</div>
+            <div class="deg">دكتوراه في الطب (PhD) في التشخيص الإشعاعي · استشارية أشعة</div>
+            <div class="exp-badge" style="display: inline-flex; align-items: center; gap: 6px; background: var(--rose-pale); padding: 4px 10px; border-radius: 20px; margin-bottom: 14px; width: fit-content;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--maroon)" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+              <span style="font-size: 0.7rem; font-weight: 600; color: var(--maroon);">+27 سنة خبرة</span>
+            </div>
+            <div class="card-btns">
+              <a href="/arabic/doctors/radiologist/dr-elham-ahmed.html" class="card-btn-sm card-btn-outline">الملف الشخصي</a>
+              <a href="contact.html" class="card-btn-sm card-btn-fill">احجز</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dr. Fasil Variyathodi - General Dentist -->
+        <div class="doctor-card-v2 fade-up" data-dept="dental" data-name="fasil variyathodi" data-order="90">
+          <div class="photo">
+            <img src="../doctors_images/fasil_variyathodi.webp" alt="د. فاسيل فارياتودي" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph-box" style="display:none">
+              <div class="ph-circle"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="1.5">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg></div>
+              <p class="ph-name">د. فاسيل فارياتودي</p>
+            </div>
+          </div>
+          <div class="info">
+            <span class="spec-tag">طب الأسنان</span>
+            <div class="name">د. فاسيل فارياتودي</div>
+            <div class="deg">بكالوريوس جراحة الأسنان · طبيب أسنان عام</div>
+            <div class="exp-badge" style="display: inline-flex; align-items: center; gap: 6px; background: var(--rose-pale); padding: 4px 10px; border-radius: 20px; margin-bottom: 14px; width: fit-content;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--maroon)" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+              <span style="font-size: 0.7rem; font-weight: 600; color: var(--maroon);">+13 سنة خبرة</span>
+            </div>
+            <div class="card-btns">
+              <a href="/arabic/doctors/dentist/dr-fasil-variyathodi.html" class="card-btn-sm card-btn-outline">الملف الشخصي</a>
+              <a href="contact.html" class="card-btn-sm card-btn-fill">احجز</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dr. Fatema Tuj Jahura -->
+        <div class="doctor-card-v2 fade-up" data-dept="dental" data-name="fatema tuj jahura" data-order="91">
+          <div class="photo">
+            <img src="../doctors_images/fatema_tuj_jahura.webp" alt="Dr. Fatema Tuj Jahura" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph-box" style="display:none">
+              <div class="ph-circle"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="1.5">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg></div>
+              <p class="ph-name">د. فاطمة توج جاهورا</p>
+            </div>
+          </div>
+          <div class="info">
+            <span class="spec-tag">طب الأسنان</span>
+            <div class="name">د. فاطمة توج جاهورا</div>
+            <div class="deg">بكالوريوس جراحة الأسنان · طبيبة أسنان عامة</div>
+            <div class="exp-badge" style="display: inline-flex; align-items: center; gap: 6px; background: var(--rose-pale); padding: 4px 10px; border-radius: 20px; margin-bottom: 14px; width: fit-content;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--maroon)" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+              <span style="font-size: 0.7rem; font-weight: 600; color: var(--maroon);">+11 سنة خبرة</span>
+            </div>
+            <div class="card-btns">
+              <a href="/arabic/doctors/dentist/dr-fatema-tuj-jahura.html" class="card-btn-sm card-btn-outline">الملف الشخصي</a>
+              <a href="contact.html" class="card-btn-sm card-btn-fill">احجز</a>
+            </div>
+          </div>
+        </div>
+
+
+
+        <!-- Dr. Muhammed Salih -->
+        <div class="doctor-card-v2 fade-up" data-dept="general" data-name="muhammed salih" data-order="93">
+          <div class="photo">
+            <img src="../doctors_images/muhd_salih.webp" alt="Dr. Muhammed Salih" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph-box" style="display:none">
+              <div class="ph-circle"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="1.5">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg></div>
+              <p class="ph-name">د. محمد صالح</p>
+            </div>
+          </div>
+          <div class="info">
+            <span class="spec-tag">الطب العام</span>
+            <div class="name">د. محمد صالح</div>
+            <div class="deg">بكالوريوس طب وجراحة · طبيب عام</div>
+            <div class="exp-badge" style="display: inline-flex; align-items: center; gap: 6px; background: var(--rose-pale); padding: 4px 10px; border-radius: 20px; margin-bottom: 14px; width: fit-content;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--maroon)" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+              <span style="font-size: 0.7rem; font-weight: 600; color: var(--maroon);">+12 سنة خبرة</span>
+            </div>
+            <div class="card-btns">
+              <a href="/arabic/doctors/practitioner/dr-muhammed-salih.html" class="card-btn-sm card-btn-outline">الملف الشخصي</a>
+              <a href="contact.html" class="card-btn-sm card-btn-fill">احجز</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dr. Rajani Thachappilly -->
+        <div class="doctor-card-v2 fade-up" data-dept="general" data-name="rajani suresh" data-order="21">
+          <div class="photo">
+            <img src="../doctors_images/rajani_thachappilly.webp" alt="Dr. Rajani Suresh" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph-box" style="display:none">
+              <div class="ph-circle"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="1.5">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg></div>
+              <p class="ph-name">د. راجاني سوريش</p>
+            </div>
+          </div>
+          <div class="info">
+            <span class="spec-tag">الممارسة العامة</span>
+            <div class="name">د. راجاني ثاتشابيلي</div>
+            <div class="deg">بكالوريوس طب وجراحة · طبيبة عامة</div>
+            <div class="exp-badge" style="display: inline-flex; align-items: center; gap: 6px; background: var(--rose-pale); padding: 4px 10px; border-radius: 20px; margin-bottom: 14px; width: fit-content;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--maroon)" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+              <span style="font-size: 0.7rem; font-weight: 600; color: var(--maroon);">+19 سنة خبرة</span>
+            </div>
+            <div class="card-btns">
+              <a href="/arabic/doctors/practitioner/dr-rajani-thachappilly.html" class="card-btn-sm card-btn-outline">الملف الشخصي</a>
+              <a href="contact.html" class="card-btn-sm card-btn-fill">احجز</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dr. Sreevidya Arun -->
+        <div class="doctor-card-v2 fade-up" data-dept="peds" data-name="sreevidya arun" data-order="10">
+          <div class="photo">
+            <img src="../doctors_images/sreevidhya.webp" alt="د. سريفيديا أرون" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph-box" style="display:none">
+              <div class="ph-circle"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="1.5">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg></div>
+              <p class="ph-name">د. سريفيديا أرون</p>
+            </div>
+          </div>
+          <div class="info">
+            <span class="spec-tag">طب الأطفال</span>
+            <div class="name">د. سريفيديا أرون</div>
+            <div class="deg">بكالوريوس طب وجراحة، دكتوراه · طبيبة أطفال</div>
+            <div class="exp-badge" style="display: inline-flex; align-items: center; gap: 6px; background: var(--rose-pale); padding: 4px 10px; border-radius: 20px; margin-bottom: 14px; width: fit-content;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--maroon)" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+              <span style="font-size: 0.7rem; font-weight: 600; color: var(--maroon);">+7 سنوات خبرة</span>
+            </div>
+            <div class="card-btns">
+              <a href="/arabic/doctors/pediatrician/dr-sreevidya-arun.html" class="card-btn-sm card-btn-outline">الملف الشخصي</a>
+              <a href="contact.html" class="card-btn-sm card-btn-fill">احجز</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dr. Shemy Seebu -->
+        <div class="doctor-card-v2 fade-up" data-dept="path" data-name="shemy seebu" data-order="100">
+          <div class="photo">
+            <img src="../doctors_images/shemy_seebu.webp" alt="Dr. Shemy Seebu" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph-box" style="display:none">
+              <div class="ph-circle"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="1.5">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg></div>
+              <p class="ph-name">د. شيمي سيبو</p>
+            </div>
+          </div>
+          <div class="info">
+            <span class="spec-tag">علم الأمراض</span>
+            <div class="name">د. شيمي سيبو</div>
+            <div class="deg">بكالوريوس طب وجراحة · أخصائية علم الأمراض</div>
+            <div class="exp-badge" style="display: inline-flex; align-items: center; gap: 6px; background: var(--rose-pale); padding: 4px 10px; border-radius: 20px; margin-bottom: 14px; width: fit-content;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--maroon)" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+              <span style="font-size: 0.7rem; font-weight: 600; color: var(--maroon);">ذات خبرة عالية</span>
+            </div>
+            <div class="card-btns">
+              <a href="/arabic/doctors/pathology/dr-shemy-seebu.html" class="card-btn-sm card-btn-outline">الملف الشخصي</a>
+              <a href="contact.html" class="card-btn-sm card-btn-fill">احجز</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- NEW: Dr. Lenoy Leelakrishnan Remadevi - General Physician & Diabetologist -->
+        <div class="doctor-card-v2 fade-up" data-dept="diabetes" data-name="lenoy leelakrishnan remadevi" data-order="110">
+          <div class="photo">
+            <img src="../doctors_images/lenoy.webp" alt="د. لينوي ليلاكريشنان ريماديفي" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ph-box" style="display:none">
+              <div class="ph-circle"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="1.5">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg></div>
+              <p class="ph-name">د. لينوي ليلاكريشنان</p>
+            </div>
+          </div>
+          <div class="info">
+            <span class="spec-tag">الطب العام وطب السكري</span>
+            <div class="name">د. لينوي ليلاكريشنان ريماديفي</div>
+            <div class="deg">مرخص من وزارة الصحة ودائرة الصحة · طبيب عام وأخصائي سكري</div>
+            <div class="exp-badge" style="display: inline-flex; align-items: center; gap: 6px; background: var(--rose-pale); padding: 4px 10px; border-radius: 20px; margin-bottom: 14px; width: fit-content;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--maroon)" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+              <span style="font-size: 0.7rem; font-weight: 600; color: var(--maroon);">+19 سنة خبرة</span>
+            </div>
+            <div class="card-btns">
+              <a href="/arabic/doctors/physician/lenoy-leelakrishnan" class="card-btn-sm card-btn-outline">الملف الشخصي</a>
+              <a href="contact.html" class="card-btn-sm card-btn-fill">احجز</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div id="noResults" style="display:none;text-align:center;padding:60px;color:var(--text-soft);">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin-bottom:16px;opacity:0.4;">
           <circle cx="11" cy="11" r="8" />
           <line x1="21" y1="21" x2="16.65" y2="16.65" />
         </svg>
-        <input type="text" placeholder="ابحث عن طبيب بالاسم..." id="searchInput" oninput="filterDoctors()" aria-label="ابحث عن طبيب بالاسم">
+        <p>لم يتم العثور على أطباء مطابقين لبحثك.</p>
       </div>
     </div>
-  </div>
 
-  <!-- DIRECTOR FEATURE -->
-  <div class="director-feature">
-    <div class="director-feature-inner">
-      <div style="display:flex;justify-content:center;">
-        <div class="director-feature-photo">
-          <img src="../doctors_images/rasna_munaifa.webp" alt="Dr. Rasna Munaifa Koroth" onerror="this.style.display='none';document.getElementById('dirPh').style.display='flex'">
-          <div class="placeholder-inner" id="dirPh" style="display:none;">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5">
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-              <circle cx="12" cy="7" r="4" />
-            </svg>
-            <p style="color:rgba(255,255,255,0.5);font-size:0.75rem;margin-top:10px;text-align:center;padding:0 16px;">د. راسنا منيفة</p>
-          </div>
-        </div>
-      </div>
-      <div class="director-feature-text">
-        <div class="eyebrow">⭐ مميز — المدير الطبي</div>
-        <h2>د. راسنا منيفة كوروث</h2>
-        <p class="role">بكالوريوس طب وجراحة · طبيب عام · مجموعة ميترو الطبية</p>
-        <p>تقود الدكتورة راسنا مجموعة ميترو الطبية برؤية تقوم على الرحمة ورعاية المرضى كأولوية. لقد شكلت خبرتها التي تزيد عن عقد في الممارسة العامة والقيادة الطبية مركز ستاركير ليصبح المؤسسة الموثوقة التي هو عليه اليوم.</p>
-        <div class="dir-chips">
-          <div class="dir-chip">الممارسة العامة</div>
-          <div class="dir-chip">القيادة الطبية</div>
-          <div class="dir-chip">رعاية المرضى</div>
-        </div>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;">
-          <a href="/arabic/doctors/general-practice/dr-rasna" class="btn btn-white">عرض الملف الشخصي الكامل</a>
-          <a href="contact.html" class="btn" style="background:rgba(255,255,255,0.15);color:white;border:1.5px solid rgba(255,255,255,0.3);">احجز استشارة</a>
-        </div>
-      </div>
-    </div>
-  </div>
+    <!-- FOOTER -->
 
-  <!-- DOCTORS GRID -->
-  <div class="doctors-section">
-    <div class="section-header-row">
-      <div>
-        <div class="section-sub">أخصائيو</div>
-        <h2 class="section-title">أطباء خبراء ملتزمون بصحتك</h2>
-      </div>
-      <div id="docCount" style="font-size:0.85rem;color:var(--text-soft);">عرض <strong id="countNum">13</strong> طبيب</div>
-    </div>
-    <div class="doctors-grid" id="doctorsGrid">
-
-      <!-- Dr. Yashwanth Nag M N - General & Laparoscopic Surgeon -->
-      <div class="doctor-card-v2 fade-up" data-dept="surgery" data-name="yashwanth nag mn" data-order="30">
-        <div class="photo">
-          <img src="../doctors_images/yashwanth_nag.webp" alt="د. ياشوانث ناج إم إن" style="object-fit: cover; object-position: 50% 30%; transform: scale(1.0); width: 100%; height: 120%;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="ph-box" style="display:none">
-            <div class="ph-circle"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg></div>
-            <p class="ph-name">د. ياشوانث ناج إم إن</p>
-          </div>
-        </div>
-        <div class="info">
-          <span class="spec-tag">الجراحة العامة</span>
-          <div class="name">د. ياشوانث ناج إم إن</div>
-          <div class="deg">بكالوريوس طب وجراحة، ماجستير، دبلوم البورد الوطني · جراح عام وجراحة مناظير</div>
-          <div class="exp-badge" style="display: inline-flex; align-items: center; gap: 6px; background: var(--rose-pale); padding: 4px 10px; border-radius: 20px; margin-bottom: 14px; width: fit-content;">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--maroon)" stroke-width="2"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
-            <span style="font-size: 0.7rem; font-weight: 600; color: var(--maroon);">+6 سنوات خبرة</span>
-          </div>
-          <div class="card-btns">
-            <a href="/arabic/doctors/general-surgery/dr-yashwanth-nag.html" class="card-btn-sm card-btn-outline">الملف الشخصي</a>
-            <a href="contact.html" class="card-btn-sm card-btn-fill">احجز</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Dr. Fareeda Mammu -->
-      <div class="doctor-card-v2 fade-up" data-dept="gyn" data-name="fareeda mammu" data-order="20">
-        <div class="photo">
-          <img src="../doctors_images/fareeda_mammu.webp" alt="د. فريدة مامو" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="ph-box" style="display:none">
-            <div class="ph-circle"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg></div>
-            <p class="ph-name">د. فريدة مامو</p>
-          </div>
-        </div>
-        <div class="info">
-          <span class="spec-tag">أمراض النساء والتوليد</span>
-          <div class="name">د. فريدة مامو</div>
-          <div class="deg">بكالوريوس طب وجراحة · أخصائية أمراض النساء والتوليد</div>
-          <div class="exp-badge" style="display: inline-flex; align-items: center; gap: 6px; background: var(--rose-pale); padding: 4px 10px; border-radius: 20px; margin-bottom: 14px; width: fit-content;">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--maroon)" stroke-width="2"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
-            <span style="font-size: 0.7rem; font-weight: 600; color: var(--maroon);">+22 سنة خبرة</span>
-          </div>
-          <div class="card-btns">
-            <a href="/arabic/doctors/gynaecologist/dr-fareeda-mammu" class="card-btn-sm card-btn-outline">الملف الشخصي</a>
-            <a href="contact.html" class="card-btn-sm card-btn-fill">احجز</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Dr. Ali Akbar -->
-      <div class="doctor-card-v2 fade-up" data-dept="ent" data-name="ali akbar" data-order="40">
-        <div class="photo">
-          <img src="../doctors_images/ali_akbar_abdul_salam.webp" alt="Dr. Ali Akbar" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="ph-box" style="display:none">
-            <div class="ph-circle"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg></div>
-            <p class="ph-name">د. علي أكبر</p>
-          </div>
-        </div>
-        <div class="info">
-          <span class="spec-tag">أنف وأذن وحنجرة</span>
-          <div class="name">د. علي أكبر</div>
-          <div class="deg">بكالوريوس طب وجراحة · أخصائي أنف وأذن وحنجرة</div>
-          <div class="exp-badge" style="display: inline-flex; align-items: center; gap: 6px; background: var(--rose-pale); padding: 4px 10px; border-radius: 20px; margin-bottom: 14px; width: fit-content;">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--maroon)" stroke-width="2"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
-            <span style="font-size: 0.7rem; font-weight: 600; color: var(--maroon);">+24 سنة خبرة</span>
-          </div>
-          <div class="card-btns">
-            <a href="/arabic/doctors/ent/dr-ali-akbar.html" class="card-btn-sm card-btn-outline">الملف الشخصي</a>
-            <a href="contact.html" class="card-btn-sm card-btn-fill">احجز</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Dr. Pradeep Kumar Shetty -->
-      <div class="doctor-card-v2 fade-up" data-dept="ophthal" data-name="pradeep kumar shetty" data-order="50">
-        <div class="photo">
-          <img src="../doctors_images/prateep_kumar_shetty.webp" alt="Dr. Pradeep Kumar Shetty" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="ph-box" style="display:none">
-            <div class="ph-circle"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg></div>
-            <p class="ph-name">د. براديب كومار شيتي</p>
-          </div>
-        </div>
-        <div class="info">
-          <span class="spec-tag">طب العيون</span>
-          <div class="name">د. براديب كومار شيتي</div>
-          <div class="deg">بكالوريوس طب وجراحة، ماجستير · أخصائي عيون</div>
-          <div class="exp-badge" style="display: inline-flex; align-items: center; gap: 6px; background: var(--rose-pale); padding: 4px 10px; border-radius: 20px; margin-bottom: 14px; width: fit-content;">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--maroon)" stroke-width="2"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
-            <span style="font-size: 0.7rem; font-weight: 600; color: var(--maroon);">+29 سنة خبرة</span>
-          </div>
-          <div class="card-btns">
-            <a href="/arabic/doctors/ophthalmologist/dr-pradeep-kumar-shetty.html" class="card-btn-sm card-btn-outline">الملف الشخصي</a>
-            <a href="contact.html" class="card-btn-sm card-btn-fill">احجز</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Dr. Vipul Paul Thomas -->
-      <div class="doctor-card-v2 fade-up" data-dept="derma" data-name="vipul paul thomas" data-order="120">
-        <div class="photo">
-          <img src="../doctors_images/vipul_paul_thomas.webp" alt="Dr. Vipul Paul Thomas" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="ph-box" style="display:none">
-            <div class="ph-circle"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg></div>
-            <p class="ph-name">د. فيبول بول توماس</p>
-          </div>
-        </div>
-        <div class="info">
-          <span class="spec-tag">الأمراض الجلدية</span>
-          <div class="name">د. فيبول بول توماس</div>
-          <div class="deg">بكالوريوس طب وجراحة، دكتوراه · أخصائي أمراض جلدية</div>
-          <div class="exp-badge" style="display: inline-flex; align-items: center; gap: 6px; background: var(--rose-pale); padding: 4px 10px; border-radius: 20px; margin-bottom: 14px; width: fit-content;">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--maroon)" stroke-width="2"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
-            <span style="font-size: 0.7rem; font-weight: 600; color: var(--maroon);">+14 سنة خبرة</span>
-          </div>
-          <div class="card-btns">
-            <a href="/arabic/doctors/dermatologist/dr-vipul-paul-thomas.html" class="card-btn-sm card-btn-outline">الملف الشخصي</a>
-            <a href="contact.html" class="card-btn-sm card-btn-fill">احجز</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Dr. Nedhina E.K. - Specialist Ophthalmologist -->
-<div class="doctor-card-v2 fade-up" data-dept="ophthal" data-name="nedhina e.k." data-order="60">
-  <div class="photo">
-    <img src="../doctors_images/nedhina_ek.webp" alt="د. نيدهينا إي كيه" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-    <div class="ph-box" style="display:none">
-      <div class="ph-circle"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg></div>
-      <p class="ph-name">د. نيدهينا إي كيه</p>
-    </div>
-  </div>
-  <div class="info">
-    <span class="spec-tag">طب العيون</span>
-    <div class="name">د. نيدهينا إي كيه</div>
-    <div class="deg">بكالوريوس طب وجراحة، دبلوم البورد الوطني · أخصائية عيون وجراحة الساد</div>
-    <div class="exp-badge" style="display: inline-flex; align-items: center; gap: 6px; background: var(--rose-pale); padding: 4px 10px; border-radius: 20px; margin-bottom: 14px; width: fit-content;">
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--maroon)" stroke-width="2"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
-      <span style="font-size: 0.7rem; font-weight: 600; color: var(--maroon);">+8 سنوات خبرة</span>
-    </div>
-    <div class="card-btns">
-      <a href="/arabic/doctors/ophthalmologist/dr-nedhina-ek.html" class="card-btn-sm card-btn-outline">الملف الشخصي</a>
-      <a href="contact.html" class="card-btn-sm card-btn-fill">احجز</a>
-    </div>
-  </div>
-</div>
-
-      <!-- Dr. Fasil Variyathodi - General Dentist -->
-<div class="doctor-card-v2 fade-up" data-dept="dental" data-name="fasil variyathodi" data-order="90">
-  <div class="photo">
-    <img src="../doctors_images/fasil_variyathodi.webp" alt="د. فاسيل فارياتودي" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-    <div class="ph-box" style="display:none">
-      <div class="ph-circle"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg></div>
-      <p class="ph-name">د. فاسيل فارياتودي</p>
-    </div>
-  </div>
-  <div class="info">
-    <span class="spec-tag">طب الأسنان</span>
-    <div class="name">د. فاسيل فارياتودي</div>
-    <div class="deg">بكالوريوس جراحة الأسنان · طبيب أسنان عام</div>
-    <div class="exp-badge" style="display: inline-flex; align-items: center; gap: 6px; background: var(--rose-pale); padding: 4px 10px; border-radius: 20px; margin-bottom: 14px; width: fit-content;">
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--maroon)" stroke-width="2"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
-      <span style="font-size: 0.7rem; font-weight: 600; color: var(--maroon);">+13 سنة خبرة</span>
-    </div>
-    <div class="card-btns">
-      <a href="/arabic/doctors/dentist/dr-fasil-variyathodi.html" class="card-btn-sm card-btn-outline">الملف الشخصي</a>
-      <a href="contact.html" class="card-btn-sm card-btn-fill">احجز</a>
-    </div>
-  </div>
-</div>
-
-      <!-- Dr. Fatema Tuj Jahura -->
-      <div class="doctor-card-v2 fade-up" data-dept="dental" data-name="fatema tuj jahura" data-order="91">
-        <div class="photo">
-          <img src="../doctors_images/fatema_tuj_jahura.webp" alt="Dr. Fatema Tuj Jahura" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="ph-box" style="display:none">
-            <div class="ph-circle"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg></div>
-            <p class="ph-name">د. فاطمة توج جاهورا</p>
-          </div>
-        </div>
-        <div class="info">
-          <span class="spec-tag">طب الأسنان</span>
-          <div class="name">د. فاطمة توج جاهورا</div>
-          <div class="deg">بكالوريوس جراحة الأسنان · طبيبة أسنان عامة</div>
-          <div class="exp-badge" style="display: inline-flex; align-items: center; gap: 6px; background: var(--rose-pale); padding: 4px 10px; border-radius: 20px; margin-bottom: 14px; width: fit-content;">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--maroon)" stroke-width="2"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
-            <span style="font-size: 0.7rem; font-weight: 600; color: var(--maroon);">+11 سنة خبرة</span>
-          </div>
-          <div class="card-btns">
-            <a href="/arabic/doctors/dentist/dr-fatema-tuj-jahura.html" class="card-btn-sm card-btn-outline">الملف الشخصي</a>
-            <a href="contact.html" class="card-btn-sm card-btn-fill">احجز</a>
-          </div>
-        </div>
-      </div>
-
-     
-
-      <!-- Dr. Muhammed Salih -->
-      <div class="doctor-card-v2 fade-up" data-dept="general" data-name="muhammed salih" data-order="93">
-        <div class="photo">
-          <img src="../doctors_images/muhd_salih.webp" alt="Dr. Muhammed Salih" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="ph-box" style="display:none">
-            <div class="ph-circle"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg></div>
-            <p class="ph-name">د. محمد صالح</p>
-          </div>
-        </div>
-        <div class="info">
-          <span class="spec-tag">الطب العام</span>
-          <div class="name">د. محمد صالح</div>
-          <div class="deg">بكالوريوس طب وجراحة · طبيب عام</div>
-          <div class="exp-badge" style="display: inline-flex; align-items: center; gap: 6px; background: var(--rose-pale); padding: 4px 10px; border-radius: 20px; margin-bottom: 14px; width: fit-content;">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--maroon)" stroke-width="2"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
-            <span style="font-size: 0.7rem; font-weight: 600; color: var(--maroon);">+12 سنة خبرة</span>
-          </div>
-          <div class="card-btns">
-            <a href="/arabic/doctors/practitioner/dr-muhammed-salih.html" class="card-btn-sm card-btn-outline">الملف الشخصي</a>
-            <a href="contact.html" class="card-btn-sm card-btn-fill">احجز</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Dr. Rajani Thachappilly -->
-      <div class="doctor-card-v2 fade-up" data-dept="general" data-name="rajani suresh" data-order="21">
-        <div class="photo">
-          <img src="../doctors_images/rajani_thachappilly.webp" alt="Dr. Rajani Suresh" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="ph-box" style="display:none">
-            <div class="ph-circle"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg></div>
-            <p class="ph-name">د. راجاني سوريش</p>
-          </div>
-        </div>
-        <div class="info">
-          <span class="spec-tag">الممارسة العامة</span>
-          <div class="name">د. راجاني ثاتشابيلي</div>
-          <div class="deg">بكالوريوس طب وجراحة · طبيبة عامة</div>
-          <div class="exp-badge" style="display: inline-flex; align-items: center; gap: 6px; background: var(--rose-pale); padding: 4px 10px; border-radius: 20px; margin-bottom: 14px; width: fit-content;">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--maroon)" stroke-width="2"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
-            <span style="font-size: 0.7rem; font-weight: 600; color: var(--maroon);">+19 سنة خبرة</span>
-          </div>
-          <div class="card-btns">
-            <a href="/arabic/doctors/practitioner/dr-rajani-thachappilly.html" class="card-btn-sm card-btn-outline">الملف الشخصي</a>
-            <a href="contact.html" class="card-btn-sm card-btn-fill">احجز</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Dr. Sreevidya Arun -->
-      <div class="doctor-card-v2 fade-up" data-dept="peds" data-name="sreevidya arun" data-order="10">
-        <div class="photo">
-          <img src="../doctors_images/sreevidhya.webp" alt="د. سريفيديا أرون" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="ph-box" style="display:none">
-            <div class="ph-circle"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg></div>
-            <p class="ph-name">د. سريفيديا أرون</p>
-          </div>
-        </div>
-        <div class="info">
-          <span class="spec-tag">طب الأطفال</span>
-          <div class="name">د. سريفيديا أرون</div>
-          <div class="deg">بكالوريوس طب وجراحة، دكتوراه · طبيبة أطفال</div>
-          <div class="exp-badge" style="display: inline-flex; align-items: center; gap: 6px; background: var(--rose-pale); padding: 4px 10px; border-radius: 20px; margin-bottom: 14px; width: fit-content;">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--maroon)" stroke-width="2"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
-            <span style="font-size: 0.7rem; font-weight: 600; color: var(--maroon);">+7 سنوات خبرة</span>
-          </div>
-          <div class="card-btns">
-            <a href="/arabic/doctors/pediatrician/dr-sreevidya-arun.html" class="card-btn-sm card-btn-outline">الملف الشخصي</a>
-            <a href="contact.html" class="card-btn-sm card-btn-fill">احجز</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Dr. Shemy Seebu -->
-      <div class="doctor-card-v2 fade-up" data-dept="path" data-name="shemy seebu" data-order="100">
-        <div class="photo">
-          <img src="../doctors_images/shemy_seebu.webp" alt="Dr. Shemy Seebu" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="ph-box" style="display:none">
-            <div class="ph-circle"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg></div>
-            <p class="ph-name">د. شيمي سيبو</p>
-          </div>
-        </div>
-        <div class="info">
-          <span class="spec-tag">علم الأمراض</span>
-          <div class="name">د. شيمي سيبو</div>
-          <div class="deg">بكالوريوس طب وجراحة · أخصائية علم الأمراض</div>
-          <div class="exp-badge" style="display: inline-flex; align-items: center; gap: 6px; background: var(--rose-pale); padding: 4px 10px; border-radius: 20px; margin-bottom: 14px; width: fit-content;">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--maroon)" stroke-width="2"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
-            <span style="font-size: 0.7rem; font-weight: 600; color: var(--maroon);">ذات خبرة عالية</span>
-          </div>
-          <div class="card-btns">
-            <a href="/arabic/doctors/pathology/dr-shemy-seebu.html" class="card-btn-sm card-btn-outline">الملف الشخصي</a>
-            <a href="contact.html" class="card-btn-sm card-btn-fill">احجز</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- NEW: Dr. Lenoy Leelakrishnan Remadevi - General Physician & Diabetologist -->
-      <div class="doctor-card-v2 fade-up" data-dept="diabetes" data-name="lenoy leelakrishnan remadevi" data-order="110">
-        <div class="photo">
-          <img src="../doctors_images/lenoy.webp" alt="د. لينوي ليلاكريشنان ريماديفي" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="ph-box" style="display:none">
-            <div class="ph-circle"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8B1A4A" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg></div>
-            <p class="ph-name">د. لينوي ليلاكريشنان</p>
-          </div>
-        </div>
-        <div class="info">
-          <span class="spec-tag">الطب العام وطب السكري</span>
-          <div class="name">د. لينوي ليلاكريشنان ريماديفي</div>
-          <div class="deg">مرخص من وزارة الصحة ودائرة الصحة · طبيب عام وأخصائي سكري</div>
-          <div class="exp-badge" style="display: inline-flex; align-items: center; gap: 6px; background: var(--rose-pale); padding: 4px 10px; border-radius: 20px; margin-bottom: 14px; width: fit-content;">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--maroon)" stroke-width="2"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
-            <span style="font-size: 0.7rem; font-weight: 600; color: var(--maroon);">+19 سنة خبرة</span>
-          </div>
-          <div class="card-btns">
-            <a href="/arabic/doctors/physician/lenoy-leelakrishnan" class="card-btn-sm card-btn-outline">الملف الشخصي</a>
-            <a href="contact.html" class="card-btn-sm card-btn-fill">احجز</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <div id="noResults" style="display:none;text-align:center;padding:60px;color:var(--text-soft);">
-      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin-bottom:16px;opacity:0.4;">
-        <circle cx="11" cy="11" r="8" />
-        <line x1="21" y1="21" x2="16.65" y2="16.65" />
-      </svg>
-      <p>لم يتم العثور على أطباء مطابقين لبحثك.</p>
-    </div>
-  </div>
-
-  <!-- FOOTER -->
-  
-</main>
-<footer>
+  </main>
+  <footer>
     <div class="footer-inner">
       <div class="footer-brand"><img src="/assets/images/logo/logo.webp" alt="Metro Starcare Logo">
         <p>مركز ميترو ستاركير الطبي، تحت مجموعة ميترو الطبية، ملتزم بتقديم خدمات رعاية صحية عالمية المستوى برحابة صدر وتميز واهتمام شخصي لكل مريض.</p>
@@ -560,7 +740,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li><span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
               </svg></span><span><a href="tel:+971528415113" style="color: inherit; text-decoration: none; text-underline-offset: 4px; transition: color 0.3s;" onmouseover="this.style.color='var(--rose, #db2c66)'" onmouseout="this.style.color='inherit'">+971 52 841 5113</a></span></li>
-          <li><span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><span><a href="mailto:info@metrostarcare.ae" style="color: inherit; text-decoration: none; text-underline-offset: 4px; transition: color 0.3s;" onmouseover="this.style.color='var(--rose, #db2c66)'" onmouseout="this.style.color='inherit'">info@metrostarcare.ae</a></span></li>
+          <li><span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="5" width="18" height="14" rx="2" />
+                <path d="M3 7l9 6 9-6" />
+              </svg></span><span><a href="mailto:info@metrostarcare.ae" style="color: inherit; text-decoration: none; text-underline-offset: 4px; transition: color 0.3s;" onmouseover="this.style.color='var(--rose, #db2c66)'" onmouseout="this.style.color='inherit'">info@metrostarcare.ae</a></span></li>
           <li><span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                 <circle cx="12" cy="10" r="3" />
@@ -568,7 +751,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </ul>
       </div>
     </div>
-   <div class="footer-bottom">
+    <div class="footer-bottom">
       <p>© جميع الحقوق محفوظة | تم التطوير بواسطة <a href="https://mostech.ae/" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;"><strong>شركة موستك لحلول الأعمال</strong></a></p>
     </div>
   </footer>
@@ -604,21 +787,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 
     // ── Sort doctor cards by data-order attribute on load ──
-function sortDoctorsByOrder() {
-  const grid = document.getElementById('doctorsGrid');
-  if (!grid) return;
-  const cards = Array.from(grid.querySelectorAll('.doctor-card-v2'));
-  cards.sort((a, b) => {
-    const aVal = parseInt(a.dataset.order, 10) || 9999;
-    const bVal = parseInt(b.dataset.order, 10) || 9999;
-    return aVal - bVal;
-  });
-  cards.forEach(card => grid.appendChild(card));
-}
-document.addEventListener('DOMContentLoaded', () => {
-  sortDoctorsByOrder();
-  filterDoctors();
-});
+    function sortDoctorsByOrder() {
+      const grid = document.getElementById('doctorsGrid');
+      if (!grid) return;
+      const cards = Array.from(grid.querySelectorAll('.doctor-card-v2'));
+      cards.sort((a, b) => {
+        const aVal = parseInt(a.dataset.order, 10) || 9999;
+        const bVal = parseInt(b.dataset.order, 10) || 9999;
+        return aVal - bVal;
+      });
+      cards.forEach(card => grid.appendChild(card));
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      sortDoctorsByOrder();
+      filterDoctors();
+    });
 
     function filterDoctors() {
       const dept = document.getElementById('deptFilter').value;
@@ -645,7 +828,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     };
     backToTopBtn.onclick = function() {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
     };
 
     document.querySelectorAll('.lang-btn').forEach(btn => {
