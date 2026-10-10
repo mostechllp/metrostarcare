@@ -892,27 +892,42 @@ const doctorsData = [];
         }
       }
 
-      // ✅ Featured: Medical Director (only prepended, not duplicated from grid)
-const featuredDirector = {
-  imgSrc: 'home_docs/rasna_munaifa_.webp',
-  specialty: 'General Practice',
-  name: 'Dr. Rasna Munaifa Koroth',
-  deg: 'MBBS · Medical Director',
-  exp: 'Experienced',
-  profileHref: '/doctors/general-practice/dr-rasna-munaifa',
-  bookHref: 'contact.html',
-  isDirector: true
-};
+      // ✅ Featured: Leadership — Medical Director + Managing Director
+const featuredDirectors = [
+  {
+    imgSrc: 'home_docs/rasna_munaifa_.webp',
+    specialty: 'General Practice',
+    name: 'Dr. Rasna Munaifa Koroth',
+    deg: 'MBBS · Medical Director',
+    exp: 'Experienced',
+    profileHref: '/doctors/general-practice/dr-rasna-munaifa',
+    bookHref: 'contact.html',
+    isDirector: true,
+    directorLabel: '⭐ Medical Director'
+  },
+  {
+    imgSrc: 'home_docs/rasheek_ahammed.webp',
+    specialty: 'Emergency Medicine',
+    name: 'Dr. Rasheek Ahammed',
+    deg: 'MBBS, DNB · Managing Director',
+    exp: 'Experienced',
+    profileHref: '/doctors/general-practice/dr-rasheek-ahammed',
+    bookHref: 'contact.html',
+    isDirector: true,
+    directorLabel: '⭐ Managing Director'
+  }
+];
 
 async function getAllDoctors() {
-  // 1) Director first
-  const allDoctors = [featuredDirector];
-  const existingNames = new Set([featuredDirector.name]);
+  // 1) Directors first (Rasna, then Rasheek)
+  const allDoctors = [...featuredDirectors];
+  const existingNames = new Set(featuredDirectors.map(d => d.name));
 
   // 2) Sorted cards from doctors.html (already sorted by data-order)
   const fetchedDoctors = await fetchAllDoctors();
 
   for (const doc of fetchedDoctors) {
+    // Skip if this doctor is already featured above (avoid duplicates)
     if (!existingNames.has(doc.name)) {
       allDoctors.push(doc);
       existingNames.add(doc.name);
@@ -985,7 +1000,7 @@ async function getAllDoctors() {
           if (window.innerWidth <= 768) card.style.width = '280px';
 
           card.innerHTML = `
-  ${doctor.isDirector ? '<div class="director-badge">⭐ Medical Director</div>' : ''}
+  ${doctor.isDirector ? `<div class="director-badge">${doctor.directorLabel || '⭐ Director'}</div>` : ''}
   <div class="doctor-img-wrap" style="height: 220px;">
     <img src="${doctor.imgSrc}" alt="${doctor.name}" style="width: 100%; height: 100%; object-fit: cover; object-position: top;" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(160deg, #F2D9E6, #E8C4D4)';">
   </div>
