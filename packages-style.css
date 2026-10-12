@@ -109,22 +109,21 @@
 
     /* Filter Bar */
     .filter-bar {
-      background: white;
-      padding: 20px 32px;
-      border-bottom: 1px solid var(--border);
-      position: relative;
-      /*top: 76px;*/
-      z-index: 10;
-      background: rgba(255, 255, 255, 0.98);
-      backdrop-filter: blur(10px);
-    }
+  background: white;
+  padding: 20px 32px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  z-index: 50;              /* was 10 */
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+}
 
     @media (min-width: 992px) {
       .filter-bar {
-        position: sticky;
-        top: 76px;
-        z-index: 10;
-      }
+    position: sticky;
+    top: 76px;
+    z-index: 50;            /* was 10 */
+  }
     }
 
     .filter-inner {
@@ -331,7 +330,7 @@
       justify-content: center;
       text-align: center;
       line-height: 1;
-      z-index: 10;
+      z-index: 1;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
       clip-path: polygon(
         50% 0%, 59% 7%, 70% 3%, 76% 13%, 87% 12%, 90% 23%, 
