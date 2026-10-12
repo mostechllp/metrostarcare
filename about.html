@@ -252,9 +252,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h2 class="section-title">Messages from Our Leaders</h2>
         <div class="divider" style="margin: 12px auto;"></div>
       </div>
-      <div class="message-tabs">
+            <div class="message-tabs">
         <button class="message-tab-btn active" data-msg-index="0">Mustafa Hamza – Chairman & CEO</button>
-        <button class="message-tab-btn" data-msg-index="1">Dr. Rasna Munaifa Koroth – Medical Director</button>
+        <button class="message-tab-btn" data-msg-index="1">Dr. Rasheek Ahamed – Managing Director</button>
+        <button class="message-tab-btn" data-msg-index="2">Dr. Rasna Munaifa Koroth – Medical Director</button>
       </div>
       <div class="message-slider">
         <div class="messages-track" id="messagesTrack">
@@ -285,7 +286,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
             <div class="message-signature">Sincerely Yours,<br>Mustafa Hamza<br><span style="font-size:0.8rem; font-weight:normal;">Group Chairman & CEO</span></div>
           </div>
-          <!-- Slide 1: Dr. Rasna Munaifa Koroth -->
+
+                    <!-- Slide 1: Rasheek Ahamed - Managing Director -->
+          <div class="message-slide">
+            <div class="message-leader-info">
+              <img class="leader-avatar" src="/home_docs/rasheek_ahamed.webp" alt="Rasheek Ahamed" onerror="this.src='https://via.placeholder.com/100x100?text=Rasheek'">
+              <div class="leader-title">
+                <h3>Dr. Rasheek Ahamed</h3>
+                <p>Managing Director – Metro Medical Group (UAE)</p>
+              </div>
+            </div>
+            <div class="message-full-text" id="rasheekMessage">
+              <div class="message-short">
+                <p>Metro Medical Group has proudly served Kuwait for over eleven years, building a legacy of trusted, compassionate healthcare. When we undertook Starcare, it marked our first venture here in the UAE — a milestone that reflects our long-term commitment to this country and its people.</p>
+                <p>Today, we are multiplying our ventures across the region. My vision is to expand our hospitals to more countries across the Gulf, building on our established presence in Kuwait and the UAE. Multiple countries, one standard of care — that is the future we are building.</p>
+              </div>
+              <div class="message-full">
+                <p>Metro Medical Group has proudly served Kuwait for over eleven years, building a legacy of trusted, compassionate healthcare. When we undertook Starcare, it marked our first venture here in the UAE — a milestone that reflects our long-term commitment to this country and its people.</p>
+                <p>Today, we are multiplying our ventures across the region. My vision is to expand our hospitals to more countries across the Gulf, building on our established presence in Kuwait and the UAE. Multiple countries, one standard of care — that is the future we are building.</p>
+                <p>Every new city we enter and every new clinic we open is guided by the same principle: accessible, affordable, and world-class care for the families we serve. We are not just growing a business — we are growing a promise.</p>
+                <p>I am especially proud of the team we have assembled in Sharjah. Their dedication, expertise, and warmth have made Metro Starcare a name that patients trust. As we scale to more countries, this same spirit will travel with us.</p>
+                <p>To our patients and partners: thank you for being part of this journey. The road ahead is long, and we are only getting started. Together, we will redefine what regional healthcare can achieve.</p>
+              </div>
+              <button class="read-more-btn" onclick="toggleMessageExpand(this)">Read More <span>↓</span></button>
+            </div>
+            <div class="message-signature">With gratitude,<br>Rasheek Ahamed<br><span style="font-size:0.8rem; font-weight:normal;">Managing Director</span></div>
+          </div>
+          <!-- Slide 2: Dr. Rasna Munaifa Koroth -->
           <div class="message-slide">
             <div class="message-leader-info">
               <img class="leader-avatar" src="/home_docs/rasna_munaifa.webp" alt="Dr. Rasna Munaifa" onerror="this.src='https://via.placeholder.com/100x100?text=Dr.Rasna'">
@@ -541,7 +568,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         clearInterval(autoInterval);
 
         function scheduleNext() {
-          const delay = currentMsgIndex === 0 ? 10000 : 5000; // Chairman 10s, others 5s
+          const delay = (currentMsgIndex === 0 || currentMsgIndex === 1) ? 10000 : 5000; // Chairman 10s, others 5s
           autoInterval = setTimeout(() => {
             currentMsgIndex = (currentMsgIndex + 1) % slides.length;
             updateMessagesSlide(currentMsgIndex);
@@ -552,7 +579,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       }, 0);
       clearInterval(autoInterval); // reset, but use setTimeout recursion
       function startRecursive() {
-        const delay = currentMsgIndex === 0 ? 10000 : 5000;
+        const delay = (currentMsgIndex === 0 || currentMsgIndex === 1) ? 10000 : 5000;
         autoInterval = setTimeout(() => {
           currentMsgIndex = (currentMsgIndex + 1) % slides.length;
           updateMessagesSlide(currentMsgIndex);
@@ -564,7 +591,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     function resetAutoSlide() {
       if (autoInterval) clearTimeout(autoInterval);
-      const delay = currentMsgIndex === 0 ? 10000 : 5000;
+      const delay = (currentMsgIndex === 0 || currentMsgIndex === 1) ? 10000 : 5000;
       autoInterval = setTimeout(() => {
         currentMsgIndex = (currentMsgIndex + 1) % slides.length;
         updateMessagesSlide(currentMsgIndex);

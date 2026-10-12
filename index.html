@@ -395,53 +395,113 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           Services</a></div>
     </div>
   </section>
-  <!-- CHAIRMAN'S MESSAGE SECTION with sticky image -->
+  <!-- LEADERSHIP MESSAGES SLIDER (Chairman → Managing Director → Medical Director) -->
   <section class="chairman-section fade-up">
-    <div class="chairman-wrap">
-      <div class="chairman-image" style="position: sticky; top: 100px; align-self: flex-start;">
-        <img src="https://www.metromedicalgroup.com/assets/img/team/chairman.jpg" alt="Chairman Mustafa Hamza"
-          onerror="this.style.display='none'">
-        <div class="chairman-sign" style="margin-top: 16px; text-align: center; border-top: none; padding-top: 0;">
-          <div class="name">Mustafa Hamza</div>
-          <div class="title">Group Chairman & CEO – Metro Medical Group (Kuwait/UAE)</div>
+    <div class="chairman-slider-wrap">
+
+      <!-- Arrows -->
+      <button class="chairman-nav chairman-nav-prev" id="chairmanPrev" aria-label="Previous message">&#10094;</button>
+      <button class="chairman-nav chairman-nav-next" id="chairmanNext" aria-label="Next message">&#10095;</button>
+
+      <div class="chairman-slider-track" id="chairmanTrack">
+
+        <!-- Slide 1: Chairman -->
+        <div class="chairman-slide">
+          <div class="chairman-wrap">
+            <div class="lead-card">
+              <div class="lead-photo">
+                <img src="https://www.metromedicalgroup.com/assets/img/team/chairman.jpg" alt="Chairman Mustafa Hamza"
+                  onerror="this.style.display='none'">
+              </div>
+              <div class="lead-sign">
+                <div class="lead-name">Mustafa Hamza</div>
+                <div class="lead-title">Group Chairman &amp; CEO – Metro Medical Group (Kuwait/UAE)</div>
+              </div>
+            </div>
+            <div class="chairman-content">
+              <div class="section-sub">Leadership</div>
+              <h2 class="section-title">Chairman's Message</h2>
+              <div class="chairman-message">
+                <p>We have arranged our Healthcare providing specialized centers from Metro Medical Group with a concept that anyone who enters the center will feel that they have reached a star level ambience and receive a premium quality healthcare along with our unique concept of patient escort since the beginning.</p>
+                <p>Our doctors, medical and paramedical staff could be defined as handpicked, especially our doctors where some of them are having more than 40 years' experience in their noble field of providing healthcare services and treatments to the society with a dedicated attitude.</p>
+                <div class="message-hidden">
+                  <p>All set to become a landmark in the field of medical care, Metro Medical Group has gone leaps and bounds to deliver its mission of bringing quality healthcare services for all. The team of our expert medical professionals will constantly endeavor to provide accessible, affordable and best available healthcare services in Kuwait with the available facilities in its best with us. Since its commencement, Metro Medical Group is always in this sector with noble thoughts and services.</p>
+                  <p>Great ideologies have greater responsibilities and the goals in healthcare are to safeguard, encourage and Metro Medical Group has become a name that spells assurance for the well-being of the patients. We are committed to make available to the public the benefits of the most modern and technological developments in the field which are a blend of technology along with impeccable patient care. This is where we planned to start our unit of Day care surgeries in our Super Metro Specialized Medical Center in Salmiya. Also we enhanced our services by adding MRI, CT and DEXA Scans in our different branches.</p>
+                  <p>With a career in this spanning over several years, I stand here grateful to the almighty, despite being from a humble background, I met a few gracious souls who guided me in my journey of life. My parents solicited inspiration and taught me the value of discipline, perseverance and a regulated life.</p>
+                  <p>Through our essence of high teamwork, we bring together all necessary disciplines and skills from many resources of our organization to serve our patients better and attempt to set a league of its own. Life is our greatest gift, where every moment is as new as it is special. Life is about living every second to the fullest and about making every day an experience to enjoy and cherish. We have a dream of delivering world-class healthcare with the best medical talent and we aim that Metro Medical Group leaves an indelible mark in the heart of every patient and their family members.</p>
+                </div>
+                <button class="read-more-btn" onclick="toggleChairmanExpand(this)">Read More <span>↓</span></button>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <!-- Slide 2: Managing Director -->
+        <div class="chairman-slide">
+          <div class="chairman-wrap">
+            <div class="lead-card">
+              <div class="lead-photo pos-md">
+                <img src="/home_docs/rasheek_ahamed.webp" alt="Dr. Rasheek Ahamed"
+                  onerror="this.style.display='none'">
+              </div>
+              <div class="lead-sign">
+                <div class="lead-name">Dr. Rasheek Ahamed</div>
+                <div class="lead-title">Managing Director – Metro Medical Group (UAE)</div>
+              </div>
+            </div>
+            <div class="chairman-content">
+              <div class="section-sub">Leadership</div>
+              <h2 class="section-title">Managing Director's Message</h2>
+              <div class="chairman-message">
+                <p>Metro Medical Group has proudly served Kuwait for over eleven years, building a legacy of trusted, compassionate healthcare. When we undertook Starcare, it marked our first venture here in the UAE — a milestone that reflects our long-term commitment to this country and its people.</p>
+                <p>Today, we are multiplying our ventures across the region. My vision is to expand our hospitals to more countries across the Gulf, building on our established presence in Kuwait and the UAE. Multiple countries, one standard of care — that is the future we are building.</p>
+                <div class="message-hidden">
+                  <p>Every new city we enter and every new clinic we open is guided by the same principle: accessible, affordable, and world-class care for the families we serve. We are not just growing a business — we are growing a promise.</p>
+                  <p>I am especially proud of the team we have assembled in Sharjah. Their dedication, expertise, and warmth have made Metro Starcare a name that patients trust. As we scale to more countries, this same spirit will travel with us.</p>
+                  <p>To our patients and partners: thank you for being part of this journey. The road ahead is long, and we are only getting started. Together, we will redefine what regional healthcare can achieve.</p>
+                </div>
+                <button class="read-more-btn" onclick="toggleChairmanExpand(this)">Read More <span>↓</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3: Medical Director -->
+        <div class="chairman-slide">
+          <div class="chairman-wrap">
+            <div class="lead-card">
+              <div class="lead-photo cutout">
+                <img src="/home_docs/rasna_munaifa_.webp" alt="Dr. Rasna Munaifa Koroth"
+                  onerror="this.style.display='none'">
+              </div>
+              <div class="lead-sign">
+                <div class="lead-name">Dr. Rasna Munaifa Koroth</div>
+                <div class="lead-title">Medical Director · General Practitioner</div>
+              </div>
+            </div>
+            <div class="chairman-content">
+              <div class="section-sub">Leadership</div>
+              <h2 class="section-title">Medical Director's Message</h2>
+              <div class="chairman-message">
+                <p>As Medical Director of Metro Starcare Medical Centre, I am honored to lead a team that places patient well-being at the heart of everything we do. Our commitment is to deliver not just medical treatment, but genuine compassion and respect for every individual who walks through our doors.</p>
+                <p>We believe that exceptional healthcare begins with listening — truly understanding each patient's concerns, lifestyle, and goals. Our multidisciplinary team of specialists works collaboratively to ensure seamless, coordinated care across all disciplines.</p>
+                <div class="message-hidden">
+                  <p>At Metro Starcare Medical Centre, we continuously invest in advanced medical technology and ongoing education for our staff. This allows us to offer precise diagnostics and effective treatments while maintaining the warmth of a personal connection. Your health is our priority, and we strive to make every visit a reassuring experience.</p>
+                  <p>We have built a culture of excellence where every team member — from front desk to specialist — understands the importance of empathy and precision. Our patient-first approach means we take the time to explain diagnoses, treatment options, and answer every question you may have.</p>
+                  <p>I am proud of the diverse expertise within our medical team. With specialists across general medicine, orthopedics, gynecology, ENT, dermatology, and more, we offer comprehensive care under one roof. This integrated approach ensures continuity of care and better health outcomes for our patients.</p>
+                  <p>I invite you to experience the Metro Starcare Medical Centre difference — where excellence meets empathy, and where we treat you like family. Together, we will build a healthier future for you and your loved ones.</p>
+                </div>
+                <button class="read-more-btn" onclick="toggleChairmanExpand(this)">Read More <span>↓</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
-      <div class="chairman-content">
-  <div class="section-sub">Leadership</div>
-  <h2 class="section-title">Chairman's Message</h2>
-  <div class="chairman-message" id="chairmanMessage" style="text-align: justify;">
-    
-    <!-- ALWAYS VISIBLE - Paragraph 1 -->
-    <div class="message-visible">
-      <p>We have arranged our Healthcare providing specialized centers from Metro Medical Group with a concept that anyone who enters the center will feel that they have reached a star level ambience and receive a premium quality healthcare along with our unique concept of patient escort since the beginning. Our doctors, medical and paramedical staff could be defined as handpicked, especially our doctors where some of them are having more than 40 years' experience in their noble field of providing healthcare services and treatments to the society with a dedicated attitude.</p>
-      <br/>
-    </div>
-    
-    <!-- ALWAYS VISIBLE - Paragraph 3 -->
-    <div class="message-visible">
-      <p>Our doctors, medical and paramedical staff could be defined as handpicked, especially our doctors where some of them are having more than 40 years' experience in their noble field of providing healthcare services and treatments to the society with a dedicated attitude.</p>
-      <br/>
-    </div>
-    <!-- ALWAYS VISIBLE - Paragraph 3 -->
-    <div class="message-visible">
-      <p>All set to become a landmark in the field of medical care, Metro Medical Group has gone leaps and bounds to deliver its mission of bringing quality healthcare services for all. The team of our expert medical professionals will constantly endeavor to provide accessible, affordable and best available healthcare services in Kuwait with the available facilities in its best with us. Since its commencement, Metro Medical Group is always in this sector with noble thoughts and services.</p>
-      <br/>
-    </div>
-    
-    <!-- HIDDEN - Show on Read More click (these are the remaining paragraphs) -->
-    <div class="message-hidden" id="hiddenMessage">
-      
-      
-      <p>Great ideologies have greater responsibilities and the goals in healthcare are to safeguard, encourage and Metro Medical Group has become a name that spells assurance for the well-being of the patients. We are committed to make available to the public the benefits of the most modern and technological developments in the field which are a blend of technology along with impeccable patient care. This is where we planned to start our unit of Day care surgeries in our Super Metro Specialized Medical Center in Salmiya. Also we enhanced our services by adding MRI, CT and DEXA Scans in our different branches.</p>
-      <br/>
-      <p>With a career in this spanning over several years, I stand here grateful to the almighty, despite being from a humble background, I met a few gracious souls who guided me in my journey of life. My parents solicited inspiration and taught me the value of discipline, perseverance and a regulated life.</p>
-      <br/>
-      <p>Through our essence of high teamwork, we bring together all necessary disciplines and skills from many resources of our organization to serve our patients better and attempt to set a league of its own. Life is our greatest gift, where every moment is as new as it is special. Life is about living every second to the fullest and about making every day an experience to enjoy and cherish. We have a dream of delivering world-class healthcare with the best medical talent and we aim that Metro Medical Group leaves an indelible mark in the heart of every patient and their family members.</p>
-    </div>
-    
-    <button class="read-more-btn" id="readMoreBtn">Read More <span>↓</span></button>
-  </div>
-</div>
+
+      <!-- Dots -->
+      <div class="chairman-slider-dots" id="chairmanDots"></div>
+
     </div>
   </section>
 
@@ -653,20 +713,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </main>
 <footer>
     <div class="footer-inner">
-      <div class="footer-brand"><img src="/assets/images/logo/logo.webp" alt="Metro Starcare Logo">
+      <div class="footer-brand">
+        <img src="/assets/images/logo/logo.webp" alt="Metro Starcare Logo">
         <p>Metro Starcare Medical Centre, under Metro Medical Group, is committed to providing world-class healthcare services with compassion, excellence, and personalised attention for every patient.</p>
-       <div class="footer-socials" style="margin-top:20px;"><a href="https://www.instagram.com/starcare.uae"
-            class="footer-social" target="_blank" aria-label="Instagram"><i class="fab fa-instagram" style="font-size: 1.2rem;"></i></a>
-            <a href="https://www.facebook.com/share/15BroPchCk/" class="footer-social" target="_blank" aria-label="Facebook">
-                <i class="fab fa-facebook" style="font-size: 1.2rem;"></i></a>
-                <a href="https://www.linkedin.com/company/metro-starcare/posts/?feedView=all" class="footer-social" target="_blank" aria-label="Facebook">
-                <i class="fab fa-linkedin" style="font-size: 1.2rem;"></i></a>
-                </div>
+        <div class="footer-socials" style="margin-top:20px;">
+          <a href="https://www.instagram.com/starcare.uae" class="footer-social" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/share/15BroPchCk/" class="footer-social" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.linkedin.com/company/metro-starcare/posts/?feedView=all" class="footer-social" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
       </div>
       <div class="footer-col">
-        <h3>Services</h3>
+        <h2>Services</h2>
         <ul>
-           <li><a href="services.html">General Medicine</a></li>
+          <li><a href="services.html">General Medicine</a></li>
           <li><a href="services.html">Gynecology</a></li>
           <li><a href="services.html">Pediatrics</a></li>
           <li><a href="services.html">Orthopedics</a></li>
@@ -674,49 +733,60 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li><a href="services.html">Ophthalmology</a></li>
           <li><a href="services.html">Dermatology</a></li>
           <li><a href="services.html">Cosmetology</a></li>
-          <li><a href="services.html">Laser Treatments</a></li>
-          <li><a href="services.html">Physiotherapy</a></li>
-          <li><a href="services.html">Radiology (Ultrasound & <br>X-Ray)</a></li>
+          <li><a href="services.html">Radiology (Ultrasound &amp; X-Ray)</a></li>
           <li><a href="services.html">Laboratory</a></li>
           <li><a href="services.html">Pharmacy</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h3>Quick Links</h3>
+        <h2>Quick Links</h2>
         <ul>
           <li><a href="about.html">About Us</a></li>
           <li><a href="doctors.html">Our Doctors</a></li>
           <li><a href="packages.html">Packages</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="careers.html">Careers</a></li>
-          <!--<li><a href="#">Our Team</a></li>-->
-          <li><a href="news.html">News & Events</a></li>
+          <li><a href="news.html">News &amp; Events</a></li>
           <li><a href="contact.html">Contact Us</a></li>
           <li><a href="blogs.html">Blogs</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h3>Contact</h3>
+        <h2>Contact</h2>
         <ul class="footer-contact">
-          <li><span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-              </svg></span><span><a href="tel:+971528415113" style="color: inherit; text-decoration: none; text-underline-offset: 4px; transition: color 0.3s;" onmouseover="this.style.color='var(--rose, #db2c66)'" onmouseout="this.style.color='inherit'">+971 52 841 5113</a></span></li>
-              <li><span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"
-     stroke="currentColor" stroke-width="2">
-  <rect x="3" y="5" width="18" height="14" rx="2"/>
-  <path d="M3 7l9 6 9-6"/>
-</svg></span><span><a href="mailto:&#105;&#110;&#102;&#111;&#64;&#109;&#101;&#116;&#114;&#111;&#115;&#116;&#97;&#114;&#99;&#97;&#114;&#101;&#46;&#97;&#101;" style="color: inherit; text-decoration: none; text-underline-offset: 4px; transition: color 0.3s;" onmouseover="this.style.color='var(--rose, #db2c66)'" onmouseout="this.style.color='inherit'">&#105;&#110;&#102;&#111;&#64;&#109;&#101;&#116;&#114;&#111;&#115;&#116;&#97;&#114;&#99;&#97;&#114;&#101;&#46;&#97;&#101;</a></span></li>
-          <li><span class="contact-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg></span><span>Malabar Plaza, Rolla, Sharjah, UAE</span></li>
+          <li>
+            <span class="contact-icon">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+            </span>
+            <span><a href="tel:+971528415113">+971 52 841 5113</a></span>
+          </li>
+          <li>
+            <span class="contact-icon">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="5" width="18" height="14" rx="2"/>
+                <path d="M3 7l9 6 9-6"/>
+              </svg>
+            </span>
+            <span><a href="mailto:&#105;&#110;&#102;&#111;&#64;&#109;&#101;&#116;&#114;&#111;&#115;&#116;&#97;&#114;&#99;&#97;&#114;&#101;&#46;&#97;&#101;">&#105;&#110;&#102;&#111;&#64;&#109;&#101;&#116;&#114;&#111;&#115;&#116;&#97;&#114;&#99;&#97;&#114;&#101;&#46;&#97;&#101;</a></span>
+          </li>
+          <li>
+            <span class="contact-icon">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </span>
+            <span>Malabar Plaza, Rolla, Sharjah, UAE</span>
+          </li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© All Rights Reserved | Developed by <a href="https://mostech.ae/" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;"><strong>Mostech Business Solutions</strong></a></p>
+            <p>© All Rights Reserved | Developed by <a href="https://mostech.ae/" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;"><strong>Mostech Business Solutions</strong></a></p>
     </div>
-  </footer>
+</footer>
 
   <a href="https://wa.me/971528415113" class="floating-btn whatsapp-float" target="_blank" rel="nofollow noopener noreferrer"
     aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
@@ -885,6 +955,17 @@ const doctorsData = [];
       // ✅ Featured: Leadership — Medical Director + Managing Director
 const featuredDirectors = [
   {
+    imgSrc: 'home_docs/rasheek_ahammed.webp',
+    specialty: 'Emergency Medicine',
+    name: 'Dr. Rasheek Ahammed',
+    deg: 'MBBS, DNB · Managing Director',
+    exp: 'Experienced',
+    profileHref: '/doctors/general-practice/dr-rasheek-ahammed',
+    bookHref: 'contact.html',
+    isDirector: true,
+    directorLabel: '⭐ Managing Director'
+  },
+  {
     imgSrc: 'home_docs/rasna_munaifa_.webp',
     specialty: 'General Practice',
     name: 'Dr. Rasna Munaifa Koroth',
@@ -895,17 +976,7 @@ const featuredDirectors = [
     isDirector: true,
     directorLabel: '⭐ Medical Director'
   },
-  {
-    imgSrc: 'home_docs/rasheek_ahammed.webp',
-    specialty: 'Emergency Medicine',
-    name: 'Dr. Rasheek Ahammed',
-    deg: 'MBBS, DNB · Managing Director',
-    exp: 'Experienced',
-    profileHref: '/doctors/general-practice/dr-rasheek-ahammed',
-    bookHref: 'contact.html',
-    isDirector: true,
-    directorLabel: '⭐ Managing Director'
-  }
+  
 ];
 
 async function getAllDoctors() {
@@ -1166,14 +1237,99 @@ async function getAllDoctors() {
       document.querySelector('.lang-btn[data-lang="ar"]').classList.remove('active');
     }
 
-    // Read more functionality
-    const readBtn = document.getElementById('readMoreBtn');
-    const msgDiv = document.getElementById('chairmanMessage');
-    if (readBtn && msgDiv) {
-      readBtn.addEventListener('click', () => {
-        msgDiv.classList.toggle('expanded');
-        readBtn.innerHTML = msgDiv.classList.contains('expanded') ? 'Show Less <span>↑</span>' : 'Read More <span>↓</span>';
+        /* ---- Leadership slider (Chairman / Managing Director / Medical Director) ---- */
+    (function initChairmanSlider() {
+      const track = document.getElementById('chairmanTrack');
+      const slides = document.querySelectorAll('#chairmanTrack .chairman-slide');
+      const dotsWrap = document.getElementById('chairmanDots');
+      const prevBtn = document.getElementById('chairmanPrev');
+      const nextBtn = document.getElementById('chairmanNext');
+      if (!track || slides.length === 0) return;
+
+      let idx = 0;
+      let autoTimer = null;
+
+      function slideWidth() {
+        return slides[0].offsetWidth;
+      }
+
+      function render() {
+        track.style.transform = `translateX(-${idx * slideWidth()}px)`;
+        if (dotsWrap) {
+          dotsWrap.querySelectorAll('.c-dot').forEach((d, i) =>
+            d.classList.toggle('active', i === idx)
+          );
+        }
+      }
+
+      function goTo(i) {
+        idx = (i + slides.length) % slides.length;
+        render();
+        restartAuto();
+      }
+
+      function next() { goTo(idx + 1); }
+      function prev() { goTo(idx - 1); }
+
+      function buildDots() {
+        if (!dotsWrap) return;
+        dotsWrap.innerHTML = '';
+        slides.forEach((_, i) => {
+          const d = document.createElement('div');
+          d.className = 'c-dot' + (i === 0 ? ' active' : '');
+          d.addEventListener('click', () => goTo(i));
+          dotsWrap.appendChild(d);
+        });
+      }
+
+      function restartAuto() {
+        if (autoTimer) clearTimeout(autoTimer);
+        // Longer dwell for Chairman (index 0); shorter for others
+        const delay = idx === 0 ? 12000 : 8000;
+        autoTimer = setTimeout(() => {
+          idx = (idx + 1) % slides.length;
+          render();
+          restartAuto();
+        }, delay);
+      }
+
+      prevBtn?.addEventListener('click', prev);
+      nextBtn?.addEventListener('click', next);
+
+      // Pause auto-slide when user hovers the section
+      const section = track.closest('.chairman-section');
+      section?.addEventListener('mouseenter', () => {
+        if (autoTimer) clearTimeout(autoTimer);
       });
+      section?.addEventListener('mouseleave', restartAuto);
+
+      // Recalculate on resize
+           let rT;
+      const scheduleRender = () => {
+        clearTimeout(rT);
+        rT = setTimeout(render, 120);
+      };
+      window.addEventListener('resize', scheduleRender);
+      window.addEventListener('load', scheduleRender);
+      // Also re-render once after images inside slides load
+      document.querySelectorAll('#chairmanTrack img').forEach(img => {
+        if (!img.complete) img.addEventListener('load', scheduleRender, { once: true });
+      });
+
+      buildDots();
+      render();
+      restartAuto();
+    })();
+
+    /* ---- Read More / Show Less inside any chairman slide ---- */
+    function toggleChairmanExpand(btn) {
+      const box = btn.closest('.chairman-message');
+      if (!box) return;
+      box.classList.toggle('expanded');
+      const expanded = box.classList.contains('expanded');
+      btn.innerHTML = expanded
+        ? 'Show Less <span>↑</span>'
+        : 'Read More <span>↓</span>';
     }
 
     // Auto-sliding testimonials
