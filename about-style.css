@@ -442,7 +442,7 @@
     .message-tab-btn {
       background: transparent;
       border: 2px solid var(--border);
-      padding: 12px 32px;
+      padding: 12px 20px;
       border-radius: 50px;
       font-weight: 700;
       font-size: 1rem;

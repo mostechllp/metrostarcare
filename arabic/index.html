@@ -391,54 +391,113 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <!-- CHAIRMAN'S MESSAGE -->
+  <!-- LEADERSHIP MESSAGES SLIDER (رئيس المجموعة → المدير التنفيذي → المديرة الطبية) -->
   <section class="chairman-section fade-up">
-    <div class="chairman-wrap">
-      <div class="chairman-image" style="position: sticky; top: 100px; align-self: flex-start;"><img
-          src="https://www.metromedicalgroup.com/assets/img/team/chairman.jpg" alt="Chairman Mustafa Hamza"
-          onerror="this.style.display='none'">
-        <div class="chairman-sign" style="margin-top: 16px; text-align: center; border-top: none; padding-top: 0;">
-          <div class="name">مصطفى حمزة</div>
-          <div class="title">رئيس المجموعة والرئيس التنفيذي – مجموعة ميترو الطبية (الكويت/الإمارات)</div>
-        </div>
-      </div>
-      <div class="chairman-content">
-        <div class="section-sub">القيادة</div>
-        <h2 class="section-title">كلمة رئيس المجموعة</h2>
-        <div class="chairman-message" id="chairmanMessage" style="text-align: justify;">
-          <div class="message-short">
-            <p>لقد رتبنا مراكز الرعاية الصحية المتخصصة لدينا من مجموعة ميترو الطبية بمفهوم أن أي شخص يدخل المركز سيشعر
-              بأنه وصل إلى أجواء فندقية ويحصل على رعاية صحية عالية الجودة إلى جانب مفهومنا الفريد لمرافق المريض منذ
-              البداية. يمكن تعريف أطبائنا والكوادر الطبية وشبه الطبية بأنهم منتقون بعناية، خاصة أطبائنا حيث يتمتع بعضهم
-              بأكثر من 40 عامًا من الخبرة في مجالهم النبيل لتقديم خدمات الرعاية الصحية والعلاجات للمجتمع بموقف متفاني.
-            </p>
+    <div class="chairman-slider-wrap">
+
+      <!-- Arrows (RTL: "previous" sits on the right, "next" on the left) -->
+      <button class="chairman-nav chairman-nav-prev" id="chairmanPrev" aria-label="الرسالة السابقة">&#10094;</button>
+      <button class="chairman-nav chairman-nav-next" id="chairmanNext" aria-label="الرسالة التالية">&#10095;</button>
+
+      <div class="chairman-slider-track" id="chairmanTrack">
+
+        <!-- Slide 1: Chairman -->
+        <div class="chairman-slide">
+          <div class="chairman-wrap">
+            <div class="lead-card">
+              <div class="lead-photo">
+                <img src="https://www.metromedicalgroup.com/assets/img/team/chairman.jpg" alt="رئيس المجموعة مصطفى حمزة"
+                  onerror="this.style.display='none'">
+              </div>
+              <div class="lead-sign">
+                <div class="lead-name">مصطفى حمزة</div>
+                <div class="lead-title">رئيس المجموعة والرئيس التنفيذي – مجموعة ميترو الطبية (الكويت/الإمارات)</div>
+              </div>
+            </div>
+            <div class="chairman-content">
+              <div class="section-sub">القيادة</div>
+              <h2 class="section-title">كلمة رئيس المجموعة</h2>
+              <div class="chairman-message">
+                <p>لقد رتبنا مراكز الرعاية الصحية المتخصصة لدينا من مجموعة ميترو الطبية بمفهوم أن أي شخص يدخل المركز سيشعر بأنه وصل إلى أجواء فندقية ويحصل على رعاية صحية عالية الجودة إلى جانب مفهومنا الفريد لمرافق المريض منذ البداية.</p>
+                <p>يمكن تعريف أطبائنا والكوادر الطبية وشبه الطبية بأنهم منتقون بعناية، خاصة أطبائنا حيث يتمتع بعضهم بأكثر من 40 عامًا من الخبرة في مجالهم النبيل لتقديم خدمات الرعاية الصحية والعلاجات للمجتمع بموقف متفاني.</p>
+                <div class="message-hidden">
+                  <p>على أهبة الاستعداد لتصبح علامة فارقة في مجال الرعاية الطبية، قطعت مجموعة ميترو الطبية شوطًا كبيرًا لتحقيق رسالتها في تقديم خدمات رعاية صحية عالية الجودة للجميع. سيسعى فريق خبرائنا الطبيين باستمرار إلى توفير خدمات رعاية صحية يسهل الوصول إليها وبأسعار معقولة وأفضل ما يمكن في الكويت مع المرافق المتاحة لدينا على أفضل وجه. منذ بدايتها، كانت مجموعة ميترو الطبية دائمًا في هذا القطاع بأفكار وخدمات نبيلة.</p>
+                  <p>الأيديولوجيات العظيمة لها مسؤوليات أكبر، والأهداف في الرعاية الصحية هي حماية وتشجيع، وأصبحت مجموعة ميترو الطبية اسمًا يبعث على الاطمئنان لرفاهية المرضى. نحن ملتزمون بتوفير فوائد أحدث التطورات التكنولوجية في المجال للجمهور، وهي مزيج من التكنولوجيا إلى جانب رعاية المرضى التي لا تشوبها شائبة. هذا هو المكان الذي خططنا فيه لبدء وحدة الجراحات اليومية في مركزنا الطبي المتخصص سوبر ميترو في السالمية. كما قمنا بتعزيز خدماتنا بإضافة التصوير بالرنين المغناطيسي والأشعة المقطعية ومسح كثافة العظام في فروعنا المختلفة.</p>
+                  <p>مع مسيرة مهنية في هذا المجال تمتد لعدة سنوات، أقف هنا شاكراً للعلي القدير، على الرغم من كوني من خلفية متواضعة، إلا أنني قابلت بعض النفوس الكريمة التي أرشدتني في رحلة حياتي. ألهمني والداي وعلماني قيمة الانضباط والمثابرة والحياة المنظمة.</p>
+                  <p>من خلال جوهر العمل الجماعي العالي لدينا، نجمع كل التخصصات والمهارات اللازمة من العديد من موارد مؤسستنا لخدمة مرضانا بشكل أفضل ومحاولة إنشاء دوري خاص به. الحياة هي أعظم هدية لنا، حيث كل لحظة جديدة بقدر ما هي مميزة. الحياة تدور حول عيش كل ثانية على أكمل وجه وجعل كل يوم تجربة للاستمتاع والاعتزاز. لدينا حلم بتقديم رعاية صحية على مستوى عالمي بأفضل المواهب الطبية ونهدف إلى أن تترك مجموعة ميترو الطبية بصمة لا تمحى في قلب كل مريض وأفراد أسرته.</p>
+                </div>
+                <button class="read-more-btn" onclick="toggleChairmanExpand(this)">اقرأ المزيد <span>↓</span></button>
+              </div>
+            </div>
           </div>
-          <div class="message-full">
-            <p>لقد رتبنا مراكز الرعاية الصحية المتخصصة لدينا من مجموعة ميترو الطبية بمفهوم أن أي شخص يدخل المركز سيشعر
-              بأنه وصل إلى أجواء فندقية ويحصل على رعاية صحية عالية الجودة إلى جانب مفهومنا الفريد لمرافق المريض منذ
-              البداية.</p>
-            <p>يمكن تعريف أطبائنا والكوادر الطبية وشبه الطبية بأنهم منتقون بعناية، خاصة أطبائنا حيث يتمتع بعضهم بأكثر من
-              40 عامًا من الخبرة في مجالهم النبيل لتقديم خدمات الرعاية الصحية والعلاجات للمجتمع بموقف متفاني.</p>
-            <p>على أهبة الاستعداد لتصبح علامة فارقة في مجال الرعاية الطبية، قطعت مجموعة ميترو الطبية شوطًا كبيرًا لتحقيق
-              رسالتها في تقديم خدمات رعاية صحية عالية الجودة للجميع. سيسعى فريق خبرائنا الطبيين باستمرار إلى توفير خدمات
-              رعاية صحية يسهل الوصول إليها وبأسعار معقولة وأفضل ما يمكن في الكويت مع المرافق المتاحة لدينا على أفضل وجه.
-              منذ بدايتها، كانت مجموعة ميترو الطبية دائمًا في هذا القطاع بأفكار وخدمات نبيلة.</p>
-            <p>الأيديولوجيات العظيمة لها مسؤوليات أكبر، والأهداف في الرعاية الصحية هي حماية وتشجيع، وأصبحت مجموعة ميترو
-              الطبية اسمًا يبعث على الاطمئنان لرفاهية المرضى. نحن ملتزمون بتوفير فوائد أحدث التطورات التكنولوجية في
-              المجال للجمهور، وهي مزيج من التكنولوجيا إلى جانب رعاية المرضى التي لا تشوبها شائبة. هذا هو المكان الذي
-              خططنا فيه لبدء وحدة الجراحات اليومية في مركزنا الطبي المتخصص سوبر ميترو في السالمية. كما قمنا بتعزيز
-              خدماتنا بإضافة التصوير بالرنين المغناطيسي والأشعة المقطعية ومسح كثافة العظام في فروعنا المختلفة.</p>
-            <p>مع مسيرة مهنية في هذا المجال تمتد لعدة سنوات، أقف هنا شاكراً للعلي القدير، على الرغم من كوني من خلفية
-              متواضعة، إلا أنني قابلت بعض النفوس الكريمة التي أرشدتني في رحلة حياتي. ألهمني والداي وعلماني قيمة الانضباط
-              والمثابرة والحياة المنظمة.</p>
-            <p>من خلال جوهر العمل الجماعي العالي لدينا، نجمع كل التخصصات والمهارات اللازمة من العديد من موارد مؤسستنا
-              لخدمة مرضانا بشكل أفضل ومحاولة إنشاء دوري خاص به. الحياة هي أعظم هدية لنا، حيث كل لحظة جديدة بقدر ما هي
-              مميزة. الحياة تدور حول عيش كل ثانية على أكمل وجه وجعل كل يوم تجربة للاستمتاع والاعتزاز. لدينا حلم بتقديم
-              رعاية صحية على مستوى عالمي بأفضل المواهب الطبية ونهدف إلى أن تترك مجموعة ميترو الطبية بصمة لا تمحى في قلب
-              كل مريض وأفراد أسرته.</p>
-          </div><button class="read-more-btn" id="readMoreBtn">اقرأ المزيد <span>↓</span></button>
         </div>
+
+        <!-- Slide 2: Managing Director -->
+        <div class="chairman-slide">
+          <div class="chairman-wrap">
+            <div class="lead-card">
+              <div class="lead-photo pos-md">
+                <img src="/home_docs/rasheek_ahamed.webp" alt="د. رشيك أحمد"
+                  onerror="this.style.display='none'">
+              </div>
+              <div class="lead-sign">
+                <div class="lead-name">د. رشيك أحمد</div>
+                <div class="lead-title">المدير التنفيذي – مجموعة ميترو الطبية (الإمارات)</div>
+              </div>
+            </div>
+            <div class="chairman-content">
+              <div class="section-sub">القيادة</div>
+              <h2 class="section-title">كلمة المدير التنفيذي</h2>
+              <div class="chairman-message">
+                <p>خدمت مجموعة ميترو الطبية الكويت بكل فخر لأكثر من أحد عشر عامًا، لتبني إرثًا من الرعاية الصحية الموثوقة والرحيمة. وعندما أطلقنا ستاركير، كان ذلك أول مشروع لنا هنا في دولة الإمارات — وهو إنجاز يعكس التزامنا طويل الأمد تجاه هذا البلد وشعبه.</p>
+                <p>واليوم، نضاعف مشاريعنا في جميع أنحاء المنطقة. رؤيتي هي توسيع مستشفياتنا لتشمل المزيد من دول الخليج، بالبناء على حضورنا الراسخ في الكويت والإمارات. دول متعددة، ومعيار واحد للرعاية — هذا هو المستقبل الذي نبنيه.</p>
+                <div class="message-hidden">
+                  <p>كل مدينة جديدة ندخلها وكل عيادة جديدة نفتتحها تسترشد بالمبدأ نفسه: رعاية ميسورة وسهلة المنال وعالمية المستوى للعائلات التي نخدمها. نحن لا ننمّي عملًا تجاريًا فحسب — بل ننمّي وعدًا.</p>
+                  <p>وأنا فخور بشكل خاص بالفريق الذي جمعناه في الشارقة. لقد جعل تفانيهم وخبرتهم ودفؤهم من ميترو ستاركير اسمًا يثق به المرضى. ومع توسعنا إلى المزيد من الدول، ستسافر معنا هذه الروح نفسها.</p>
+                  <p>إلى مرضانا وشركائنا: شكرًا لكم لكونكم جزءًا من هذه الرحلة. الطريق أمامنا طويل، ونحن في بدايته فقط. معًا، سنعيد تعريف ما يمكن أن تحققه الرعاية الصحية في المنطقة.</p>
+                </div>
+                <button class="read-more-btn" onclick="toggleChairmanExpand(this)">اقرأ المزيد <span>↓</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3: Medical Director -->
+        <div class="chairman-slide">
+          <div class="chairman-wrap">
+            <div class="lead-card">
+              <div class="lead-photo cutout">
+                <img src="/home_docs/rasna_munaifa_.webp" alt="د. راسنا منيفة كوروث"
+                  onerror="this.style.display='none'">
+              </div>
+              <div class="lead-sign">
+                <div class="lead-name">د. راسنا منيفة كوروث</div>
+                <div class="lead-title">المدير الطبي · طبيبة عامة</div>
+              </div>
+            </div>
+            <div class="chairman-content">
+              <div class="section-sub">القيادة</div>
+              <h2 class="section-title">كلمة المدير الطبي</h2>
+              <div class="chairman-message">
+                <p>بصفتي المديرة الطبية لمركز ميترو ستاركير الطبي، يشرفني أن أقود فريقًا يضع رفاهية المريض في صميم كل ما نقوم به. التزامنا هو تقديم ليس فقط العلاج الطبي، بل التعاطف الحقيقي والاحترام لكل فرد يدخل أبوابنا.</p>
+                <p>نؤمن بأن الرعاية الصحية الاستثنائية تبدأ بالإصغاء — الفهم الحقيقي لمخاوف كل مريض ونمط حياته وأهدافه. يعمل فريقنا متعدد التخصصات من الأخصائيين بشكل تعاوني لضمان رعاية متكاملة ومنسقة عبر جميع التخصصات.</p>
+                <div class="message-hidden">
+                  <p>في مركز ميترو ستاركير الطبي، نستثمر باستمرار في التكنولوجيا الطبية المتقدمة والتعليم المستمر لكوادرنا. وهذا يتيح لنا تقديم تشخيص دقيق وعلاجات فعالة مع الحفاظ على دفء التواصل الشخصي. صحتك أولويتنا، ونسعى لجعل كل زيارة تجربة مطمئنة.</p>
+                  <p>لقد بنينا ثقافة من التميز يدرك فيها كل عضو في الفريق — من مكتب الاستقبال إلى الأخصائي — أهمية التعاطف والدقة. ويعني نهجنا الذي يضع المريض أولًا أننا نخصص الوقت لشرح التشخيصات وخيارات العلاج والإجابة عن كل سؤال لديك.</p>
+                  <p>أنا فخورة بتنوع الخبرات داخل فريقنا الطبي. فمع أخصائيين في الطب العام وجراحة العظام وأمراض النساء والأنف والأذن والحنجرة والأمراض الجلدية وغيرها، نقدم رعاية شاملة تحت سقف واحد. ويضمن هذا النهج المتكامل استمرارية الرعاية ونتائج صحية أفضل لمرضانا.</p>
+                  <p>أدعوكم لتجربة الفرق الذي يصنعه مركز ميترو ستاركير الطبي — حيث يلتقي التميز بالتعاطف، ونعاملكم كأفراد من العائلة. معًا، سنبني مستقبلًا أكثر صحة لكم ولأحبائكم.</p>
+                </div>
+                <button class="read-more-btn" onclick="toggleChairmanExpand(this)">اقرأ المزيد <span>↓</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
+
+      <!-- Dots -->
+      <div class="chairman-slider-dots" id="chairmanDots"></div>
+
     </div>
   </section>
 
@@ -812,6 +871,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       // ✅ القيادة — المدير الطبي + المدير التنفيذي
 const featuredDirectors = [
+   {
+    imgSrc: '../home_docs/rasheek_ahammed.webp',
+    specialty: 'طب الطوارئ',
+    name: 'د. رشيك أحمد',
+    deg: 'بكالوريوس طب وجراحة، دبلوم وطني · المدير التنفيذي',
+    exp: 'خبير',
+    profileHref: '/arabic/doctors/general-practice/dr-rasheek-ahammed.html',
+    bookHref: 'contact.html',
+    isDirector: true,
+    directorLabel: '⭐ المدير التنفيذي'
+  },
   {
     imgSrc: '../home_docs/rasna_munaifa_.webp',
     specialty: 'الطب العام',
@@ -823,17 +893,7 @@ const featuredDirectors = [
     isDirector: true,
     directorLabel: '⭐ المدير الطبي'
   },
-  {
-    imgSrc: '../home_docs/rasheek_ahammed.webp',
-    specialty: 'طب الطوارئ',
-    name: 'د. رشيك أحمد',
-    deg: 'بكالوريوس طب وجراحة، دبلوم وطني · المدير التنفيذي',
-    exp: 'خبير',
-    profileHref: '/arabic/doctors/general-practice/dr-rasheek-ahammed.html',
-    bookHref: 'contact.html',
-    isDirector: true,
-    directorLabel: '⭐ المدير التنفيذي'
-  }
+ 
 ];
 
 const existingDoctors = [
@@ -1131,13 +1191,100 @@ const existingDoctors = [
       document.querySelector('.lang-btn[data-lang="en"]').classList.add('active');
       document.querySelector('.lang-btn[data-lang="ar"]').classList.remove('active');
     }
-    const readBtn = document.getElementById('readMoreBtn');
-    const msgDiv = document.getElementById('chairmanMessage');
-    if (readBtn && msgDiv) {
-      readBtn.addEventListener('click', () => {
-        msgDiv.classList.toggle('expanded');
-        readBtn.innerHTML = msgDiv.classList.contains('expanded') ? 'عرض أقل <span>↑</span>' : 'اقرأ المزيد <span>↓</span>';
+        /* ---- Leadership slider (Chairman / Managing Director / Medical Director) ---- */
+    (function initChairmanSlider() {
+      const track = document.getElementById('chairmanTrack');
+      const slides = document.querySelectorAll('#chairmanTrack .chairman-slide');
+      const dotsWrap = document.getElementById('chairmanDots');
+      const prevBtn = document.getElementById('chairmanPrev');
+      const nextBtn = document.getElementById('chairmanNext');
+      if (!track || slides.length === 0) return;
+
+      let idx = 0;
+      let autoTimer = null;
+
+      function slideWidth() {
+        return slides[0].offsetWidth;
+      }
+
+            function render() {
+        const dir = document.documentElement.getAttribute('dir') === 'rtl' ? 1 : -1;
+        track.style.transform = `translateX(${dir * idx * slideWidth()}px)`;
+        if (dotsWrap) {
+          dotsWrap.querySelectorAll('.c-dot').forEach((d, i) =>
+            d.classList.toggle('active', i === idx)
+          );
+        }
+      }
+
+      function goTo(i) {
+        idx = (i + slides.length) % slides.length;
+        render();
+        restartAuto();
+      }
+
+      function next() { goTo(idx + 1); }
+      function prev() { goTo(idx - 1); }
+
+      function buildDots() {
+        if (!dotsWrap) return;
+        dotsWrap.innerHTML = '';
+        slides.forEach((_, i) => {
+          const d = document.createElement('div');
+          d.className = 'c-dot' + (i === 0 ? ' active' : '');
+          d.addEventListener('click', () => goTo(i));
+          dotsWrap.appendChild(d);
+        });
+      }
+
+      function restartAuto() {
+        if (autoTimer) clearTimeout(autoTimer);
+        // Longer dwell for Chairman (index 0); shorter for others
+        const delay = idx === 0 ? 12000 : 8000;
+        autoTimer = setTimeout(() => {
+          idx = (idx + 1) % slides.length;
+          render();
+          restartAuto();
+        }, delay);
+      }
+
+      prevBtn?.addEventListener('click', prev);
+      nextBtn?.addEventListener('click', next);
+
+      // Pause auto-slide when user hovers the section
+      const section = track.closest('.chairman-section');
+      section?.addEventListener('mouseenter', () => {
+        if (autoTimer) clearTimeout(autoTimer);
       });
+      section?.addEventListener('mouseleave', restartAuto);
+
+      // Recalculate on resize
+            let rT;
+      const scheduleRender = () => {
+        clearTimeout(rT);
+        rT = setTimeout(render, 120);
+      };
+      window.addEventListener('resize', scheduleRender);
+      window.addEventListener('load', scheduleRender);
+      // Also re-render once after images inside slides load
+      document.querySelectorAll('#chairmanTrack img').forEach(img => {
+        if (!img.complete) img.addEventListener('load', scheduleRender, { once: true });
+      });
+
+      buildDots();
+      render();
+      restartAuto();
+    })();
+
+    /* ---- Read More / Show Less inside any chairman slide ---- */
+    function toggleChairmanExpand(btn) {
+      const box = btn.closest('.chairman-message');
+      if (!box) return;
+      box.classList.toggle('expanded');
+      const expanded = box.classList.contains('expanded');
+      btn.innerHTML = expanded
+        ? 'Show Less <span>↑</span>'
+        : 'Read More <span>↓</span>';
     }
   </script>
 </body>
