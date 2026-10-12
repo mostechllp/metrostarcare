@@ -1,4 +1,5 @@
 
+
     // Package Data with image URLs (based on original site structure)
     const packagesData = [
       
@@ -18,22 +19,6 @@
           ],
           fullDetails: "This special Umrah vaccination offer ensures you stay protected during your spiritual journey. Available at an affordable price, the package includes a safe and certified vaccine administered by healthcare professionals in a hygienic environment."
         },
-      {
-        id: 2,
-        name: "Mini Wellness Health Checkup – 39 AED",
-        category: "general_health",
-        description: "Affordable mini wellness checkup for quick health screening.",
-        features: [
-          "Blood Pressure Check",
-          "Blood Sugar (FBS/RBS)",
-          "Total Cholesterol",
-          "SGPT (Liver Enzyme)",
-          "Uric Acid",
-          "BMI (Body Mass Index)",
-          "Free GP Consultation"
-        ],
-        fullDetails: "This mini wellness package is ideal for individuals and families looking for a quick and budget-friendly health checkup."
-      },
       {
         id: 3,
         name: "Wellness Health Checkup – 59 AED",
@@ -662,4 +647,3 @@
 
     // Initial render
     renderPackages();
-  
