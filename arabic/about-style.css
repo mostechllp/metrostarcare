@@ -605,4 +605,61 @@
         text-align: center;
       }
     }
+
+     /* =========================================================
+   LEADERSHIP TABS — responsive labels
+   ========================================================= */
+
+/* Default: hide the short labels, show full labels (desktop) */
+.message-tab-btn .label-short { display: none; }
+.message-tab-btn .label-full  { display: inline; }
+
+/* Tabs container — 3 in a row on mobile, centered */
+@media (max-width: 768px) {
+
+  /* Hide the full labels, show the short labels */
+  .message-tab-btn .label-full  { display: none; }
+  .message-tab-btn .label-short { display: inline; }
+
+  /* Container: force 3 equal columns, no wrapping */
+  .message-tabs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    flex-wrap: nowrap;       /* override the desktop "wrap" */
+    margin-bottom: 28px;
+    padding: 0 4px;
+  }
+
+  /* Each button fills its column evenly */
+  .message-tab-btn {
+    width: 100%;
+    padding: 10px 6px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    border-radius: 30px;
+    border-width: 1.5px;
+    white-space: nowrap;      /* keep label on one line */
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Even tighter on small phones */
+  @media (max-width: 400px) {
+    .message-tab-btn {
+      font-size: 0.7rem;
+      padding: 8px 4px;
+    }
+  }
+}
+
+/* Also apply short labels for tablet up to 900px if needed */
+@media (max-width: 900px) and (min-width: 769px) {
+  .message-tab-btn {
+    font-size: 0.88rem;
+    padding: 10px 14px;
+  }
+}
+  
   
