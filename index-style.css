@@ -1819,35 +1819,179 @@
 .chairman-message .read-more-btn { margin-top: 0; }
 
 /* ---- Tablet / mobile ---- */
-@media (max-width: 900px) {
-  .chairman-section { padding: 56px 0; }
-  .chairman-slider-wrap { padding: 0 16px; }
+/* =========================================================
+   LEADERSHIP SLIDER — MOBILE / TABLET
+   ========================================================= */
 
+@media (max-width: 900px) {
+
+  /* Section padding tightens on small screens */
+  .chairman-section {
+    padding: 56px 0 72px;
+  }
+
+  /* The outer slider wrapper keeps a small side gutter for arrows.
+     Use 56px total (28px each side) so arrows don't fall off-screen. */
+  .chairman-slider-wrap {
+    padding: 0 28px;
+  }
+
+  /* Each slide loses the huge desktop gutter */
+  .chairman-slide {
+    padding: 0;
+  }
+
+  /* Stack the photo card above the text */
   .chairman-wrap {
     flex-direction: column;
     align-items: center;
-    gap: 28px;
+    gap: 24px;
+    padding: 0;
   }
 
-  .lead-card {
+  /* Photo card shrinks and centers */
+    .lead-card {
     flex: 0 0 auto;
-    width: 260px;
+    width: 100%;
     max-width: 100%;
+    border-width: 0;              /* full-bleed look on mobile */
+    border-radius: 20px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
   }
 
-  /* long centered text reads badly, keep the message left-aligned */
+  /* Keep the 4:5 ratio but shorter on mobile */
+  .lead-photo {
+    aspect-ratio: 4 / 5;
+  }
+
+  /* Name + role text scales down slightly */
+  .lead-sign {
+    min-height: 78px;
+    padding: 10px 12px 14px;
+  }
+
+  .lead-name {
+    font-size: 0.98rem;
+  }
+
+  .lead-title {
+    font-size: 0.75rem;
+  }
+
+  /* Message column takes full width and centers its text */
   .chairman-content {
     width: 100%;
+    max-width: 560px;
     text-align: left;
   }
 
-  /* arrows sit on the photo instead of the page edge */
+  .chairman-content .section-title {
+    font-size: 1.6rem;
+    line-height: 1.2;
+  }
+
+  .chairman-message {
+    font-size: 0.92rem;
+    line-height: 1.7;
+  }
+
+  /* Arrows move DOWN — below the slider, next to the dots.
+     This keeps them off the leader's face entirely. */
   .chairman-nav {
-    top: 162px;
-    width: 38px;
-    height: 38px;
+    position: absolute;
+    top: auto;
+    bottom: -52px;
+    width: 42px;
+    height: 42px;
+    font-size: 1rem;
+    background: var(--maroon);
+    transform: none;
+  }
+
+  .chairman-nav:hover {
+    transform: scale(1.08);
+    background: var(--maroon);
+  }
+
+  /* Place arrows flanking the dots, centered */
+  .chairman-nav-prev {
+    left: calc(50% - 70px);
+    right: auto;
+  }
+  .chairman-nav-next {
+    left: auto;
+    right: calc(50% - 70px);
+  }
+
+  /* Make room for the arrows sitting below */
+  .chairman-slider-dots {
+    margin-top: 48px;
+  }
+}
+
+/* =========================================================
+   SMALL PHONES (≤ 480px) — final polish
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .chairman-section {
+    padding: 40px 0 60px;
+  }
+
+  .chairman-slider-wrap {
+    overflow: hidden;
+    padding: 0 20px;
+  }
+
+  .chairman-slide {
+    padding: 0 20px;
+    overflow: hidden;          /* guarantees nothing spills left/right */
+  }
+
+   .chairman-nav-prev { left: 12px; }
+  .chairman-nav-next { right: 12px; }
+
+  .lead-card {
+    width: 320px;
+  }
+
+  .lead-sign {
+    min-height: 68px;
+  }
+
+  .lead-name {
     font-size: 0.9rem;
   }
-  .chairman-nav-prev { left: 6px; }
-  .chairman-nav-next { right: 6px; }
+
+  .lead-title {
+    font-size: 0.7rem;
+  }
+
+  .chairman-content .section-title {
+    font-size: 1.35rem;
+  }
+
+  .chairman-message {
+    font-size: 0.88rem;
+  }
+
+  /* Smaller arrows, tighter to the center */
+  .chairman-nav {
+    width: 36px;
+    height: 36px;
+    bottom: -46px;
+    font-size: 0.9rem;
+  }
+
+  .chairman-nav-prev {
+    left: calc(50% - 58px);
+  }
+  .chairman-nav-next {
+    right: calc(50% - 58px);
+  }
+
+  .chairman-slider-dots {
+    margin-top: 40px;
+  }
 }
