@@ -663,7 +663,7 @@
 
     @media (max-width: 600px) {
       .director-badge {
-        display: none;
+        display: block;
       }
 
       .rasna-img {
@@ -1827,8 +1827,8 @@
     background: var(--maroon);
   }
  
-  .chairman-nav-prev { right: calc(50% - 84px); left: auto; }
-  .chairman-nav-next { left: calc(50% - 84px); right: auto; }
+  .chairman-nav-prev { display: none }
+  .chairman-nav-next { display: none }
 }
  
 /* =========================================================
