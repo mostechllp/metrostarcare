@@ -511,4 +511,348 @@
         width: 100%;
       }
     }
-  
+   /* =========================================================
+   DIRECTOR FEATURE — Meet Our Directors
+   ========================================================= */
+
+.director-feature-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+.directors-heading {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.directors-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  font-weight: 700;
+  color: rgba(255,255,255,0.75);
+  background: rgba(255,255,255,0.1);
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+}
+
+.directors-title {
+  color: #fff;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  margin: 0 0 10px;
+}
+
+.directors-subtitle {
+  color: rgba(255,255,255,0.75);
+  max-width: 620px;
+  margin: 0 auto;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Two-column grid on desktop */
+.directors-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+/* Card */
+.director-card-feat {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 20px;
+  padding: 28px;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  backdrop-filter: blur(6px);
+  transition: transform 0.3s ease;
+}
+
+.director-card-feat:hover {
+  transform: translateY(-4px);
+}
+
+/* Photo */
+.director-photo-wrap {
+  flex-shrink: 0;
+  width: 150px;
+  height: 190px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid rgba(255,255,255,0.25);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  background: rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.director-photo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.director-photo-ph {
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Info column */
+.director-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.director-role-badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: #fff;
+  background: rgba(219,44,102,0.85);
+  padding: 4px 10px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.director-name {
+  color: #fff;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+  margin: 0 0 6px;
+  line-height: 1.2;
+}
+
+.director-deg {
+  color: rgba(255,255,255,0.8);
+  font-size: 0.82rem;
+  margin: 0 0 12px;
+  line-height: 1.5;
+}
+
+.director-bio {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin: 0 0 16px;
+}
+
+.director-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.director-btn {
+  font-size: 0.75rem;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.director-btn-light {
+  background: #fff;
+  color: #8B1A4A;
+}
+
+.director-btn-ghost {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .director-feature-inner {
+    padding: 32px 20px;
+  }
+
+  .directors-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .director-card-feat {
+    padding: 22px;
+    gap: 18px;
+  }
+
+  .director-photo-wrap {
+    width: 120px;
+    height: 150px;
+  }
+
+  .director-name { font-size: 1.2rem; }
+  .director-deg  { font-size: 0.78rem; }
+  .director-bio  { font-size: 0.8rem; }
+}
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .director-feature-inner {
+    padding: 28px 16px;
+  }
+
+  .directors-heading {
+    margin-bottom: 24px;
+  }
+
+  .directors-title {
+    font-size: 1.5rem;
+  }
+
+  .directors-subtitle {
+    font-size: 0.85rem;
+    padding: 0 8px;
+  }
+
+  /* Each card becomes a stacked column: photo on top, info below */
+  .director-card-feat {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 20px;
+    gap: 16px;
+  }
+
+  /* Photo full-width, more portrait-friendly */
+  .director-photo-wrap {
+    width: 100%;
+    height: 220px;
+    margin: 0 auto;
+  }
+
+  /* Info panel centers */
+  .director-info {
+    text-align: center;
+  }
+
+  .director-role-badge {
+    font-size: 0.62rem;
+  }
+
+  .director-name {
+    font-size: 1.15rem;
+  }
+
+  .director-deg {
+    font-size: 0.76rem;
+  }
+
+  .director-bio {
+    font-size: 0.82rem;
+    margin-bottom: 14px;
+  }
+
+  /* Buttons stretch full-width, side-by-side */
+  .director-actions {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .director-btn {
+    flex: 1 1 auto;
+    min-width: 120px;
+    text-align: center;
+    padding: 10px 14px;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+  .director-photo-wrap {
+    height: 200px;
+  }
+
+  .director-name { font-size: 1.05rem; }
+  .director-deg  { font-size: 0.72rem; }
+  .director-bio  { font-size: 0.78rem; }
+
+  .director-btn {
+    font-size: 0.72rem;
+    padding: 9px 12px;
+  }
+}
+  /* =========================================================
+   DIRECTORS — MOBILE: same photo style/size as the doctor cards
+   Paste at the very bottom of doctors-style.css
+   (it overrides the earlier 600px / 400px director rules)
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  /* Wider container: same side margin as the doctor cards below */
+  .director-feature {
+    padding: 40px 18px;
+  }
+
+  .director-feature-inner {
+    padding: 0;
+  }
+
+  /* Card: photo sits flush at the top, text below (like .doctor-card-v2) */
+  .director-card-feat {
+    padding: 0;
+    gap: 0;
+    overflow: hidden;
+    border-radius: 20px;
+    align-items: stretch;
+  }
+
+  /* Photo: full card width, same height cap as the doctor photos */
+  .director-photo-wrap {
+    width: 100%;
+    height: 280px;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    background: transparent;
+  }
+
+  .director-photo-wrap img {
+    width: 80%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;          /* same as the doctor photos */
+  }
+
+  /* Text area gets the padding that the card no longer has */
+  .director-info {
+    padding: 20px 20px 22px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .director-photo-wrap {
+    height: 280px;                 /* keep it equal to the doctor photos on small phones */
+  }
+}
+
+/* Directors: heading on top, two cards below (undo the old 2-column grid) */
+.director-feature-inner {
+  display: block;
+  grid-template-columns: none;
+  gap: 0;
+  align-items: normal;
+}
