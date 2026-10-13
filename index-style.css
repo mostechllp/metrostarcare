@@ -674,7 +674,7 @@
 
     @media (max-width: 600px) {
       .director-badge {
-        display: none;
+        display: block;
       }
 
       .rasna-img {
