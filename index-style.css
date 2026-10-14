@@ -365,7 +365,7 @@
       background: url('home_docs/patriotic_banner.webp') right center/cover no-repeat;
     }
 
-    .hero-overlay-maroon {<
+    .hero-overlay-maroon {
       position: absolute;
       inset: 0;
       background: linear-gradient(135deg, rgba(74, 13, 40, 0.92) 0%, rgba(139, 26, 74, 0.88) 55%, rgba(192, 80, 120, 0.82) 100%);
@@ -1355,6 +1355,7 @@
   object-fit: cover;
   object-position: center;
   z-index: 0;
+  display: block;
 }
 
 /* Video visibility swap */
