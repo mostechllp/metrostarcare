@@ -157,14 +157,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- HERO VIDEO -->
 <section class="hero-video-section">
   <div class="hero-video-wrapper">
-    <video class="hero-background-video desktop-video" id="heroVideo" autoplay muted loop playsinline>
-      <source src="./assets/videos/banner.mp4" type="video/mp4">
+    <video class="hero-background-video" id="heroVideo" autoplay muted loop playsinline preload="metadata">
       متصفحك لا يدعم تشغيل الفيديو.
     </video>
-    <video class="hero-background-video mobile-video" id="heroVideoMobile" autoplay muted loop playsinline>
-      <source src="./assets/videos/mobile-banner.mp4" type="video/mp4">
-      متصفحك لا يدعم تشغيل الفيديو.
-    </video>
+    <script>
+      (function() {
+        var video = document.getElementById('heroVideo');
+        if (!video) return;
+        var isMobile = window.innerWidth <= 768;
+        var videoSrc = isMobile ? './assets/videos/mobile-banner.mp4' : './assets/videos/banner.mp4';
+        var source = document.createElement('source');
+        source.src = videoSrc;
+        source.type = 'video/mp4';
+        video.appendChild(source);
+        video.load();
+        var playPromise = video.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(function() {});
+        }
+      })();
+    </script>
+    <noscript>
+      <video class="hero-background-video" autoplay muted loop playsinline>
+        <source src="./assets/videos/banner.mp4" type="video/mp4">
+      </video>
+    </noscript>
     <div class="hero-video-overlay"></div>
     <div class="hero-video-content">
       <div class="hero-video-inner">
