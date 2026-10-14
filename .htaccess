@@ -8,8 +8,17 @@
 </IfModule>
 ### AutoSSL-Satellite Don't Edit Above This Line ###
 
+<IfModule mod_mime.c>
+	AddType video/mp4 .mp4
+	AddType video/webm .webm
+</IfModule>
+
 <IfModule mod_headers.c>
-Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+	Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+	<FilesMatch "\.(mp4|webm)$">
+		Header set Accept-Ranges bytes
+		Header set Cache-Control "max-age=2592000, public"
+	</FilesMatch>
 </IfModule>
 
 ### AutoSSL-Satellite Don't Edit Below This Line ###

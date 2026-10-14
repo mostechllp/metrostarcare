@@ -1290,6 +1290,7 @@
   object-fit: cover;
   object-position: center;
   z-index: 0;
+  display: block;
 }
 
 /* Video visibility swap */
