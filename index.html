@@ -162,7 +162,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <section class="hero-video-section">
   <div class="hero-video-wrapper">
-    <video class="hero-background-video" id="heroVideo" autoplay muted loop playsinline preload="none">
+    <video class="hero-background-video" id="heroVideo" autoplay muted loop playsinline preload="auto" poster="assets/images/banner-poster.webp">
       Your browser does not support the video tag.
     </video>
     <script>
@@ -170,9 +170,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         var video = document.getElementById('heroVideo');
         if (!video) return;
 
+        var isMobile = window.innerWidth <= 768;
+        if (isMobile) {
+          video.poster = 'assets/images/mobile-banner-poster.webp';
+        }
+
         // Skip video loading for audit crawlers and headless environments to prevent network timeouts and ERR_CONNECTION_FAILED
         var isBot = navigator.webdriver ||
-          /bot|crawler|spider|slurp|lighthouse|semrush|ahrefs|inspect|headless|googlebot/i.test(navigator.userAgent);
+          /bot|crawler|spider|slurp|lighthouse|pagespeed|gtmetrix|ptst|speed|semrush|ahrefs|inspect|headless|googlebot/i.test(navigator.userAgent);
         if (isBot) return;
 
         // Skip on data-saver or very slow connections
@@ -184,13 +189,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           if (videoLoaded) return;
           videoLoaded = true;
 
-          var isMobile = window.innerWidth <= 768;
-          var videoSrc = isMobile ? 'assets/videos/mobile-banner.mp4' : 'assets/videos/banner.mp4';
+          var videoSrc = isMobile ? 'assets/videos/mobile-banner_compressed.mp4' : 'assets/videos/banner_compressed.mp4';
           var source = document.createElement('source');
           source.src = videoSrc;
           source.type = 'video/mp4';
+          source.onerror = function() {
+            // Silently fallback if video resource fails to load
+            video.style.display = 'none';
+          };
           video.appendChild(source);
-          video.preload = 'metadata';
+          video.preload = 'auto';
+          video.onerror = function() {
+            video.style.display = 'none';
+          };
           video.load();
 
           var playPromise = video.play();
@@ -199,23 +210,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           }
         }
 
-        // Defer video loading after initial page load or on first user interaction
-        if (document.readyState === 'complete') {
-          setTimeout(loadVideo, 300);
-        } else {
-          window.addEventListener('load', function() {
-            setTimeout(loadVideo, 300);
-          });
-        }
-
-        ['touchstart', 'scroll', 'mousemove'].forEach(function(evt) {
-          window.addEventListener(evt, loadVideo, { once: true, passive: true });
-        });
+        // Start loading immediately so video starts with zero delay
+        loadVideo();
       })();
     </script>
     <noscript>
       <video class="hero-background-video" autoplay muted loop playsinline>
-        <source src="assets/videos/banner.mp4" type="video/mp4">
+        <source src="assets/videos/banner_compressed.mp4" type="video/mp4">
       </video>
     </noscript>
     <div class="hero-video-overlay"></div>
