@@ -194,6 +194,9 @@
 	RewriteCond %{ENV:REDIRECT_STATUS} ^$
 	RewriteRule ^pharmacy\.html$ /services/pharmacy [R=301,L]
 
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^laser-treatments\.html$ /services/laser-treatments [R=301,L]
+
 	RewriteCond %{THE_REQUEST} \s//+general-doctor-sharjah [NC]
 	RewriteRule ^ /general-doctor-sharjah [R=301,L]
 
@@ -303,6 +306,9 @@
 	RewriteRule ^arabic/dental\.html$ /arabic/services/dental [R=301,L]
 
 	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^arabic/laser-treatments\.html$ /arabic/services/laser-treatments [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
 	RewriteRule ^arabic/radiology\.html$ /arabic/services/radiology [R=301,L]
 
 	RewriteCond %{ENV:REDIRECT_STATUS} ^$
@@ -379,6 +385,8 @@
 	RewriteRule ^services/radiology/?$ radiology.html [L]
 	RewriteRule ^services/pathology/?$ pathology.html [L]
 	RewriteRule ^services/pharmacy/?$ pharmacy.html [L]
+	RewriteRule ^services/laser-treatments/?$ laser-treatments.html [L]
+	RewriteRule ^services/laser/?$ /services/laser-treatments [R=301,L]
 	RewriteRule ^arabic/services/ent/?$ arabic/ent.html [L]
 	RewriteRule ^arabic/services/physiotherapy/?$ arabic/physiotherapy.html [L]
 	RewriteRule ^arabic/services/pediatrics/?$ arabic/pediatrics.html [L]
@@ -391,6 +399,8 @@
 	RewriteRule ^arabic/services/radiology/?$ arabic/radiology.html [L]
 	RewriteRule ^arabic/services/pathology/?$ arabic/pathology.html [L]
 	RewriteRule ^arabic/services/pharmacy/?$ arabic/pharmacy.html [L]
+	RewriteRule ^arabic/services/laser-treatments/?$ arabic/laser-treatments.html [L]
+	RewriteRule ^arabic/services/laser/?$ /arabic/services/laser-treatments [R=301,L]
 
 
 	# 301 Redirects for Short Doctor URLs
