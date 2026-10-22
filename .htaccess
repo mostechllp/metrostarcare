@@ -239,6 +239,12 @@
 	RewriteCond %{ENV:REDIRECT_STATUS} ^$
 	RewriteRule ^hospital-in-sharjah\.html$ /hospital-in-sharjah [R=301,L]
 
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^multispecialty-clinic-in-sharjah\.html$ /multispecialty-clinic-in-sharjah [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^skin-clinic-in-sharjah\.html$ /skin-clinic-in-sharjah [R=301,L]
+
 
 	# 301 Redirects for HTML Extension Pages (Arabic)
 	RewriteCond %{ENV:REDIRECT_STATUS} ^$
@@ -355,6 +361,12 @@
 
 	RewriteCond %{ENV:REDIRECT_STATUS} ^$
 	RewriteRule ^arabic/hospital-in-sharjah\.html$ /arabic/hospital-in-sharjah [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^arabic/multispecialty-clinic-in-sharjah\.html$ /arabic/multispecialty-clinic-in-sharjah [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^arabic/skin-clinic-in-sharjah\.html$ /arabic/skin-clinic-in-sharjah [R=301,L]
 
 
 	# Specific Rewrites to fix 403 Forbidden (because a real folder exists with this name)
