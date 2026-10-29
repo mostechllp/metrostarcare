@@ -64,7 +64,11 @@
 	RewriteRule ^doctor-profile\.html$ /doctors/dentist/dr-fatema? [R=301,L]
 
 	RewriteCond %{QUERY_STRING} ^id=akshay$
-	RewriteRule ^doctor-profile\.html$ /doctors/dentist/dr-akshay? [R=301,L]
+	RewriteRule ^doctor-profile\.html$ /doctors? [R=301,L]
+	RewriteCond %{QUERY_STRING} ^id=akshay$
+	RewriteRule ^arabic/doctor-profile\.html$ /arabic/doctors? [R=301,L]
+	RewriteRule ^doctors/dentist/dr-akshay(-paduvilavi)?(\.html)?$ /doctors [R=301,L]
+	RewriteRule ^arabic/doctors/dentist/dr-akshay(-paduvilavi)?(\.html)?$ /arabic/doctors [R=301,L]
 
 	RewriteCond %{QUERY_STRING} ^id=salih$
 	RewriteRule ^doctor-profile\.html$ /doctors/practitioner/dr-salih? [R=301,L]
