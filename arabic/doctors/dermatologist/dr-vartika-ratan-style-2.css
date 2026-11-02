@@ -1,0 +1,7 @@
+
+        .os-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(139, 26, 74, 0.08); }
+        .btn-fill:hover { background: var(--maroon) !important; }
+        @media (max-width: 768px) {
+          .os-grid { grid-template-columns: 1fr !important; }
+        }
+      

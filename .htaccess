@@ -60,6 +60,9 @@
 	RewriteCond %{QUERY_STRING} ^id=vipul$
 	RewriteRule ^doctor-profile\.html$ /doctors/dermatologist/dr-vipul? [R=301,L]
 
+	RewriteCond %{QUERY_STRING} ^id=vartika$
+	RewriteRule ^doctor-profile\.html$ /doctors/dermatologist/dr-vartika-ratan? [R=301,L]
+
 	RewriteCond %{QUERY_STRING} ^id=fatema$
 	RewriteRule ^doctor-profile\.html$ /doctors/dentist/dr-fatema? [R=301,L]
 
@@ -103,6 +106,9 @@
 
 	RewriteCond %{QUERY_STRING} ^id=vipul$
 	RewriteRule ^arabic/doctor-profile\.html$ /arabic/doctors/dermatologist/dr-vipul? [R=301,L]
+
+	RewriteCond %{QUERY_STRING} ^id=vartika$
+	RewriteRule ^arabic/doctor-profile\.html$ /arabic/doctors/dermatologist/dr-vartika-ratan? [R=301,L]
 
 	RewriteCond %{QUERY_STRING} ^id=fatema$
 	RewriteRule ^arabic/doctor-profile\.html$ /arabic/doctors/dentist/dr-fatema? [R=301,L]
@@ -433,6 +439,8 @@
 	RewriteCond %{ENV:REDIRECT_STATUS} ^$
 	RewriteRule ^doctors/dermatologist/dr-vipul/?$ /doctors/dermatologist/dr-vipul-paul-thomas [R=301,L]
 	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^doctors/dermatologist/dr-vartika/?$ /doctors/dermatologist/dr-vartika-ratan [R=301,L]
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
 	RewriteRule ^doctors/dentist/dr-fatema/?$ /doctors/dentist/dr-fatema-tuj-jahura [R=301,L]
 	RewriteCond %{ENV:REDIRECT_STATUS} ^$
 	RewriteRule ^doctors/practitioner/dr-salih/?$ /doctors/practitioner/dr-muhammed-salih [R=301,L]
@@ -458,6 +466,8 @@
 	RewriteRule ^arabic/doctors/ophthalmologist/dr-pradeep/?$ /arabic/doctors/ophthalmologist/dr-pradeep-kumar-shetty [R=301,L]
 	RewriteCond %{ENV:REDIRECT_STATUS} ^$
 	RewriteRule ^arabic/doctors/dermatologist/dr-vipul/?$ /arabic/doctors/dermatologist/dr-vipul-paul-thomas [R=301,L]
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^arabic/doctors/dermatologist/dr-vartika/?$ /arabic/doctors/dermatologist/dr-vartika-ratan [R=301,L]
 	RewriteCond %{ENV:REDIRECT_STATUS} ^$
 	RewriteRule ^arabic/doctors/dentist/dr-fatema/?$ /arabic/doctors/dentist/dr-fatema-tuj-jahura [R=301,L]
 	RewriteCond %{ENV:REDIRECT_STATUS} ^$
