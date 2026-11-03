@@ -845,6 +845,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <button id="backToTop" class="floating-btn scroll-top" aria-label="Back to top"><i
       class="fas fa-arrow-up"></i></button>
 
+      <!-- Award Popup -->
+<div id="awardPopup" class="award-popup">
+  <div class="award-popup-overlay"></div>
+  <div class="award-popup-content">
+    <button id="awardPopupClose" class="award-popup-close" aria-label="Close popup">
+      <i class="fas fa-times"></i>
+    </button>
+    <img src="assets/popup/popup.jpeg" alt="Metro Starcare - Annual Health Award 2026" class="award-popup-img">
+  </div>
+</div>
+
   <script>
     // Hero Slider
     document.addEventListener("DOMContentLoaded", () => {
@@ -1462,6 +1473,42 @@ async function getAllDoctors() {
       resetAutoSlide();
       window.addEventListener('resize', () => updateSlider());
     }
+
+    (function initAwardPopup() {
+    var popup = document.getElementById('awardPopup');
+    var closeBtn = document.getElementById('awardPopupClose');
+    if (!popup || !closeBtn) return;
+
+    // Check if already dismissed this session (optional - remove if you want it every reload)
+    // if (sessionStorage.getItem('awardPopupDismissed') === 'true') return;
+
+    // Show popup on load
+    window.addEventListener('load', function () {
+      popup.classList.add('active');
+      document.body.classList.add('popup-open');
+    });
+
+    function closePopup() {
+      popup.classList.remove('active');
+      document.body.classList.remove('popup-open');
+      // Optional: remember dismissal for the session
+      // sessionStorage.setItem('awardPopupDismissed', 'true');
+    }
+
+    // Close on button click
+    closeBtn.addEventListener('click', closePopup);
+
+    // Close on overlay click
+    var overlay = popup.querySelector('.award-popup-overlay');
+    if (overlay) overlay.addEventListener('click', closePopup);
+
+    // Close on ESC key
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && popup.classList.contains('active')) {
+        closePopup();
+      }
+    });
+  })();
   </script>
 </body>
 
