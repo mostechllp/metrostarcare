@@ -101,7 +101,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 </head>
 
-<body>
+<body class="popup-open">
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-THFF86K7"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -845,6 +845,57 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <button id="backToTop" class="floating-btn scroll-top" aria-label="Back to top"><i
       class="fas fa-arrow-up"></i></button>
 
+      <!-- Award Popup (renders instantly, before any JS) -->
+<div id="awardPopup" class="award-popup active" role="dialog" aria-modal="true" aria-label="Award Announcement">
+  <div class="award-popup-overlay"></div>
+  <div class="award-popup-content">
+    <button id="awardPopupClose" class="award-popup-close" aria-label="Close popup">
+      <i class="fas fa-times"></i>
+    </button>
+    <img src="assets/popup/popup.jpeg" alt="Metro Starcare - Annual Health Award 2026" class="award-popup-img">
+  </div>
+</div>
+
+<style>
+  /* Inline critical CSS so the popup paints instantly — no waiting for CSS files */
+  body.popup-open { overflow: hidden !important; }
+  .award-popup {
+    position: fixed; inset: 0; z-index: 999999;
+    display: none; align-items: center; justify-content: center;
+    padding: 20px;
+    background: rgba(0,0,0,0.9);
+  }
+  .award-popup.active { display: flex; }
+  .award-popup-overlay { position: absolute; inset: 0; }
+  .award-popup-content {
+    position: relative; z-index: 1;
+    max-width: 95vw; max-height: 95vh;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .award-popup-img {
+    max-width: 95vw; max-height: 92vh;
+    width: auto; height: auto; object-fit: contain;
+    border-radius: 12px; display: block;
+    box-shadow: 0 25px 80px rgba(0,0,0,0.7);
+  }
+  .award-popup-close {
+    position: absolute; top: -18px; right: -18px;
+    width: 46px; height: 46px; border-radius: 50%;
+    background: #fff; color: #8B1A4A; border: none;
+    font-size: 1.2rem; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    transition: transform .25s ease, background .25s ease, color .25s ease;
+    z-index: 2;
+  }
+  .award-popup-close:hover { background:#8B1A4A; color:#fff; transform: rotate(90deg) scale(1.1); }
+  @media (max-width: 768px) {
+    .award-popup { padding: 10px; }
+    .award-popup-close { top: 6px; right: 6px; width: 40px; height: 40px; background: rgba(255,255,255,.95); }
+    .award-popup-img { max-width: 100vw; max-height: 90vh; border-radius: 8px; }
+  }
+</style>
+
   <script>
     // Hero Slider
     document.addEventListener("DOMContentLoaded", () => {
@@ -1462,6 +1513,27 @@ async function getAllDoctors() {
       resetAutoSlide();
       window.addEventListener('resize', () => updateSlider());
     }
+
+    (function initAwardPopup() {
+  var popup = document.getElementById('awardPopup');
+  var closeBtn = document.getElementById('awardPopupClose');
+  if (!popup || !closeBtn) return;
+
+  // Popup is already visible (has .active in HTML). Just wire up the close handlers.
+  function closePopup() {
+    popup.classList.remove('active');
+    document.body.classList.remove('popup-open');
+  }
+
+  closeBtn.addEventListener('click', closePopup);
+
+  var overlay = popup.querySelector('.award-popup-overlay');
+  if (overlay) overlay.addEventListener('click', closePopup);
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && popup.classList.contains('active')) closePopup();
+  });
+})();
   </script>
 </body>
 
