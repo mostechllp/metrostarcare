@@ -790,7 +790,7 @@
 
   <!-- Award Popup (renders instantly, before any JS) -->
   <div id="awardPopup" class="award-popup" role="dialog" aria-modal="true" aria-label="Award Announcement">
-    <div class="award-popup-overlay"></div>
+    
     <div class="award-popup-content">
       <button id="awardPopupClose" class="award-popup-close" aria-label="Close popup">
         <i class="fas fa-times"></i>
@@ -806,15 +806,13 @@
     }
 
     .award-popup {
-      position: fixed;
-      inset: 0;
-      z-index: 999999;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.9);
-    }
+  position: fixed; inset: 0; z-index: 999999;
+  display: none; align-items: center; justify-content: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
 
     .award-popup.active {
       display: flex;
@@ -875,8 +873,6 @@
     @media (max-width: 768px) {
   .award-popup {
     padding: 16px;
-    /* Keep the overlay light so the hero is still visible behind it */
-    background: rgba(0, 0, 0, 0.82);
   }
   .award-popup-content {
     max-width: 70vw;   /* popup is now smaller than the hero */
