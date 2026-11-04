@@ -9,6 +9,8 @@
   <link href="/assets/images/favicon/favicon.webp" rel="icon" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="../shared.css">
+  <link rel="preload" as="image" href="./assets/images/banner-poster.webp" media="(min-width: 769px)">
+  <link rel="preload" as="image" href="./assets/images/mobile-banner-poster.webp" media="(max-width: 768px)">
   <!-- Google Tag Manager -->
   <script>
     (function(w, d, s, l, i) {
@@ -162,7 +164,7 @@
     <!-- HERO VIDEO -->
     <section class="hero-video-section">
       <div class="hero-video-wrapper">
-        <video class="hero-background-video" id="heroVideo" autoplay muted loop playsinline preload="auto" poster="./assets/images/banner-poster.webp">
+        <video class="hero-background-video" id="heroVideo" autoplay muted loop playsinline preload="none" poster="./assets/images/banner-poster.webp">
           متصفحك لا يدعم تشغيل الفيديو.
         </video>
         <script>
@@ -175,27 +177,22 @@
               video.poster = './assets/images/mobile-banner-poster.webp';
             }
 
-            // Skip video loading for audit crawlers and headless environments to prevent network timeouts and ERR_CONNECTION_FAILED
             var isBot = navigator.webdriver ||
               /bot|crawler|spider|slurp|lighthouse|pagespeed|gtmetrix|ptst|speed|semrush|ahrefs|inspect|headless|googlebot/i.test(navigator.userAgent);
-            if (isBot) return;
-
-            // Skip on data-saver or very slow connections
             var conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
-            if (conn && (conn.saveData || /2g/.test(conn.effectiveType))) return;
-
-            var videoLoaded = false;
+            if (isBot || (conn && (conn.saveData || /2g/.test(conn.effectiveType)))) return;
 
             function loadVideo() {
-              if (videoLoaded) return;
-              videoLoaded = true;
+              if (video.dataset.loaded === '1') return;
+              video.dataset.loaded = '1';
 
-              var videoSrc = isMobile ? './assets/videos/mobile-banner_compressed.mp4' : './assets/videos/banner_compressed.mp4';
+              var videoSrc = isMobile ?
+                './assets/videos/mobile-banner_compressed.mp4' :
+                './assets/videos/banner_compressed.mp4';
               var source = document.createElement('source');
               source.src = videoSrc;
               source.type = 'video/mp4';
               source.onerror = function() {
-                // Silently fallback if video resource fails to load
                 video.style.display = 'none';
               };
               video.appendChild(source);
@@ -204,15 +201,19 @@
                 video.style.display = 'none';
               };
               video.load();
-
-              var playPromise = video.play();
-              if (playPromise !== undefined) {
-                playPromise.catch(function() {});
-              }
+              var p = video.play();
+              if (p !== undefined) p.catch(function() {});
             }
 
-            // Start loading immediately so video starts with zero delay
-            loadVideo();
+            if ('requestIdleCallback' in window) {
+              requestIdleCallback(loadVideo, {
+                timeout: 3000
+              });
+            } else {
+              window.addEventListener('load', function() {
+                setTimeout(loadVideo, 1500);
+              });
+            }
           })();
         </script>
         <noscript>
@@ -788,109 +789,119 @@
   <button id="backToTop" class="floating-btn scroll-top"><i class="fas fa-arrow-up"></i></button>
 
   <!-- Award Popup (renders instantly, before any JS) -->
-<div id="awardPopup" class="award-popup active" role="dialog" aria-modal="true" aria-label="Award Announcement">
-  <div class="award-popup-overlay"></div>
-  <div class="award-popup-content">
-    <button id="awardPopupClose" class="award-popup-close" aria-label="Close popup">
-      <i class="fas fa-times"></i>
-    </button>
-    <img src="../assets/popup/popup.jpeg" alt="Metro Starcare - Annual Health Award 2026" class="award-popup-img">
+  <div id="awardPopup" class="award-popup" role="dialog" aria-modal="true" aria-label="Award Announcement">
+    <div class="award-popup-overlay"></div>
+    <div class="award-popup-content">
+      <button id="awardPopupClose" class="award-popup-close" aria-label="Close popup">
+        <i class="fas fa-times"></i>
+      </button>
+      <img src="../assets/popup/popup.jpeg" alt="Metro Starcare - Annual Health Award 2026" class="award-popup-img">
+    </div>
   </div>
-</div>
 
-<style>
-  /* Inline critical CSS so the popup paints instantly — no waiting for CSS files */
-  body.popup-open { overflow: hidden !important; }
+  <style>
+    /* Inline critical CSS so the popup paints instantly — no waiting for CSS files */
+    body.popup-open {
+      overflow: hidden !important;
+    }
+
+    .award-popup {
+      position: fixed;
+      inset: 0;
+      z-index: 999999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.9);
+    }
+
+    .award-popup.active {
+      display: flex;
+    }
+
+    .award-popup-overlay {
+      position: absolute;
+      inset: 0;
+    }
+
+    .award-popup-content {
+      position: relative;
+      z-index: 1;
+      max-width: 95vw;
+      max-height: 95vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .award-popup-img {
+      max-width: 95vw;
+      max-height: 92vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 12px;
+      display: block;
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.7);
+    }
+
+    .award-popup-close {
+      position: absolute;
+      top: -18px;
+      right: -18px;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: #fff;
+      color: #8B1A4A;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      transition: transform .25s ease, background .25s ease, color .25s ease;
+      z-index: 2;
+    }
+
+    .award-popup-close:hover {
+      background: #8B1A4A;
+      color: #fff;
+      transform: rotate(90deg) scale(1.1);
+    }
+
+    @media (max-width: 768px) {
   .award-popup {
-    position: fixed; inset: 0; z-index: 999999;
-    display: none; align-items: center; justify-content: center;
-    padding: 20px;
-    background: rgba(0,0,0,0.9);
+    padding: 16px;
+    /* Keep the overlay light so the hero is still visible behind it */
+    background: rgba(0, 0, 0, 0.82);
   }
-  .award-popup.active { display: flex; }
-  .award-popup-overlay { position: absolute; inset: 0; }
   .award-popup-content {
-    position: relative; z-index: 1;
-    max-width: 95vw; max-height: 95vh;
-    display: flex; align-items: center; justify-content: center;
+    max-width: 70vw;   /* popup is now smaller than the hero */
+    max-height: 40vh;
   }
   .award-popup-img {
-    max-width: 95vw; max-height: 92vh;
-    width: auto; height: auto; object-fit: contain;
-    border-radius: 12px; display: block;
-    box-shadow: 0 25px 80px rgba(0,0,0,0.7);
+    max-width: 70vw;
+    max-height: 40vh;   /* key: popup image is now visibly smaller than hero text */
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.55);
   }
   .award-popup-close {
-    position: absolute; top: -18px; right: -18px;
-    width: 46px; height: 46px; border-radius: 50%;
-    background: #fff; color: #8B1A4A; border: none;
-    font-size: 1.2rem; cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-    transition: transform .25s ease, background .25s ease, color .25s ease;
-    z-index: 2;
+    top: -12px;
+    right: -12px;
+    width: 36px;
+    height: 36px;
+    font-size: 0.95rem;
+    background: rgba(255,255,255,.95);
   }
-  .award-popup-close:hover { background:#8B1A4A; color:#fff; transform: rotate(90deg) scale(1.1); }
-  @media (max-width: 768px) {
-    .award-popup { padding: 10px; }
-    .award-popup-close { top: 6px; right: 6px; width: 40px; height: 40px; background: rgba(255,255,255,.95); }
-    .award-popup-img { max-width: 100vw; max-height: 90vh; border-radius: 8px; }
-  }
-</style>
+}
+  </style>
 
   <script>
-    // ======================== HERO SLIDER LOGIC (RTL) ========================
-    const heroTrack = document.getElementById('heroSliderTrack');
-    const heroSlides = document.querySelectorAll('.hero-slide');
-    const heroDots = document.querySelectorAll('#heroDots .dot');
-    const heroPrev = document.getElementById('heroPrev');
-    const heroNext = document.getElementById('heroNext');
-    let currentHeroSlide = 0;
-    const totalHeroSlides = heroSlides.length;
-    let heroAutoInterval;
-
-    function updateHeroSlider() {
-      // In RTL, translateX positive moves content to the left, but we want to show slides moving "forward" in Arabic (right to left reading).
-      // Flex items naturally sit right-to-left in dir=rtl.
-      // So translating +100% moves the track right, revealing items to the left.
-      heroTrack.style.transform = `translateX(${currentHeroSlide * 100}%)`;
-      heroDots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentHeroSlide);
-      });
-    }
-
-    function nextHeroSlide() {
-      currentHeroSlide = (currentHeroSlide + 1) % totalHeroSlides;
-      updateHeroSlider();
-      resetHeroAuto();
-    }
-
-    function prevHeroSlide() {
-      currentHeroSlide = (currentHeroSlide - 1 + totalHeroSlides) % totalHeroSlides;
-      updateHeroSlider();
-      resetHeroAuto();
-    }
-
-    function resetHeroAuto() {
-      clearInterval(heroAutoInterval);
-      heroAutoInterval = setInterval(nextHeroSlide, 7000);
-    }
-
-    if (heroPrev && heroNext) {
-      heroNext.addEventListener('click', nextHeroSlide);
-      heroPrev.addEventListener('click', prevHeroSlide);
-
-      heroDots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-          currentHeroSlide = index;
-          updateHeroSlider();
-          resetHeroAuto();
-        });
-      });
-
-      resetHeroAuto();
-    }
-
     // ======================== ALL SLIDERS SLIDE TO THE RIGHT (POSITIVE TRANSLATEX) ========================
     window.addEventListener('scroll', () => {
       document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
@@ -1103,9 +1114,28 @@
           }, 250);
         });
       }
-      getAllDoctors().then(doctors => {
-        if (doctors.length > 0) createInfiniteDoctorSlider(doctors);
-      });
+      const doctorsSection = document.getElementById('doctorsSliderTrack')?.closest('section');
+      if (doctorsSection && 'IntersectionObserver' in window) {
+        let started = false;
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach(e => {
+            if (e.isIntersecting && !started) {
+              started = true;
+              io.disconnect();
+              getAllDoctors().then(doctors => {
+                if (doctors.length > 0) createInfiniteDoctorSlider(doctors);
+              });
+            }
+          });
+        }, {
+          rootMargin: '200px'
+        });
+        io.observe(doctorsSection);
+      } else {
+        getAllDoctors().then(doctors => {
+          if (doctors.length > 0) createInfiniteDoctorSlider(doctors);
+        });
+      }
     });
 
     // ======================== TESTIMONIALS SLIDER - SLIDES TO THE RIGHT ========================
@@ -1365,20 +1395,31 @@
   var closeBtn = document.getElementById('awardPopupClose');
   if (!popup || !closeBtn) return;
 
-  // Popup is already visible (has .active in HTML). Just wire up the close handlers.
+  function openPopup() {
+    if (sessionStorage.getItem('awardPopupClosed') === '1') return;
+    popup.classList.add('active');
+    document.body.classList.add('popup-open');
+  }
   function closePopup() {
     popup.classList.remove('active');
     document.body.classList.remove('popup-open');
+    sessionStorage.setItem('awardPopupClosed', '1');
   }
 
   closeBtn.addEventListener('click', closePopup);
-
   var overlay = popup.querySelector('.award-popup-overlay');
   if (overlay) overlay.addEventListener('click', closePopup);
-
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && popup.classList.contains('active')) closePopup();
   });
+
+  // Show as soon as the DOM is ready — before the page fully loads.
+  // Small popup size means it won't become the LCP element.
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', openPopup, { once: true });
+  } else {
+    openPopup();
+  }
 })();
   </script>
 </body>

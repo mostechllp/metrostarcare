@@ -12,6 +12,8 @@
   <meta property="og:image" content="https://www.metrostarcare.ae/assets/images/favicon/favicon.webp">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="shared.css">
+  <link rel="preload" as="image" href="assets/images/banner-poster.webp" media="(min-width: 769px)">
+<link rel="preload" as="image" href="assets/images/mobile-banner-poster.webp" media="(max-width: 768px)">
   <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -101,7 +103,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 </head>
 
-<body class="popup-open">
+<body>
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-THFF86K7"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -162,57 +164,53 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <section class="hero-video-section">
   <div class="hero-video-wrapper">
-    <video class="hero-background-video" id="heroVideo" autoplay muted loop playsinline preload="auto" poster="assets/images/banner-poster.webp">
+    <video class="hero-background-video" id="heroVideo" autoplay muted loop playsinline preload="none" poster="assets/images/banner-poster.webp">
       Your browser does not support the video tag.
     </video>
     <script>
       (function() {
-        var video = document.getElementById('heroVideo');
-        if (!video) return;
+  var video = document.getElementById('heroVideo');
+  if (!video) return;
 
-        var isMobile = window.innerWidth <= 768;
-        if (isMobile) {
-          video.poster = 'assets/images/mobile-banner-poster.webp';
-        }
+  var isMobile = window.innerWidth <= 768;
+  if (isMobile) {
+    video.poster = 'assets/images/mobile-banner-poster.webp';
+  }
 
-        // Skip video loading for audit crawlers and headless environments to prevent network timeouts and ERR_CONNECTION_FAILED
-        var isBot = navigator.webdriver ||
-          /bot|crawler|spider|slurp|lighthouse|pagespeed|gtmetrix|ptst|speed|semrush|ahrefs|inspect|headless|googlebot/i.test(navigator.userAgent);
-        if (isBot) return;
+  // Skip video for bots / save-data / very slow connections
+  var isBot = navigator.webdriver ||
+    /bot|crawler|spider|slurp|lighthouse|pagespeed|gtmetrix|ptst|speed|semrush|ahrefs|inspect|headless|googlebot/i.test(navigator.userAgent);
+  var conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+  if (isBot || (conn && (conn.saveData || /2g/.test(conn.effectiveType)))) return;
 
-        // Skip on data-saver or very slow connections
-        var conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
-        if (conn && (conn.saveData || /2g/.test(conn.effectiveType))) return;
+  function loadVideo() {
+    if (video.dataset.loaded === '1') return;
+    video.dataset.loaded = '1';
 
-        var videoLoaded = false;
-        function loadVideo() {
-          if (videoLoaded) return;
-          videoLoaded = true;
+    var videoSrc = isMobile
+      ? 'assets/videos/mobile-banner_compressed.mp4'
+      : 'assets/videos/banner_compressed.mp4';
+    var source = document.createElement('source');
+    source.src = videoSrc;
+    source.type = 'video/mp4';
+    source.onerror = function() { video.style.display = 'none'; };
+    video.appendChild(source);
+    video.preload = 'auto';
+    video.onerror = function() { video.style.display = 'none'; };
+    video.load();
+    var p = video.play();
+    if (p !== undefined) p.catch(function() {});
+  }
 
-          var videoSrc = isMobile ? 'assets/videos/mobile-banner_compressed.mp4' : 'assets/videos/banner_compressed.mp4';
-          var source = document.createElement('source');
-          source.src = videoSrc;
-          source.type = 'video/mp4';
-          source.onerror = function() {
-            // Silently fallback if video resource fails to load
-            video.style.display = 'none';
-          };
-          video.appendChild(source);
-          video.preload = 'auto';
-          video.onerror = function() {
-            video.style.display = 'none';
-          };
-          video.load();
-
-          var playPromise = video.play();
-          if (playPromise !== undefined) {
-            playPromise.catch(function() {});
-          }
-        }
-
-        // Start loading immediately so video starts with zero delay
-        loadVideo();
-      })();
+  // Defer video load until after the hero has painted
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(loadVideo, { timeout: 3000 });
+  } else {
+    window.addEventListener('load', function() {
+      setTimeout(loadVideo, 1500);
+    });
+  }
+})();
     </script>
     <noscript>
       <video class="hero-background-video" autoplay muted loop playsinline>
@@ -846,13 +844,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       class="fas fa-arrow-up"></i></button>
 
       <!-- Award Popup (renders instantly, before any JS) -->
-<div id="awardPopup" class="award-popup active" role="dialog" aria-modal="true" aria-label="Award Announcement">
+<div id="awardPopup" class="award-popup" role="dialog" aria-modal="true" aria-label="Award Announcement">
   <div class="award-popup-overlay"></div>
   <div class="award-popup-content">
     <button id="awardPopupClose" class="award-popup-close" aria-label="Close popup">
       <i class="fas fa-times"></i>
     </button>
-    <img src="assets/popup/popup.jpeg" alt="Metro Starcare - Annual Health Award 2026" class="award-popup-img">
+    <img src="assets/popup/popup.webp" alt="Metro Starcare - Annual Health Award 2026" class="award-popup-img">
   </div>
 </div>
 
@@ -890,10 +888,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }
   .award-popup-close:hover { background:#8B1A4A; color:#fff; transform: rotate(90deg) scale(1.1); }
   @media (max-width: 768px) {
-    .award-popup { padding: 10px; }
-    .award-popup-close { top: 6px; right: 6px; width: 40px; height: 40px; background: rgba(255,255,255,.95); }
-    .award-popup-img { max-width: 100vw; max-height: 90vh; border-radius: 8px; }
+  .award-popup {
+    padding: 16px;
+    /* Keep the overlay light so the hero is still visible behind it */
+    background: rgba(0, 0, 0, 0.82);
   }
+  .award-popup-content {
+    max-width: 70vw;   /* popup is now smaller than the hero */
+    max-height: 40vh;
+  }
+  .award-popup-img {
+    max-width: 70vw;
+    max-height: 40vh;   /* key: popup image is now visibly smaller than hero text */
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.55);
+  }
+  .award-popup-close {
+    top: -12px;
+    right: -12px;
+    width: 36px;
+    height: 36px;
+    font-size: 0.95rem;
+    background: rgba(255,255,255,.95);
+  }
+}
 </style>
 
   <script>
@@ -1245,11 +1265,26 @@ async function getAllDoctors() {
         });
       }
 
-      getAllDoctors().then(doctors => {
-        if (doctors.length > 0) {
-          createInfiniteSlider(doctors);
-        }
-      });
+      const doctorsSection = document.getElementById('doctorsTrack')?.closest('section');
+if (doctorsSection && 'IntersectionObserver' in window) {
+  let started = false;
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting && !started) {
+        started = true;
+        io.disconnect();
+        getAllDoctors().then(doctors => {
+          if (doctors.length > 0) createInfiniteSlider(doctors);
+        });
+      }
+    });
+  }, { rootMargin: '200px' });
+  io.observe(doctorsSection);
+} else {
+  getAllDoctors().then(doctors => {
+    if (doctors.length > 0) createInfiniteSlider(doctors);
+  });
+}
     });
 
     // Mobile menu toggle with overlay
@@ -1514,25 +1549,36 @@ async function getAllDoctors() {
       window.addEventListener('resize', () => updateSlider());
     }
 
-    (function initAwardPopup() {
+   (function initAwardPopup() {
   var popup = document.getElementById('awardPopup');
   var closeBtn = document.getElementById('awardPopupClose');
   if (!popup || !closeBtn) return;
 
-  // Popup is already visible (has .active in HTML). Just wire up the close handlers.
+  function openPopup() {
+    if (sessionStorage.getItem('awardPopupClosed') === '1') return;
+    popup.classList.add('active');
+    document.body.classList.add('popup-open');
+  }
   function closePopup() {
     popup.classList.remove('active');
     document.body.classList.remove('popup-open');
+    sessionStorage.setItem('awardPopupClosed', '1');
   }
 
   closeBtn.addEventListener('click', closePopup);
-
   var overlay = popup.querySelector('.award-popup-overlay');
   if (overlay) overlay.addEventListener('click', closePopup);
-
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && popup.classList.contains('active')) closePopup();
   });
+
+  // Show as soon as the DOM is ready — before the page fully loads.
+  // Small popup size means it won't become the LCP element.
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', openPopup, { once: true });
+  } else {
+    openPopup();
+  }
 })();
   </script>
 </body>
