@@ -253,6 +253,19 @@
   ],
   fullDetails: "The Premium Pregnancy Package is our most complete maternity offering — 10 obstetric consultations, 4 normal ultrasounds, NT and Anomaly scans, and an extensive laboratory panel (CBC 4, HIV, HCV, VDRL, TSH, GTT, HBSAG, HbA1c, Urine Analysis 3, Urine Culture & Sensitivity, Blood Group, Blood Type, Blood Sugar Fasting 2, Blood Sugar Post Pandial). Includes ongoing blood pressure and BMI monitoring for total peace of mind throughout your pregnancy."
 },
+{
+  id: 34,
+  name: "NIPT Basic – 950 AED",
+  category: "women_health",
+  description: "Get essential insights into your baby's health with safe, reliable and convenient prenatal screening.",
+  features: [
+    "Non-Invasive Prenatal Testing (NIPT)",
+    "100% Confidentiality",
+    "Fast & Accurate",
+    "Convenience & Personalized"
+  ],
+  fullDetails: "Safe, reliable, and confidential prenatal screening for early insights into your baby's health."
+},
 
 // Metro Premium Wellness Package
 {
@@ -403,9 +416,46 @@
     "Assessments & Consultation: ECG, Blood Pressure, BMI, GP Consultation"
   ],
   fullDetails: "Prevention today means a healthier, happier tomorrow for you and your family! Prioritize your complete wellness with our Cardiac Comprehensive Package. From key cardiac markers to full lipid, kidney, liver, diabetes, and essential mineral profiles — get an all-in-one health check designed to give you total peace of mind. Comprehensive. Complete. Protective."
+},
+
+// Glucofit Plus Diabetes Package
+{
+  id: 35,
+  name: "Glucofit Plus Diabetes Package – 69 AED",
+  category: "diabetes",
+  description: "Comprehensive diabetes screening package with pre & post-meal blood sugar evaluation.",
+  features: [
+    "Fasting/Random Blood Sugar (FBS/RBS)",
+    "HbA1c (3-Month Average)",
+    "Postprandial Blood Sugar (PPBS)"
+  ],
+  fullDetails: "Comprehensive fasting and post-meal blood sugar screening for effective diabetes management."
+},
+
+// Hydrafacial Special Offer
+{
+  id: 36,
+  name: "Hydrafacial Special Offer – 99 AED",
+  category: "skin_care",
+  description: "Refresh, brighten, and rejuvenate your skin with our National Day Hydrafacial specials.",
+  features: [
+    "Basic Hydrafacial – 99 AED",
+    "Advanced Hydrafacial – 129 AED",
+    "Dermalogica Hydrafacial – 179 AED"
+  ],
+  packages: [
+    {
+      category_name: "Hydrafacial Options",
+      services: [
+        { name: "Basic Hydrafacial", price: "99 AED" },
+        { name: "Advanced Hydrafacial", price: "129 AED" },
+        { name: "Dermalogica Hydrafacial", price: "179 AED" }
+      ]
+    }
+  ],
+  fullDetails: "Deep cleansing, intensive hydration, and rejuvenation for radiant, healthy-looking skin."
 }
     ];
-
 
     let currentFilter = "all";
     let currentSort = "default";
@@ -416,6 +466,7 @@
         "diabetes": "Diabetes",
         "blood_test": "Blood Test",
         "women_health": "Women Health",
+        "skin_care": "Skin & Aesthetics",
         "allergy": "Allergy",
         "general_fitness": "General Fitness",
         "nutrition": "Nutrition",
