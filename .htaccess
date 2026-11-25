@@ -298,6 +298,21 @@
 	RewriteRule ^gynecologist-in-sharjah\.html$ /gynecologist-in-sharjah [R=301,L]
 
 	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^gynecologist-in-rolla\.html$ /gynecologist-in-rolla [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^gynecologist-in-muwaileh\.html$ /gynecologist-in-muwaileh [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^gynecologist-in-al-majaz\.html$ /gynecologist-in-al-majaz [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^gynecologist-in-al-khan\.html$ /gynecologist-in-al-khan [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
+	RewriteRule ^gynecologist-in-al-sharq\.html$ /gynecologist-in-al-sharq [R=301,L]
+
+	RewriteCond %{ENV:REDIRECT_STATUS} ^$
 	RewriteRule ^healthcare-clinic-in-sharjah\.html$ /healthcare-clinic-in-sharjah [R=301,L]
 
 	RewriteCond %{ENV:REDIRECT_STATUS} ^$

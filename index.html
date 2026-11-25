@@ -697,6 +697,71 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </section>
 
   <!-- ★ NEW: AUTO-SLIDING TESTIMONIALS SECTION (after doctors preview) ★ -->
+  <style>
+    .testimonials-track {
+      display: flex !important;
+      align-items: stretch !important;
+    }
+    .testimonial-card {
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: flex-start !important;
+      height: auto !important;
+      min-height: 280px !important;
+      padding: 28px 24px !important;
+      background: #ffffff !important;
+      border-radius: 28px !important;
+      border: 1px solid var(--border) !important;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05) !important;
+      transition: transform 0.2s ease, border-color 0.2s ease !important;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-5px) !important;
+      border-color: var(--rose) !important;
+    }
+    .testimonial-quote {
+      font-size: 2rem !important;
+      color: var(--rose) !important;
+      opacity: 0.4 !important;
+      margin-bottom: 8px !important;
+      line-height: 1 !important;
+      flex-shrink: 0 !important;
+    }
+    .testimonial-text {
+      font-size: 0.95rem !important;
+      color: var(--text-dark) !important;
+      line-height: 1.6 !important;
+      margin: 8px 0 16px !important;
+      font-style: italic !important;
+      display: block !important;
+      flex: 0 0 auto !important;
+    }
+    .testimonial-text a {
+      display: inline !important;
+      position: relative !important;
+      text-decoration: underline !important;
+      text-underline-offset: 3px !important;
+      color: var(--maroon-light) !important;
+      font-size: 0.85rem !important;
+      margin-left: 4px !important;
+      padding: 0 !important;
+    }
+    .testimonial-author {
+      font-weight: 700 !important;
+      color: var(--maroon) !important;
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+      letter-spacing: -0.2px !important;
+      font-size: 1rem !important;
+      flex-shrink: 0 !important;
+    }
+    .testimonial-role {
+      font-size: 0.72rem !important;
+      color: var(--text-soft) !important;
+      margin-top: 4px !important;
+      flex-shrink: 0 !important;
+    }
+  </style>
   <section class="testimonials-section fade-up">
     <div class="testimonials-inner">
       <div class="text-center">
@@ -706,6 +771,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 <div class="testimonials-slider">
   <div class="testimonials-track" id="testimonialsTrack">
+
+    <div class="testimonial-card">
+      <div class="testimonial-quote">“</div>
+      <div class="testimonial-text">
+        Really happy with my HydraFacial from Hasna. She explained every step clearly, did a great job, and my skin feels really good.
+      </div>
+      <div class="testimonial-author">Azlah</div>
+      <div class="testimonial-role">Local Guide • 4 days ago</div>
+    </div>
 
     <div class="testimonial-card">
       <div class="testimonial-quote">“</div>
@@ -721,11 +795,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="testimonial-card">
       <div class="testimonial-quote">“</div>
       <div class="testimonial-text">
+        Both the Pediatrician Mrs sreevidya Arun and General Medicine Doctor linoy were absolutely wonderful! They were very kind, caring, patient, and professional. They provided excellent care and made us feel comfortable and reassured throughout our visits Truly grateful to both doctors. Highly recommended...
+      </div>
+      <div class="testimonial-author">Christy Janu</div>
+      <div class="testimonial-role">7 days ago</div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-quote">“</div>
+      <div class="testimonial-text">
         Very Good Service from Ms Noreen and Mr Aamir. Star metro is lucky to have such
         professionals to serve patients. Thanks a lot.
       </div>
       <div class="testimonial-author">Abdul Nawa</div>
       <div class="testimonial-role">a week ago</div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-quote">“</div>
+      <div class="testimonial-text">
+        Doctors are good and experienced<br>Clinic charges also reasonable
+      </div>
+      <div class="testimonial-author">ASHOK SACHDEVA</div>
+      <div class="testimonial-role">Local Guide • 2 weeks ago</div>
     </div>
 
     <div class="testimonial-card">

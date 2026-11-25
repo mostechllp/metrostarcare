@@ -662,6 +662,71 @@ body.rtl .nav-lang-switch{order:2}
     </section>
 
     <!-- TESTIMONIALS AUTO-SLIDER - SLIDES TO THE RIGHT -->
+    <style>
+      .testimonials-track {
+        display: flex !important;
+        align-items: stretch !important;
+      }
+      .testimonial-card {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        height: auto !important;
+        min-height: 280px !important;
+        padding: 28px 24px !important;
+        background: #ffffff !important;
+        border-radius: 28px !important;
+        border: 1px solid var(--border) !important;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05) !important;
+        transition: transform 0.2s ease, border-color 0.2s ease !important;
+      }
+      .testimonial-card:hover {
+        transform: translateY(-5px) !important;
+        border-color: var(--rose) !important;
+      }
+      .testimonial-quote {
+        font-size: 2rem !important;
+        color: var(--rose) !important;
+        opacity: 0.4 !important;
+        margin-bottom: 8px !important;
+        line-height: 1 !important;
+        flex-shrink: 0 !important;
+      }
+      .testimonial-text {
+        font-size: 0.95rem !important;
+        color: var(--text-dark) !important;
+        line-height: 1.6 !important;
+        margin: 8px 0 16px !important;
+        font-style: italic !important;
+        display: block !important;
+        flex: 0 0 auto !important;
+      }
+      .testimonial-text a {
+        display: inline !important;
+        position: relative !important;
+        text-decoration: underline !important;
+        text-underline-offset: 3px !important;
+        color: var(--maroon-light) !important;
+        font-size: 0.85rem !important;
+        margin-right: 4px !important;
+        padding: 0 !important;
+      }
+      .testimonial-author {
+        font-weight: 700 !important;
+        color: var(--maroon) !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        letter-spacing: -0.2px !important;
+        font-size: 1rem !important;
+        flex-shrink: 0 !important;
+      }
+      .testimonial-role {
+        font-size: 0.72rem !important;
+        color: var(--text-soft) !important;
+        margin-top: 4px !important;
+        flex-shrink: 0 !important;
+      }
+    </style>
     <section class="testimonials-section fade-up">
       <div class="testimonials-inner">
         <div class="text-center">
@@ -671,6 +736,15 @@ body.rtl .nav-lang-switch{order:2}
         </div>
         <div class="testimonials-slider" dir="rtl">
           <div class="testimonials-track" id="testimonialsTrack">
+
+            <div class="testimonial-card">
+              <div class="testimonial-quote">“</div>
+              <div class="testimonial-text">
+                سعيدة جداً بجلسة الهيدرافيشل (HydraFacial) مع حسناء. لقد قامت بشرح كل خطوة بوضوح، وقدمت عملاً رائعاً، وبشرتي تشعر بالانتعاش والراحة حقاً.
+              </div>
+              <div class="testimonial-author">أزلا</div>
+              <div class="testimonial-role">مرشد محلي • منذ 4 أيام</div>
+            </div>
 
             <div class="testimonial-card">
               <div class="testimonial-quote">“</div>
@@ -685,10 +759,28 @@ body.rtl .nav-lang-switch{order:2}
             <div class="testimonial-card">
               <div class="testimonial-quote">“</div>
               <div class="testimonial-text">
+                كل من أخصائية طب الأطفال الدكتورة سريفيديا أرون وطبيب الطب العام الدكتور لينوي كانا رائعين للغاية! لقد كانا في غاية اللطف والاهتمام والصبر والاحترافية. قدما رعاية ممتازة وجعلانا نشعر بالراحة والاطمئنان طوال زياراتنا. ممتنة حقاً لكلا الطبيبين، وأنصح بهما بشدة...
+              </div>
+              <div class="testimonial-author">كريستي جانو</div>
+              <div class="testimonial-role">منذ 7 أيام</div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="testimonial-quote">“</div>
+              <div class="testimonial-text">
                 خدمة ممتازة من السيدة نورين والسيد عامر. مركز ستار مترو محظوظ بوجود مثل هؤلاء المحترفين لخدمة المرضى. شكرًا جزيلًا.
               </div>
               <div class="testimonial-author">عبدال نوى</div>
               <div class="testimonial-role">منذ أسبوع</div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="testimonial-quote">“</div>
+              <div class="testimonial-text">
+                الأطباء ممتازون وذوو خبرة عالية، كما أن أسعار العيادة مناسبة ومعقولة جداً.
+              </div>
+              <div class="testimonial-author">أشوك ساشديفا</div>
+              <div class="testimonial-role">مرشد محلي • منذ أسبوعين</div>
             </div>
 
             <div class="testimonial-card">
