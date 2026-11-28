@@ -10,18 +10,53 @@
   <link rel="canonical" href="https://www.metrostarcare.ae/services/general-medicine">
   <link href="assets/images/favicon/favicon.webp" rel="icon">
   <meta property="og:image" content="https://www.metrostarcare.ae/assets/images/favicon/favicon.webp">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+  </noscript>
+  <link rel="preload" href="shared.css" as="style">
   <link rel="stylesheet" href="shared.css">
-  <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-THFF86K7');</script>
-<!-- End Google Tag Manager -->
+  <!-- Google Tag Manager (Deferred for performance & Core Web Vitals) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+
+    (function() {
+      var isBot = navigator.webdriver ||
+        /bot|crawler|spider|slurp|lighthouse|pagespeed|gtmetrix|ptst|speed|semrush|ahrefs|inspect|headless|googlebot/i.test(navigator.userAgent);
+      if (isBot) return;
+
+      var gtmLoaded = false;
+      function loadGTM() {
+        if (gtmLoaded) return;
+        gtmLoaded = true;
+
+        ['scroll', 'mousemove', 'touchstart', 'click', 'keydown'].forEach(function(ev) {
+          window.removeEventListener(ev, loadGTM, { passive: true });
+        });
+
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-THFF86K7');
+      }
+
+      ['scroll', 'mousemove', 'touchstart', 'click', 'keydown'].forEach(function(ev) {
+        window.addEventListener(ev, loadGTM, { passive: true, once: true });
+      });
+
+      setTimeout(loadGTM, 3500);
+    })();
+  </script>
+  <!-- End Google Tag Manager -->
   
 
   <!-- Open Graph / Facebook -->
@@ -134,7 +169,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
-        <img src="/assets/images/logo/logo.webp" alt="Starcare Logo" onerror="this.style.display='none'">
+        <img src="/assets/images/logo/logo.webp" alt="Starcare Logo" width="108" height="48" fetchpriority="high" onerror="this.style.display='none'">
         <div class="nav-logo-text"><span class="brand">Metro Starcare</span><span class="sub">Metro Medical Group</span></div>
       </a>
       <ul class="nav-links" id="navLinks">
@@ -310,7 +345,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </main>
 <footer>
     <div class="footer-inner">
-      <div class="footer-brand"><img src="/assets/images/logo/logo.webp" alt="Metro Starcare Logo">
+      <div class="footer-brand"><img src="/assets/images/logo/logo.webp" alt="Metro Starcare Logo" width="99" height="44" loading="lazy" decoding="async">
         <p>Metro Starcare Medical Centre, under Metro Medical Group, is committed to providing world-class healthcare services with compassion, excellence, and personalised attention for every patient.</p>
        <div class="footer-socials" style="margin-top:20px;"><a href="https://www.instagram.com/starcare.uae"
             class="footer-social" target="_blank" aria-label="Instagram"><i class="fab fa-instagram" style="font-size: 1.2rem;"></i></a>
